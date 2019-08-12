@@ -1,0 +1,30 @@
+@font-face {
+  font-family: ProximaNova-Regular;
+  src: url("/static/fonts/ProximaNova-Regular.otf");
+}
+@font-face {
+  font-family: ProximaNova-Bold;
+  src: url("/static/fonts/ProximaNova-Bold.otf");
+}
+
+#header{
+    background-color: #1c1c20;
+    height: 920px;
+    overflow-y: hidden;
+    img{
+        position: absolute;
+        right: 0px;
+    }
+    .text_holder{
+      padding-top: 195px;
+      padding-left: 35px;
+      z-index: 2;
+    }
+    p{
+      font-family: ProximaNova-Regular;
+      color:white;
+      font-size: 0.95em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+}
