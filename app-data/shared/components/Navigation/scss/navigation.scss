@@ -6,7 +6,7 @@
 .navbar{
     margin-top: 25px;
 }
-.navbar-nav{
+.navbar-nav {
     li{
         a{
             font-family: ProximaNova-Regular;
@@ -14,6 +14,10 @@
             font-size: 0.8em;
             padding-top: 12px;
             padding-bottom: 12px;
+
+            &:hover {
+                color: #00a7f0;
+            }
         }
         button{
             font-family: ProximaNova-Regular;
@@ -21,6 +25,13 @@
             font-size: 0.8em;
             padding-top: 12px;
             padding-bottom: 12px;
+
+            &.btn-link {
+                &:hover {
+                    color: #00a7f0;
+                    text-decoration: none;
+                }
+            }
         }
         .button-link{
             background-color: #0098d8;
@@ -29,6 +40,51 @@
             padding-left: 28px !important;
             padding-top: 12px;
             padding-bottom: 12px;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+
+        &:nth-child(2) {
+            position: relative;
+            padding: 0 0 0 1rem;
+            margin: 0 0 0 1rem;
+
+            &::before {
+                content: '|';
+                color: #aeb4b8;
+                position: absolute;
+                top: .5rem;
+                left: 0;
+            } 
+        }
+    }
+    &.not-homepage {
+        li {
+            a {
+                color: #aeb4b8;
+
+                &:hover {
+                    color: #000;
+                }
+                &.button-link {
+                    color: #fff;
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+            button {
+                &.btn-link {
+                    color: #aeb4b8;
+                    
+                    &:hover {
+                        color: #000;
+                    }
+                }
+            }
         }
     }
 }

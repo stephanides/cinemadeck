@@ -1,0 +1,34 @@
+.product {
+  .product-bg {
+    background-color: #eee;
+    padding: 1rem;
+    position: relative;
+
+    h4 {
+      font-weight: 100;
+    }
+    h5 {
+      font-weight: bold;
+    }
+  }
+
+  .button-link {
+    background-color: #0098d8;
+    border-color: transparent;
+    border-radius: 2px;
+    color: #fff;
+    padding-right: 28px !important;
+    padding-left: 28px !important;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: absolute;
+    bottom: -1rem;
+    width: calc(100% - 28px);
+  
+    &:hover {
+        background-color: #0098d8;
+        border-color: transparent;
+        color: #fff;
+    }
+  }
+}

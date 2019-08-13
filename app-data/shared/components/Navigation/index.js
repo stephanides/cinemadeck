@@ -8,6 +8,8 @@ import {
   Nav,
   NavItem,
 } from 'reactstrap';
+import PropTypes from 'prop-types';
+
 import { graphql } from 'react-apollo';
 import { toggleLangMutation } from '../../../graphql/mutation';
 import CustomContainer from '../CustomContainer';
@@ -16,7 +18,7 @@ import './scss/navigation.scss';
 
 const Navigation = graphql(
   toggleLangMutation, { name: 'toggleLang' },
-)(({ lang, toggleLang }) => {
+)(({ lang, isHome, toggleLang }) => {
   const [isOpen, toggle] = useState(false);
 
   return (
@@ -29,7 +31,7 @@ const Navigation = graphql(
           onClick={() => toggle(!isOpen)}
         />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto" navbar>
+          <Nav className={isHome ? 'ml-auto' : 'ml-auto not-homepage'} navbar>
             <NavItem>
               <button
                 type="button"
@@ -95,5 +97,9 @@ const Navigation = graphql(
     </Navbar>
   );
 });
+
+Navigation.propTypes = {
+  isHome: PropTypes.bool.isRequired,
+};
 
 export default Navigation;
