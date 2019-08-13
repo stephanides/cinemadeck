@@ -13,9 +13,11 @@ const Unique = compose(
   return (
   <div className="unique" id="unique">
     <Container fluid>
-      <CustomContainer>
+      <Container>
           <h2 className="text-center">{localisation[lang].uniqueTitle}</h2>
-      </CustomContainer>
+          <img src="/static/images/unique/karty.png" alt="Vizuál" />
+          
+      </Container>
     </Container>
   </div>
   );
