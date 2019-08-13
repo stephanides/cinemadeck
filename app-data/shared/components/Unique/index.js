@@ -14,7 +14,7 @@ const Unique = compose(
   <div className="unique" id="unique">
     <Container fluid>
       <CustomContainer>
-          <h2>{localisation[lang].uniqueTitle}</h2>
+          <h2 className="text-center">{localisation[lang].uniqueTitle}</h2>
       </CustomContainer>
     </Container>
   </div>
