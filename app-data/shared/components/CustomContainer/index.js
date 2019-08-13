@@ -8,12 +8,15 @@ const CustomContainer = ({ children, flex }) => (
   </div>
 );
 
+CustomContainer.defaultProps = {
+  flex: false,
+};
 CustomContainer.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-  flex: PropTypes.bool.isRequired,
+  flex: PropTypes.bool,
 };
 
 export default CustomContainer;
