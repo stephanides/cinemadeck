@@ -4,9 +4,9 @@ import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Navigation from '../Navigation';
 
-const Layout = ({ children }) => (
+const Layout = ({ lang, children }) => (
   <div>
-    <Navigation />
+    <Navigation lang={lang} />
     <Container fluid className="pl-0 pr-0">
       { children }
     </Container>
@@ -18,6 +18,7 @@ Layout.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  lang: PropTypes.string.isRequired,
 };
 
 export default Layout;
