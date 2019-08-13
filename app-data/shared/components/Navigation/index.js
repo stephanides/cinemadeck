@@ -25,7 +25,7 @@ const Navigation = compose(
 
   return (
     <Navbar className= 'fixed-top p-0' expand="md">
-      <CustomContainer className="d-flex">
+      <CustomContainer flex>
       <NavbarBrand href="/">
           <img src="/static/images/logo.png" alt="Logo White" />
         </NavbarBrand>

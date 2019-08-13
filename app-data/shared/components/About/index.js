@@ -6,6 +6,9 @@ import { getLocaleQuery } from '../../../graphql/query';
 import CustomContainer from '../CustomContainer';
 import localisation from '../../localisation/Navigation';
 
+const renderDangerHtml = (lang) => ({ __html: localisation[lang].aboutTitle })
+const renderDangerHtmlText1 = (lang) => ({ __html: localisation[lang].aboutText1 })
+const renderDangerHtmlText2 = (lang) => ({ __html: localisation[lang].aboutText2 })
 const About = compose(
   graphql(getLocaleQuery, { name: 'getLocale' }),
 )(({ getLocale: { lang }}) => {
@@ -14,9 +17,12 @@ const About = compose(
   <div className="about" id="about">
     <Container fluid>
       <CustomContainer>
-          <h1>{localisation[lang].aboutTitle}</h1>
-          <p>{localisation[lang].aboutText1}</p>
-          <p>{localisation[lang].aboutText2}</p>
+        <Container>
+          <h1 className="text-center" dangerouslySetInnerHTML={renderDangerHtml(lang)}/>
+          <img src="/static/images/aboutKarty/spoluKarty.png" alt="Karty CinemaDeck" />
+          <p className="text-center mt-text" dangerouslySetInnerHTML={renderDangerHtmlText1(lang)}/>
+          <p className="text-center mt-4" dangerouslySetInnerHTML={renderDangerHtmlText2(lang)}/>
+        </Container>
       </CustomContainer>
     </Container>
   </div>

@@ -3,6 +3,39 @@
     src: url("/static/fonts/ProximaNova-Regular.otf");
   }
   @font-face {
-    font-family: ProximaNova-Bold;
-    src: url("/static/fonts/ProximaNova-Bold.otf");
+    font-family: ProximaNova-SemiBold;
+    src: url("/static/fonts/ProximaNova-Semibold.otf");
+  }
+
+  .about{
+    background-color: #1c1c20;
+    padding-top: 100px;
+    position: relative;
+    z-index: 2;
+    padding-bottom: 160px;
+    h1{
+      font-family: ProximaNova-SemiBold;
+      font-size: 2em;
+      color:white; 
+      letter-spacing: 8px;
+    }
+    img{
+      
+      display: block;
+      margin: 0 auto;
+      margin-top: 60px;
+    }
+    p{
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.5em;
+      color: #b1b6be;
+      font-weight: 400;
+      strong{
+        color:white;
+        font-weight: 500;
+      }
+    }
+    .mt-text{
+      margin-top: 140px;
+    }
   }

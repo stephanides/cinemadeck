@@ -6,6 +6,7 @@ import { getLocaleQuery } from '../../../graphql/query';
 import CustomContainer from '../CustomContainer';
 import localisation from '../../localisation/Navigation';
 
+const renderDangerHtml = (lang) => ({ __html: localisation[lang].headerText2 })
 const Header = compose(
   graphql(getLocaleQuery, { name: 'getLocale' }),
 )(({ getLocale: { lang }}) => {
@@ -17,7 +18,7 @@ const Header = compose(
       <CustomContainer>
         <div className="text_holder">
           <p>{localisation[lang].headerText1}</p>
-          <h3>{localisation[lang].headerText2}</h3>
+          <h3 className="pt-4" dangerouslySetInnerHTML={renderDangerHtml(lang)}/>
         </div>
         <button>{localisation[lang].findOutMore}</button>
       </CustomContainer>
