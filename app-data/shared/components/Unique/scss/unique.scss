@@ -6,3 +6,17 @@
     font-family: ProximaNova-Bold;
     src: url("/static/fonts/ProximaNova-Bold.otf");
   }
+  @font-face {
+    font-family: ProximaNova-SemiBold;
+    src: url("/static/fonts/ProximaNova-Semibold.otf");
+  }
+
+  .unique{
+    padding-top: 120px;
+    h2{
+      color:#2f3438;
+      font-family: ProximaNova-Bold;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+    }
+  }
