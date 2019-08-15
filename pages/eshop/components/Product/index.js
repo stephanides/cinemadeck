@@ -5,6 +5,7 @@ import { Button } from 'reactstrap';
 const Product = () => (
   <div className="product">
     <div className="product-bg">
+      <img src="/static/images/CARD-BOX.png" loading="lazy" alt="" />
       <h4 className="text-uppercase">Cinemadeck</h4>
       <h5 className="text-uppercase d-flex justify-content-between">
         <span>Cards</span>

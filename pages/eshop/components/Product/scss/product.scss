@@ -1,7 +1,10 @@
 .product {
+  position: relative;
+  padding-top: 8.5rem;
+
   .product-bg {
     background-color: #eee;
-    padding: 1rem;
+    padding: 11rem 2.5rem 2rem;
     position: relative;
 
     h4 {
@@ -10,10 +13,14 @@
     h5 {
       font-weight: bold;
     }
+    img {
+      position: absolute;
+      top: -35%;
+    }
   }
 
   .button-link {
-    background-color: #0098d8;
+    background-color: #37baf1;
     border-color: transparent;
     border-radius: 2px;
     color: #fff;
@@ -23,7 +30,7 @@
     padding-bottom: 12px;
     position: absolute;
     bottom: -1rem;
-    width: calc(100% - 28px);
+    width: calc(100% - 5rem);
   
     &:hover {
         background-color: #0098d8;

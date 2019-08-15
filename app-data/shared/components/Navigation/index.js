@@ -25,7 +25,7 @@ const Navigation = graphql(
     <Navbar className="fixed-top p-0" expand="md">
       <CustomContainer flex>
         <NavbarBrand href="/">
-          <img src="/static/images/logo.png" alt="Logo White" />
+          <img src={isHome ? '/static/images/logo.png' : '/static/images/logo-dark.png'} alt="Logo White" />
         </NavbarBrand>
         <NavbarToggler
           onClick={() => toggle(!isOpen)}
@@ -66,7 +66,7 @@ const Navigation = graphql(
             </NavItem>
             <NavItem>
               <AnchorLink
-                href="#services"
+                href="/eshop"
                 className="nav-link"
                 onClick={() => toggle(!isOpen)}
               >

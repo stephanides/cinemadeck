@@ -1,13 +1,12 @@
 import './scss/eshop.scss';
 import React from 'react';
 import {
-  Button, Col, Row,
+  Container, Col, Row,
 } from 'reactstrap';
 import { graphql } from 'react-apollo';
 import { getLocaleQuery } from '../../app-data/graphql/query';
 
 import Layout from '../../app-data/shared/components/Layout';
-import CustomContainer from '../../app-data/shared/components/CustomContainer';
 import Product from './components/Product';
 
 const EshopPage = graphql(
@@ -17,7 +16,7 @@ const EshopPage = graphql(
     lang={lang}
     isHome={false}
   >
-    <CustomContainer>
+    <Container>
       <h1 className="text-uppercase text-center">Cinemadeck Shop</h1>
       <Row>
         <Col>
@@ -30,7 +29,7 @@ const EshopPage = graphql(
           <Product />
         </Col>
       </Row>
-    </CustomContainer>
+    </Container>
   </Layout>
 ));
 
