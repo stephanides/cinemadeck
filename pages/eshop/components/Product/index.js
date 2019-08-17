@@ -1,20 +1,36 @@
 import './scss/product.scss';
 import React from 'react';
-import { Button } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Product = () => (
   <div className="product">
     <div className="product-bg">
       <img src="/static/images/CARD-BOX.png" loading="lazy" alt="" />
-      <h4 className="text-uppercase">Cinemadeck</h4>
-      <h5 className="text-uppercase d-flex justify-content-between">
-        <span>Cards</span>
-        <span>37eur</span>
+      <h4 className="text-uppercase d-flex justify-content-between">
+        <span className="font-weight-lighter">Cinemadeck</span>
+        <span className="font-weight-bold">
+          37
+          {''}
+          <small className="align-top text-uppercase mt-1 ml-1">
+            eur
+          </small>
+        </span>
+      </h4>
+      <h5 className="text-uppercase font-weight-bold d-flex justify-content-between mb-3">
+        Cards
       </h5>
-      <p className="mb-5">První detailní instruktor pro profesionálníkompozicive vašem interview</p>
-      <Button className="button-link text-uppercase">Přidat do košíku</Button>
+      <p className="mb-5 font-weight-lighter">První detailní instruktor pro profesionálníkompozicive vašem interview</p>
+      <button
+        type="button"
+        className="button-add-to-cart text-uppercase"
+      >
+        Přidat do košíku
+        {''}
+        <FontAwesomeIcon className="ml-2" icon={faShoppingCart} />
+      </button>
     </div>
-    <p className="text-center text-uppercase mt-5">Zjistit více</p>
+    <p className="text-center text-blue text-uppercase">Zjistit více</p>
   </div>
 );
 

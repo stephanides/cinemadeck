@@ -1,4 +1,4 @@
-import './scss/eshop.scss';
+// import './scss/eshop.scss';
 import React from 'react';
 import {
   Container, Col, Row,
@@ -8,6 +8,7 @@ import { getLocaleQuery } from '../../app-data/graphql/query';
 
 import Layout from '../../app-data/shared/components/Layout';
 import Product from './components/Product';
+import Footer from './components/Footer';
 
 const EshopPage = graphql(
   getLocaleQuery, { name: 'getLocale' },
@@ -17,7 +18,10 @@ const EshopPage = graphql(
     isHome={false}
   >
     <Container>
-      <h1 className="text-uppercase text-center">Cinemadeck Shop</h1>
+      <div className="eshop-heading-container d-flex justify-content-center">
+        <h1 className="text-uppercase text-center mb-0 pt-4">Cinemadeck Shop</h1>
+      </div>
+      {''}
       <Row>
         <Col>
           <Product />
@@ -29,7 +33,17 @@ const EshopPage = graphql(
           <Product />
         </Col>
       </Row>
+      <style jsx>
+        {
+          `
+            .eshop-heading-container {
+              min-height: 210px;
+            }
+          `
+        }
+      </style>
     </Container>
+    <Footer />
   </Layout>
 ));
 
