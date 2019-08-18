@@ -19,8 +19,8 @@ export const addProductToCartMutation = gql`
 `;
 
 export const initCartMutation = gql`
-  mutation initCart {
-    initCart @client {
+  mutation initCart($cart: [Object]!) {
+    initCart(cart: $cart) @client {
       count @client
       price @client
       title @client

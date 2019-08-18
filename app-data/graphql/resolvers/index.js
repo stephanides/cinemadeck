@@ -48,14 +48,12 @@ export default {
 
       return data;
     },
-    initCart: (args) => {
-      console.log(args);
-      const storageCart = window.localStorage.getItem('cart');
-      if (storageCart) {
-        console.log(storageCart);
-      }
+    initCart: (_root, { cart }, { cache }) => {
+      const data = { cart };
 
-      return null;
+      cache.writeData({ data });
+
+      return cart;
     },
     removeProductFromCart: (_root, { title }, { cache }) => {
       const { cart } = cache.readQuery({ query: getProductsFromCart });
@@ -93,7 +91,11 @@ export default {
 
       cache.writeData({ data });
 
-      window.localStorage.setItem('cart', JSON.stringify(cartData));
+      if (cartData.length > 0) {
+        window.localStorage.setItem('cart', JSON.stringify(cartData));
+      } else {
+        window.localStorage.clear();
+      }
 
       return data;
     },

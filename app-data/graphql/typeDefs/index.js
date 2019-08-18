@@ -19,7 +19,7 @@ export default gql`
   extend type Mutation {
     toggleLang(lang: String!): String
     addProductToCart(product: ProductInput!): [Product]
-    initCart: [Product]
+    initCart(cart: [Object]!): [Product]
     removeProductFromCart(title: String!): [Product]
   }
 `;

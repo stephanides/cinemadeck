@@ -1,5 +1,5 @@
 // import './scss/eshop.scss';
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Container, Col, Row,
 } from 'reactstrap';
@@ -18,17 +18,23 @@ const EshopPage = compose(
 )(({
   getLocale: { lang }, cartProducts: { cart }, mutate,
 }) => {
-  const initCartData = async () => {
-    try {
-      await mutate();
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  useEffect(() => {
+    const checkCart = async () => {
+      try {
+        if (process.browser) {
+          const cartStorageData = JSON.parse(window.localStorage.getItem('cart'));
 
-  if (process.browser && cart.length < 1) {
-    initCartData();
-  }
+          if (cartStorageData && cartStorageData.length > 0) {
+            await mutate({ variables: { cart: cartStorageData } });
+          }
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    checkCart();
+  }, []);
 
   return (
     <Layout
