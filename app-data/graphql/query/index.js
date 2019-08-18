@@ -13,6 +13,7 @@ export const getProductsFromCart = gql`
       count @client
       price @client
       title @client
+      totalPrice @client
     }
   }
 `;

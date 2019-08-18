@@ -3,12 +3,11 @@ import './scss/navigation.scss';
 import React, { useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Link from 'next/link';
-import { compose, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
-  // NavbarBrand,
   Nav,
   NavItem,
 } from 'reactstrap';
@@ -16,23 +15,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import { toggleLangMutation } from '../../../graphql/mutation';
-import { getProductsFromCart } from '../../../graphql/query';
 import CustomContainer from '../CustomContainer';
+import CartContent from './components/CartContent';
 import localisation from '../../localisation/Navigation';
 
-const Navigation = compose(
-  graphql(getProductsFromCart, { name: 'cartProducts' }),
-  graphql(toggleLangMutation, { name: 'toggleLang' }),
+const Navigation = graphql(
+  toggleLangMutation, { name: 'toggleLang' },
 )(({
-  cartProducts: { cart }, lang, isHome, toggleLang,
+  cart, lang, isHome, toggleLang,
 }) => {
   const [isOpen, toggle] = useState(false);
 
-  console.log('NAVIGATION COMPONENT');
-  console.log(cart);
-
   return (
-    <Navbar className="sticky-top" expand="md">
+    <Navbar className={isHome ? 'sticky-top' : 'sticky-top bg-white'} expand="md">
       <CustomContainer flex>
         <Link href="/">
           <a className="navbar-brand">
@@ -43,7 +38,7 @@ const Navigation = compose(
           onClick={() => toggle(!isOpen)}
         />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className={isHome ? 'ml-auto' : 'ml-auto not-homepage'} navbar>
+          <Nav className={isHome ? 'ml-auto' : 'ml-auto not-homepage position-relative'} navbar>
             <NavItem>
               <button
                 type="button"
@@ -79,7 +74,12 @@ const Navigation = compose(
                 <a className="nav-link">ESHOP</a>
               </Link>
             </NavItem>
-            <NavItem>
+            <NavItem
+              className={
+                (!isHome && cart && cart.length > 0)
+                  ? 'move move-left' : 'move'
+              }
+            >
               <AnchorLink
                 href="#licence"
                 className="nav-link"
@@ -87,6 +87,14 @@ const Navigation = compose(
               >
                 {localisation[lang].contact}
               </AnchorLink>
+            </NavItem>
+            <NavItem
+              className={
+                (!isHome && cart && cart.length > 0)
+                  ? 'cart-content move move-top' : 'cart-content move'
+              }
+            >
+              <CartContent cart={cart} />
             </NavItem>
             <NavItem>
               {
@@ -120,7 +128,18 @@ const Navigation = compose(
   );
 });
 
+Navigation.defaultProps = {
+  cart: [],
+};
 Navigation.propTypes = {
+  cart: PropTypes.arrayOf(
+    PropTypes.shape({
+      count: PropTypes.number,
+      price: PropTypes.number,
+      title: PropTypes.string,
+      totalPrice: PropTypes.number,
+    }),
+  ),
   isHome: PropTypes.bool.isRequired,
 };
 

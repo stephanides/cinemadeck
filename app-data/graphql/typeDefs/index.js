@@ -10,6 +10,7 @@ export default gql`
     count: Int!
     price: Float!
     title: String!
+    totalPrice: Float!
   }
   extend type Query {
     lang: String!
@@ -18,5 +19,6 @@ export default gql`
   extend type Mutation {
     toggleLang(lang: String!): String
     addProductToCart(product: ProductInput!): [Product]
+    removeProductFromCart(title: String!): [Product]
   }
 `;

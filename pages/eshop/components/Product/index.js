@@ -5,9 +5,9 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { graphql } from 'react-apollo';
 import { addProductToCartMutation } from '../../../../app-data/graphql/mutation';
 
-const Product = graphql(addProductToCartMutation)(({
-  mutate, productData,
-}) => {
+const Product = graphql(
+  addProductToCartMutation,
+)(({ mutate, productData }) => {
   const { title, price } = productData;
   const handleAddProductToCart = async (product) => {
     try {
@@ -40,9 +40,9 @@ const Product = graphql(addProductToCartMutation)(({
           className="button-add-to-cart text-uppercase"
           onClick={() => {
             const product = {
-              title,
-              price,
               count: 1,
+              price,
+              title,
             };
 
             handleAddProductToCart(product);

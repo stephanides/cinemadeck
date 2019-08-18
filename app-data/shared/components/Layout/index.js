@@ -6,9 +6,12 @@ import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Navigation from '../Navigation';
 
-const Layout = ({ isHome, lang, children }) => (
+const Layout = ({
+  cart, isHome, lang, children,
+}) => (
   <div>
     <Navigation
+      cart={cart}
       lang={lang}
       isHome={isHome}
     />
@@ -18,7 +21,18 @@ const Layout = ({ isHome, lang, children }) => (
   </div>
 );
 
+Layout.defaultProps = {
+  cart: [],
+};
 Layout.propTypes = {
+  cart: PropTypes.arrayOf(
+    PropTypes.shape({
+      count: PropTypes.number,
+      price: PropTypes.number,
+      title: PropTypes.string,
+      totalPrice: PropTypes.number,
+    }),
+  ),
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

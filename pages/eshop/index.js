@@ -3,17 +3,21 @@ import React from 'react';
 import {
   Container, Col, Row,
 } from 'reactstrap';
-import { graphql } from 'react-apollo';
-import { getLocaleQuery } from '../../app-data/graphql/query';
+import { compose, graphql } from 'react-apollo';
+import { getLocaleQuery, getProductsFromCart } from '../../app-data/graphql/query';
 
 import Layout from '../../app-data/shared/components/Layout';
 import Product from './components/Product';
 import Footer from './components/Footer';
 
-const EshopPage = graphql(
-  getLocaleQuery, { name: 'getLocale' },
-)(({ getLocale: { lang } }) => (
+const EshopPage = compose(
+  graphql(getProductsFromCart, { name: 'cartProducts' }),
+  graphql(getLocaleQuery, { name: 'getLocale' }),
+)(({
+  getLocale: { lang }, cartProducts: { cart },
+}) => (
   <Layout
+    cart={cart}
     lang={lang}
     isHome={false}
   >
