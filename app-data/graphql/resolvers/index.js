@@ -44,7 +44,18 @@ export default {
 
       cache.writeData({ data });
 
+      window.localStorage.setItem('cart', JSON.stringify(cartData));
+
       return data;
+    },
+    initCart: (args) => {
+      console.log(args);
+      const storageCart = window.localStorage.getItem('cart');
+      if (storageCart) {
+        console.log(storageCart);
+      }
+
+      return null;
     },
     removeProductFromCart: (_root, { title }, { cache }) => {
       const { cart } = cache.readQuery({ query: getProductsFromCart });
@@ -81,6 +92,8 @@ export default {
       };
 
       cache.writeData({ data });
+
+      window.localStorage.setItem('cart', JSON.stringify(cartData));
 
       return data;
     },

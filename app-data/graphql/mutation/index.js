@@ -18,6 +18,17 @@ export const addProductToCartMutation = gql`
   }
 `;
 
+export const initCartMutation = gql`
+  mutation initCart {
+    initCart @client {
+      count @client
+      price @client
+      title @client
+      totalPrice @client
+    }
+  }
+`;
+
 export const removeProductFromCartMutation = gql`
   mutation removeProductFromCart($title: String!) {
     removeProductFromCart(title: $title) @client {
