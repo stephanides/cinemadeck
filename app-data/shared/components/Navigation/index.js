@@ -3,7 +3,7 @@ import './scss/navigation.scss';
 import React, { useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Link from 'next/link';
-import { graphql } from 'react-apollo';
+import { compose, graphql } from 'react-apollo';
 import {
   Collapse,
   Navbar,
@@ -16,13 +16,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import { toggleLangMutation } from '../../../graphql/mutation';
+import { getProductsFromCart } from '../../../graphql/query';
 import CustomContainer from '../CustomContainer';
 import localisation from '../../localisation/Navigation';
 
-const Navigation = graphql(
-  toggleLangMutation, { name: 'toggleLang' },
-)(({ lang, isHome, toggleLang }) => {
+const Navigation = compose(
+  graphql(getProductsFromCart, { name: 'cartProducts' }),
+  graphql(toggleLangMutation, { name: 'toggleLang' }),
+)(({
+  cartProducts: { cart }, lang, isHome, toggleLang,
+}) => {
   const [isOpen, toggle] = useState(false);
+
+  console.log('NAVIGATION COMPONENT');
+  console.log(cart);
 
   return (
     <Navbar className="sticky-top" expand="md">

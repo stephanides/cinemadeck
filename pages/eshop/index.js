@@ -24,13 +24,28 @@ const EshopPage = graphql(
       {''}
       <Row>
         <Col>
-          <Product />
+          <Product
+            productData={{
+              title: 'Cards',
+              price: 37,
+            }}
+          />
         </Col>
         <Col>
-          <Product />
+          <Product
+            productData={{
+              title: 'Light Like Pro',
+              price: 7,
+            }}
+          />
         </Col>
         <Col>
-          <Product />
+          <Product
+            productData={{
+              title: 'Sound Like Pro',
+              price: 7,
+            }}
+          />
         </Col>
       </Row>
       <style jsx>

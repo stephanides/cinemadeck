@@ -6,3 +6,13 @@ export const toggleLangMutation = gql`
     toggleLang(lang: $lang) @client
   }
 `;
+
+export const addProductToCartMutation = gql`
+  mutation addProductToCart($product: ProductInput!) {
+    addProductToCart(product: $product) @client {
+      count @client
+      price @client
+      title @client
+    }
+  }
+`;

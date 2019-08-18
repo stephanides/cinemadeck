@@ -33,5 +33,5 @@ client.cache.writeData({ data });
 client.onResetStore(() => client.cache.writeData({ data }));
 
 export default withApollo(
-  () => client, { getDataFromTree: 'ssr' }, // 'always', 'never', 'ssr'
+  () => client, { getDataFromTree: 'never' }, // 'always', 'never', 'ssr'
 );
