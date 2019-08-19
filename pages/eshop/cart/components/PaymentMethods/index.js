@@ -14,7 +14,7 @@ const PaymentMethods = ({ handleOrder, order }) => {
         <div className="p-4 bg-white mb-5">
           <Row>
             <Col>
-              <FormGroup check>
+              <FormGroup check className="pt-3 pb-3 border-bottom">
                 <Label check>
                   <Input
                     type="radio"
@@ -33,7 +33,7 @@ const PaymentMethods = ({ handleOrder, order }) => {
                   Platební karta
                 </Label>
               </FormGroup>
-              <FormGroup check>
+              <FormGroup check className="pt-3 pb-3 border-bottom">
                 <Label check>
                   <Input
                     type="radio"
@@ -52,7 +52,7 @@ const PaymentMethods = ({ handleOrder, order }) => {
                   PayPal
                 </Label>
               </FormGroup>
-              <FormGroup check>
+              <FormGroup check className="pt-3 pb-3">
                 <Label check>
                   <Input
                     type="radio"
@@ -72,7 +72,17 @@ const PaymentMethods = ({ handleOrder, order }) => {
                 </Label>
               </FormGroup>
             </Col>
-            <Col />
+            <Col>
+              <div className="pt-3 pb-3 border-bottom">
+                <img src="" alt="" />
+              </div>
+              <div className="pt-3 pb-3 border-bottom">
+                <img src="" alt="" />
+              </div>
+              <div className="pt-3 pb-3">
+                <img src="" alt="" />
+              </div>
+            </Col>
           </Row>
         </div>
       </div>

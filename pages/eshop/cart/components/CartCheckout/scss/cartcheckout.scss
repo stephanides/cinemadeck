@@ -40,6 +40,7 @@
         button {
           background-color: #37baf1;
           border-radius: .25rem;
+          border: 0;
           color: #fff;
           display: flex;
           align-items: center;
@@ -48,6 +49,12 @@
           height: 70px;
           width: 265px;
           letter-spacing: .15rem;
+        }
+      }
+      .warranty {
+        aside {
+          width: 110px;
+          float: left;
         }
       }
     }

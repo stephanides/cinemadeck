@@ -113,9 +113,9 @@ const CartCheckout = compose(
                       </div>
                     </Label>
                   </FormGroup>
-                  <div>
-                    <aside>
-                      <img alt="" />
+                  <div className="warranty">
+                    <aside className="mr-2">
+                      <img src="/static/images/refund.png" alt="" />
                     </aside>
                     <p>
                       Když vám karty nebudou z jakéhokoliv dúvodu během 30 dnú vyhovovat, napište nám email a my vám vrátíme všechny vaše peníze.
