@@ -124,7 +124,6 @@ const Navigation = graphql(
                   ) : (
                     <Link href="/eshop/cart">
                       <a className="nav-link shopping-cart d-flex align-items-center">
-                        {/* <FontAwesomeIcon icon={faShoppingCart} /> */}
                         <img src="/static/images/cart-logo.png" alt="" />
                         <div className="proceed-to-cart d-flex align-items-center justify-content-center ml-2">
                           <span className="font-weight-bold d-flex align-items-center">
