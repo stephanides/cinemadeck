@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import './scss/navigation.scss';
 import React, { useState } from 'react';
@@ -22,12 +23,21 @@ import localisation from '../../localisation/Navigation';
 const Navigation = graphql(
   toggleLangMutation, { name: 'toggleLang' },
 )(({
-  cart, lang, isHome, toggleLang,
+  cart, lang, isCart, isHome, toggleLang,
 }) => {
   const [isOpen, toggle] = useState(false);
 
   return (
-    <Navbar className={isHome ? 'sticky-top' : 'sticky-top bg-white'} expand="md">
+    <Navbar
+      className={
+        isHome
+          ? 'sticky-top'
+          : (
+            isCart ? 'sticky-top' : 'sticky-top bg-white'
+          )
+      }
+      expand="md"
+    >
       <CustomContainer flex>
         <Link href="/">
           <a className="navbar-brand">
@@ -76,7 +86,7 @@ const Navigation = graphql(
             </NavItem>
             <NavItem
               className={
-                (!isHome && cart && cart.length > 0)
+                (!isHome && !isCart && cart && cart.length > 0)
                   ? 'move move-left' : 'move'
               }
             >
@@ -88,14 +98,18 @@ const Navigation = graphql(
                 {localisation[lang].contact}
               </AnchorLink>
             </NavItem>
-            <NavItem
-              className={
-                (!isHome && cart && cart.length > 0)
-                  ? 'cart-content move move-top' : 'cart-content move'
-              }
-            >
-              <CartContent cart={cart} />
-            </NavItem>
+            {
+              !isCart && (
+                <NavItem
+                  className={
+                    (!isHome && cart && cart.length > 0)
+                      ? 'cart-content move move-top' : 'cart-content move'
+                  }
+                >
+                  <CartContent cart={cart} />
+                </NavItem>
+              )
+            }
             <NavItem>
               {
                 isHome
@@ -129,6 +143,7 @@ const Navigation = graphql(
 });
 
 Navigation.defaultProps = {
+  isCart: false,
   cart: [],
 };
 Navigation.propTypes = {
@@ -140,6 +155,7 @@ Navigation.propTypes = {
       totalPrice: PropTypes.number,
     }),
   ),
+  isCart: PropTypes.bool,
   isHome: PropTypes.bool.isRequired,
 };
 

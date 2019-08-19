@@ -7,12 +7,13 @@ import PropTypes from 'prop-types';
 import Navigation from '../Navigation';
 
 const Layout = ({
-  cart, isHome, lang, children,
+  cart, isCart, isHome, lang, children,
 }) => (
-  <div>
+  <div className={isCart ? 'bg-light' : undefined}>
     <Navigation
       cart={cart}
       lang={lang}
+      isCart={isCart}
       isHome={isHome}
     />
     <Container fluid className="pl-0 pr-0">
@@ -22,9 +23,11 @@ const Layout = ({
 );
 
 Layout.defaultProps = {
+  isCart: false,
   cart: [],
 };
 Layout.propTypes = {
+  isCart: PropTypes.bool,
   cart: PropTypes.arrayOf(
     PropTypes.shape({
       count: PropTypes.number,

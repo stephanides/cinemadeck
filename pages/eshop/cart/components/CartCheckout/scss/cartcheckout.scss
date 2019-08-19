@@ -1,0 +1,44 @@
+.cart-checkout-wrapper {
+  & > div {
+    &:first-child {
+      top: 0;
+      right: 0;
+      width: calc(100vw / 2);
+      height: 100vh;
+    }
+  }
+  .cart-checkout-container {
+    position: relative;
+    z-index: 1;
+    
+    .checkout-content {
+      min-height: 400px;
+
+      & > div {
+        p {
+          font-size: .9rem;
+
+          &.sum {
+            span {
+              &:first-child {
+                letter-spacing: .25rem;
+              }
+            }
+          }
+        }
+        button {
+          background-color: #37baf1;
+          border-radius: .25rem;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: .85rem;
+          height: 70px;
+          width: 265px;
+          letter-spacing: .15rem;
+        }
+      }
+    }
+  }
+}
