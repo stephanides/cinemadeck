@@ -10,7 +10,10 @@ import Unique from './components/Unique';
 const IndexPage = graphql(
   getLocaleQuery, { name: 'getLocale' },
 )(({ getLocale: { lang } }) => (
-  <Layout lang={lang}>
+  <Layout
+    lang={lang}
+    isHome
+  >
     <Header lang={lang} />
     <About lang={lang} />
     <Unique lang={lang} />

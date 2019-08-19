@@ -1,34 +1,158 @@
 @font-face {
-    font-family: ProximaNova-Regular;
-    src: url("/static/fonts/ProximaNova-Regular.otf");
+  font-family: ProximaNova-Regular;
+  src: url("/static/fonts/ProximaNova-Regular.otf");
+}
+
+.navbar {
+  padding: 20px 0;
+  margin-bottom: 10px;
+
+  .navbar-brand {
+    padding: 0;
   }
 
-.navbar{
-    margin-top: 25px;
-}
-.navbar-nav{
-    li{
-        a{
-            font-family: ProximaNova-Regular;
-            color:white;
-            font-size: 0.8em;
-            padding-top: 12px;
-            padding-bottom: 12px;
+  .navbar-nav {
+    li {
+      display: flex;
+      align-items: center;
+
+      a {
+        font-family: ProximaNova-Regular;
+        color:white;
+        font-size: 0.8em;
+        padding: 0 .5rem;
+        /* padding-top: 12px;
+        padding-bottom: 12px;
+        display: flex;
+        align-items: center; */
+  
+        &:hover {
+          color: #00a7f0;
         }
-        button{
-            font-family: ProximaNova-Regular;
-            color:white;
-            font-size: 0.8em;
-            padding-top: 12px;
-            padding-bottom: 12px;
+      }
+  
+      button {
+        background-color: transparent;
+        border: 0 none;
+        color:white;
+        font-family: ProximaNova-Regular;
+        font-size: 0.8em;
+        padding: 0 .5rem;
+        /* padding-top: 12px;
+        padding-bottom: 12px; */
+
+        &.btn-link {
+          &:hover {
+            color: #00a7f0;
+            text-decoration: none;
+          }
         }
-        .button-link{
-            background-color: #0098d8;
-            border-radius: 2px;
-            padding-right: 28px !important;
-            padding-left: 28px !important;
-            padding-top: 12px;
-            padding-bottom: 12px;
+      }
+  
+      .button-link {
+        background-color: #0098d8;
+        border-radius: 2px;
+        padding-right: 28px !important;
+        padding-left: 28px !important;
+        padding-top: 12px;
+        padding-bottom: 12px;
+  
+        &:hover {
+          color: #fff;
         }
+      }
+  
+      &:nth-child(2) {
+        position: relative;
+        padding: 0 0 0 1rem;
+        margin: 0 0 0 1rem;
+  
+        &::before {
+          content: '|';
+          color: #aeb4b8;
+          position: absolute;
+          top: .5rem;
+          left: 0;
+        } 
+      }
     }
+  
+    &.not-homepage {
+      li {
+        &.move {
+          transition: margin-right 2s;
+
+          &.move-left {
+            margin-right: 350px;
+          }
+        }
+        &.cart-content {
+          background-color: #f8f8f8;
+          display: flex;
+          flex-direction: column;
+          font-size: .85rem;
+          align-items: start;
+          justify-items: center;
+          justify-content: center;
+          min-height: 80px;
+          padding: .5rem 1rem;
+          position: absolute;
+          right: 125px;
+          top: -399px;
+          width: 300px;
+          
+          div {
+            color: #8e979f;
+            margin-bottom: .5rem;
+          }
+          &.move {
+            transition: top 2s;
+
+            &.move-top {
+              top: -25px;
+            }
+          }
+        }
+        a {
+          color: #aeb4b8;
+  
+          &:hover {
+            color: #00a7f0;
+          }
+          &.button-link {
+            color: #fff;
+  
+            &:hover {
+              color: #fff;
+            }
+          }
+
+          &.shopping-cart {
+            color: #000;
+            font-size: 2.5rem;
+
+            .proceed-to-cart {
+              background-color: #37baf1;
+              border-radius: 50%;
+              color: #fff;
+              height: 30px;
+              width: 30px;
+
+              span {
+                font-size: .9rem;
+              }
+            }
+          }
+        }
+  
+        button {
+          color: #aeb4b8;
+            
+          &:hover {
+            color:#00a7f0;
+          }
+        }
+      }
+    }
+  }
 }

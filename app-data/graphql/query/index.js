@@ -6,3 +6,14 @@ export const getLocaleQuery = gql`
     lang @client
   }
 `;
+
+export const getProductsFromCart = gql`
+  query {
+    cart @client {
+      count @client
+      price @client
+      title @client
+      totalPrice @client
+    }
+  }
+`;

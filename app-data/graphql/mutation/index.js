@@ -6,3 +6,36 @@ export const toggleLangMutation = gql`
     toggleLang(lang: $lang) @client
   }
 `;
+
+export const addProductToCartMutation = gql`
+  mutation addProductToCart($product: ProductInput!) {
+    addProductToCart(product: $product) @client {
+      count @client
+      price @client
+      title @client
+      totalPrice @client
+    }
+  }
+`;
+
+export const initCartMutation = gql`
+  mutation initCart($cart: [Object]!) {
+    initCart(cart: $cart) @client {
+      count @client
+      price @client
+      title @client
+      totalPrice @client
+    }
+  }
+`;
+
+export const removeProductFromCartMutation = gql`
+  mutation removeProductFromCart($title: String!) {
+    removeProductFromCart(title: $title) @client {
+      count @client
+      price @client
+      title @client
+      totalPrice @client
+    }
+  }
+`;
