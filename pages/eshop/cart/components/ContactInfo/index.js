@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, FormGroup, Input } from 'reactstrap';
 
 const ContactInfo = () => (
-  <div className="pt-5 pr-5">
+  <div className="pt-5 pr-5 contact-info-container position-relative mb-5">
     <p className="text-uppercase"><small>Vyplňte prosím vaše fakturační Údaje</small></p>
     <h3 className="text-uppercase mb-5">Jméno, Adresa a Kontakt</h3>
     <div className="bg-white p-5">
@@ -31,6 +31,15 @@ const ContactInfo = () => (
         <Input type="email" id="email" name="email" placeholder="E-mail" className="border-0" required />
       </FormGroup>
     </div>
+    <style jsx>
+      {
+        `
+          .contact-info-container {
+            z-index: 2;
+          }
+        `
+      }
+    </style>
   </div>
 );
 
