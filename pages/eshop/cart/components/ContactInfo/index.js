@@ -34,10 +34,13 @@ const ContactInfo = () => (
       </FormGroup>
       <FormGroup className="pl-1">
         <Input type="select" id="state" name="state" className="border-0" required>
-          <option defaultChecked>Stát</option>
+          <option defaultChecked value="">Stát</option>
           <option value="cz">Česká republika</option>
           <option value="sk">Slovensko</option>
         </Input>
+        <div className="invalid-feedback">
+          Prosím zvolte stát.
+        </div>
       </FormGroup>
       <FormGroup>
         <Input type="email" id="email" name="email" placeholder="E-mail" className="border-0" required />

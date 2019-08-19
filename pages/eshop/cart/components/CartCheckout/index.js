@@ -109,7 +109,7 @@ const CartCheckout = compose(
                         Souhlasím s podmínkami a se zpracováním osobních údajú
                       </small>
                       <div className="invalid-feedback">
-                        Před odesláním objednávky musíte souhlasit se všemi podmínkami.
+                        Před odesláním objednávky musíte souhlasit.
                       </div>
                     </Label>
                   </FormGroup>
