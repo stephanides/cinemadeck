@@ -13,7 +13,7 @@ import {
   NavItem,
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faGreaterThan } from '@fortawesome/free-solid-svg-icons';
+import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import { toggleLangMutation } from '../../../graphql/mutation';
 import CustomContainer from '../CustomContainer';
@@ -124,10 +124,14 @@ const Navigation = graphql(
                   ) : (
                     <Link href="/eshop/cart">
                       <a className="nav-link shopping-cart d-flex align-items-center">
-                        <FontAwesomeIcon icon={faShoppingCart} />
+                        {/* <FontAwesomeIcon icon={faShoppingCart} /> */}
+                        <img src="/static/images/cart-logo.png" alt="" />
                         <div className="proceed-to-cart d-flex align-items-center justify-content-center ml-2">
                           <span className="font-weight-bold d-flex align-items-center">
-                            <FontAwesomeIcon icon={faGreaterThan} />
+                            {
+                              cart && cart.length > 0
+                                ? cart.length : <FontAwesomeIcon icon={faGreaterThan} />
+                            }
                           </span>
                         </div>
                       </a>

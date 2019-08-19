@@ -51,6 +51,7 @@ const EshopPage = compose(
           <Col>
             <Product
               productData={{
+                imageURL: '/static/images/CARD-BOX.png',
                 title: 'Cards',
                 price: 37,
               }}
@@ -59,6 +60,7 @@ const EshopPage = compose(
           <Col>
             <Product
               productData={{
+                imageURL: '/static/images/LIGHT-PRO.png',
                 title: 'Light Like Pro',
                 price: 7,
               }}
@@ -67,6 +69,7 @@ const EshopPage = compose(
           <Col>
             <Product
               productData={{
+                imageURL: '/static/images/SOUND-PRO.png',
                 title: 'Sound Like Pro',
                 price: 7,
               }}

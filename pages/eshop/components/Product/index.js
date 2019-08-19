@@ -8,7 +8,7 @@ import { addProductToCartMutation } from '../../../../app-data/graphql/mutation'
 const Product = graphql(
   addProductToCartMutation,
 )(({ mutate, productData }) => {
-  const { title, price } = productData;
+  const { imageURL, price, title } = productData;
   const handleAddProductToCart = async (product) => {
     try {
       await mutate({ variables: { product } });
@@ -20,7 +20,13 @@ const Product = graphql(
   return (
     <div className="product">
       <div className="product-bg">
-        <img src="/static/images/CARD-BOX.png" loading="lazy" alt="" />
+        <img
+          src={imageURL}
+          loading="lazy"
+          alt=""
+          width={350}
+          height={280}
+        />
         <h4 className="text-uppercase d-flex justify-content-between">
           <span className="font-weight-lighter">Cinemadeck</span>
           <span className="font-weight-bold">
