@@ -13,7 +13,7 @@ const PaymentMethods = ({ handleOrder, order }) => {
       <div className="pr-5">
         <div className="p-4 bg-white mb-5">
           <Row>
-            <Col>
+            <Col className="pr-0">
               <FormGroup check className="pt-3 pb-3 border-bottom">
                 <Label check>
                   <Input
@@ -72,20 +72,29 @@ const PaymentMethods = ({ handleOrder, order }) => {
                 </Label>
               </FormGroup>
             </Col>
-            <Col>
-              <div className="pt-3 pb-3 border-bottom">
-                <img src="" alt="" />
+            <Col className="pl-0">
+              <div className="border-bottom logo-line">
+                <img src="/static/images/payment-cards-logos.png" className="d-block ml-auto mr-3" alt="" />
               </div>
-              <div className="pt-3 pb-3 border-bottom">
-                <img src="" alt="" />
+              <div className="border-bottom logo-line">
+                <img src="/static/images/paypal-logo.png" className="d-block ml-auto mr-3" alt="" />
               </div>
               <div className="pt-3 pb-3">
-                <img src="" alt="" />
+                {''}
               </div>
             </Col>
           </Row>
         </div>
       </div>
+      <style jsx>
+        {
+          `
+            .logo-line {
+              height: 57px;
+            }
+          `
+        }
+      </style>
     </div>
   );
 };
