@@ -111,24 +111,28 @@
         .text-1{
           top:65px;
           img{
-            position: relative;
-            left: 30px;
-            top:6px;
+            position: absolute;
+            left: 230px;
+            top:16px;
           }
         }
         .text-2{
           top:100px;
           img{
-            position: relative;
-            top:-22px;
-            left:5px
+            position: absolute;
+            top:0px;
+            left:230px
+          }
+          .text{
+            width: 220px !important;
           }
         }
         .text-3{
           top:140px;
           img{
-            position: relative;
-            top:-4px;
+            position: absolute;
+            left: 260px;
+            top: 30px;
           }
           .text{
             width: 240px !important;
@@ -137,8 +141,9 @@
         .text-4{
           top:180px;
           img{
-            position: relative;
-            top:-44px;
+            position: absolute;
+            top: -42px;
+            left: 250px;
           }
           .text{
             width: 240px !important;
@@ -150,9 +155,9 @@
         .text-5{
           top:50px;
           img{
-            position: relative;
-            left: -22px;
-            top: 12px;
+            position: absolute;
+            left: -240px;
+            top: 32px;
           }
           .text{
             width: 225px !important;
@@ -161,9 +166,9 @@
         .text-6{
           top:90px;
           img{
-            position: relative;
-            left: 3px;
-            top: -44px;
+            position: absolute;
+            left: -206px;
+            top: -12px;
           }
           .text{
             width: 225px !important;
@@ -172,9 +177,9 @@
         .text-7{
           top:276px;
           img{
-            position: relative;
-            left: 14px;
-            top:6px;
+            position: absolute;
+            left: -192px;
+            top: 6px;
           }
           .text{
             width: 225px !important;
@@ -188,20 +193,21 @@
         .text-8{
           top:60px;
           img{
-            position: relative;
-            left: 20px;
-            top: -98px;
+            position: absolute;
+            left: 240px;
+            top: 20px;
           }
           .text{
             width: 225px !important;
           }
         }
         .text-9{
-          top:65px;
+          top:380px;
+          position: absolute;
           img{
-            position: relative;
-            left: -75px;
-            top: -78px;
+            position: absolute;
+            left: 240px;
+            top: -42px;
           }
           .text{
             width: 216px !important;
@@ -213,9 +219,9 @@
         .text-10{
           top:140px;
           img{
-            position: relative;
-            left: 0px;
-            top: -58px;
+            position: absolute;
+            left: -200px;
+            top: 20px;
           }
           .text{
             width: 225px !important;
@@ -224,9 +230,9 @@
         .text-11{
           top:380px;
           img{
-            position: relative;
-            left: -22px;
-            top: -34px;
+            position: absolute;
+            left: -240px;
+            top: -10px;
           }
           .text{
             width: 225px !important;
