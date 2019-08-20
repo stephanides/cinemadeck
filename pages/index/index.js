@@ -6,6 +6,7 @@ import Layout from '../../app-data/shared/components/Layout';
 import Header from './components/Header';
 import About from './components/About';
 import Unique from './components/Unique';
+import Content from './components/Content';
 
 const IndexPage = graphql(
   getLocaleQuery, { name: 'getLocale' },
@@ -17,6 +18,7 @@ const IndexPage = graphql(
     <Header lang={lang} />
     <About lang={lang} />
     <Unique lang={lang} />
+    <Content lang={lang} />
   </Layout>
 ));
 

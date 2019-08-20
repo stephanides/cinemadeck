@@ -13,7 +13,22 @@
     "aboutText1":"CinemaDeck consists of 60 unique movie cards for both beginners and advanced filmmakers. Thanks to exact instructions on each of the cards, <strong>you can easily create a film composition for your interview</strong>.",
     "aboutText2":"Long ago, like most filmmakers I also used to spend hours watching tutorials. Thanks to them, I wanted to break through the amateur border and get the results I found with experienced filmmakers. CinemaDeck cards are a complex system, a straight byway that I would have given myself 2 years ago and would have saved weeks or months of trying and attempting. <strong>You don't have to go through it all</strong>. The cards simply guide you to perfect results.",
     "uniqueTitle":"What makes CinemaDeck cards so unique?",
-    "uniqueText":"Each of the 60 CinemaDeck cards tells you the exact rates and values ​​with which you can achieve professional composition."
+    "uniqueText":"Each of the 60 CinemaDeck cards tells you the exact rates and values ​​with which you can achieve professional composition.",
+    "uniqueCol1Header":"How and where to place the camera",
+    "uniqueCol2Header":"What lens to use",
+    "uniqueCol3Header":"The exact aperture value",
+    "uniqueCol1Text":"written instructions or spatial representation will show you exactly at what angle and distance the camera should be from your actor.",
+    "uniqueCol2Text":"On each card you will find the information on the size of the zoom with which you can achieve the particular composition. So every time you shoot, you will know what lens you need for the selected composition.",
+    "uniqueCol3Text":"You will find an aperture value on each card to help you achieve the final composition.",
+    "contentTitle":"60 film compositions<br> immediately applicable in practice",
+    "contentCol1Header":"Immediate use",
+    "contentCol2Header":"Dozens of combinations and interviews",
+    "contentCol3Header":"Professional Output",
+    "contentCol1Text":"Each card contains a photo of the final composition and specific values ​​that will simply guide you to it. Thanks to this feature you can take your cards and start using them right away.",
+    "contentCol2Text":"You can combine different cards with one another. You can create dozens of interviews with different emotions and stories.",
+    "contentCol3Text":"With any CinemaDeck card you can now make interview as if made by experienced filmmakers."
+
+
   },
   "cz": {
     "czechLanguage":"CZ",
@@ -29,7 +44,19 @@
     "aboutText1":"CinemaDeck je 60 unikátních filmových karet pro začínající i pokročilé filmaře. Díky přesným instrukcím na každé z těchto karet <strong>s lehkostí postavíte filmovou kompozici pro vaše interview</strong>.",
     "aboutText2":"Kdysi jsem podobně jako většina filmařů trávil hodiny sledováním tutoriálů. Chtěl jsem díky nim prolomit amatérskou hranici a získat výsledky, které jsem nacházel u zkušených filmařů. Karty CinemaDeck představují přímou zkratku, kterou bych sám sobě dal před 2 lety a ušetřil bych týdny či měsíce pokusů a omylů. <strong>Vy tím vším už prochádzet nemusíte</strong>. Stačí karty vzít a začít natáčet videa, po kterých vaši klienti prahnou.",
     "uniqueTitle":"V čem jsou karty cinemadeck unikátní",
-    "uniqueText":"Každá z 60ti karet CinemaDeck vám řekne přesné míry a hodnoty, se kterými dosáhnete profesionální kompozici."
-    
+    "uniqueText":"Každá z 60ti karet CinemaDeck vám řekne přesné míry a hodnoty, se kterými dosáhnete profesionální kompozici.",
+    "uniqueCol1Header":"Jak a kde postavit kameru",
+    "uniqueCol2Header":"jaký použít<br> objektiv",
+    "uniqueCol3Header":"přesnou hodnotu clonového čísla",
+    "uniqueCol1Text":"Psané instrukce, nebo prostorové znázornění vám přesně ukáže, v jakém uhlu a vzdálenosti má kamera od vašeho herce stát.",
+    "uniqueCol2Text":"Na každé kartě najdete informaci, s jakou velikostí ohniska (zoom) dosáhnete danou kompozici. Na každé natáčení tak budete vědět, jaký objektív budete potřebovať.",
+    "uniqueCol3Text":"Na každé kartě najdete velikost clonového čísla, které vám pomuže dosáhnout finální vizuál kompozice.",
+    "contentTitle":"60 filmových kompozic<br> ihned aplikovatelných v praxi",
+    "contentCol1Header":"Okamžité použití",
+    "contentCol2Header":"Desítky kombinací a rozhovorů",
+    "contentCol3Header":"Profesionální výstup",
+    "contentCol1Text":"Každá karta obsahuje fotku výsledné kompozice a konrkétní čísla, které vás k ní jednoduše navedou. Díky tomu můžete karty vzít a ihned začít používat.",
+    "contentCol2Text":"Různé karty jde mezi sebou kombinovat. Mužete tak vytvářet desítky rozhovorů s ruznými emocemi a příbehy.",
+    "contentCol3Text":"Kteroukoliv kartu z balíku CinemaDeck použijete, dosáhnete interview zkušených filmařů."
   }
 }

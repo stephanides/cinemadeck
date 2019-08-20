@@ -13,6 +13,7 @@
 
   .unique{
     padding-top: 120px;
+    padding-bottom: 120px;
     h2{
       color:#2f3438;
       font-family: ProximaNova-Bold;
@@ -38,7 +39,21 @@
       p{
         font-family:  ProximaNova-Regular;
         color: #d2d4d5;
+        font-size: 1.2em;
+      }
+      h3{
+        text-transform: uppercase;
+        font-family: ProximaNova-Bold;
+        letter-spacing: 1px;
         font-size: 1.5em;
+      }
+      .icon_text{
+        font-family: 'Open Sans', sans-serif;
+        color: #666a6d;
+        font-weight: 300;
+        font-size: 1em;
+        padding-top: 50px;
+        padding-right: 40px;
       }
       .number_arrow{
         [class*="icono"] {
@@ -61,7 +76,7 @@
           border-left-color: transparent;
           margin: 10px;
           margin-left: 80px;
-          top: 2px;  
+          top: -2px;  
           &:before{
             right: 0;
             top: -3px;
@@ -98,6 +113,14 @@
           }
         }
       }
-      
     }
+    .iconHolder{
+      height: 80px;
+      display: flex;
+      align-items: center;
+      .icon{
+        margin: 0;
+      }
+    }
+    
   }

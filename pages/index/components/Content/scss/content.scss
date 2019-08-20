@@ -1,0 +1,28 @@
+@font-face {
+    font-family: ProximaNova-Regular;
+    src: url("/static/fonts/ProximaNova-Regular.otf");
+  }
+  @font-face {
+    font-family: ProximaNova-Bold;
+    src: url("/static/fonts/ProximaNova-Bold.otf");
+  }
+  @font-face {
+    font-family: ProximaNova-SemiBold;
+    src: url("/static/fonts/ProximaNova-Semibold.otf");
+  }
+
+  .content{
+     background-image: url("/static/images/content/background.png");
+     height: 1160px;
+     background-size: cover;
+     background-position: 50% 50%;
+     background-repeat: no-repeat;
+    h2{
+      padding-top: 100px;
+      font-family: ProximaNova-SemiBold;
+      font-size: 2em;
+      color:white; 
+      letter-spacing: 8px;
+      text-transform: uppercase;
+    }
+  }

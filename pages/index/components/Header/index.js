@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
 import localisation from '../../../../app-data/shared/localisation/Navigation';
 
-const renderDangerHtml = lang => ({ __html: localisation[lang].headerText2 });
+const renderDangerHtml = (lang) => ({ __html: localisation[lang].headerText2 });
 
 const Header = ({ lang }) => (
   <div className="header" id="header">
