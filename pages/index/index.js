@@ -7,6 +7,7 @@ import Header from './components/Header';
 import About from './components/About';
 import Unique from './components/Unique';
 import Content from './components/Content';
+import CardComposition from './components/CardComposition';
 
 const IndexPage = graphql(
   getLocaleQuery, { name: 'getLocale' },
@@ -19,6 +20,7 @@ const IndexPage = graphql(
     <About lang={lang} />
     <Unique lang={lang} />
     <Content lang={lang} />
+    <CardComposition lang={lang} />
   </Layout>
 ));
 
