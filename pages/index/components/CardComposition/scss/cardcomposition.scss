@@ -252,8 +252,17 @@
       outline:none;
       margin: 0 auto;
       margin-top: 60px;
-      img{
-        padding-right: 10px;
+      .flip-image{
+        width: 56px;
+        height: 20px;
+        background-image: url("/static/images/composition/flip.png");
+        background-repeat: no-repeat;
+      }
+      &:hover{
+        color:#29abe2;
+        .flip-image{
+          background-image: url("/static/images/composition/fliphover.png") !important;
+        }
       }
     }
     .text-p{

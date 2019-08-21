@@ -112,7 +112,7 @@ const CardComposition = ({ lang }) => {
             </div>
           </div>
           <button type="button" onClick={() => toggle(!isOpen)}>
-            <img src="/static/images/composition/flip.png" alt="" />
+            <div className="flip-image" />
             {localisation[lang].cardSide}
           </button>
         </Container>
