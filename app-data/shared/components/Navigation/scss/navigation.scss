@@ -21,10 +21,6 @@
         color:white;
         font-size: 0.8em;
         padding: 0 .5rem;
-        /* padding-top: 12px;
-        padding-bottom: 12px;
-        display: flex;
-        align-items: center; */
   
         &:hover {
           color: #00a7f0;
@@ -140,6 +136,9 @@
 
               span {
                 font-size: .9rem;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
               }
             }
           }

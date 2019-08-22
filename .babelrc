@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    ["babel-plugin-root-import"]
+  ],
+  "presets": [
+    [
+      "next/babel",
+      {
+        "styled-jsx": {
+          "optimizeForSpeed": true,
+          "plugins": [
+            "styled-jsx-plugin-sass"
+          ]
+        }
+      }
+    ]
+  ]
+}
