@@ -1,0 +1,82 @@
+@font-face {
+  font-family: ProximaNova-Regular;
+  src: url("/static/fonts/ProximaNova-Regular.otf");
+}
+@font-face {
+  font-family: ProximaNova-Bold;
+  src: url("/static/fonts/ProximaNova-Bold.otf");
+}
+@font-face {
+  font-family: ProximaNova-SemiBold;
+  src: url("/static/fonts/ProximaNova-Semibold.otf");
+}
+
+.package{
+  padding-top: 120px;
+  padding-bottom: 120px;
+  h2{
+    color:#2f3438;
+    font-family: ProximaNova-Bold;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    padding-bottom: 80px;
+    text-align: center;
+  }
+  h6{
+    font-family: ProximaNova-Regular;
+    color: rgb(47, 52, 56);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    padding-top: 20px;
+  }
+  img{
+    margin: 0 auto;
+    display: block;
+    width: 95%;
+  }
+  .unique-img{
+    left: -12px;
+    position: relative;
+  }
+  .text-header{
+    font-family: ProximaNova-Bold;
+    color: rgb(47, 52, 56);
+    text-transform: uppercase;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .text-text{
+    font-family: ProximaNova-Regular;
+    color: rgb(47, 52, 56);
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .img-holder{
+    height: 466px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .pdf-icon{
+    position: absolute;
+    margin: 0;
+    width: unset;
+    top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+  }
+  .unique-pdf-icon{
+    position: absolute;
+    margin: 0;
+    width: unset;
+    top: 50%;
+	  left: calc(50% - 12px);
+	  transform: translate(-50%, -50%);
+  }
+  .img-right{
+    position: relative;
+    left: 24px;
+  }
+}
