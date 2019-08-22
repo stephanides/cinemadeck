@@ -1,0 +1,38 @@
+{
+  "en": {
+    "billingDataToFill": "Please, fill in your billing information",
+    "nameAddressContact": "Name, Address and Contact",
+    "namePlaceholder": "Name and Surname",
+    "nameError": "Please enter your name.",
+    "streetPlaceholder": "Street and street number",
+    "streetError": "Please enter your street and street number.",
+    "cityPlaceholder": "City",
+    "cityError": "Please enter the city.",
+    "postCode": "PSČ",
+    "postCodeError": "Please enter postal code number.",
+    "state": "State",
+    "czechRepublic": "Česká republika",
+    "slovakRepublic": "Slovakia",
+    "stateError": "Please choose the state.",
+    "emailPlaceholder": "E-mail",
+    "emailError": "Please enter a valid email."
+  },
+  "cz": {
+    "billingDataToFill": "Vyplňte prosím vaše fakturační Údaje",
+    "nameAddressContact": "Jméno, Adresa a Kontakt",
+    "namePlaceholder": "Jméno a Příjmení",
+    "nameError": "Prosím zadejte jméno.",
+    "streetPlaceholder": "Ulice a číslo popisné",
+    "streetError": "Prosím zadejte ulici a číslo popisné.",
+    "cityPlaceholder": "Město",
+    "cityError": "Prosím zadejte město.",
+    "postCode": "PC",
+    "postCodeError": "Prosím zadejte poštové smerové číslo.",
+    "state": "Stát",
+    "czechRepublic": "Czech Republic",
+    "slovakRepublic": "Slovensko",
+    "stateError": "Prosím zvolte stát.",
+    "emailPlaceholder": "E-mail",
+    "emailError": "Prosím zadejte validní email."
+  }
+}

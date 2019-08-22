@@ -1,0 +1,32 @@
+{
+  "en": {
+    "addToCart": "Add to cart",
+    "heading": "Cinemadeck Shop",
+    "cardsTitleOne": "Cinemadeck",
+    "cardsTitleTwo": "Cards", 
+    "cardsContent": "The first detailed instructor for the profesional composition in your interview",
+    "lightLikeProTitleOne": "<strong class='font-weight-bold'>Light</strong>",
+    "lightLikeProTitleTwo": "Like <strong class='font-weight-bold'>Pro</strong",
+    "lightLikeProContent": "The detailed instructor for the right lighting of your composition",
+    "soundLikeProTitleOne": "<strong class='font-weight-bold'>Sound</strong>",
+    "soundLikeProTitleTwo": "Like <strong class='font-weight-bold'>Pro</strong>",
+    "soundLikeProContent": "Detailed instructor for the perfect sound for your interview",
+    "proceedToCheckout": "Proceed to checkout",
+    "knowMore": "Know more"
+  },
+  "cz": {
+    "addToCart": "Přidat do košíku",
+    "heading": "Cinemadeck Shop",
+    "cardsTitleOne": "Cinemadeck",
+    "cardsTitleTwo": "<strong class='font-weight-bold'>Cards</strong>",
+    "cardsContent": "První detailní instruktor pro profesionální kompozici ve vašem interview",
+    "lightLikeProTitleOne": "<strong class='font-weight-bold'>Light</strong>",
+    "lightLikeProTitleTwo": "Like <strong class='font-weight-bold'>Pro</strong>",
+    "lightLikeProContent": "Detailní instruktor pro správné nasvícení vašich kompozic",
+    "soundLikeProTitleOne": "<strong class='font-weight-bold'>Sound</strong>",
+    "soundLikeProTitleTwo": "Like <strong class='font-weight-bold'>Pro</strong>",
+    "soundLikeProContent": "Detailní instruktor pro perfektní nazvučení vašeho interview",
+    "proceedToCheckout": "Přejít k platbě",
+    "knowMore": "Zjistit více"
+  }
+}

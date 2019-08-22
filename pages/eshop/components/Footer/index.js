@@ -4,11 +4,13 @@ import React from 'react';
 import Link from 'next/link';
 import DefaultFooter from '../../../../app-data/shared/components/Footer';
 
-const Footer = () => (
+import locale from '../../../../app-data/shared/localisation/eshop';
+
+const Footer = ({ lang }) => (
   <div className="footer-container d-flex justify-content-center position-relative">
     <Link href="/eshop/cart">
       <a className="big-blue-anchor text-uppercase d-flex justify-content-center align-items-center">
-        Přejít k platbě
+        {locale[lang].proceedToCheckout}
         {' '}
         &gt;
       </a>
