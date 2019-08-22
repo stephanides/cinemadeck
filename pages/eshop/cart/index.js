@@ -101,7 +101,7 @@ const ShoppingCart = compose(
         >
           <Row>
             <Col>
-              <ContactInfo />
+              <ContactInfo lang={lang} />
             </Col>
             <Col>
               <CartCheckout

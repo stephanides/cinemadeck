@@ -11,6 +11,8 @@ import Layout from '../../app-data/shared/components/Layout';
 import Product from './components/Product';
 import Footer from './components/Footer';
 
+import locale from '../../app-data/shared/localisation/eshop';
+
 const EshopPage = compose(
   graphql(initCartMutation),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
@@ -44,33 +46,42 @@ const EshopPage = compose(
     >
       <Container>
         <div className="eshop-heading-container d-flex justify-content-center">
-          <h1 className="text-uppercase text-center mb-0 pt-4">Cinemadeck Shop</h1>
+          <h1 className="text-uppercase text-center mb-0 pt-4">{locale[lang].heading}</h1>
         </div>
         {''}
         <Row>
           <Col>
             <Product
+              lang={lang}
               productData={{
+                content: locale[lang].cardsContent,
                 imageURL: '/static/images/CARD-BOX.png',
-                title: 'Cards',
+                titleOne: locale[lang].cardsTitleOne,
+                titleTwo: locale[lang].cardsTitleTwo,
                 price: 37,
               }}
             />
           </Col>
           <Col>
             <Product
+              lang={lang}
               productData={{
+                content: locale[lang].lightLikeProContent,
                 imageURL: '/static/images/LIGHT-PRO.png',
-                title: 'Light Like Pro',
+                titleOne: locale[lang].lightLikeProTitleOne,
+                titleTwo: locale[lang].lightLikeProTitleTwo,
                 price: 7,
               }}
             />
           </Col>
           <Col>
             <Product
+              lang={lang}
               productData={{
+                content: locale[lang].soundLikeProContent,
                 imageURL: '/static/images/SOUND-PRO.png',
-                title: 'Sound Like Pro',
+                titleOne: locale[lang].soundLikeProTitleOne,
+                titleTwo: locale[lang].soundLikeProTitleTwo,
                 price: 7,
               }}
             />
@@ -86,7 +97,7 @@ const EshopPage = compose(
           }
         </style>
       </Container>
-      <Footer />
+      <Footer lang={lang} />
     </Layout>
   );
 });
