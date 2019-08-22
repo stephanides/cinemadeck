@@ -14,6 +14,8 @@ import Package from './components/Package';
 import Videos from './components/Videos';
 import Refund from './components/Refund';
 import FAQ from './components/FAQ';
+import Author from './components/Author';
+import Footer from './components/Footer';
 
 const IndexPage = graphql(
   getLocaleQuery, { name: 'getLocale' },
@@ -33,6 +35,8 @@ const IndexPage = graphql(
     <Videos lang={lang} />
     <Refund lang={lang} />
     <FAQ lang={lang} />
+    <Author lang={lang} />
+    <Footer />
   </Layout>
 ));
 
