@@ -3,12 +3,14 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { graphql } from 'react-apollo';
+import PropTypes from 'prop-types';
 import { addProductToCartMutation } from '../../../../app-data/graphql/mutation';
 
 const Product = graphql(
   addProductToCartMutation,
 )(({ mutate, productData }) => {
   const { imageURL, price, title } = productData;
+
   const handleAddProductToCart = async (product) => {
     try {
       await mutate({ variables: { product } });
@@ -63,5 +65,13 @@ const Product = graphql(
     </div>
   );
 });
+
+Product.propTypes = {
+  productData: PropTypes.shape({
+    imageURL: PropTypes.string,
+    price: PropTypes.number,
+    title: PropTypes.string,
+  }).isRequired,
+};
 
 export default Product;
