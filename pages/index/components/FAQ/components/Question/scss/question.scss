@@ -1,0 +1,84 @@
+.faq-heading {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  -webkit-transition: text-indent 0.2s;
+  color: rgb(255, 255, 255);
+  text-indent: 20px;
+  font-size: 1.2em;
+  padding-bottom: 40px;
+}
+
+.faq-text {
+  font-family: 'Open Sans', sans-serif;
+    color: #b1b6bd;
+    font-weight: 400;
+    font-size: 1em;
+    padding-right: 40px;
+    padding-left: 20px;
+}
+
+.faq {
+  margin: 0 auto;
+  border-radius: 4px;
+  position: relative;
+  margin-top: 32px;
+}
+.faq label {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 56px;
+  padding-top:1px;
+}
+
+.faq input[type="checkbox"] {
+  display: none;
+}
+
+.faq .faq-arrow {
+  width: 12px;
+  height: 12px;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-top: 4px solid rgb(255, 255, 255);
+    border-right: 4px solid rgb(255, 255, 255);
+  float: right;
+  position: relative;
+  top: -60px;
+  right: 27px;
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+}
+
+ .faq input[type="checkbox"]:checked + label > .faq-arrow {
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+}
+ .faq input[type="checkbox"]:checked + label {
+  display: block;
+  background: transparent;
+  color: #4f7351;
+  height: 180px;
+  transition: height 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-bottom: 1px solid grey;
+}
+
+ .faq input[type='checkbox']:not(:checked) + label {
+  display: block;
+  transition: height 0.8s;
+  height: 60px;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-bottom: 1px solid grey;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

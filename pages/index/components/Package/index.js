@@ -4,11 +4,12 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 import localisation from '../../../../app-data/shared/localisation/Navigation';
+import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
 
 const Package = ({ lang }) => (
   <div className="package" id="package">
     <Container fluid>
-      <Container>
+      <CustomContainer>
         <h2>{localisation[lang].packageTitle}</h2>
         <Row>
           <Col md="4" sm="6" xs="12">
@@ -32,7 +33,7 @@ const Package = ({ lang }) => (
           <Col md="4" sm="6" xs="12">
             <h6 className="text-center">{localisation[lang].packageCol3Title}</h6>
             <div className="img-holder">
-              <img src="/static/images/package/kartapresets.png" className="unique-img" alt="" />
+              <img src="/static/images/package/kartapresets.png" className="presets-img" alt="" />
             </div>
             <p className="text-header">{localisation[lang].packageCol3Header}</p>
             <p className="text-text">{localisation[lang].packageCol3Text}</p>
@@ -64,7 +65,7 @@ const Package = ({ lang }) => (
             <p className="text-text">{localisation[lang].packageCol6Text}</p>
           </Col>
         </Row>
-      </Container>
+      </CustomContainer>
     </Container>
   </div>
 );

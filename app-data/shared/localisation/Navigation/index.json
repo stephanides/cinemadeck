@@ -101,7 +101,21 @@
     "refundText2":"And that is why: if you are not satisfied with the CinemaDeck cards for any reason and you want to have your money returned just email us and we will refund all your money.",
     "refundText3":"When I made my first professional interview with CinemaDeck without years of experience in the industry, I proved myself that thousands of hours of work on the cards were worth it. I am convinced that <strong>the same results are now waiting for you, too and at a price lower than you would pay for any one-day shooting course.</strong>",
     "refundText4":"You can test, use, invent dozens of camera composition combinations for 30 days, and if you say it's not what you were looking for, write us an email and we'll refund all your money without any questions.",
-    "buyCinemaDeck":"Buy cinemadeck"
+    "buyCinemaDeck":"Buy cinemadeck",
+    "faqTitle":"Frequently Asked Questions",
+    "faqQuestion1":"What will I get after I pay?",
+    "faqQuestion2":"What if I am not satisfied with the CD cards?",
+    "faqQuestion3":"What if I have additional questions about CinemaDeck?",
+    "faqQuestion4":"Can I distribute the CD content and share it with a third party?",
+    "faqQuestion5":"Who is CinemaDeck intended for?",
+    "faqAnswer1":"You can find the full list of products you get after paying <a href=#faq-items>here</a>.",
+    "faqAnswer2":"You get a 30-day money back guarantee with CinemaDeck package. If you are not satisfied with the cards for any reason, please email us on moneyback@cinemadeck.com and we will refund all your money.",
+    "faqAnswer3":"If you have any questions regarding the use of CinemaDeck cards, please email us on martin@cinemadeck.com. We will solve everything together. You will also have a private FB group with other members of CinemaDeck available to you. In this group we provide valuable advice and tips to each other.",
+    "faqAnswer4":"All cards are copyrighted and are subject to copyrights. Unauthorized distribution without the author's consent is deemed to be a gross violation of the Copyright Act. In the event of such a breach, the applicable legal sanction will be 'enforced' as a result of the appropriate court proceeding. We have online systems that also control Internet sharing. We spent many hours working to create something that will make life easier for filmmakers and to be honest to sue someone is not my cup of tea :). I believe you will respect that.",
+    "faqAnswer5":"CinemaDeck cards are designed for both beginners and advanced filmmakers who want to achieve professional results in short time and do not want to spend hours watching internettutorials.",
+    "faqPackageText":"complete package cinemadeck",
+    "packagePrice":"37",
+    "packageCurrency":"EUR"
 
 
 
@@ -208,8 +222,21 @@
     "refundText2":"A proto platí: Když vám karty CinemaDeck nebudou z jakéhokoliv důvodu vyhovovat a budete chtít vrátit peníze, napíšte nám email a všechny peníze vám okamžite vrátíme.",
     "refundText3":"Když jsem díky CinemaDeck natočil své první profesionální interview bez letitých zkušeností v obotu, byl to důkaz, že stovky hodin prác na kartách stáli za to. Jsem přesvědcčen, že <strong>stejné výsledky teď čekají i vás a to za cenu nižší, než by jste zaplatili za jakýkoliv jednodenní kurz natáčení.</strong>",
     "refundText4":"30 dní můžete karty zkoušet, používat, vymýšlet desítky kombinací kamerových kompozic a když jsi řeknete, že to není to, co jste hledali, napíšte nám email a my vám bez otázek vrátíme všechny peníze.",
-    "buyCinemaDeck":"koupit cinemadeck"
-    
+    "buyCinemaDeck":"koupit cinemadeck",
+    "faqTitle":"Často kladené dotazy",
+    "faqQuestion1":"Co obdržím po zaplacení?",
+    "faqQuestion2":"Co když mi karty CinemaDeck nebudou vyhovovat?",
+    "faqQuestion3":"Co když budu mít doplňujíci otázky ke kartám CinemaDeck?",
+    "faqQuestion4":"Mohu šířit obsah CD a sdílet ho třetí straně?",
+    "faqQuestion5":"Pro koho jsou karty CinemaDeck určeny?",
+    "faqAnswer1":"Kompletní seznam produktů, které získáte po zaplacení, najdete <a href=#faq-items>zde</a>.",
+    "faqAnswer2":"S balíčkem CinemaDeck získáte 30denní záruku vrácení peněz. Pokud nejste s kartami z jakéhokoli důvodu spokojeni, pošlete nám prosím e-mail na adresu moneyback@cinemadeck.com a my vám vrátíme všechny vaše peníze.",
+    "faqAnswer3":"Pokud máte jakékoli dotazy týkající se používání karet CinemaDeck, pošlete nám prosím e-mail na martin@cinemadeck.com. Vše vyřešíme společně. Budete mít také k dispozici soukromou skupinu FB s dalšími členy CinemaDeck. V této skupině si navzájem poskytujeme cenné rady a tipy.",
+    "faqAnswer4":"Všechny karty jsou autorským dílem a podléhají autorským právům. Neoprávněné šíření bez souhlasu autora je porušením práva a bude předvedeno před soud. Máme nastavené online systémy, které také kontrolují sdílení na internetu. Strávili jsme spoustu hodin práce, abychom vytvořili něco, co nám filmařům ulehčí život a vysoudit z někoho barák není zrovna moje hobby :). Věřím, že to budete respektovat.",
+    "faqAnswer5":"Karty CinemaDeck jsou určeny pro začínající i pokročilé filmaře, kteří chtějí dosáhnout profi výsledků za zlomek času a nechtějí trávit hodiny u sledování internetových návodů a tutoriálů.",
+    "faqPackageText":"kompletní balík cinemadeck",
+    "packagePrice":"950",
+    "packageCurrency":"CZK"
 
   }
 }

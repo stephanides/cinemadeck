@@ -13,6 +13,7 @@ import Steps from './components/Steps';
 import Package from './components/Package';
 import Videos from './components/Videos';
 import Refund from './components/Refund';
+import FAQ from './components/FAQ';
 
 const IndexPage = graphql(
   getLocaleQuery, { name: 'getLocale' },
@@ -31,6 +32,7 @@ const IndexPage = graphql(
     <Package lang={lang} />
     <Videos lang={lang} />
     <Refund lang={lang} />
+    <FAQ lang={lang} />
   </Layout>
 ));
 

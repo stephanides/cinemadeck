@@ -38,6 +38,10 @@
     left: -12px;
     position: relative;
   }
+  .presets-img{
+    left: -60px;
+    position: relative;
+  }
   .text-header{
     font-family: ProximaNova-Bold;
     color: rgb(47, 52, 56);
@@ -54,7 +58,7 @@
     padding-right: 30px;
   }
   .img-holder{
-    height: 466px;
+    height: 566px;
     position: relative;
     display: flex;
     align-items: center;
@@ -77,6 +81,6 @@
   }
   .img-right{
     position: relative;
-    left: 24px;
+    left: 46px;
   }
 }
