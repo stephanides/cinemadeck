@@ -15,7 +15,19 @@
     "slovakRepublic": "Slovakia",
     "stateError": "Please choose the state.",
     "emailPlaceholder": "E-mail",
-    "emailError": "Please enter a valid email."
+    "emailError": "Please enter a valid email.",
+    "cart": "Cart",
+    "sum": "Total",
+    "buy": "Buy",
+    "methodOfPayment": "Payment method",
+    "purchasedProductsInMail": "All purchased products will be sent to the email given to the order.",
+    "agreeSentence": "I agree with the terms and conditions and the processing of personal data",
+    "agreeError": "You must agree before submitting your order.",
+    "refund": "If the cards do not suit you for any reason within 30 days, email us and we will refund all your money.",
+    "cardIsEmpty": "The cart is empty.",
+    "paymentCard": "Credit card",
+    "payPal": "PayPal",
+    "bankTransfer": "Bank transfer"
   },
   "cz": {
     "billingDataToFill": "Vyplňte prosím vaše fakturační Údaje",
@@ -33,6 +45,18 @@
     "slovakRepublic": "Slovensko",
     "stateError": "Prosím zvolte stát.",
     "emailPlaceholder": "E-mail",
-    "emailError": "Prosím zadejte validní email."
+    "emailError": "Prosím zadejte validní email.",
+    "cart": "Košík",
+    "sum": "Celkem",
+    "buy": "Koupit",
+    "methodOfPayment": "Zpúsob platby",
+    "purchasedProductsInMail": "Všechny zakoupené produkty získáte na uvedený email v objednávce.",
+    "agreeSentence": "Souhlasím s podmínkami a se zpracováním osobních údajú",
+    "agreeError": "Před odesláním objednávky musíte souhlasit.",
+    "refund": "Když vám karty nebudou z jakéhokoliv dúvodu během 30 dnú vyhovovat, napište nám email a my vám vrátíme všechny vaše peníze.",
+    "cardIsEmpty": "Košík je prázdny.",
+    "paymentCard": "Platební karta",
+    "payPal": "PayPal",
+    "bankTransfer": "Bankovní prevod"
   }
 }

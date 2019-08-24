@@ -106,6 +106,7 @@ const ShoppingCart = compose(
             <Col>
               <CartCheckout
                 cart={cart}
+                lang={lang}
                 order={order}
                 handleOrder={handleOrder}
               />
@@ -115,6 +116,7 @@ const ShoppingCart = compose(
             <Col>
               <PaymentMethods
                 handleOrder={handleOrder}
+                lang={lang}
                 order={order}
               />
             </Col>

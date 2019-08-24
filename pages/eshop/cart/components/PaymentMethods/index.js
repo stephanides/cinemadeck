@@ -4,12 +4,14 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-const PaymentMethods = ({ handleOrder, order }) => {
+import locale from '../../../../../app-data/shared/localisation/cart';
+
+const PaymentMethods = ({ handleOrder, lang, order }) => {
   const { paymentMethod } = order;
 
   return (
     <div className="pt-5">
-      <h3 className="text-uppercase mb-5">Zpúsob platby</h3>
+      <h3 className="text-uppercase mb-5">{locale[lang].methodOfPayment}</h3>
       <div className="pr-5">
         <div className="p-4 bg-white mb-5">
           <Row>
@@ -30,7 +32,7 @@ const PaymentMethods = ({ handleOrder, order }) => {
                     }}
                   />
                   {' '}
-                  Platební karta
+                  {locale[lang].paymentCard}
                 </Label>
               </FormGroup>
               <FormGroup check className="pt-3 pb-3 border-bottom">
@@ -49,7 +51,7 @@ const PaymentMethods = ({ handleOrder, order }) => {
                     }}
                   />
                   {' '}
-                  PayPal
+                  {locale[lang].payPal}
                 </Label>
               </FormGroup>
               <FormGroup check className="pt-3 pb-3">
@@ -68,7 +70,7 @@ const PaymentMethods = ({ handleOrder, order }) => {
                     }}
                   />
                   {' '}
-                  Bankovní prevod
+                  {locale[lang].bankTransfer}
                 </Label>
               </FormGroup>
             </Col>
@@ -101,6 +103,7 @@ const PaymentMethods = ({ handleOrder, order }) => {
 
 PaymentMethods.propTypes = {
   handleOrder: PropTypes.func.isRequired,
+  lang: PropTypes.string.isRequired,
   order: PropTypes.shape({
     paymentMethod: PropTypes.number,
   }).isRequired,
