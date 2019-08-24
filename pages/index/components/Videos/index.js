@@ -4,7 +4,7 @@ import './scss/videos.scss';
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
-import localisation from '../../../../app-data/shared/localisation/Navigation';
+import localisation from '../../../../app-data/shared/localisation/Videos';
 
 const Videos = ({ lang }) => (
   <div className="videos" id="videos">

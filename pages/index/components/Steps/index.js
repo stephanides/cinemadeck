@@ -4,7 +4,7 @@ import './scss/steps.scss';
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
-import localisation from '../../../../app-data/shared/localisation/Navigation';
+import localisation from '../../../../app-data/shared/localisation/Steps';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].stepsText1span });
 const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].stepsText2span });

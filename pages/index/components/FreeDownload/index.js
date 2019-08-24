@@ -3,7 +3,7 @@ import './scss/freeDownload.scss';
 import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
-import localisation from '../../../../app-data/shared/localisation/Navigation';
+import localisation from '../../../../app-data/shared/localisation/FreeDownload';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].freeDownloadTitle });
 const FreeDownload = ({ lang }) => (

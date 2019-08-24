@@ -4,7 +4,7 @@ import './scss/refund.scss';
 import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
-import localisation from '../../../../app-data/shared/localisation/Navigation';
+import localisation from '../../../../app-data/shared/localisation/Refund';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].refundText3 });
 const Refund = ({ lang }) => (

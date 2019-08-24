@@ -5,7 +5,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
-import localisation from '../../../../app-data/shared/localisation/Navigation';
+import localisation from '../../../../app-data/shared/localisation/Content';
 import Item from './components/Item';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].contentTitle });

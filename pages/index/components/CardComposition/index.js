@@ -3,7 +3,7 @@ import './scss/cardcomposition.scss';
 import React, { useState } from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
-import localisation from '../../../../app-data/shared/localisation/Navigation';
+import localisation from '../../../../app-data/shared/localisation/CardComposition';
 
 
 // eslint-disable-next-line arrow-body-style

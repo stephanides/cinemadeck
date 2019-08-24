@@ -1,0 +1,23 @@
+{
+  "en": {
+    "freeDownloadTitle":"Free professional<br> composition",
+    "freeDownloadText":"Try working with CinemaDeck cards and practice directly.",
+    "freeDownloadTextBold":"In the free package you will find:",
+    "freeDownloadText1":"A full-featured CinemaDeck card",
+    "freeDownloadText2":"Card ready to print",
+    "freeDownloadText3":"Exact instructions on how to illuminate the actor professionally",
+    "freeDownloadText4":"A bonus waiting for you at the end of the package",
+    "freeDownloadButton":"Download free now"
+    
+  },
+  "cz": {
+    "freeDownloadTitle":"profesionalní<br> kompozice zdarma",
+    "freeDownloadText":"Zkuste si práci s kartama CinemaDeck přímo v praxi.",
+    "freeDownloadTextBold":"V balíku zdarma najdete:",
+    "freeDownloadText1":"Plnohodnotnou kartu CinemaDeck",
+    "freeDownloadText2":"Kartu předpripravenou k vytisknutí",
+    "freeDownloadText3":"Přesne instrukce, jak herce profesionálně nasvítit",
+    "freeDownloadText4":"Bonus, který na vás čeká na konci balíku",
+    "freeDownloadButton":"Stáhnout zdarma teď"
+  }
+}

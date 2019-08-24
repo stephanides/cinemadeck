@@ -4,7 +4,7 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
-import localisation from '../../../../app-data/shared/localisation/Navigation';
+import localisation from '../../../../app-data/shared/localisation/Header';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].headerText2 });
 

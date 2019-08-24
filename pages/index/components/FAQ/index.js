@@ -4,7 +4,7 @@ import './scss/faq.scss';
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
-import localisation from '../../../../app-data/shared/localisation/Navigation';
+import localisation from '../../../../app-data/shared/localisation/FAQ';
 import Question from './components/Question';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
 
@@ -99,7 +99,7 @@ const FAQ = ({ lang }) => (
             {localisation[lang].packagePrice}
             <span className="currency">{localisation[lang].packageCurrency}</span>
           </p>
-          <button type="button">{localisation[lang].packageButton}</button>
+          <button type="button">{localisation[lang].buyCinemaDeck}</button>
         </div>
       </CustomContainer>
     </Container>

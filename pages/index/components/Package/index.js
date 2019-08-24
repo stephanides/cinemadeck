@@ -3,7 +3,7 @@ import './scss/package.scss';
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
-import localisation from '../../../../app-data/shared/localisation/Navigation';
+import localisation from '../../../../app-data/shared/localisation/Package';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
 
 const Package = ({ lang }) => (
@@ -65,6 +65,14 @@ const Package = ({ lang }) => (
             <p className="text-text">{localisation[lang].packageCol6Text}</p>
           </Col>
         </Row>
+        <div className="buy-package-holder">
+          <p className="text-complete">{localisation[lang].faqPackageText}</p>
+          <p className="price">
+            {localisation[lang].packagePrice}
+            <span className="currency">{localisation[lang].packageCurrency}</span>
+          </p>
+          <button type="button">{localisation[lang].buyCinemaDeck}</button>
+        </div>
       </CustomContainer>
     </Container>
   </div>
