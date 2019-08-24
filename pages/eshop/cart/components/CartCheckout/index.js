@@ -7,10 +7,14 @@ import { compose, graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { addProductToCartMutation, removeProductFromCartMutation } from '../../../../../app-data/graphql/mutation';
 
+import locale from '../../../../../app-data/shared/localisation/cart';
+
 const CartCheckout = compose(
   graphql(addProductToCartMutation, { name: 'addProductToCart' }),
   graphql(removeProductFromCartMutation, { name: 'removeProductFromCart' }),
-)(({ cart, addProductToCart, removeProductFromCart }) => {
+)(({
+  cart, lang, addProductToCart, removeProductFromCart,
+}) => {
   const handleAddProductToCart = async (product) => {
     try {
       await addProductToCart({ variables: { product } });
@@ -18,6 +22,7 @@ const CartCheckout = compose(
       console.log(err);
     }
   };
+
   const handleRemoveProductFromCart = async (title) => {
     try {
       await removeProductFromCart({ variables: { title } });
@@ -30,7 +35,7 @@ const CartCheckout = compose(
     <div className="cart-checkout-wrapper">
       <div className="bg-white position-fixed" />
       <div className="cart-checkout-container px-5">
-        <h3 className="text-uppercase mb-5">Košík</h3>
+        <h3 className="text-uppercase mb-5">{locale[lang].cart}</h3>
         <div className="checkout-content">
           {
             cart && cart.length > 0
@@ -85,7 +90,7 @@ const CartCheckout = compose(
                     ))
                   }
                   <p className="d-flex justify-content-between sum mb-5">
-                    <span className="text-uppercase">Celkem</span>
+                    <span className="text-uppercase">{locale[lang].sum}</span>
                     <span className="font-weight-bold">
                       {
                         cart.reduce((a, b) => (a + b.totalPrice), 0)
@@ -98,18 +103,18 @@ const CartCheckout = compose(
                     type="submit"
                     className="text-uppercase mx-auto mb-3"
                   >
-                    Koupit
+                    {locale[lang].buy}
                   </button>
-                  <p><small>Všechny zakoupené produkty získáte na uvedený email v objednávce.</small></p>
+                  <p><small>{locale[lang].purchasedProductsInMail}</small></p>
                   <FormGroup check className="mb-5">
                     <Label check>
                       <Input type="checkbox" id="agree" name="agree" required />
                       {' '}
                       <small>
-                        Souhlasím s podmínkami a se zpracováním osobních údajú
+                        {locale[lang].agreeSentence}
                       </small>
                       <div className="invalid-feedback">
-                        Před odesláním objednávky musíte souhlasit.
+                        {locale[lang].agreeError}
                       </div>
                     </Label>
                   </FormGroup>
@@ -118,12 +123,12 @@ const CartCheckout = compose(
                       <img src="/static/images/refund.png" alt="" />
                     </aside>
                     <p>
-                      Když vám karty nebudou z jakéhokoliv dúvodu během 30 dnú vyhovovat, napište nám email a my vám vrátíme všechny vaše peníze.
+                      {locale[lang].refund}
                     </p>
                   </div>
                 </div>
               )
-              : <p className="w-100 text-center">Košík je prázdny</p>
+              : <p className="w-100 text-center">{locale[lang].cartIsEmpty}</p>
           }
         </div>
       </div>
@@ -143,6 +148,7 @@ CartCheckout.propTypes = {
       totalPrice: PropTypes.number,
     }),
   ),
+  lang: PropTypes.string.isRequired,
 };
 
 export default CartCheckout;
