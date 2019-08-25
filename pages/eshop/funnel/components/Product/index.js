@@ -24,7 +24,7 @@ const Product = () => (
           <button></button>
         </p> */
       }
-      <div className="price-add-to-cart-container d-flex">
+      <div className="price-add-to-cart-container d-flex pt-3">
         <div>
           <span className="font-weight-bold align-top">7</span>
           <span className="font-weight-lighter align-top">
@@ -33,7 +33,7 @@ const Product = () => (
         </div>
         <button
           type="button"
-          className="ml-3"
+          className="ml-4"
         >
           PRIDAT DO KOSIKU
         </button>
