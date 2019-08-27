@@ -4,7 +4,7 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import locale from '../../../../../app-data/shared/localisation/cart';
+import locale from '../../../../../app-data/shared/localisation/eshop/cart';
 
 const PaymentMethods = ({ handleOrder, lang, order }) => {
   const { paymentMethod } = order;
