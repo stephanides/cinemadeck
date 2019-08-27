@@ -9,7 +9,7 @@ import { initCartMutation } from '../../app-data/graphql/mutation';
 
 import Layout from '../../app-data/shared/components/Layout';
 import Product from './components/Product';
-import Footer from './components/Footer';
+import Footer from '../../app-data/shared/components/Footer';
 
 import locale from '../../app-data/shared/localisation/eshop';
 

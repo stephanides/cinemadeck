@@ -4,6 +4,7 @@ import { compose, graphql } from 'react-apollo';
 import { getLocaleQuery, getProductsFromCart } from '../../../app-data/graphql/query';
 import Layout from '../../../app-data/shared/components/Layout';
 import Product from './components/Product';
+import Footer from '../../../app-data/shared/components/eshop/Footer';
 
 const Funnel = compose(
   graphql(getLocaleQuery),
@@ -20,6 +21,7 @@ const Funnel = compose(
       </div>
       <Product />
       <Product />
+      <Footer lang={lang} />
     </Container>
     <style jsx>
       {
