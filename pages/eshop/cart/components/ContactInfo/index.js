@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, FormGroup, Input } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import locale from '../../../../../app-data/shared/localisation/cart';
+import locale from '../../../../../app-data/shared/localisation/eshop/cart';
 
 const ContactInfo = ({ lang }) => (
   <div className="pt-5 pr-5 contact-info-container position-relative mb-5">

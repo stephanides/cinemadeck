@@ -7,7 +7,7 @@ import { compose, graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { addProductToCartMutation, removeProductFromCartMutation } from '../../../../../app-data/graphql/mutation';
 
-import locale from '../../../../../app-data/shared/localisation/cart';
+import locale from '../../../../../app-data/shared/localisation/eshop/cart';
 
 const CartCheckout = compose(
   graphql(addProductToCartMutation, { name: 'addProductToCart' }),

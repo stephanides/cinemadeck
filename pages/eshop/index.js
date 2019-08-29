@@ -9,7 +9,7 @@ import { initCartMutation } from '../../app-data/graphql/mutation';
 
 import Layout from '../../app-data/shared/components/Layout';
 import Product from './components/Product';
-import Footer from './components/Footer';
+import Footer from '../../app-data/shared/components/Footer';
 
 import locale from '../../app-data/shared/localisation/eshop';
 
@@ -56,6 +56,7 @@ const EshopPage = compose(
               productData={{
                 content: locale[lang].cardsContent,
                 imageURL: '/static/images/CARD-BOX.png',
+                productTitle: 'Cards',
                 titleOne: locale[lang].cardsTitleOne,
                 titleTwo: locale[lang].cardsTitleTwo,
                 price: 37,
@@ -68,6 +69,7 @@ const EshopPage = compose(
               productData={{
                 content: locale[lang].lightLikeProContent,
                 imageURL: '/static/images/LIGHT-PRO.png',
+                productTitle: 'Light Like Pro',
                 titleOne: locale[lang].lightLikeProTitleOne,
                 titleTwo: locale[lang].lightLikeProTitleTwo,
                 price: 7,
@@ -80,6 +82,7 @@ const EshopPage = compose(
               productData={{
                 content: locale[lang].soundLikeProContent,
                 imageURL: '/static/images/SOUND-PRO.png',
+                productTitle: 'Sound Like Pro',
                 titleOne: locale[lang].soundLikeProTitleOne,
                 titleTwo: locale[lang].soundLikeProTitleTwo,
                 price: 7,

@@ -100,10 +100,10 @@ const ShoppingCart = compose(
           noValidate
         >
           <Row>
-            <Col>
+            <Col sm={{ size: 12, order: 1 }} md={{ size: 6, order: 1 }} lg={{ size: 6, order: 1 }}>
               <ContactInfo lang={lang} />
             </Col>
-            <Col>
+            <Col sm={{ size: 12, order: 3 }} md={{ size: 6, order: 2 }} lg={{ size: 6, order: 2 }}>
               <CartCheckout
                 cart={cart}
                 lang={lang}
@@ -111,17 +111,21 @@ const ShoppingCart = compose(
                 handleOrder={handleOrder}
               />
             </Col>
-          </Row>
-          <Row>
-            <Col>
+            {''}
+            <Col sm={{ size: 12, order: 2 }} md={{ size: 6, order: 3 }} lg={{ size: 6, order: 3 }}>
               <PaymentMethods
                 handleOrder={handleOrder}
                 lang={lang}
                 order={order}
               />
             </Col>
-            <Col />
+            <Col
+              sm={{ size: 12, order: 4 }}
+              md={{ size: 6, order: 4 }}
+              lg={{ size: 6, order: 4 }}
+            />
           </Row>
+          <Row />
         </form>
       </Container>
       <Footer />

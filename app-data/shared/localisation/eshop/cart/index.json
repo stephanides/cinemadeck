@@ -24,7 +24,7 @@
     "agreeSentence": "I agree with the terms and conditions and the processing of personal data",
     "agreeError": "You must agree before submitting your order.",
     "refund": "If the cards do not suit you for any reason within 30 days, email us and we will refund all your money.",
-    "cardIsEmpty": "The cart is empty.",
+    "cartIsEmpty": "The cart is empty.",
     "paymentCard": "Credit card",
     "payPal": "PayPal",
     "bankTransfer": "Bank transfer"
@@ -54,7 +54,7 @@
     "agreeSentence": "Souhlasím s podmínkami a se zpracováním osobních údajú",
     "agreeError": "Před odesláním objednávky musíte souhlasit.",
     "refund": "Když vám karty nebudou z jakéhokoliv dúvodu během 30 dnú vyhovovat, napište nám email a my vám vrátíme všechny vaše peníze.",
-    "cardIsEmpty": "Košík je prázdny.",
+    "cartIsEmpty": "Košík je prázdny.",
     "paymentCard": "Platební karta",
     "payPal": "PayPal",
     "bankTransfer": "Bankovní prevod"
