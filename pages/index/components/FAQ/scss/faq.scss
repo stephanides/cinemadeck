@@ -87,23 +87,27 @@ $break-xarge: 1400px;
     align-items: center;
     padding-top: 200px;
     padding-bottom: 60px;
+    justify-content: center;
     @media screen and (max-width: $break-mobile) {
       padding-top: 40px;
       padding-bottom: 10px;
     }
+    .mt-40{
+      margin-top: 40px;
+      @media screen and (max-width: $break-mobile) {
+        margin-top: 40px !important;
+        left: -45px !important;
+      }
+    }
     .faq-item{
-      height: 400px;
+      height: 440px;
       @media screen and (max-width: $break-mobile) {
         height: 480px;
       }
       .img-holder{
         display: flex;
         align-items: center;
-        height: 343px;
         position: relative;
-        @media screen and (max-width: $break-mobile) {
-          height: 460px;
-        }
       }
       img{
         position: relative;

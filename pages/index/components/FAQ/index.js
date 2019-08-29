@@ -53,7 +53,7 @@ const FAQ = ({ lang }) => (
           />
         </div>
         <Row className="faq-items" id="faq-items">
-          <Col className="col-md-5ths" xs="12">
+          <Col lg="3" md="4" xs="12">
             <div className="faq-item">
               <h6>PRINT DATA</h6>
               <div className="img-holder">
@@ -61,7 +61,7 @@ const FAQ = ({ lang }) => (
               </div>
             </div>
           </Col>
-          <Col className="col-md-5ths" xs="12">
+          <Col lg="3" md="4" xs="12">
             <div className="faq-item">
               <h6>MOBILE PDF</h6>
               <div className="img-holder">
@@ -69,23 +69,23 @@ const FAQ = ({ lang }) => (
               </div>
             </div>
           </Col>
-          <Col className="col-md-5ths" xs="12">
+          <Col lg="3" md="4" xs="12">
             <div className="faq-item">
               <h6>TITLE PRESETS</h6>
               <div className="img-holder">
-                <img src="/static/images/faq/presets.png" alt="" />
+                <img className="mt-40" src="/static/images/faq/presets.png" alt="" />
               </div>
             </div>
           </Col>
-          <Col className="col-md-5ths" xs="12">
+          <Col lg="3" md="4" xs="12">
             <div className="faq-item">
               <h6>CHECKLIST</h6>
               <div className="img-holder">
-                <img src="/static/images/faq/checklist.png" alt="" />
+                <img className="mt-40" src="/static/images/faq/checklist.png" alt="" />
               </div>
             </div>
           </Col>
-          <Col className="col-md-5ths" xs="12">
+          <Col lg="3" md="4" xs="12">
             <div className="faq-item">
               <h6>GUIDE</h6>
               <div className="img-holder">

@@ -20,10 +20,6 @@ const FreeDownload = ({ lang }) => (
           </div>
           <div className="check-item d-flex align-items-center mb-1">
             <img src="/static/images/freedownload/check.png" alt="" />
-            <p className="pl-3">{localisation[lang].freeDownloadText2}</p>
-          </div>
-          <div className="check-item d-flex align-items-center mb-1">
-            <img src="/static/images/freedownload/check.png" alt="" />
             <p className="pl-3">{localisation[lang].freeDownloadText3}</p>
           </div>
           <div className="check-item d-flex align-items-center mb-1">

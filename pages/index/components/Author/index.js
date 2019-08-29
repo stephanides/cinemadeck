@@ -19,19 +19,9 @@ const Author = ({ lang }) => (
           <p className="text-center">{localisation[lang].text2}</p>
         </div>
         <div className="social-networks">
-          <Link href="https://twitter.com">
-            <a target="_blank" className="navbar-brand">
-              <img src="/static/images/author/twitter.png" alt="Twitter" />
-            </a>
-          </Link>
           <Link href="https://facebook.com">
             <a target="_blank" className="navbar-brand">
               <img src="/static/images/author/facebook.png" alt="Facebook" />
-            </a>
-          </Link>
-          <Link href="https://youtube.com">
-            <a target="_blank" className="navbar-brand">
-              <img src="/static/images/author/youtube.png" alt="Youtube" />
             </a>
           </Link>
         </div>
