@@ -2,25 +2,69 @@
   font-family: ProximaNova-Regular;
   src: url("/static/fonts/ProximaNova-Regular.otf");
 }
+$break-small: 576px;
+$break-mobile:768px;
+$break-medium: 992px;
+$break-large: 1200px;
+$break-xarge: 1400px;
 
+.scroll_background{
+  background-color: #171717;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  outline: none !important;
+}
+.navbar-toggler{
+  outline: none !important;
+}
+.navigation_holder{
+  padding-left: 60px;
+  padding-right: 60px;
+  @media screen and (max-width: $break-large) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 .navbar {
   padding: 20px 0;
   margin-bottom: 10px;
+  @media screen and (max-width: $break-xarge) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @media screen and (max-width: $break-mobile) {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #171717;
+  }
 
   .navbar-brand {
     padding: 0;
   }
 
   .navbar-nav {
+    @media screen and (max-width: $break-mobile) {
+      height: 100vh;
+      padding-top: 100px;
+    }
     li {
       display: flex;
       align-items: center;
+      @media screen and (max-width: $break-mobile) {
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+      }
 
       a {
         font-family: ProximaNova-Regular;
         color:white;
         font-size: 0.8em;
         padding: 0 .5rem;
+        @media screen and (max-width: $break-mobile) {
+          font-size: 1.5em;
+        }
   
         &:hover {
           color: #00a7f0;
@@ -34,6 +78,10 @@
         font-family: ProximaNova-Regular;
         font-size: 0.8em;
         padding: 0 .5rem;
+        outline: none;
+        @media screen and (max-width: $break-mobile) {
+          font-size: 1.5em;
+        }
         /* padding-top: 12px;
         padding-bottom: 12px; */
 
@@ -62,6 +110,11 @@
         position: relative;
         padding: 0 0 0 1rem;
         margin: 0 0 0 1rem;
+        @media screen and (max-width: $break-mobile) {
+          margin: 0;
+          padding: 0;
+          margin-top: 20px;
+        }
   
         &::before {
           content: '|';
@@ -70,6 +123,11 @@
           top: .5rem;
           left: 0;
         } 
+        @media screen and (max-width: $break-mobile) {
+          &::before {
+            display: none;
+          }
+        }
       }
     }
   

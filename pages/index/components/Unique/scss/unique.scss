@@ -1,28 +1,45 @@
 @font-face {
-    font-family: ProximaNova-Regular;
-    src: url("/static/fonts/ProximaNova-Regular.otf");
-  }
-  @font-face {
-    font-family: ProximaNova-Bold;
-    src: url("/static/fonts/ProximaNova-Bold.otf");
-  }
-  @font-face {
-    font-family: ProximaNova-SemiBold;
-    src: url("/static/fonts/ProximaNova-Semibold.otf");
-  }
+  font-family: ProximaNova-Regular;
+  src: url("/static/fonts/ProximaNova-Regular.otf");
+}
+@font-face {
+  font-family: ProximaNova-Bold;
+  src: url("/static/fonts/ProximaNova-Bold.otf");
+}
+@font-face {
+  font-family: ProximaNova-SemiBold;
+  src: url("/static/fonts/ProximaNova-Semibold.otf");
+}
+$break-xsmall: 400px;
+$break-small: 576px;
+$break-mobile:768px;
+$break-medium: 992px;
+$break-large: 1200px;
+$break-xarge: 1400px;
 
   .unique{
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 80px;
+    padding-bottom: 80px;
     h2{
       color:#2f3438;
       font-family: ProximaNova-Bold;
       text-transform: uppercase;
       letter-spacing: 8px;
+      @media screen and (max-width: $break-mobile) {
+        font-size: 1.5em;
+      }
+      @media screen and (max-width: $break-xsmall) {
+        font-size: 1.2em;
+      }
     }
     img{
       display: block;
       margin: 0 auto;
+      
+      @media screen and (max-width: $break-medium) {
+        padding-top: 20px;
+        width: 100%;
+      }
     }
     .text-p{
       font-family: 'Open Sans', sans-serif;
@@ -31,8 +48,16 @@
       font-weight: 400;
       letter-spacing: 1px;
       padding-top: 100px;
-      padding-left: 13%;
-      padding-right: 13%;
+      padding-left: 20px;
+      padding-right: 20px;
+      @media screen and (max-width: $break-mobile) {
+        font-size: 1.2em;
+        padding-top: 60px;
+      }
+      @media screen and (max-width: $break-xsmall) {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
     }
     .items_holder{
       margin-top: 100px;
@@ -54,6 +79,9 @@
         font-size: 1em;
         padding-top: 50px;
         padding-right: 40px;
+        @media screen and (max-width: $break-mobile) {
+          padding-top: 20px;
+        }
       }
       .number_arrow{
         [class*="icono"] {
@@ -120,6 +148,9 @@
       align-items: center;
       .icon{
         margin: 0;
+        @media screen and (max-width: $break-medium) {
+          width: unset;
+        }
       }
     }
     

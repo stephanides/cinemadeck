@@ -18,7 +18,7 @@ const Steps = ({ lang }) => (
           <img src="/static/images/steps/image.png" alt="" />
           <p className="img-text img-text-1">{localisation[lang].stepsImageText1}</p>
           <p className="img-text img-text-2">{localisation[lang].stepsImageText2}</p>
-          <p className="img-text img-text-3">{localisation[lang].stepsImageText2}</p>
+          <p className="img-text img-text-3">{localisation[lang].stepsImageText3}</p>
         </div>
         <div className="items_holder">
           <Row>

@@ -3,8 +3,10 @@ import './scss/header.scss';
 import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
 import localisation from '../../../../app-data/shared/localisation/Header';
+
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].headerText2 });
 
@@ -17,7 +19,7 @@ const Header = ({ lang }) => (
           <p>{localisation[lang].headerText1}</p>
           <h3 className="pt-4" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
         </div>
-        <button type="button">{localisation[lang].findOutMore}</button>
+        <AnchorLink href="#about">{localisation[lang].findOutMore}</AnchorLink>
       </CustomContainer>
     </Container>
   </div>

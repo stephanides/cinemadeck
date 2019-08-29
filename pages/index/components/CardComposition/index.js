@@ -25,88 +25,166 @@ const CardComposition = ({ lang }) => {
                 </div>
               </div>
             </div>
-            <div className={isOpen ? 'left-card1-text fade-out-left' : 'left-card1-text'}>
-              <div className="text-item text-1">
-                <div className="text">
-                  <h6>{localisation[lang].cardComposition1Title}</h6>
-                  <p>{localisation[lang].cardComposition1Text}</p>
+            <div className="card-text-holder-desktop">
+              <div className={isOpen ? 'left-card1-text fade-out-left' : 'left-card1-text'}>
+                <div className="text-item text-1">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition1Title}</h6>
+                    <p>{localisation[lang].cardComposition1Text}</p>
+                  </div>
+                  <img src="/static/images/composition/arrow1.png" alt="" />
                 </div>
-                <img src="/static/images/composition/arrow1.png" alt="" />
+                <div className="text-item text-2">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition2Title}</h6>
+                    <p>{localisation[lang].cardComposition2Text}</p>
+                  </div>
+                  <img src="/static/images/composition/arrow2.png" alt="" />
+                </div>
+                <div className="text-item text-3">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition3Title}</h6>
+                    <p>{localisation[lang].cardComposition3Text}</p>
+                  </div>
+                  <img src="/static/images/composition/arrow3.png" alt="" />
+                </div>
+                <div className="text-item text-4">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition4Title}</h6>
+                    <p>{localisation[lang].cardComposition4Text}</p>
+                  </div>
+                  <img src="/static/images/composition/arrow4.png" alt="" />
+                </div>
               </div>
-              <div className="text-item text-2">
-                <div className="text">
-                  <h6>{localisation[lang].cardComposition2Title}</h6>
-                  <p>{localisation[lang].cardComposition2Text}</p>
+              <div className={isOpen ? 'right-card1-text fade-out-right' : 'right-card1-text'}>
+                <div className="text-item text-5">
+                  <img src="/static/images/composition/arrow5.png" alt="" />
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition5Title}</h6>
+                    <p>{localisation[lang].cardComposition5Text}</p>
+                  </div>
                 </div>
-                <img src="/static/images/composition/arrow2.png" alt="" />
+                <div className="text-item text-6">
+                  <img src="/static/images/composition/arrow6.png" alt="" />
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition6Title}</h6>
+                    <p>{localisation[lang].cardComposition6Text}</p>
+                  </div>
+                </div>
+                <div className="text-item text-7">
+                  <img src="/static/images/composition/arrow7.png" alt="" />
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition7Title}</h6>
+                    <p>{localisation[lang].cardComposition7Text}</p>
+                  </div>
+                </div>
               </div>
-              <div className="text-item text-3">
-                <div className="text">
-                  <h6>{localisation[lang].cardComposition3Title}</h6>
-                  <p>{localisation[lang].cardComposition3Text}</p>
+              <div className={isOpen ? 'left-card2-text' : 'left-card2-text fade-out-left'}>
+                <div className="text-item text-8">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition8Title}</h6>
+                    <p>{localisation[lang].cardComposition8Text}</p>
+                  </div>
+                  <img src="/static/images/composition/arrow8.png" alt="" />
                 </div>
-                <img src="/static/images/composition/arrow3.png" alt="" />
+                <div className="text-item text-9">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition9Title}</h6>
+                    <p>{localisation[lang].cardComposition9Text}</p>
+                  </div>
+                  <img src="/static/images/composition/arrow9.png" alt="" />
+                </div>
               </div>
-              <div className="text-item text-4">
-                <div className="text">
-                  <h6>{localisation[lang].cardComposition4Title}</h6>
-                  <p>{localisation[lang].cardComposition4Text}</p>
+              <div className={isOpen ? 'right-card2-text' : 'right-card2-text fade-out-right'}>
+                <div className="text-item text-10">
+                  <img src="/static/images/composition/arrow10.png" alt="" />
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition10Title}</h6>
+                    <p>{localisation[lang].cardComposition10Text}</p>
+                  </div>
                 </div>
-                <img src="/static/images/composition/arrow4.png" alt="" />
+                <div className="text-item text-11">
+                  <img src="/static/images/composition/arrow11.png" alt="" />
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition11Title}</h6>
+                    <p>{localisation[lang].cardComposition11Text}</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className={isOpen ? 'right-card1-text fade-out-right' : 'right-card1-text'}>
-              <div className="text-item text-5">
-                <img src="/static/images/composition/arrow5.png" alt="" />
-                <div className="text">
-                  <h6>{localisation[lang].cardComposition5Title}</h6>
-                  <p>{localisation[lang].cardComposition5Text}</p>
+            <div className="card-text-holder-mobile">
+              <div className={isOpen ? 'left-card1-text fade-out-left' : 'left-card1-text'}>
+                <div className="text-item text-1">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition1Title}</h6>
+                    <p>{localisation[lang].cardComposition1Text}</p>
+                  </div>
+                </div>
+                <div className="text-item text-2">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition2Title}</h6>
+                    <p>{localisation[lang].cardComposition2Text}</p>
+                  </div>
+                </div>
+                <div className="text-item text-3">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition3Title}</h6>
+                    <p>{localisation[lang].cardComposition3Text}</p>
+                  </div>
+                </div>
+                <div className="text-item text-4">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition4Title}</h6>
+                    <p>{localisation[lang].cardComposition4Text}</p>
+                  </div>
                 </div>
               </div>
-              <div className="text-item text-6">
-                <img src="/static/images/composition/arrow6.png" alt="" />
-                <div className="text">
-                  <h6>{localisation[lang].cardComposition6Title}</h6>
-                  <p>{localisation[lang].cardComposition6Text}</p>
+              <div className={isOpen ? 'right-card1-text fade-out-right' : 'right-card1-text'}>
+                <div className="text-item text-5">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition5Title}</h6>
+                    <p>{localisation[lang].cardComposition5Text}</p>
+                  </div>
+                </div>
+                <div className="text-item text-6">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition6Title}</h6>
+                    <p>{localisation[lang].cardComposition6Text}</p>
+                  </div>
+                </div>
+                <div className="text-item text-7">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition7Title}</h6>
+                    <p>{localisation[lang].cardComposition7Text}</p>
+                  </div>
                 </div>
               </div>
-              <div className="text-item text-7">
-                <img src="/static/images/composition/arrow7.png" alt="" />
-                <div className="text">
-                  <h6>{localisation[lang].cardComposition7Title}</h6>
-                  <p>{localisation[lang].cardComposition7Text}</p>
+              <div className={isOpen ? 'left-card2-text' : 'left-card2-text fade-out-left'}>
+                <div className="text-item text-8">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition8Title}</h6>
+                    <p>{localisation[lang].cardComposition8Text}</p>
+                  </div>
+                </div>
+                <div className="text-item text-9">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition9Title}</h6>
+                    <p>{localisation[lang].cardComposition9Text}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className={isOpen ? 'left-card2-text' : 'left-card2-text fade-out-left'}>
-              <div className="text-item text-8">
-                <div className="text">
-                  <h6>{localisation[lang].cardComposition8Title}</h6>
-                  <p>{localisation[lang].cardComposition8Text}</p>
+              <div className={isOpen ? 'right-card2-text' : 'right-card2-text fade-out-right'}>
+                <div className="text-item text-10">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition10Title}</h6>
+                    <p>{localisation[lang].cardComposition10Text}</p>
+                  </div>
                 </div>
-                <img src="/static/images/composition/arrow8.png" alt="" />
-              </div>
-              <div className="text-item text-9">
-                <div className="text">
-                  <h6>{localisation[lang].cardComposition9Title}</h6>
-                  <p>{localisation[lang].cardComposition9Text}</p>
-                </div>
-                <img src="/static/images/composition/arrow9.png" alt="" />
-              </div>
-            </div>
-            <div className={isOpen ? 'right-card2-text' : 'right-card2-text fade-out-right'}>
-              <div className="text-item text-10">
-                <img src="/static/images/composition/arrow10.png" alt="" />
-                <div className="text">
-                  <h6>{localisation[lang].cardComposition10Title}</h6>
-                  <p>{localisation[lang].cardComposition10Text}</p>
-                </div>
-              </div>
-              <div className="text-item text-11">
-                <img src="/static/images/composition/arrow11.png" alt="" />
-                <div className="text">
-                  <h6>{localisation[lang].cardComposition11Title}</h6>
-                  <p>{localisation[lang].cardComposition11Text}</p>
+                <div className="text-item text-11">
+                  <div className="text">
+                    <h6>{localisation[lang].cardComposition11Title}</h6>
+                    <p>{localisation[lang].cardComposition11Text}</p>
+                  </div>
                 </div>
               </div>
             </div>

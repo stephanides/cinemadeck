@@ -1,3 +1,10 @@
+$break-xsmall: 400px;
+$break-small: 576px;
+$break-mobile:768px;
+$break-medium: 992px;
+$break-large: 1200px;
+$break-xarge: 1400px;
+
 .faq-heading {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
@@ -6,6 +13,12 @@
   text-indent: 20px;
   font-size: 1.2em;
   padding-bottom: 40px;
+  @media screen and (max-width: $break-mobile) {
+    font-size: 1em;
+    text-indent: 0px;
+    width: 80%;
+    padding-left: 20px;
+  }
 }
 
 .faq-text {
@@ -51,6 +64,9 @@
   right: 27px;
   -webkit-transform: rotate(315deg);
           transform: rotate(315deg);
+  @media screen and (max-width: $break-mobile) {
+    top: -76px;
+  }
 }
 
  .faq input[type="checkbox"]:checked + label > .faq-arrow {
@@ -69,6 +85,12 @@
   transition: height 0.8s;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   border-bottom: 1px solid grey;
+  @media screen and (max-width: $break-mobile) {
+    height: 380px;
+  }
+  @media screen and (max-width: $break-xsmall) {
+    height: 490px;
+  }
 }
 
  .faq input[type='checkbox']:not(:checked) + label {
@@ -77,4 +99,7 @@
   height: 60px;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   border-bottom: 1px solid grey;
+  @media screen and (max-width: $break-mobile) {
+    height: 80px;
+  }
 }

@@ -2,9 +2,9 @@
 /* eslint-disable react/no-danger */
 import './scss/content.scss';
 import React from 'react';
-import Link from 'next/link';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import localisation from '../../../../app-data/shared/localisation/Content';
 import Item from './components/Item';
 
@@ -58,11 +58,7 @@ const Content = ({ lang }) => (
           </div>
         </div>
       </div>
-      <Link href="#">
-        <a className="content-button">
-          {localisation[lang].contentButton}
-        </a>
-      </Link>
+      <AnchorLink href="#package" className="content-button">{localisation[lang].contentButton}</AnchorLink>
     </Container>
   </div>
 );

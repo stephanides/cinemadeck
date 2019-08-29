@@ -11,6 +11,12 @@
   src: url("/static/fonts/ProximaNova-Semibold.otf");
 }
 
+$break-small: 576px;
+$break-mobile:768px;
+$break-medium: 992px;
+$break-large: 1200px;
+$break-xarge: 1400px;
+
 .author{
   background-color: #0f141c;
   padding-top: 120px;
@@ -18,6 +24,9 @@
   .author-image{
     display: block;
     margin: 0 auto;
+    @media screen and (max-width: $break-mobile) {
+      width: 100%;
+    }
   }
   h5{
     font-family: ProximaNova-Bold;
@@ -41,6 +50,10 @@
     padding-bottom: 60px;
     padding-right: 20%;
     padding-left: 20%;
+    @media screen and (max-width: $break-mobile) {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
     p{
       font-family: "Open Sans", "sans-serif";
       color: #a0a4ad;

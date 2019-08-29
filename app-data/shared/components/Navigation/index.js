@@ -1,11 +1,12 @@
 /* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import './scss/navigation.scss';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Link from 'next/link';
 import { graphql } from 'react-apollo';
 import {
+  Container,
   Collapse,
   Navbar,
   NavbarToggler,
@@ -16,7 +17,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import { toggleLangMutation } from '../../../graphql/mutation';
-import CustomContainer from '../CustomContainer';
 import CartContent from './components/CartContent';
 import localisation from '../../localisation/Navigation';
 
@@ -26,19 +26,36 @@ const Navigation = graphql(
   cart, lang, isCart, isHome, toggleLang,
 }) => {
   const [isOpen, toggle] = useState(false);
+  const [isTop, isPageTop] = useState(true);
+
+  useEffect(() => {
+    const checkTop = () => {
+      const currentIsTop = window.scrollY < 100;
+      if (currentIsTop !== isTop) {
+        isPageTop(currentIsTop);
+      }
+    };
+
+    checkTop();
+    document.addEventListener('scroll', () => {
+      checkTop();
+    }, []);
+  });
 
   return (
     <Navbar
       className={
         isHome
-          ? 'sticky-top'
+          ? (
+            isTop ? 'fixed-top background' : 'fixed-top scroll_background'
+          )
           : (
-            isCart ? 'sticky-top' : 'sticky-top bg-white'
+            isCart ? 'fixed-top' : 'fixed-top bg-white'
           )
       }
       expand="md"
     >
-      <CustomContainer flex>
+      <Container fluid className="navigation_holder">
         <Link href="/">
           <a className="navbar-brand">
             <img src={isHome ? '/static/images/logo.png' : '/static/images/logo-dark.png'} alt="Logo White" />
@@ -140,7 +157,7 @@ const Navigation = graphql(
             </NavItem>
           </Nav>
         </Collapse>
-      </CustomContainer>
+      </Container>
     </Navbar>
   );
 });

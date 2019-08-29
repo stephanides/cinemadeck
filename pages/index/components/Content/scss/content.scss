@@ -1,15 +1,21 @@
 @font-face {
-    font-family: ProximaNova-Regular;
-    src: url("/static/fonts/ProximaNova-Regular.otf");
-  }
-  @font-face {
-    font-family: ProximaNova-Bold;
-    src: url("/static/fonts/ProximaNova-Bold.otf");
-  }
-  @font-face {
-    font-family: ProximaNova-SemiBold;
-    src: url("/static/fonts/ProximaNova-Semibold.otf");
-  }
+  font-family: ProximaNova-Regular;
+  src: url("/static/fonts/ProximaNova-Regular.otf");
+}
+@font-face {
+  font-family: ProximaNova-Bold;
+  src: url("/static/fonts/ProximaNova-Bold.otf");
+}
+@font-face {
+  font-family: ProximaNova-SemiBold;
+  src: url("/static/fonts/ProximaNova-Semibold.otf");
+}
+$break-xsmall: 400px;
+$break-small: 576px;
+$break-mobile:768px;
+$break-medium: 992px;
+$break-large: 1200px;
+$break-xarge: 1400px;
 
   .content{
      background-image: url("/static/images/content/background.png");
@@ -17,6 +23,13 @@
      background-size: cover;
      background-position: 50% 50%;
      background-repeat: no-repeat;
+     @media screen and (max-width: $break-mobile) {
+      background-image: url("/static/images/steps/background.png");
+      background-repeat: repeat;
+      background-size: unset;
+      height: unset;
+      padding-bottom: 100px;
+    }
     h2{
       padding-top: 100px;
       font-family: ProximaNova-SemiBold;
@@ -24,17 +37,44 @@
       color:white; 
       letter-spacing: 8px;
       text-transform: uppercase;
+      @media screen and (max-width: $break-mobile) {
+        font-size: 1.5em;
+      }
+      @media screen and (max-width: $break-xsmall) {
+        font-size: 1.2em;
+        letter-spacing: 4px;
+        padding-top: 80px;
+      }
     }
     .holder{
       padding-top: 200px;
       display: flex;
       justify-content: space-between;
+      @media screen and (max-width: $break-large) {
+        padding-top: 100px;
+      }
+      @media screen and (max-width: $break-mobile) {
+        padding-top: 40px;
+      }
+      @media screen and (max-width: $break-xsmall) {
+        padding-top: 0px;
+      }
       .left-items{
         padding-left: 150px;
+        @media screen and (max-width: $break-medium) {
+          padding-left: 60px;
+        }
+        @media screen and (max-width: $break-mobile) {
+          width: 100%;
+          padding-left: 20px;
+        }
       }
       .right-items{
         padding-right: 60px;
         padding-top: 36px;
+        @media screen and (max-width: $break-medium) {
+          display: none;
+        }
         .right-item{
           display: flex;
           align-items: center;
@@ -75,5 +115,10 @@
       margin-top: 80px;
       text-align: center;
       text-decoration: none;
+      @media screen and (max-width: $break-mobile) {
+        width: unset;
+        margin: 0 auto;
+        margin-top: 60px;
+      }
     }
   }

@@ -10,6 +10,12 @@
     font-family: ProximaNova-SemiBold;
     src: url("/static/fonts/ProximaNova-Semibold.otf");
   }
+$break-xsmall: 400px;
+$break-small: 576px;
+$break-mobile:768px;
+$break-medium: 992px;
+$break-large: 1200px;
+$break-xarge: 1400px;
 
   .steps{
       background-image: url("/static/images/steps/background.png");
@@ -21,6 +27,14 @@
       color:white; 
       letter-spacing: 8px;
       text-transform: uppercase;
+      @media screen and (max-width: $break-mobile) {
+        font-size: 1.5em;
+        letter-spacing: 4px;
+      }
+      @media screen and (max-width: $break-xsmall) {
+        font-size: 1.2em;
+        letter-spacing: 4px;
+      }
     }
     img{
         width: 100%;
@@ -28,6 +42,9 @@
     .image-holder{
       position: relative;
       margin-top: 100px;
+      @media screen and (max-width: $break-mobile) {
+        margin-top: 60px;
+      }
       .img-text{
         color: #6cfc9f;
         text-transform: uppercase;
@@ -37,14 +54,86 @@
       .img-text-1{
         top: 86px;
         right: 160px;
+        @media screen and (max-width: $break-large) {
+          top: 68px;
+          right: 120px;
+        }
+        @media screen and (max-width: $break-medium) {
+          top: 52px;
+          right: 74px;
+          font-size: 0.8em;
+        }
+        @media screen and (max-width: $break-mobile) {
+          top: 40px;
+          right: 48px;
+          font-size: 0.6em;
+        }
+        @media screen and (max-width: 560px) {
+          top: 34px;
+          right: 20px;
+          font-size: 0.6em;
+        }
+        @media screen and (max-width: $break-xsmall) {
+          top: 20px;
+          right: -4px;
+          font-size: 0.5em;
+        }
       }
       .img-text-2{
         bottom: 40px;
         right: 200px;
+        @media screen and (max-width: $break-large) {
+          bottom: 28px;
+          right: 154px;
+        }
+        @media screen and (max-width: $break-medium) {
+          bottom: 16px;
+          right: 98px;
+          font-size: 0.8em;
+        }
+        @media screen and (max-width: $break-mobile) {
+          bottom: 6px;
+          right: 68px;
+          font-size: 0.6em;
+        }
+        @media screen and (max-width: 560px) {
+          bottom: 6px;
+          right: 48px;
+          font-size: 0.6em;
+        }
+        @media screen and (max-width: $break-xsmall) {
+          top: 160px;
+          right: 6px;
+          font-size: 0.5em;
+        }
       }
       .img-text-3{
         top: 308px;
         left: 60px;
+        @media screen and (max-width: $break-large) {
+          top: 256px;
+          left: 56px;
+        }
+        @media screen and (max-width: $break-medium) {
+          top: 190px;
+          left: 22px;
+          left: -7px;
+        }
+        @media screen and (max-width: $break-mobile) {
+          font-size: 0.6em;
+          top: 138px;
+          left: 16px;
+        }
+        @media screen and (max-width: 560px) {
+          top: 123px;
+          left: 0px;
+          font-size: 0.6em;
+        }
+        @media screen and (max-width: $break-xsmall) {
+          top: 80px;
+          left: -16px;
+          font-size: 0.5em;
+        }
       }
     }
     .items_holder{

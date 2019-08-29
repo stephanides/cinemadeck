@@ -6,22 +6,52 @@
   font-family: ProximaNova-Bold;
   src: url("/static/fonts/ProximaNova-Bold.otf");
 }
+$break-xsmall: 400px;
+$break-small: 576px;
+$break-mobile:768px;
+$break-medium: 992px;
+$break-large: 1200px;
+$break-xarge: 1400px;
+
 
 #header{
     background-color: #1c1c20;
     height: 920px;
-    margin-top: -100px;
     overflow: hidden;
-
+    position: relative;
+    @media screen and (max-width: $break-medium) {
+      height: unset;
+      margin: 0;
+      padding-top: 100px;
+    }
+    .container-fluid{
+      @media screen and (max-width: $break-medium) {
+        padding: 0;
+      }
+    }
     img{
         position: absolute;
         right: 0px;
+        @media screen and (max-width: $break-large) {
+          right: -300px;
+        }
+        @media screen and (max-width: $break-medium) {
+          width: 100%;
+          position: relative;
+          right: 0px;
+        }
     }
     .text_holder{
       padding-top: 195px;
       padding-left: 35px;
       z-index: 2;
       position: relative;
+      @media screen and (max-width: $break-medium) {
+        padding-top: 0;
+        margin-top: -40px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
     p{
       font-family: ProximaNova-Regular;
@@ -29,6 +59,12 @@
       font-size: 0.95em;
       text-transform: uppercase;
       letter-spacing: 2px;
+      @media screen and (max-width: $break-mobile) {
+        margin-top: 20px;
+      }
+      @media screen and (max-width: $break-xsmall) {
+        font-size: 0.7em;
+      }
     }
     h3{
       font-family: 'Open Sans', sans-serif;
@@ -36,13 +72,20 @@
       color: #d4d9e2;
       font-weight: 300;
       width: 550px;
+      @media screen and (max-width: $break-mobile) {
+        width: unset;
+        font-size: 1.5em;
+      }
+      @media screen and (max-width: $break-xsmall) {
+        font-size: 1.2em;
+      }
       strong{
         color:white;
         font-weight: 600;
       }
     }
-    button{
-      background-color: #0098d8;
+    a{
+      background-color: #37baf1;
       color: white;
       font-family: ProximaNova-Regular;
       font-size: 1em;
@@ -60,5 +103,7 @@
       box-shadow: 0px 0px 8px 0px darkgrey;
       z-index: 2;
       position: relative;
+      width: 235px;
+      text-decoration: none;
     }
 }

@@ -16,6 +16,7 @@ import Refund from './components/Refund';
 import FAQ from './components/FAQ';
 import Author from './components/Author';
 import Footer from './components/Footer';
+import Slideshow from './components/Slideshow';
 
 const IndexPage = graphql(
   getLocaleQuery, { name: 'getLocale' },
@@ -28,6 +29,7 @@ const IndexPage = graphql(
     <About lang={lang} />
     <Unique lang={lang} />
     <Content lang={lang} />
+    <Slideshow lang={lang} />
     <CardComposition lang={lang} />
     <FreeDownload lang={lang} />
     <Steps lang={lang} />

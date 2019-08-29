@@ -4,6 +4,7 @@ import './scss/faq.scss';
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import localisation from '../../../../app-data/shared/localisation/FAQ';
 import Question from './components/Question';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
@@ -52,7 +53,7 @@ const FAQ = ({ lang }) => (
           />
         </div>
         <Row className="faq-items" id="faq-items">
-          <Col className="col-md-5ths">
+          <Col className="col-md-5ths" xs="12">
             <div className="faq-item">
               <h6>PRINT DATA</h6>
               <div className="img-holder">
@@ -60,7 +61,7 @@ const FAQ = ({ lang }) => (
               </div>
             </div>
           </Col>
-          <Col className="col-md-5ths">
+          <Col className="col-md-5ths" xs="12">
             <div className="faq-item">
               <h6>MOBILE PDF</h6>
               <div className="img-holder">
@@ -68,7 +69,7 @@ const FAQ = ({ lang }) => (
               </div>
             </div>
           </Col>
-          <Col className="col-md-5ths">
+          <Col className="col-md-5ths" xs="12">
             <div className="faq-item">
               <h6>TITLE PRESETS</h6>
               <div className="img-holder">
@@ -76,7 +77,7 @@ const FAQ = ({ lang }) => (
               </div>
             </div>
           </Col>
-          <Col className="col-md-5ths">
+          <Col className="col-md-5ths" xs="12">
             <div className="faq-item">
               <h6>CHECKLIST</h6>
               <div className="img-holder">
@@ -84,7 +85,7 @@ const FAQ = ({ lang }) => (
               </div>
             </div>
           </Col>
-          <Col className="col-md-5ths">
+          <Col className="col-md-5ths" xs="12">
             <div className="faq-item">
               <h6>GUIDE</h6>
               <div className="img-holder">
@@ -99,7 +100,9 @@ const FAQ = ({ lang }) => (
             {localisation[lang].packagePrice}
             <span className="currency">{localisation[lang].packageCurrency}</span>
           </p>
-          <button type="button">{localisation[lang].buyCinemaDeck}</button>
+          <Link href="/eshop">
+            <a>{localisation[lang].buyCinemaDeck}</a>
+          </Link>
         </div>
       </CustomContainer>
     </Container>

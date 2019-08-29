@@ -10,10 +10,20 @@
   font-family: ProximaNova-SemiBold;
   src: url("/static/fonts/ProximaNova-Semibold.otf");
 }
+$break-xsmall: 400px;
+$break-small: 576px;
+$break-mobile:768px;
+$break-medium: 992px;
+$break-large: 1200px;
+$break-xarge: 1400px;
 
 .package{
   padding-top: 120px;
   padding-bottom: 120px;
+  @media screen and (max-width: $break-mobile) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   h2{
     color:#2f3438;
     font-family: ProximaNova-Bold;
@@ -21,6 +31,10 @@
     letter-spacing: 8px;
     padding-bottom: 80px;
     text-align: center;
+    @media screen and (max-width: $break-mobile) {
+      font-size: 1.5em;
+      padding-bottom: 40px;
+    }
   }
   h6{
     font-family: ProximaNova-Regular;
@@ -33,6 +47,9 @@
     margin: 0 auto;
     display: block;
     width: 95%;
+    @media screen and (max-width: $break-large) {
+      width: 80%;
+    }
   }
   .unique-img{
     left: -12px;
@@ -41,6 +58,13 @@
   .presets-img{
     left: -60px;
     position: relative;
+    @media screen and (max-width: $break-mobile) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    @media screen and (max-width: $break-xsmall) {
+      left: -40px;
+    }
   }
   .text-header{
     font-family: ProximaNova-Bold;
@@ -62,6 +86,10 @@
     position: relative;
     display: flex;
     align-items: center;
+    @media screen and (max-width: $break-mobile) {
+      display: block;
+      height: unset;
+    }
   }
   .pdf-icon{
     position: absolute;
@@ -82,6 +110,9 @@
   .img-right{
     position: relative;
     left: 46px;
+    @media screen and (max-width: $break-xsmall) {
+      left: 20px;
+    }
   }
   .buy-package-holder{
     width: 380px;
@@ -91,6 +122,10 @@
     margin: 0 auto;
     position: relative;
     margin-top: 40px;
+    @media screen and (max-width: $break-xsmall) {
+      width: 260px;
+      height: 200px;
+    }
     .text-complete{
       font-family: ProximaNova-Regular;
       color:black;
@@ -99,6 +134,9 @@
       font-size: 0.7em;
       text-align: center;
       padding-top: 30px;
+      @media screen and (max-width: $break-xsmall) {
+        font-size: 0.55em;
+      }
     }
     .price{
       font-family: ProximaNova-Bold;
@@ -112,7 +150,7 @@
         top:7px;
       }
     }
-    button{
+    a{
       background-color: #0094d2;
       color: white;
       font-family: ProximaNova-Regular;
@@ -130,6 +168,12 @@
       text-align: center;
       text-decoration: none;
       text-transform: uppercase;
+      @media screen and (max-width: $break-xsmall) {
+        width: 220px;
+        top: -10px;
+        position: relative;
+        font-size: 0.7em;
+      }
       &:hover{
         background-color: #37baf1;
         box-shadow: 0px 0px 7px 0px #b8d6f7;

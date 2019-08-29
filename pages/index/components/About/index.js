@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/no-danger */
 import './scss/about.scss';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
@@ -17,6 +18,7 @@ const About = ({ lang }) => (
       <CustomContainer>
         <Container>
           <h1 className="text-center" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
+          <img src="/static/images/aboutKarty/spoluKarty.png" alt="Karty CinemaDeck" />
           <p className="text-center mt-text" dangerouslySetInnerHTML={renderDangerHtmlText1(lang)} />
           <p className="text-center mt-4" dangerouslySetInnerHTML={renderDangerHtmlText2(lang)} />
         </Container>

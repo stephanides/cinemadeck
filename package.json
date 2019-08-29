@@ -44,6 +44,7 @@
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-apollo": "^2.5.8",
     "react-dom": "^16.8.6",
+    "react-image-gallery": "^0.9.1",
     "reactstrap": "^8.0.1",
     "styled-components": "^4.3.2"
   },
