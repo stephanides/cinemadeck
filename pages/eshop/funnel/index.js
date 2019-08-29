@@ -25,15 +25,21 @@ const Funnel = compose(
         lang={lang}
         data={{
           title: locale[lang].lightLikeProTitle,
+          image: '/static/images/LIGHT-PRO.png',
           price: 7,
           productTitle: 'Light Like Pro',
           content: locale[lang].lightLikeProContent,
+          extraContent: {
+            infoLine: 'Jak funguje light like pro s kartama cinemadeck',
+            infoContent: 'adlka;dlkas;ldka; aslkjdasldjsaljk lkasjdlkasjd lkjasdasdlkjasd ljkasdlk lkjasdlk',
+          },
         }}
       />
       <Product
         lang={lang}
         data={{
           title: locale[lang].lightLikeProTitle,
+          image: '/static/images/SOUND-PRO.png',
           price: 7,
           productTitle: 'Sound Like Pro',
           content: locale[lang].lightLikeProContent,

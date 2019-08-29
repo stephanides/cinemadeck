@@ -1,15 +1,21 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-danger */
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Row } from 'reactstrap';
 import { graphql } from 'react-apollo';
-import { addProductToCartMutation } from '../../../../../app-data/graphql/mutation';
 import PropTypes from 'prop-types';
+import { addProductToCartMutation } from '../../../../../app-data/graphql/mutation';
 
 import locale from '../../../../../app-data/shared/localisation/eshop/funnel';
 
 const Product = graphql(
   addProductToCartMutation,
-)(({ data: { content, price, productTitle, title }, lang, mutate }) => {
+)(({
+  data: {
+    content, extraContent, image, price, productTitle, title,
+  }, lang, mutate,
+}) => {
+  const [infoShow, toggleInfo] = useState(false);
   const handleAddProductToCart = async (product) => {
     try {
       await mutate({ variables: { product } });
@@ -20,18 +26,31 @@ const Product = graphql(
 
   return (
     <Row className="mb-5">
-      <Col md="4" lg="4">
+      <Col sm="12" md="6" lg="4">
         <aside>
-          <img src="/static/images/LIGHT-PRO.png" alt="" />
+          <img src={image} alt="" />
         </aside>
       </Col>
-      <Col md="8" lg="8">
+      <Col sm="12" md="6" lg="8">
         <h3>{title}</h3>
         <p className="font-weight-lighter" dangerouslySetInnerHTML={{ __html: content }} />
         {
-          /* <p>
-            <button></button>
-          </p> */
+          (extraContent && extraContent.infoLine && extraContent.infoContent) && (
+            <div>
+              <p>
+                <button
+                  className={infoShow ? 'infoLink down' : 'infoLink up'}
+                  type="button"
+                  onClick={() => toggleInfo(!infoShow)}
+                >
+                  {extraContent.infoLine}
+                </button>
+              </p>
+              <div className={infoShow ? 'd-block' : 'd-none'}>
+                <p dangerouslySetInnerHTML={{ __html: extraContent.infoContent }} />
+              </div>
+            </div>
+          )
         }
         <div className="price-add-to-cart-container d-flex pt-3">
           <div>
@@ -81,6 +100,35 @@ const Product = graphql(
                 width: 265px;
                 letter-spacing: .15rem;
               }
+              .show {
+                opacity: 1;
+              }
+              .infoLink {
+                border: 0;
+                background-color: transparent;
+                color: #00bcf5;
+                outline: none;
+                padding-left: 40px; 
+                position: relative;
+              }
+              .up:before {
+                content: '\\2228';
+                border: 2px solid #00bcf5;
+                border-radius: 50%;
+                height: 25px;
+                left: 0;
+                position: absolute;
+                width:25px;
+              }
+              .down:before {
+                content: '\\2227';
+                border: 2px solid #00bcf5;
+                border-radius: 50%;
+                height: 25px;
+                left: 0;
+                position: absolute;
+                width:25px;
+              }
             `
           }
         </style>
@@ -92,6 +140,11 @@ const Product = graphql(
 Product.propTypes = {
   data: PropTypes.shape({
     content: PropTypes.string,
+    extraContent: PropTypes.shape({
+      infoLine: PropTypes.string,
+      infoContent: PropTypes.string,
+    }),
+    image: PropTypes.string,
     price: PropTypes.number,
     productTitle: PropTypes.string,
     title: PropTypes.string,
