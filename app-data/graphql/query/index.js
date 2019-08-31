@@ -17,3 +17,13 @@ export const getProductsFromCart = gql`
     }
   }
 `;
+
+export const getModalQuery = gql`
+  query {
+    modal @client {
+      content
+      error
+      visible
+    }
+  }
+`;

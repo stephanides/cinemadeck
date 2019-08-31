@@ -39,3 +39,26 @@ export const removeProductFromCartMutation = gql`
     }
   }
 `;
+
+export const loginUserMutation = gql`
+  mutation loginUser($user: UserLogInput) {
+    loginUser(user: $user) {
+      _id
+      approved
+      firstName
+      jwt
+      lastName
+      role
+    }
+  }
+`;
+
+export const toggleModalMutation = gql`
+  mutation toggleModal($modal: ModalInput!) {
+    toggleModal(modal: $modal) @client {
+      content
+      error
+      visible
+    }
+  }
+`;

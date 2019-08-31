@@ -5,9 +5,9 @@ import resolvers from './resolvers';
 import data from './state';
 import typeDefs from './typeDefs';
 
-const domain = 'localhost';
-const protocol = 'http';
-const port = 3003;
+const domain = process.env.NODE_ENV === 'production' ? 'cinemadeck.codebrothers.sk' : 'localhost';
+const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
+const port = 3004;
 
 const customFetch = (uri, options) => {
   const token = getCookie('jwt', options);
@@ -23,7 +23,7 @@ const customFetch = (uri, options) => {
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  uri: `${protocol}://${domain}:${port}/api`,
+  uri: process.env.NODE_ENV === 'production' ? `${protocol}://${domain}/api` : `${protocol}://${domain}:${port}/api`,
   fetch: customFetch,
   resolvers,
   typeDefs,

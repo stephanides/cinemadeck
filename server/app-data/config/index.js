@@ -1,5 +1,5 @@
 module.exports = {
-  dbName: 'react-next-template',
+  dbName: 'cinemadeck',
   superAdmin: {
     superAdminEmail: 'info@codebrothers.sk',
     superAdminFirstName: 'Admin',

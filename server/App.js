@@ -1,10 +1,12 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
+const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const nextjsApp = require('next');
 const typeDefs = require('./app-data/grapqhl/typeDefs');
 const resolvers = require('./app-data/grapqhl/resolvers');
 const db = require('./app-data/db');
+const setup = require('./app-data/setup');
 
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = nextjsApp({ dev });
@@ -18,34 +20,33 @@ const App = async () => {
     const app = express();
 
     app.use(helmet());
+    app.use(bodyParser.json({ limit: '5mb', extended: true }));
 
     const server = new ApolloServer({
       context: async ({ req }) => {
-        try {
-          if (req) {
-            const token = req.headers['x-access-token'];
+        if (req) {
+          const token = req.headers['x-access-token'];
 
-            return { token };
-          }
-
-          return null;
-        } catch (err) {
-          throw err;
+          return { token };
         }
+
+        return null;
       },
       typeDefs,
       resolvers,
-      playground: {
+      introspection: !dev,
+      playground: dev ? ({
         endpoint: 'graphiql',
         settings: {
           'editor.theme': 'light',
         },
-      },
+      }) : true,
     });
 
     server.applyMiddleware({ app, path: '/api' });
 
     await db();
+    await setup();
 
     // Routes
     app.get('*', (req, res) => handle(req, res));

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const { dbName } = require('../config');
+
 const MONGO_URL = `mongodb://localhost:27017/${dbName}`; // production
 
 const mongoStart = async () => {
