@@ -127,6 +127,15 @@ const ShoppingCart = compose(
           </Row>
           <Row />
         </form>
+        <style jsx>
+          {
+            `
+              form {
+                margin-top: 100px;
+              }
+            `
+          }
+        </style>
       </Container>
       <Footer />
     </Layout>

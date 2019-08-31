@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./server/index.js",
+    "dev": "nodemon ./server/cinemadeck.js",
     "build": "next build",
     "start": "next start",
+    "production": "NODE_ENV=production forever start ./server/cinemadeck.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

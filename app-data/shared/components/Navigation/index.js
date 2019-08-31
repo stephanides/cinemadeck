@@ -50,7 +50,7 @@ const Navigation = graphql(
             isTop ? 'fixed-top background' : 'fixed-top scroll_background'
           )
           : (
-            isCart ? 'fixed-top' : 'fixed-top bg-white'
+            isCart ? 'fixed-top' : 'fixed-top bg-white navbar-light'
           )
       }
       expand="md"
@@ -71,9 +71,11 @@ const Navigation = graphql(
                 type="button"
                 onClick={async () => {
                   try {
-                    await toggleLang({
-                      variables: { lang: lang === 'cz' ? 'en' : 'cz' },
-                    });
+                    if (lang !== 'cz') {
+                      await toggleLang({
+                        variables: { lang: 'cz' },
+                      });
+                    }
                   } catch (err) {
                     console.log(err);
                   }
@@ -85,9 +87,11 @@ const Navigation = graphql(
                 type="button"
                 onClick={async () => {
                   try {
-                    await toggleLang({
-                      variables: { lang: lang === 'cz' ? 'en' : 'cz' },
-                    });
+                    if (lang !== 'en') {
+                      await toggleLang({
+                        variables: { lang: 'en' },
+                      });
+                    }
                   } catch (err) {
                     console.log(err);
                   }

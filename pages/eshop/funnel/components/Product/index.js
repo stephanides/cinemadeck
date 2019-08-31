@@ -27,7 +27,7 @@ const Product = graphql(
   return (
     <Row className="mb-5">
       <Col sm="12" md="6" lg="4">
-        <aside>
+        <aside className="product-image">
           <img src={image} alt="" />
         </aside>
       </Col>
@@ -75,64 +75,68 @@ const Product = graphql(
             {locale[lang].addToCart}
           </button>
         </div>
-        <style jsx>
-          {
-            `
-              .price-add-to-cart-container > div > span {
-                font-size: 5rem;
-              }
-              .price-add-to-cart-container > div > span:first-child {
-                line-height: 70px;
-              }
-              .price-add-to-cart-container > div > span:last-child {
-                font-size: 1rem;
-              }
-              .price-add-to-cart-container > button {
-                background-color: #37baf1;
-                border-radius: .25rem;
-                border: 0;
-                color: #fff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: .85rem;
-                height: 70px;
-                width: 265px;
-                letter-spacing: .15rem;
-              }
-              .show {
-                opacity: 1;
-              }
-              .infoLink {
-                border: 0;
-                background-color: transparent;
-                color: #00bcf5;
-                outline: none;
-                padding-left: 40px; 
-                position: relative;
-              }
-              .up:before {
-                content: '\\2228';
-                border: 2px solid #00bcf5;
-                border-radius: 50%;
-                height: 25px;
-                left: 0;
-                position: absolute;
-                width:25px;
-              }
-              .down:before {
-                content: '\\2227';
-                border: 2px solid #00bcf5;
-                border-radius: 50%;
-                height: 25px;
-                left: 0;
-                position: absolute;
-                width:25px;
-              }
-            `
-          }
-        </style>
       </Col>
+      <style jsx>
+        {
+          `
+            .product-image img {
+              display: block;
+              margin: 0 auto;
+            }
+            .price-add-to-cart-container > div > span {
+              font-size: 5rem;
+            }
+            .price-add-to-cart-container > div > span:first-child {
+              line-height: 70px;
+            }
+            .price-add-to-cart-container > div > span:last-child {
+              font-size: 1rem;
+            }
+            .price-add-to-cart-container > button {
+              background-color: #37baf1;
+              border-radius: .25rem;
+              border: 0;
+              color: #fff;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: .85rem;
+              height: 70px;
+              width: 265px;
+              letter-spacing: .15rem;
+            }
+            .show {
+              opacity: 1;
+            }
+            .infoLink {
+              border: 0;
+              background-color: transparent;
+              color: #00bcf5;
+              outline: none;
+              padding-left: 40px; 
+              position: relative;
+            }
+            .up:before {
+              content: '\\2228';
+              border: 2px solid #00bcf5;
+              border-radius: 50%;
+              height: 25px;
+              left: 0;
+              position: absolute;
+              width:25px;
+            }
+            .down:before {
+              content: '\\2227';
+              border: 2px solid #00bcf5;
+              border-radius: 50%;
+              height: 25px;
+              left: 0;
+              position: absolute;
+              width:25px;
+            }
+          `
+        }
+      </style>
     </Row>
   );
 });

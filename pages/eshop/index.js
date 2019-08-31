@@ -9,7 +9,7 @@ import { initCartMutation } from '../../app-data/graphql/mutation';
 
 import Layout from '../../app-data/shared/components/Layout';
 import Product from './components/Product';
-import Footer from '../../app-data/shared/components/Footer';
+import Footer from '../../app-data/shared/components/eshop/Footer';
 
 import locale from '../../app-data/shared/localisation/eshop';
 
@@ -50,7 +50,7 @@ const EshopPage = compose(
         </div>
         {''}
         <Row>
-          <Col>
+          <Col md="12" lg="4">
             <Product
               lang={lang}
               productData={{
@@ -63,7 +63,7 @@ const EshopPage = compose(
               }}
             />
           </Col>
-          <Col>
+          <Col md="12" lg="4">
             <Product
               lang={lang}
               productData={{
@@ -76,7 +76,7 @@ const EshopPage = compose(
               }}
             />
           </Col>
-          <Col>
+          <Col md="12" lg="4">
             <Product
               lang={lang}
               productData={{
