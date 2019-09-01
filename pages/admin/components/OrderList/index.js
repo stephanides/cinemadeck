@@ -1,8 +1,10 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
+import { ListGroup } from 'reactstrap';
 import { graphql } from 'react-apollo';
 import { getOrdersQuery } from '../../../../app-data/graphql/query';
 import Loader from '../../../../app-data/shared/components/admin/Loader';
+import OrderInfo from './components/OrderInfo';
 
 const OrderList = graphql(
   getOrdersQuery,
@@ -18,15 +20,17 @@ const OrderList = graphql(
     <div>
       {
         orders && orders.length > 0
-          ? orders.map((item) => {
-            console.log(item);
+          ? (
+            <ListGroup>
+              {
+                orders.map((item) => {
+                  const { orderNum } = item;
 
-            return (
-              <p key={item.orderNum}>
-                Order
-              </p>
-            );
-          })
+                  return <OrderInfo data={item} key={orderNum} />;
+                })
+              }
+            </ListGroup>
+          )
           : <p className="text-center">There is no orders yet.</p>
       }
     </div>
