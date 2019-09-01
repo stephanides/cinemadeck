@@ -7,6 +7,31 @@ export const getLocaleQuery = gql`
   }
 `;
 
+export const getOrdersQuery = gql`
+  query {
+    orders {
+      address {
+        city
+        psc
+        state
+        street
+      }
+      currency
+      email
+      name
+      orderNum
+      paymentMethod
+      products {
+        count
+        price
+        title
+        totalPrice
+      }
+      totalPriceToPay
+    }
+  }
+`;
+
 export const getProductsFromCart = gql`
   query {
     cart @client {

@@ -7,6 +7,30 @@ export const toggleLangMutation = gql`
   }
 `;
 
+export const createOrderMutation = gql`
+  mutation createOrder($order: OrderInput) {
+    createOrder(order: $order) {
+      address {
+        city
+        psc
+        state
+        street
+      }
+      currency
+      email
+      name
+      paymentMethod
+      products {
+        count
+        price
+        title
+        totalPrice
+      }
+      totalPriceToPay
+    }
+  }
+`;
+
 export const addProductToCartMutation = gql`
   mutation addProductToCart($product: ProductInput!) {
     addProductToCart(product: $product) @client {

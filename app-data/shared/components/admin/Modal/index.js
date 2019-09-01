@@ -21,6 +21,7 @@ const ModalComponent = compose(
     },
     dispatchToggle,
   } = props;
+
   const toggle = async () => {
     try {
       await dispatchToggle({

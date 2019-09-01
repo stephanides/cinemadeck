@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React from 'react';
-import Link from 'next/link';
 import { compose, graphql } from 'react-apollo';
 import {
   Button, Container, Form, FormGroup, Input,

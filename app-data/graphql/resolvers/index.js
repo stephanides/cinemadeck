@@ -1,14 +1,8 @@
 /* eslint-disable no-underscore-dangle */
-import { getProductsFromCart } from '../query';
+import { getModalQuery, getProductsFromCart } from '../query';
 
 export default {
   Mutation: {
-    toggleLang: (_root, { lang }, { cache }) => {
-      const data = { lang };
-
-      cache.writeData({ data });
-      return lang;
-    },
     addProductToCart: (_root, { product }, { cache }) => {
       const dough = { ...product, totalPrice: product.price, __typename: 'ProductInCart' };
       const { cart } = cache.readQuery({ query: getProductsFromCart });
@@ -98,6 +92,29 @@ export default {
       }
 
       return data;
+    },
+    toggleLang: (_root, { lang }, { cache }) => {
+      const data = { lang };
+
+      cache.writeData({ data });
+      return lang;
+    },
+    toggleModal: (_root, {
+      modal: { content, error, visible },
+    }, { cache }) => {
+      const { modal } = cache.readQuery({ query: getModalQuery });
+
+      const data = {
+        modal: {
+          __typename: 'ModalProps',
+          content: content !== undefined ? content : modal.content,
+          error: error !== undefined ? error : modal.error,
+          visible: visible !== undefined ? visible : modal.visible,
+        },
+      };
+
+      cache.writeData({ data });
+      return null;
     },
   },
 };

@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import './scss/navigation.scss';
 import React from 'react';
 import Link from 'next/link';
 import { Container } from 'reactstrap';
@@ -21,117 +22,23 @@ const Navigation = ({ userName }) => (
             <span>{userName}</span>
           </div>
           <div>
-            <ul>
-              <li>
-                <Link href="/admin/user/settings">
-                  <a>Nastavení</a>
-                </Link>
-              </li>
-            </ul>
+            <div>
+              <ul>
+                <li>
+                  <Link href="/admin/user/settings">
+                    <a>Nastavení</a>
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </li>
         <li className="ml-3">
           <button className="border-0 bg-transparent" type="button" onClick={signOut}>
-            <div className="position-relative">
-              <FontAwesomeIcon icon={faPowerOff} />
-              <div className="position-absolute">Odhlásit se</div>
-            </div>
+            <FontAwesomeIcon icon={faPowerOff} />
           </button>
         </li>
       </ul>
-      <style jsx>
-        {
-          `
-            ul.list-unstyled {
-              z-index: 10;
-            }
-            ul li { font-size: .9rem; }
-            ul li:first-child button {
-              background: transparent;
-              border: 0 none;
-              color: #000;
-              font-weight: 600;
-              padding: 0;
-              outline: none;
-            }
-            ul li:last-child {
-              position: relative;
-            }
-            ul li:last-child > div:first-child {
-              display: block;
-              position: relative;
-            }
-            ul li:last-child > div:last-child {
-              display: none;
-              left: -50%;
-              position: absolute;
-              padding-top: 8px;
-              transform: translateX(20%);
-            }
-            ul li:last-child:hover > div:last-child {
-              display: block;
-              position: absolute;
-              left: 50%;
-              transform: translateX(-50%);
-            }
-            ul li:last-child > div:last-child > div {
-              background-color: #fff;
-              border: 1px solid #ccc;
-              border-radius: .25rem;
-              padding: .5rem .75rem;
-              position: relative;
-            }
-            ul li:last-child > div:last-child > div:before {
-              content: '';
-              height: 0;
-              border-left: 10px solid transparent;
-              border-right: 10px solid transparent;
-              border-bottom: 10px solid #ccc;
-              left: 50%;
-              position: absolute;
-              width: 0;
-              top: -10px;
-              transform: translateX(-50%);
-            }
-            ul li:last-child > div:last-child > div:after {
-              content: '';
-              height: 0;
-              border-left: 10px solid transparent;
-              border-right: 10px solid transparent;
-              border-bottom: 10px solid #fff;
-              left: 50%;
-              position: absolute;
-              width: 0;
-              top: -9px;
-              transform: translateX(-50%);
-            }
-            ul li:last-child img { width: 50px; }
-            ul li:last-child span {
-              bottom: 0;
-              color: #000;
-              font-size: xx-small;
-              left: 0;
-              position: absolute;
-              width: 100%;
-              white-space: nowrap;
-            }
-            ul li:last-child > div:last-child > ul {
-              margin: 0;
-              padding: 0;
-              list-style: none;
-            }
-            ul li:last-child > button .position-absolute {
-              display: none;
-              left: 25px;
-              top: 0;
-              white-space: nowrap;
-            }
-            ul li:last-child > button:hover .position-absolute {
-              display: block;
-            }
-          `
-        }
-      </style>
     </Container>
   </div>
 );

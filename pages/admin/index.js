@@ -5,9 +5,11 @@ import Layout from '../../app-data/shared/components/admin/Layout';
 import { redirectIfNotAuthenticated, getJwt } from '../../app-data/lib/auth';
 import { getCookie } from '../../app-data/lib/auth/session';
 
+import OrderList from './components/OrderList';
+
 const Admin = ({ userName }) => (
   <Layout userName={userName}>
-    <p>Content</p>
+    <OrderList />
   </Layout>
 );
 

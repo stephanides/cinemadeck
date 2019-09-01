@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Col, Row } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import { getLocaleQuery, getProductsFromCart } from '../../../app-data/graphql/query';
-import { initCartMutation } from '../../../app-data/graphql/mutation';
+import { createOrderMutation, initCartMutation } from '../../../app-data/graphql/mutation';
 import Layout from '../../../app-data/shared/components/Layout';
 import ContactInfo from './components/ContactInfo';
 import CartCheckout from './components/CartCheckout';
@@ -26,11 +26,12 @@ const initialState = {
   },
 };
 const ShoppingCart = compose(
+  graphql(createOrderMutation, { name: 'createOrder' }),
   graphql(initCartMutation),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
   graphql(getLocaleQuery, { name: 'getLocale' }),
 )(({
-  cartProducts: { cart }, getLocale: { lang }, mutate,
+  cartProducts: { cart }, createOrder, getLocale: { lang }, mutate,
 }) => {
   const [order, handleOrder] = useState(initialState.order);
 
@@ -57,7 +58,7 @@ const ShoppingCart = compose(
     checkCart();
   }, []);
 
-  const handleSubmitForm = (e) => {
+  const handleSubmitForm = async (e) => {
     e.preventDefault();
 
     const form = e.currentTarget;
@@ -65,6 +66,12 @@ const ShoppingCart = compose(
     if (form.checkValidity() === false) {
       e.stopPropagation();
     } else {
+      const formattedCart = cart.map((item) => {
+        const { __typename, ...reObject } = item;
+
+        return reObject;
+      });
+
       const orderData = {
         ...order,
         name: form.name.value,
@@ -76,11 +83,21 @@ const ShoppingCart = compose(
           psc: form.psc.value,
         },
         email: form.email.value,
-        products: cart,
+        products: formattedCart,
         totalPriceToPay: cart.reduce((a, b) => (a + b.totalPrice), 0),
       };
 
       console.log(orderData);
+
+      try {
+        await createOrder({
+          variables: {
+            order: orderData,
+          },
+        });
+      } catch (err) {
+        console.log(err);
+      }
     }
 
     form.classList.add('was-validated');

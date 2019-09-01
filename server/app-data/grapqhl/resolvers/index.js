@@ -1,13 +1,21 @@
+/* eslint-disable no-nested-ternary */
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const { superSecret } = require('../../config');
 // const uniqid = require('uniqid');
+const { findLastOrderNum } = require('../../lib');
 
+const Order = require('../../db/models/Order');
 const User = require('../../db/models/User');
 
 module.exports = {
   Query: {
+    orders: async () => {
+      const orders = Order.find();
+
+      return orders;
+    },
     user: async (root, { id }) => {
       try {
         const user = await User.findOne({ _id: mongoose.Types.ObjectId(id) });
@@ -32,6 +40,65 @@ module.exports = {
     },
   },
   Mutation: {
+    createOrder: async (root, {
+      order: {
+        address,
+        currency,
+        email,
+        name,
+        paymentMethod,
+        products,
+        totalPriceToPay,
+      },
+    }) => {
+      try {
+        const orderExist = await Order.findOne({
+          email,
+          dateCreated: new Date().toISOString(),
+        });
+
+        if (orderExist) {
+          throw new Error('Allready Exist');
+        }
+
+        const lastOrderNum = await findLastOrderNum();
+
+        const orderNum = lastOrderNum
+          ? new Date().getFullYear() + (
+            (lastOrderNum + 1) > 99
+              ? `${lastOrderNum + 1}`
+              : (
+                (lastOrderNum + 1) > 9
+                  ? `0${lastOrderNum + 1}`
+                  : `00${lastOrderNum + 1}`
+              )
+          ) : `${new Date().getFullYear()}001`;
+
+        await Order.create({
+          address,
+          currency,
+          email,
+          name,
+          orderNum,
+          paymentMethod,
+          products,
+          totalPriceToPay,
+        });
+
+        return {
+          address,
+          currency,
+          email,
+          name,
+          orderNum,
+          paymentMethod,
+          products,
+          totalPriceToPay,
+        };
+      } catch (err) {
+        throw new Error(err.message);
+      }
+    },
     loginUser: async (root, { user: { email, password } }) => {
       try {
         const userExist = await User.findOne({ email });
