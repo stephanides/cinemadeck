@@ -73,6 +73,10 @@ const Package = ({ lang }) => (
             {localisation[lang].packagePrice}
             <span className="currency">{localisation[lang].packageCurrency}</span>
           </p>
+          <p className="miniprice">
+            {localisation[lang].packagePriceLittle}
+            <span className="currency">{localisation[lang].packageCurrencyLittle}</span>
+          </p>
           <Link href="/eshop">
             <a>{localisation[lang].buyCinemaDeck}</a>
           </Link>

@@ -2,7 +2,7 @@
 /* eslint-disable react/no-danger */
 import './scss/faq.scss';
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import localisation from '../../../../app-data/shared/localisation/FAQ';
@@ -53,52 +53,56 @@ const FAQ = ({ lang }) => (
           />
         </div>
         <Row className="faq-items" id="faq-items">
-          <Col lg="3" md="4" xs="12">
+          <div className="column-5">
             <div className="faq-item">
               <h6>PRINT DATA</h6>
               <div className="img-holder">
                 <img src="/static/images/faq/kartaprint.png" alt="" />
               </div>
             </div>
-          </Col>
-          <Col lg="3" md="4" xs="12">
+          </div>
+          <div className="column-5">
             <div className="faq-item">
               <h6>MOBILE PDF</h6>
               <div className="img-holder">
                 <img src="/static/images/faq/kartatelefon.png" alt="" />
               </div>
             </div>
-          </Col>
-          <Col lg="3" md="4" xs="12">
+          </div>
+          <div className="column-5">
             <div className="faq-item">
               <h6>TITLE PRESETS</h6>
               <div className="img-holder">
-                <img className="mt-40" src="/static/images/faq/presets.png" alt="" />
+                <img className="presets" src="/static/images/faq/presets.png" alt="" />
               </div>
             </div>
-          </Col>
-          <Col lg="3" md="4" xs="12">
+          </div>
+          <div className="column-5">
             <div className="faq-item">
               <h6>CHECKLIST</h6>
               <div className="img-holder">
-                <img className="mt-40" src="/static/images/faq/checklist.png" alt="" />
+                <img className="left-small" src="/static/images/faq/checklist.png" alt="" />
               </div>
             </div>
-          </Col>
-          <Col lg="3" md="4" xs="12">
+          </div>
+          <div className="column-5">
             <div className="faq-item">
               <h6>GUIDE</h6>
               <div className="img-holder">
-                <img src="/static/images/faq/guide.png" alt="" />
+                <img className="left-small" src="/static/images/faq/guide.png" alt="" />
               </div>
             </div>
-          </Col>
+          </div>
         </Row>
         <div className="buy-package-holder">
           <p className="text-complete">{localisation[lang].faqPackageText}</p>
           <p className="price">
             {localisation[lang].packagePrice}
             <span className="currency">{localisation[lang].packageCurrency}</span>
+          </p>
+          <p className="miniprice">
+            {localisation[lang].packagePriceLittle}
+            <span className="currency">{localisation[lang].packageCurrencyLittle}</span>
           </p>
           <Link href="/eshop">
             <a>{localisation[lang].buyCinemaDeck}</a>

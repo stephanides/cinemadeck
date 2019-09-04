@@ -105,5 +105,9 @@ $break-xarge: 1400px;
       position: relative;
       width: 235px;
       text-decoration: none;
+      &:hover{
+        background-color: #0094d2;
+        box-shadow: 0px 0px 7px 0px #82b6f1;
+      }
     }
 }

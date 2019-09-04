@@ -116,7 +116,7 @@ $break-xarge: 1400px;
   }
   .buy-package-holder{
     width: 380px;
-    height: 210px;
+    height: 260px;
     background-color: #f8f8f8;
     display: block;
     margin: 0 auto;
@@ -124,7 +124,7 @@ $break-xarge: 1400px;
     margin-top: 40px;
     @media screen and (max-width: $break-xsmall) {
       width: 260px;
-      height: 200px;
+      height: 240px;
     }
     .text-complete{
       font-family: ProximaNova-Regular;
@@ -144,14 +144,30 @@ $break-xarge: 1400px;
       font-size: 4.5em;
       text-align: center;
       position: relative;
+      margin-bottom: 0px;
       .currency{
         font-size: 14px;
         position: absolute;
         top:7px;
       }
     }
+    .miniprice{
+      font-family: ProximaNova-Bold;
+      color:black;
+      font-size: 1.5em;
+      text-align: center;
+      position: relative;
+      top: -14px;
+      .currency{
+        font-size: 8px;
+        position: absolute;
+        top:6px;
+        padding-left: 2px;
+      }
+    }
     a{
-      background-color: #0094d2;
+      background-color: #37baf1;
+      box-shadow: 0px 0px 7px 0px #b8d6f7;
       color: white;
       font-family: ProximaNova-Regular;
       font-size: 0.9em;
@@ -164,7 +180,6 @@ $break-xarge: 1400px;
       border-radius: 4px;
       margin: 0 auto;
       display: block;
-      box-shadow: 0px 0px 7px 0px #82b6f1;
       text-align: center;
       text-decoration: none;
       text-transform: uppercase;
@@ -175,8 +190,8 @@ $break-xarge: 1400px;
         font-size: 0.7em;
       }
       &:hover{
-        background-color: #37baf1;
-        box-shadow: 0px 0px 7px 0px #b8d6f7;
+        background-color: #0094d2;
+        box-shadow: 0px 0px 7px 0px #82b6f1;
       }
     }
   }

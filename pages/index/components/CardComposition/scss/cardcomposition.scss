@@ -82,7 +82,11 @@ $break-xarge: 1400px;
         position: absolute;
         width: 100%;
         height: 100%;
-        backface-visibility: hidden;
+        -webkit-perspective: 0;
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translate3d(0,0,0);
+    visibility:visible;
+    backface-visibility: hidden;
         box-shadow: 1px 1px 60px 4px #888888;
       }
       .flip-card-front {
