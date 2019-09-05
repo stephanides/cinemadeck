@@ -150,7 +150,7 @@ const Navigation = graphql(
                           <span className="font-weight-bold position-absolute">
                             {
                               cart && cart.length > 0
-                                ? cart.length : <FontAwesomeIcon icon={faGreaterThan} />
+                                ? cart.length : <div className="chevron-icon" />
                             }
                           </span>
                         </div>
