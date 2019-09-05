@@ -45,7 +45,7 @@ const EshopPage = compose(
       isHome={false}
     >
       <Container>
-        <div className="eshop-heading-container d-flex justify-content-center">
+        <div className="eshop-heading-container d-flex align-items-center justify-content-center mt-5">
           <h1 className="text-uppercase text-center mb-0 pt-4">{locale[lang].heading}</h1>
         </div>
         {''}
