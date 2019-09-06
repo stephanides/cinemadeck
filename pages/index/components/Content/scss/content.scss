@@ -78,6 +78,7 @@ $break-xarge: 1400px;
       .right-items{
         padding-right: 30px;
         padding-top: 36px;
+        display: none;
         @media screen and (max-width: $break-medium) {
           display: none;
         }

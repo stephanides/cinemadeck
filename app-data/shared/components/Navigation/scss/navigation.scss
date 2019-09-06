@@ -21,10 +21,15 @@ $break-xarge: 1400px;
 .navigation_holder{
   padding-left: 60px;
   padding-right: 60px;
+  @media screen and (max-width: $break-xarge) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   @media screen and (max-width: $break-large) {
     padding-left: 0px;
     padding-right: 0px;
   }
+  
 }
 .navbar {
   padding: 20px 0;

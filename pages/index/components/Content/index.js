@@ -34,8 +34,8 @@ const Content = ({ lang }) => (
           <Item
             itemData={{
               imageURL: '/static/images/content/icon3.png',
-              header: localisation[lang].contentCol2Header,
-              text: localisation[lang].contentCol2Text,
+              header: localisation[lang].contentCol3Header,
+              text: localisation[lang].contentCol3Text,
             }}
           />
         </div>
