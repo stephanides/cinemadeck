@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-danger */
 import './scss/product.scss';
 import React from 'react';
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { graphql } from 'react-apollo';
@@ -12,7 +14,7 @@ const Product = graphql(
   addProductToCartMutation,
 )(({ mutate, lang, productData }) => {
   const {
-    content, imageURL, price, productTitle, titleOne, titleTwo,
+    content, imageURL, price, productTitle, titleOne, titleTwo, knowMoreUrl,
   } = productData;
 
   const handleAddProductToCart = async (product) => {
@@ -69,7 +71,13 @@ const Product = graphql(
           <FontAwesomeIcon className="ml-2" icon={faShoppingCart} />
         </button>
       </div>
-      <p className="text-center text-blue text-uppercase">{locale[lang].knowMore}</p>
+      <p className="text-center text-blue text-uppercase">
+        <Link href={knowMoreUrl}>
+          <a>
+            {locale[lang].knowMore}
+          </a>
+        </Link>
+      </p>
     </div>
   );
 });
@@ -79,6 +87,7 @@ Product.propTypes = {
     imageURL: PropTypes.string,
     price: PropTypes.number,
     title: PropTypes.string,
+    knowMoreUrl: PropTypes.string,
   }).isRequired,
 };
 

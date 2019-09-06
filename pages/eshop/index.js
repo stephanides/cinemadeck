@@ -45,7 +45,7 @@ const EshopPage = compose(
       isHome={false}
     >
       <Container>
-        <div className="eshop-heading-container d-flex justify-content-center">
+        <div className="eshop-heading-container d-flex align-items-center justify-content-center mt-5">
           <h1 className="text-uppercase text-center mb-0 pt-4">{locale[lang].heading}</h1>
         </div>
         {''}
@@ -60,6 +60,7 @@ const EshopPage = compose(
                 titleOne: locale[lang].cardsTitleOne,
                 titleTwo: locale[lang].cardsTitleTwo,
                 price: 37,
+                knowMoreUrl: '/',
               }}
             />
           </Col>
@@ -73,6 +74,7 @@ const EshopPage = compose(
                 titleOne: locale[lang].lightLikeProTitleOne,
                 titleTwo: locale[lang].lightLikeProTitleTwo,
                 price: 7,
+                knowMoreUrl: '/eshop/funnel',
               }}
             />
           </Col>
@@ -86,6 +88,7 @@ const EshopPage = compose(
                 titleOne: locale[lang].soundLikeProTitleOne,
                 titleTwo: locale[lang].soundLikeProTitleTwo,
                 price: 7,
+                knowMoreUrl: '/eshop/funnel',
               }}
             />
           </Col>
