@@ -49,9 +49,7 @@ const Navigation = graphql(
           ? (
             isTop ? 'fixed-top background' : 'fixed-top scroll_background'
           )
-          : (
-            isCart ? 'fixed-top' : 'fixed-top bg-white navbar-light'
-          )
+          : 'fixed-top bg-white navbar-light'
       }
       expand="md"
     >
@@ -150,7 +148,7 @@ const Navigation = graphql(
                           <span className="font-weight-bold position-absolute">
                             {
                               cart && cart.length > 0
-                                ? cart.length : <div className="chevron-icon" />
+                                ? cart.reduce((a, b) => (a + b.count), 0) : <div className="chevron-icon" />
                             }
                           </span>
                         </div>

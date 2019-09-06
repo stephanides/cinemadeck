@@ -10,33 +10,67 @@ const ContactInfo = ({ lang }) => (
     <h3 className="text-uppercase mb-5">{locale[lang].nameAddressContact}</h3>
     <div className="bg-white p-5">
       <FormGroup>
-        <Input type="text" id="name" name="name" placeholder={locale[lang].namePlaceholder} className="border-0" required />
+        <Input
+          type="text"
+          id="name"
+          name="name"
+          placeholder={locale[lang].namePlaceholder}
+          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+          required
+        />
         <div className="invalid-feedback">
           {locale[lang].nameError}
         </div>
       </FormGroup>
       <FormGroup>
-        <Input type="text" id="street" name="street" placeholder={locale[lang].streetPlaceholder} className="border-0" required />
+        <Input
+          type="text"
+          id="street"
+          name="street"
+          placeholder={locale[lang].streetPlaceholder}
+          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+          required
+        />
         <div className="invalid-feedback">
           {locale[lang].streetError}
         </div>
       </FormGroup>
       <FormGroup row>
         <Col>
-          <Input type="text" id="city" name="city" placeholder={locale[lang].cityPlaceholder} className="border-0" required />
+          <Input
+            type="text"
+            id="city"
+            name="city"
+            placeholder={locale[lang].cityPlaceholder}
+            className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+            required
+          />
           <div className="invalid-feedback">
             {locale[lang].cityError}
           </div>
         </Col>
         <Col>
-          <Input type="text" id="psc" name="psc" placeholder={locale[lang].postCode} className="border-0" required />
+          <Input
+            type="text"
+            id="psc"
+            name="psc"
+            placeholder={locale[lang].postCode}
+            className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+            required
+          />
           <div className="invalid-feedback">
             {locale[lang].postCodeError}
           </div>
         </Col>
       </FormGroup>
       <FormGroup className="pl-1">
-        <Input type="select" id="state" name="state" className="border-0" required>
+        <Input
+          type="select"
+          id="state"
+          name="state"
+          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+          required
+        >
           <option defaultChecked value="">{locale[lang].state}</option>
           <option value="cz">{locale[lang].czechRepublic}</option>
           <option value="sk">{locale[lang].slovakRepublic}</option>
@@ -46,7 +80,14 @@ const ContactInfo = ({ lang }) => (
         </div>
       </FormGroup>
       <FormGroup>
-        <Input type="email" id="email" name="email" placeholder={locale[lang].emailPlaceholder} className="border-0" required />
+        <Input
+          type="email"
+          id="email"
+          name="email"
+          placeholder={locale[lang].emailPlaceholder}
+          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+          required
+        />
         <div className="invalid-feedback">
           {locale[lang].emailError}
         </div>
