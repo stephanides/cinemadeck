@@ -44,7 +44,7 @@ const Product = graphql(
                   onClick={() => toggleInfo(!infoShow)}
                 >
                   <div
-                    className={infoShow ? 'down' : 'up'}
+                    className={infoShow ? 'up' : 'down'}
                   />
                   {extraContent.infoLine}
                 </button>

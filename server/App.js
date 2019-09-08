@@ -34,9 +34,9 @@ const App = async () => {
       },
       typeDefs,
       resolvers,
-      introspection: !dev,
+      introspection: true, // !dev,
       playground: dev ? ({
-        endpoint: 'graphiql',
+        endpoint: 'api', // 'graphiql',
         settings: {
           'editor.theme': 'light',
         },

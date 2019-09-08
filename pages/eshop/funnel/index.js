@@ -51,8 +51,8 @@ const Funnel = compose(
             productTitle: 'Light Like Pro',
             content: locale[lang].lightLikeProContent,
             extraContent: {
-              infoLine: 'Jak funguje light like pro s kartama cinemadeck',
-              infoContent: 'adlka;dlkas;ldka; aslkjdasldjsaljk lkasjdlkasjd lkjasdasdlkjasd ljkasdlk lkjasdlk',
+              infoLine: locale[lang].lightLikeProExtraInfoLine,
+              infoContent: locale[lang].lightLikeProExtraInfoContent,
             },
           }}
         />
