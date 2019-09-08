@@ -39,10 +39,13 @@ const Product = graphql(
             <div>
               <p>
                 <button
-                  className={infoShow ? 'infoLink down' : 'infoLink up'}
+                  className="infoLink"
                   type="button"
                   onClick={() => toggleInfo(!infoShow)}
                 >
+                  <div
+                    className={infoShow ? 'down' : 'up'}
+                  />
                   {extraContent.infoLine}
                 </button>
               </p>
@@ -112,27 +115,66 @@ const Product = graphql(
               border: 0;
               background-color: transparent;
               color: #00bcf5;
+              display: flex;
+              justify-content: space-between;
               outline: none;
-              padding-left: 40px; 
               position: relative;
             }
-            .up:before {
-              content: '\\2228';
+            .infoLink > div {
               border: 2px solid #00bcf5;
               border-radius: 50%;
               height: 25px;
-              left: 0;
+              margin-right: 1rem;
+              position: relative;
+              width: 25px;
+            };
+            .infoLink > div.up:before {
+              border-left: 8px solid transparent;
+              border-right: 8px solid transparent;
+              border-bottom: 8px solid #00bcf5;
+              content: '';
+              height: 0;
               position: absolute;
-              width:25px;
+              width: 0;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
             }
-            .down:before {
-              content: '\\2227';
-              border: 2px solid #00bcf5;
-              border-radius: 50%;
-              height: 25px;
-              left: 0;
+            .infoLink > div.up:after {
+              border-left: 6px solid transparent;
+              border-right: 6px solid transparent;
+              border-bottom: 6px solid #fff;
+              content: '';
+              height: 0;
               position: absolute;
-              width:25px;
+              width: 0;
+              top: calc(50% + 2px);
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+            .infoLink > div.down:before {
+              border-left: 8px solid transparent;
+              border-right: 8px solid transparent;
+              border-top: 8px solid #00bcf5;
+              content: '';
+              height: 0;
+              position: absolute;
+              width: 0;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+            .infoLink > div.down:after {
+              border-left: 6px solid transparent;
+              border-right: 6px solid transparent;
+              border-top: 6px solid #fff;
+              content: '';
+              height: 0;
+              position: absolute;
+              width: 0;
+              top: calc(50% - 2px);
+              left: 50%;
+              transform: translate(-50%, -50%);
             }
           `
         }
