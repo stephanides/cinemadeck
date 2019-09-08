@@ -24,8 +24,8 @@
     "faqPackageText":"complete package cinemadeck",
     "packagePrice":"37",
     "packageCurrency":"EUR",
-    "packagePriceLittle":"950",
-    "packageCurrencyLittle":"CZK",
+    "packagePriceLittle":"",
+    "packageCurrencyLittle":"",
     "buyCinemaDeck":"Buy cinemadeck"
   },
   "cz": {

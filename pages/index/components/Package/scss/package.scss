@@ -18,7 +18,7 @@ $break-large: 1200px;
 $break-xarge: 1400px;
 
 .package{
-  padding-top: 120px;
+  padding-top: 60px;
   padding-bottom: 120px;
   @media screen and (max-width: $break-mobile) {
     padding-top: 80px;
@@ -46,9 +46,9 @@ $break-xarge: 1400px;
   img{
     margin: 0 auto;
     display: block;
-    width: 95%;
+    width: 60%;
     @media screen and (max-width: $break-large) {
-      width: 80%;
+      width: 50%;
     }
   }
   .unique-img{
@@ -82,7 +82,7 @@ $break-xarge: 1400px;
     padding-right: 30px;
   }
   .img-holder{
-    height: 566px;
+    height: 420px;
     position: relative;
     display: flex;
     align-items: center;
@@ -109,7 +109,7 @@ $break-xarge: 1400px;
   }
   .img-right{
     position: relative;
-    left: 46px;
+    left: 26px;
     @media screen and (max-width: $break-xsmall) {
       left: 20px;
     }

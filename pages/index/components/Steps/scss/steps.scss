@@ -81,24 +81,24 @@ $break-xarge: 1400px;
       }
       .img-text-2{
         bottom: 40px;
-        right: 200px;
+        right: 188px;
         @media screen and (max-width: $break-large) {
           bottom: 28px;
-          right: 154px;
+          right: 132px;
         }
         @media screen and (max-width: $break-medium) {
           bottom: 16px;
-          right: 98px;
+          right: 86px;
           font-size: 0.8em;
         }
         @media screen and (max-width: $break-mobile) {
           bottom: 6px;
-          right: 68px;
+          right: 64px;
           font-size: 0.6em;
         }
         @media screen and (max-width: 560px) {
           bottom: 6px;
-          right: 48px;
+          right: 32px;
           font-size: 0.6em;
         }
         @media screen and (max-width: $break-xsmall) {
