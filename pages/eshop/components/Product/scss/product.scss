@@ -51,6 +51,10 @@
   p {
     &.text-blue {
       color: #37baf1;
+
+      a {
+        color: #37baf1;
+      }
     }
     &:last-child {
       font-size: .85rem;

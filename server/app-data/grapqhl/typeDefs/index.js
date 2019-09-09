@@ -14,6 +14,7 @@ const typeDefs = gql`
     currency: String!
     email: String!
     name: String!
+    note: String
     paymentMethod: Int!
     products: [OrderedProductInput]!
     totalPriceToPay: Float!
@@ -45,6 +46,7 @@ const typeDefs = gql`
     currency: String!
     email: String!
     name: String!
+    note: String
     paymentMethod: Int!
     orderNum: String!,
     products: [OrderedProduct]!

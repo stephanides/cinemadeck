@@ -92,6 +92,16 @@ const ContactInfo = ({ lang }) => (
           {locale[lang].emailError}
         </div>
       </FormGroup>
+
+      <FormGroup>
+        <Input
+          type="text"
+          id="note"
+          name="note"
+          placeholder={locale[lang].notePlaceHolder}
+          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+        />
+      </FormGroup>
     </div>
     <style jsx>
       {

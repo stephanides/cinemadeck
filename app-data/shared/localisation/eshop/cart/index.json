@@ -27,7 +27,8 @@
     "cartIsEmpty": "The cart is empty.",
     "paymentCard": "Credit card",
     "payPal": "PayPal",
-    "bankTransfer": "Bank transfer"
+    "bankTransfer": "Bank transfer",
+    "notePlaceHolder": "Note"
   },
   "cz": {
     "billingDataToFill": "Vyplňte prosím vaše fakturační Údaje",
@@ -57,6 +58,7 @@
     "cartIsEmpty": "Košík je prázdny.",
     "paymentCard": "Platební karta",
     "payPal": "PayPal",
-    "bankTransfer": "Bankovní prevod"
+    "bankTransfer": "Bankovní prevod",
+    "notePlaceHolder": "Poznámka"
   }
 }

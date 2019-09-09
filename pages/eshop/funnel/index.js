@@ -1,3 +1,4 @@
+import './scss/funnel.scss';
 import React, { useEffect } from 'react';
 import { Container } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
@@ -38,45 +39,38 @@ const Funnel = compose(
       lang={lang}
       isHome={false}
     >
-      <Container>
-        <div className="funnel-heading-container">
-          <h2 className="text-uppercase pt-1 pb-5 mb-5">{locale[lang].funnelTitle}</h2>
-        </div>
-        <Product
-          lang={lang}
-          data={{
-            title: locale[lang].lightLikeProTitle,
-            image: '/static/images/LIGHT-PRO.png',
-            price: 7,
-            productTitle: 'Light Like Pro',
-            content: locale[lang].lightLikeProContent,
-            extraContent: {
-              infoLine: 'Jak funguje light like pro s kartama cinemadeck',
-              infoContent: 'adlka;dlkas;ldka; aslkjdasldjsaljk lkasjdlkasjd lkjasdasdlkjasd ljkasdlk lkjasdlk',
-            },
-          }}
-        />
-        <Product
-          lang={lang}
-          data={{
-            title: locale[lang].lightLikeProTitle,
-            image: '/static/images/SOUND-PRO.png',
-            price: 7,
-            productTitle: 'Sound Like Pro',
-            content: locale[lang].lightLikeProContent,
-          }}
-        />
-        <Footer lang={lang} />
-      </Container>
-      <style jsx>
-        {
-          `
-            .funnel-heading-container h2 {
-              letter-spacing: .25rem;
-            }
-          `
-        }
-      </style>
+      <div className="funnel">
+        <Container>
+          <div className="funnel-heading-container">
+            <h2 className="text-uppercase text-center pt-5 pb-5 mb-5">{locale[lang].funnelTitle}</h2>
+          </div>
+          <Product
+            lang={lang}
+            data={{
+              title: locale[lang].lightLikeProTitle,
+              image: '/static/images/LIGHT-PRO.png',
+              price: [180, 7],
+              productTitle: 'Light Like Pro',
+              content: locale[lang].lightLikeProContent,
+              extraContent: {
+                infoLine: locale[lang].lightLikeProExtraInfoLine,
+                infoContent: locale[lang].lightLikeProExtraInfoContent,
+              },
+            }}
+          />
+          <Product
+            lang={lang}
+            data={{
+              title: locale[lang].soundLikeProTitle,
+              image: '/static/images/SOUND-PRO.png',
+              price: [180, 7],
+              productTitle: 'Sound Like Pro',
+              content: locale[lang].soundLikeProContent,
+            }}
+          />
+          <Footer lang={lang} />
+        </Container>
+      </div>
     </Layout>
   );
 });

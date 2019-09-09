@@ -1,4 +1,4 @@
-// import './scss/eshop.scss';
+import './scss/eshop.scss';
 import React, { useEffect } from 'react';
 import {
   Container, Col, Row,
@@ -45,7 +45,7 @@ const EshopPage = compose(
       isHome={false}
     >
       <Container>
-        <div className="eshop-heading-container d-flex align-items-center justify-content-center mt-5">
+        <div className="eshop-heading-container d-flex align-items-center justify-content-center mt-5 mb-5">
           <h1 className="text-uppercase text-center mb-0 pt-4">{locale[lang].heading}</h1>
         </div>
         {''}
@@ -59,7 +59,7 @@ const EshopPage = compose(
                 productTitle: 'Cards',
                 titleOne: locale[lang].cardsTitleOne,
                 titleTwo: locale[lang].cardsTitleTwo,
-                price: 37,
+                price: [950, 37],
                 knowMoreUrl: '/',
               }}
             />
@@ -73,7 +73,7 @@ const EshopPage = compose(
                 productTitle: 'Light Like Pro',
                 titleOne: locale[lang].lightLikeProTitleOne,
                 titleTwo: locale[lang].lightLikeProTitleTwo,
-                price: 7,
+                price: [180, 7],
                 knowMoreUrl: '/eshop/funnel',
               }}
             />
@@ -87,23 +87,14 @@ const EshopPage = compose(
                 productTitle: 'Sound Like Pro',
                 titleOne: locale[lang].soundLikeProTitleOne,
                 titleTwo: locale[lang].soundLikeProTitleTwo,
-                price: 7,
+                price: [180, 7],
                 knowMoreUrl: '/eshop/funnel',
               }}
             />
           </Col>
         </Row>
-        <style jsx>
-          {
-            `
-              .eshop-heading-container {
-                min-height: 210px;
-              }
-            `
-          }
-        </style>
+        <Footer lang={lang} />
       </Container>
-      <Footer lang={lang} />
     </Layout>
   );
 });

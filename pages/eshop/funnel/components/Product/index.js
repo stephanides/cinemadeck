@@ -25,50 +25,52 @@ const Product = graphql(
   };
 
   return (
-    <Row className="mb-5">
+    <Row className="mb-5 pb-5">
       <Col sm="12" md="6" lg="4">
         <aside className="product-image">
           <img src={image} alt="" />
         </aside>
       </Col>
       <Col sm="12" md="6" lg="8">
-        <h3>{title}</h3>
+        <h3 className="text-uppercase">{title}</h3>
         <p className="font-weight-lighter" dangerouslySetInnerHTML={{ __html: content }} />
         {
           (extraContent && extraContent.infoLine && extraContent.infoContent) && (
             <div>
-              <p>
+              <p className="font-weight-lighter">
                 <button
                   className="infoLink"
                   type="button"
                   onClick={() => toggleInfo(!infoShow)}
                 >
                   <div
-                    className={infoShow ? 'down' : 'up'}
+                    className={infoShow ? 'up' : 'down'}
                   />
                   {extraContent.infoLine}
                 </button>
               </p>
               <div className={infoShow ? 'd-block' : 'd-none'}>
-                <p dangerouslySetInnerHTML={{ __html: extraContent.infoContent }} />
+                <p className="font-weight-lighter" dangerouslySetInnerHTML={{ __html: extraContent.infoContent }} />
               </div>
             </div>
           )
         }
         <div className="price-add-to-cart-container d-flex pt-3">
           <div>
-            <span className="font-weight-bold align-top">7</span>
+            <span className="font-weight-bold align-top">
+              {lang === 'cz' ? `${price[0]}/${price[1]}` : price[1]}
+            </span>
             <span className="font-weight-lighter align-top">
-              EUR
+              {lang === 'cz' ? 'CZK/EUR' : 'EUR'}
             </span>
           </div>
           <button
             type="button"
-            className="ml-4 text-uppercase"
+            className="ml-4 text-uppercase add-to-cart-button"
             onClick={() => {
               const product = {
                 count: 1,
-                price,
+                price: lang === 'cz' ? price[0] : price[1],
                 title: productTitle,
               };
 
@@ -107,6 +109,9 @@ const Product = graphql(
               height: 70px;
               width: 265px;
               letter-spacing: .15rem;
+            }
+            .price-add-to-cart-container > button:hover {
+              background-color: #0098d8;
             }
             .show {
               opacity: 1;
@@ -191,7 +196,7 @@ Product.propTypes = {
       infoContent: PropTypes.string,
     }),
     image: PropTypes.string,
-    price: PropTypes.number,
+    price: PropTypes.arrayOf(PropTypes.number),
     productTitle: PropTypes.string,
     title: PropTypes.string,
   }).isRequired,
