@@ -20,6 +20,7 @@ const initialState = {
     currency: 'EUR',
     email: '',
     name: '',
+    note: '',
     paymentMethod: 0,
     products: [],
     totalPriceToPay: 0,
@@ -84,6 +85,7 @@ const ShoppingCart = compose(
         },
         email: form.email.value,
         products: formattedCart,
+        note: form.note.value,
         totalPriceToPay: cart.reduce((a, b) => (a + b.totalPrice), 0),
       };
 

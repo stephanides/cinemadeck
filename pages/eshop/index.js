@@ -1,4 +1,4 @@
-// import './scss/eshop.scss';
+import './scss/eshop.scss';
 import React, { useEffect } from 'react';
 import {
   Container, Col, Row,
@@ -45,7 +45,7 @@ const EshopPage = compose(
       isHome={false}
     >
       <Container>
-        <div className="eshop-heading-container d-flex align-items-center justify-content-center mt-5">
+        <div className="eshop-heading-container d-flex align-items-center justify-content-center mt-5 mb-5">
           <h1 className="text-uppercase text-center mb-0 pt-4">{locale[lang].heading}</h1>
         </div>
         {''}
@@ -93,17 +93,8 @@ const EshopPage = compose(
             />
           </Col>
         </Row>
-        <style jsx>
-          {
-            `
-              .eshop-heading-container {
-                min-height: 210px;
-              }
-            `
-          }
-        </style>
+        <Footer lang={lang} />
       </Container>
-      <Footer lang={lang} />
     </Layout>
   );
 });
