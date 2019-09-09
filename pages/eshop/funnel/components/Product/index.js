@@ -56,7 +56,7 @@ const Product = graphql(
           )
         }
         <div className="price-add-to-cart-container d-flex pt-3">
-          <div>
+          <div className="position-relative">
             <span className="font-weight-bold align-top">
               {lang === 'cz' ? `${price[0]}/${price[1]}` : price[1]}
             </span>
