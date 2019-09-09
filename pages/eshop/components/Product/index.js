@@ -41,10 +41,14 @@ const Product = graphql(
             dangerouslySetInnerHTML={{ __html: titleOne }}
           />
           <span className="font-weight-bold">
-            {price}
+            {
+              lang === 'cz' ? `${price[0]}/${price[1]}` : price[1]
+            }
             {''}
             <small className="align-top text-uppercase mt-1 ml-1">
-              eur
+              {
+                lang === 'cz' ? 'czk/eur' : 'eur'
+              }
             </small>
           </span>
         </h4>
@@ -59,7 +63,7 @@ const Product = graphql(
           onClick={() => {
             const product = {
               count: 1,
-              price,
+              price: lang === 'cz' ? price[0] : price[1],
               title: productTitle,
             };
 
@@ -85,7 +89,7 @@ const Product = graphql(
 Product.propTypes = {
   productData: PropTypes.shape({
     imageURL: PropTypes.string,
-    price: PropTypes.number,
+    price: PropTypes.arrayOf(PropTypes.number),
     title: PropTypes.string,
     knowMoreUrl: PropTypes.string,
   }).isRequired,

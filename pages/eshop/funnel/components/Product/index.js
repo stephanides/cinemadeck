@@ -57,9 +57,11 @@ const Product = graphql(
         }
         <div className="price-add-to-cart-container d-flex pt-3">
           <div>
-            <span className="font-weight-bold align-top">7</span>
+            <span className="font-weight-bold align-top">
+              {lang === 'cz' ? `${price[0]}/${price[1]}` : price[1]}
+            </span>
             <span className="font-weight-lighter align-top">
-              EUR
+              {lang === 'cz' ? 'CZK/EUR' : 'EUR'}
             </span>
           </div>
           <button
@@ -68,7 +70,7 @@ const Product = graphql(
             onClick={() => {
               const product = {
                 count: 1,
-                price,
+                price: lang === 'cz' ? price[0] : price[1],
                 title: productTitle,
               };
 
@@ -194,7 +196,7 @@ Product.propTypes = {
       infoContent: PropTypes.string,
     }),
     image: PropTypes.string,
-    price: PropTypes.number,
+    price: PropTypes.arrayOf(PropTypes.number),
     productTitle: PropTypes.string,
     title: PropTypes.string,
   }).isRequired,

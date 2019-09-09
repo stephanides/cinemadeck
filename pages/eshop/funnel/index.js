@@ -49,7 +49,7 @@ const Funnel = compose(
             data={{
               title: locale[lang].lightLikeProTitle,
               image: '/static/images/LIGHT-PRO.png',
-              price: 7,
+              price: [180, 7],
               productTitle: 'Light Like Pro',
               content: locale[lang].lightLikeProContent,
               extraContent: {
@@ -63,7 +63,7 @@ const Funnel = compose(
             data={{
               title: locale[lang].soundLikeProTitle,
               image: '/static/images/SOUND-PRO.png',
-              price: 7,
+              price: [180, 7],
               productTitle: 'Sound Like Pro',
               content: locale[lang].soundLikeProContent,
             }}
