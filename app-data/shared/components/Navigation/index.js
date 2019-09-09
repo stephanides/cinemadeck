@@ -133,13 +133,7 @@ const Navigation = graphql(
               {
                 isHome
                   ? (
-                    <button
-                      type="button"
-                      className="nav-link button-link"
-                      onClick={() => console.log('DOWNLOAD FREE FILES')}
-                    >
-                      {localisation[lang].download}
-                    </button>
+                    <AnchorLink href="#freedownload" className="button-link">{localisation[lang].download}</AnchorLink>
                   ) : (
                     <Link href="/eshop/cart">
                       <a className="nav-link shopping-cart d-flex align-items-center">

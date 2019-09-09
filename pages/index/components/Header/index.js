@@ -7,7 +7,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
 import localisation from '../../../../app-data/shared/localisation/Header';
 
-
+const renderDangerHtmlHeader = (lang) => ({ __html: localisation[lang].headerText1 });
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].headerText2 });
 
 const Header = ({ lang }) => (
@@ -16,7 +16,7 @@ const Header = ({ lang }) => (
       <img src="/static/images/vizual.png" alt="Vizuál" />
       <CustomContainer>
         <div className="text_holder">
-          <p>{localisation[lang].headerText1}</p>
+          <p dangerouslySetInnerHTML={renderDangerHtmlHeader(lang)} />
           <h3 className="pt-4" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
         </div>
         <AnchorLink href="#about">{localisation[lang].findOutMore}</AnchorLink>

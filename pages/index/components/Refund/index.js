@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import './scss/refund.scss';
 import React from 'react';
+import Link from 'next/link';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import localisation from '../../../../app-data/shared/localisation/Refund';
@@ -20,7 +21,9 @@ const Refund = ({ lang }) => (
           <p dangerouslySetInnerHTML={renderDangerHtml(lang)} />
           <p>{localisation[lang].refundText4}</p>
         </div>
-        <button type="button">{localisation[lang].buyCinemaDeck}</button>
+        <Link href="/eshop/funnel">
+          <a>{localisation[lang].buyCinemaDeck}</a>
+        </Link>
       </Container>
     </Container>
   </div>

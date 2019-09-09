@@ -105,9 +105,10 @@ $break-xarge: 1400px;
         padding-left: 28px !important;
         padding-top: 12px;
         padding-bottom: 12px;
-  
+        text-decoration: none;
         &:hover {
-          color: #fff;
+          background-color: #008fcc;
+          color:white;
         }
       }
   

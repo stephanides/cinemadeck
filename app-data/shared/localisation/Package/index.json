@@ -22,10 +22,6 @@
     "packagePriceText":"Full CinemaDeck package",
     "packageButton":"Buy cinemadeck",
     "faqPackageText":"complete package cinemadeck",
-    "packagePrice":"37",
-    "packageCurrency":"EUR",
-    "packagePriceLittle":"",
-    "packageCurrencyLittle":"",
     "buyCinemaDeck":"Buy cinemadeck"
   },
   "cz": {
@@ -51,10 +47,6 @@
     "packagePriceText":"kompletní balík cinemadeck",
     "packageButton":"koupit cinemadeck",
     "faqPackageText":"kompletní balík cinemadeck",
-    "packagePrice":"950",
-    "packageCurrency":"CZK",
-    "packagePriceLittle":"37",
-    "packageCurrencyLittle":"EUR",
     "buyCinemaDeck":"koupit cinemadeck"
   }
 }

@@ -96,15 +96,18 @@ const FAQ = ({ lang }) => (
         </Row>
         <div className="buy-package-holder">
           <p className="text-complete">{localisation[lang].faqPackageText}</p>
-          <p className="price">
-            {localisation[lang].packagePrice}
-            <span className="currency">{localisation[lang].packageCurrency}</span>
-          </p>
-          <p className="miniprice">
-            {localisation[lang].packagePriceLittle}
-            <span className="currency">{localisation[lang].packageCurrencyLittle}</span>
-          </p>
-          <Link href="/eshop">
+          <div className="price-holder">
+            <p className={lang === 'cz' ? 'd-block price' : 'd-none price'}>
+              947
+              <span className="currency">CZK</span>
+              &nbsp;/
+            </p>
+            <p className="price">
+              37
+              <span className="currency">EUR</span>
+            </p>
+          </div>
+          <Link href="/eshop/funnel">
             <a>{localisation[lang].buyCinemaDeck}</a>
           </Link>
         </div>

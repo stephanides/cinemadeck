@@ -160,6 +160,7 @@ $break-xarge: 1400px;
         }
       }
       .left-small{
+        left: -34px;
         @media screen and (max-width: $break-xsmall) {
           left:-40px;
         }
@@ -171,7 +172,7 @@ $break-xarge: 1400px;
   }
   .buy-package-holder{
     width: 380px;
-    height: 260px;
+    height: 220px;
     background-color: #1f2126;
     display: block;
     margin: 0 auto;
@@ -192,10 +193,16 @@ $break-xarge: 1400px;
         font-size: 0.55em;
       }
     }
+    .price-holder{
+      display: flex;
+      justify-content: center;
+      padding-bottom: 20px;
+      padding-top: 10px;
+    }
     .price{
       font-family: ProximaNova-Bold;
       color:white;
-      font-size: 4.5em;
+      font-size: 4em;
       text-align: center;
       position: relative;
       margin-bottom: 0px;
