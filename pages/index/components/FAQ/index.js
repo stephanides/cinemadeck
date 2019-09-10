@@ -70,6 +70,7 @@ const FAQ = ({ lang }) => (
                 <img src="/static/images/faq/kartatelefon.png" className={lang === 'cz' ? 'd-block' : 'd-none '} alt="" />
               </div>
             </div>
+            <img src="/static/images/faq/plus.png" className="plus" alt="" />
           </div>
           <div className="column-5">
             <div className="faq-item">
@@ -79,6 +80,7 @@ const FAQ = ({ lang }) => (
                 <img src="/static/images/faq/presets.png" className={lang === 'cz' ? 'd-block presets' : 'd-none presets'} alt="" />
               </div>
             </div>
+            <img src="/static/images/faq/plus.png" className="plus" alt="" />
           </div>
           <div className="column-5">
             <div className="faq-item">
@@ -87,6 +89,7 @@ const FAQ = ({ lang }) => (
                 <img className="left-small" src="/static/images/faq/checklist.png" alt="" />
               </div>
             </div>
+            <img src="/static/images/faq/plus.png" className="plus special-plus" alt="" />
           </div>
           <div className="column-5">
             <div className="faq-item">
@@ -95,6 +98,7 @@ const FAQ = ({ lang }) => (
                 <img className="left-small" src="/static/images/faq/guide.png" alt="" />
               </div>
             </div>
+            <img src="/static/images/faq/plus.png" className="plus" alt="" />
           </div>
         </Row>
         <div className="buy-package-holder">
