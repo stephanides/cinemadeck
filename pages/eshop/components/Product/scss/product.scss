@@ -15,6 +15,16 @@
         small {
           font-size: xx-small;
         }
+        &.font-weight-bold {
+          & > div {
+            & > span {
+              & > small {
+                top: -10px;
+                right: -15px;
+              }
+            }
+          }
+        }
       }
     }
 
