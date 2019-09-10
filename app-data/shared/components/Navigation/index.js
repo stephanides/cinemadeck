@@ -110,9 +110,8 @@ const Navigation = graphql(
               }
             >
               <AnchorLink
-                href="#licence"
+                href="#footer-main"
                 className="nav-link pr-4"
-                onClick={() => toggle(!isOpen)}
               >
                 {localisation[lang].contact}
               </AnchorLink>
