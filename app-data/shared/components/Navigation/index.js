@@ -13,8 +13,8 @@ import {
   Nav,
   NavItem,
 } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import { toggleLangMutation } from '../../../graphql/mutation';
 import CartContent from './components/CartContent';
