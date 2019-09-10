@@ -82,6 +82,9 @@ $break-xarge: 1400px;
         @media screen and (max-width: $break-mobile) {
           padding-top: 20px;
         }
+        strong{
+          color:black;
+        }
       }
       .number_arrow{
         [class*="icono"] {

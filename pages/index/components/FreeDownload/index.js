@@ -2,7 +2,7 @@
 import './scss/freeDownload.scss';
 import React, { useState } from 'react';
 import {
-  Container, Button, Modal, ModalBody, ModalFooter, InputGroup, Input,
+  Container, Button, Modal, ModalBody, InputGroup, Input,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import localisation from '../../../../app-data/shared/localisation/FreeDownload';

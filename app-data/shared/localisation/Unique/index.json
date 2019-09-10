@@ -5,9 +5,9 @@
     "uniqueCol1Header":"How and where to place the camera",
     "uniqueCol2Header":"What lens to<br> use",
     "uniqueCol3Header":"The exact aperture value",
-    "uniqueCol1Text":"written instructions or spatial representation will show you exactly at what angle and distance the camera should be from your actor.",
-    "uniqueCol2Text":"On each card you will find the information on the size of the zoom with which you can achieve the particular composition. So every time you shoot, you will know what lens you need for the selected composition.",
-    "uniqueCol3Text":"You will find an aperture value on each card to help you achieve the final composition."
+    "uniqueCol1Text":"written instructions or spatial representation will show you exactly <strong>at what angle and distance the camera should be from your actor.</strong>",
+    "uniqueCol2Text":"On each card you will find the information on the size of the zoom with which you can achieve the particular composition. So every time you shoot, you will know <strong>what lens you need for the selected composition.</strong>",
+    "uniqueCol3Text":"You will find an aperture value on each card to <strong>help you achieve the final composition.</strong>"
   },
   "cz": {
     "uniqueTitle":"V čem jsou karty cinemadeck unikátní",
@@ -15,8 +15,8 @@
     "uniqueCol1Header":"Jak a kde postavit kameru",
     "uniqueCol2Header":"jaký použít<br> objektiv",
     "uniqueCol3Header":"přesnou hodnotu clonového čísla",
-    "uniqueCol1Text":"Psané instrukce, nebo prostorové znázornění vám přesně ukáže, v jakém uhlu a vzdálenosti má kamera od vašeho herce stát.",
-    "uniqueCol2Text":"Na každé kartě najdete informaci, s jakou velikostí ohniska (zoom) dosáhnete danou kompozici. Na každé natáčení tak budete vědět, jaký objektív budete potřebovať.",
-    "uniqueCol3Text":"Na každé kartě najdete velikost clonového čísla, které vám pomuže dosáhnout finální vizuál kompozice."
+    "uniqueCol1Text":"Psané instrukce, nebo prostorové znázornění vám přesně ukáže, <strong>v jakém uhlu a vzdálenosti má kamera od vašeho herce stát.</strong>",
+    "uniqueCol2Text":"Na každé kartě najdete informaci, s jakou velikostí ohniska (zoom) dosáhnete danou kompozici. Na každé natáčení tak budete vědět, <strong>jaký objektív budete potřebovať.</strong>",
+    "uniqueCol3Text":"Na každé kartě najdete velikost clonového čísla, které vám <strong>pomuže dosáhnout finální vizuál kompozice.</strong>"
   }
 }

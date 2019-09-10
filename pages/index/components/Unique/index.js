@@ -8,6 +8,9 @@ import localisation from '../../../../app-data/shared/localisation/Unique';
 
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].uniqueCol2Header });
+const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].uniqueCol1Text });
+const renderDangerHtml3 = (lang) => ({ __html: localisation[lang].uniqueCol2Text });
+const renderDangerHtml4 = (lang) => ({ __html: localisation[lang].uniqueCol3Text });
 const Unique = ({ lang }) => (
   <div className="unique" id="unique">
     <Container fluid>
@@ -26,7 +29,7 @@ const Unique = ({ lang }) => (
                 <img src="/static/images/unique/icon3.png" className="icon" alt="Vizuál" />
               </div>
               <h3 className="pt-2">{localisation[lang].uniqueCol1Header}</h3>
-              <p className="icon_text">{localisation[lang].uniqueCol1Text}</p>
+              <p className="icon_text" dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
             </Col>
             <Col lg="4">
               <div className="number_arrow d-flex">
@@ -37,7 +40,7 @@ const Unique = ({ lang }) => (
                 <img src="/static/images/unique/icon2.png" className="icon" alt="Vizuál" />
               </div>
               <h3 className="pt-2" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
-              <p className="icon_text">{localisation[lang].uniqueCol2Text}</p>
+              <p className="icon_text" dangerouslySetInnerHTML={renderDangerHtml3(lang)} />
             </Col>
             <Col lg="4">
               <div className="number_arrow d-flex">
@@ -48,7 +51,7 @@ const Unique = ({ lang }) => (
                 <img src="/static/images/unique/icon1.png" className="icon" alt="Vizuál" />
               </div>
               <h3 className="pt-2">{localisation[lang].uniqueCol3Header}</h3>
-              <p className="icon_text">{localisation[lang].uniqueCol3Text}</p>
+              <p className="icon_text" dangerouslySetInnerHTML={renderDangerHtml4(lang)} />
             </Col>
           </Row>
         </div>
