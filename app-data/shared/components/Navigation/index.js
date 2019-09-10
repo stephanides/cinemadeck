@@ -56,7 +56,7 @@ const Navigation = graphql(
       <Container fluid className="navigation_holder">
         <Link href="/">
           <a className="navbar-brand">
-            <img src={isHome ? '/static/images/logo.png' : '/static/images/logo-dark.png'} alt="Logo White" />
+            <img src={isHome ? '/static/images/logo-light.svg' : '/static/images/logo-dark.svg'} alt="Logo White" />
           </a>
         </Link>
         <NavbarToggler

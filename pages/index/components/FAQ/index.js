@@ -57,7 +57,8 @@ const FAQ = ({ lang }) => (
             <div className="faq-item">
               <h6>PRINT DATA</h6>
               <div className="img-holder">
-                <img src="/static/images/faq/kartaprint.png" alt="" />
+                <img src="/static/images/faq/en/kartaprint.png" className={lang === 'cz' ? 'd-none' : 'd-block '} alt="" />
+                <img src="/static/images/faq/kartaprint.png" className={lang === 'cz' ? 'd-block' : 'd-none '} alt="" />
               </div>
             </div>
           </div>
@@ -65,7 +66,8 @@ const FAQ = ({ lang }) => (
             <div className="faq-item">
               <h6>MOBILE PDF</h6>
               <div className="img-holder">
-                <img src="/static/images/faq/kartatelefon.png" alt="" />
+                <img src="/static/images/faq/en/kartatelefon.png" className={lang === 'cz' ? 'd-none' : 'd-block '} alt="" />
+                <img src="/static/images/faq/kartatelefon.png" className={lang === 'cz' ? 'd-block' : 'd-none '} alt="" />
               </div>
             </div>
           </div>
@@ -73,7 +75,8 @@ const FAQ = ({ lang }) => (
             <div className="faq-item">
               <h6>TITLE PRESETS</h6>
               <div className="img-holder">
-                <img className="presets" src="/static/images/faq/presets.png" alt="" />
+                <img src="/static/images/faq/en/presets.png" className={lang === 'cz' ? 'd-none presets' : 'd-block presets'} alt="" />
+                <img src="/static/images/faq/presets.png" className={lang === 'cz' ? 'd-block presets' : 'd-none presets'} alt="" />
               </div>
             </div>
           </div>

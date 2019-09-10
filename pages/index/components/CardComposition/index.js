@@ -18,10 +18,12 @@ const CardComposition = ({ lang }) => {
             <div className="flip-card">
               <div className={isOpen ? 'flip-card-holder-flipped' : 'flip-card-holder'}>
                 <div className="flip-card-front">
-                  <img src="/static/images/composition/karta1.png" alt="" />
+                  <img className={lang === 'cz' ? 'd-block' : 'd-none'} src="/static/images/composition/karta1.png" alt="" />
+                  <img className={lang === 'cz' ? 'd-none' : 'd-block'} src="/static/images/composition/en/karta1.png" alt="" />
                 </div>
                 <div className="flip-card-back">
-                  <img src="/static/images/composition/karta2.png" alt="" />
+                  <img className={lang === 'cz' ? 'd-block' : 'd-none'} src="/static/images/composition/karta2.png" alt="" />
+                  <img className={lang === 'cz' ? 'd-none' : 'd-block'} src="/static/images/composition/en/karta2.png" alt="" />
                 </div>
               </div>
             </div>

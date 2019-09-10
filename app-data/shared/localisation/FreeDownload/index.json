@@ -7,7 +7,9 @@
     "freeDownloadText2":"Card ready to print",
     "freeDownloadText3":"Instructions on how to illuminate the actor professionally",
     "freeDownloadText4":"Promo code for 16% discount on cards CinemaDeck",
-    "freeDownloadButton":"Download free now"
+    "freeDownloadButton":"Download free now",
+    "email":"Enter your email:",
+    "cancel":"Cancel"
     
   },
   "cz": {
@@ -18,6 +20,8 @@
     "freeDownloadText2":"Kartu předpripravenou k vytisknutí",
     "freeDownloadText3":"Přesne instrukce, jak herce profesionálně nasvítit",
     "freeDownloadText4":"Promo kód pro 16% slevu na karty CinemaDeck",
-    "freeDownloadButton":"Stáhnout zdarma teď"
+    "freeDownloadButton":"Stáhnout zdarma teď",
+    "email":"Zadejte Váš email:",
+    "cancel":"Zrušit"
   }
 }

@@ -15,14 +15,14 @@ const Videos = ({ lang }) => (
           <Col md="6" sm="12">
             <div className="video-holder">
               <div className="video">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zesnfjCCv4E" title="video1" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/MgKyuUvXbew" title="video1" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
               </div>
             </div>
           </Col>
           <Col md="6" sm="12">
             <div className="video-holder">
               <div className="video">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zesnfjCCv4E" title="video1" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/zesnfjCCv4E" title="video2" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
               </div>
             </div>
           </Col>

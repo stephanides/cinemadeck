@@ -17,7 +17,8 @@ const Package = ({ lang }) => (
           <Col xl="4" md="6" sm="12">
             <h6 className="text-center">{localisation[lang].packageCol1Title}</h6>
             <div className="img-holder">
-              <img src="/static/images/package/kartaprint.png" className="unique-img" alt="" />
+              <img src="/static/images/package/en/kartaprint.png" className={lang === 'cz' ? 'd-none unique-img' : 'd-block unique-img'} alt="" />
+              <img src="/static/images/package/kartaprint.png" className={lang === 'cz' ? 'd-block unique-img' : 'd-none unique-img'} alt="" />
               <img src="/static/images/package/pdf.png" className="unique-pdf-icon" alt="" />
             </div>
             <p className="text-header">{localisation[lang].packageCol1Header}</p>
@@ -26,7 +27,8 @@ const Package = ({ lang }) => (
           <Col xl="4" md="6" sm="12">
             <h6 className="text-center">{localisation[lang].packageCol2Title}</h6>
             <div className="img-holder">
-              <img src="/static/images/package/kartatelefon.png" alt="" />
+              <img src="/static/images/package/en/kartatelefon.png" className={lang === 'cz' ? 'd-none unique-img' : 'd-block unique-img'} alt="" />
+              <img src="/static/images/package/kartatelefon.png" className={lang === 'cz' ? 'd-block unique-img' : 'd-none unique-img'} alt="" />
               <img src="/static/images/package/pdf.png" className="pdf-icon" alt="" />
             </div>
             <p className="text-header">{localisation[lang].packageCol2Header}</p>
@@ -35,7 +37,8 @@ const Package = ({ lang }) => (
           <Col xl="4" md="6" sm="12">
             <h6 className="text-center">{localisation[lang].packageCol3Title}</h6>
             <div className="img-holder">
-              <img src="/static/images/package/kartapresets.png" className="presets-img" alt="" />
+              <img src="/static/images/package/en/kartapresets.png" className={lang === 'cz' ? 'd-none unique-img' : 'd-block unique-img'} alt="" />
+              <img src="/static/images/package/kartapresets.png" className={lang === 'cz' ? 'd-block unique-img' : 'd-none unique-img'} alt="" />
             </div>
             <p className="text-header">{localisation[lang].packageCol3Header}</p>
             <p className="text-text">{localisation[lang].packageCol3Text}</p>
