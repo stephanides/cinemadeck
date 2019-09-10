@@ -42,14 +42,35 @@ const Product = graphql(
           />
           <span className="font-weight-bold">
             {
-              lang === 'cz' ? `${price[0]}/${price[1]}` : price[1]
+              lang === 'cz'
+                ? (
+                  <div>
+                    <span className="position-relative">
+                      {price[0]}
+                      <small className="align-top text-uppercase mt-1 ml-1 position-absolute">
+                        czk
+                      </small>
+                    </span>
+                    {' / '}
+                    <span className="position-relative">
+                      {price[1]}
+                      <small className="align-top text-uppercase mt-1 ml-1 position-absolute">
+                        eur
+                      </small>
+                    </span>
+                  </div>
+                )
+                : (
+                  <div>
+                    <span className="position-relative">
+                      {price[1]}
+                      <small className="align-top text-uppercase mt-1 ml-1 position-absolute">
+                        eur
+                      </small>
+                    </span>
+                  </div>
+                )
             }
-            {''}
-            <small className="align-top text-uppercase mt-1 ml-1">
-              {
-                lang === 'cz' ? 'czk/eur' : 'eur'
-              }
-            </small>
           </span>
         </h4>
         <h5
