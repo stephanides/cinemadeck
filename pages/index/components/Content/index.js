@@ -61,7 +61,7 @@ const Content = ({ lang }) => (
       </div>
       <AnchorLink href="#package" className="content-button">{localisation[lang].contentButton}</AnchorLink>
     </Container>
-    <style jsx>{styles}</style>
+    <style jsx global>{styles}</style>
   </div>
 );
 

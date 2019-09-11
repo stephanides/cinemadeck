@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { Container, Col, Row } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import { getLocaleQuery, getProductsFromCart } from '../../../app-data/graphql/query';
@@ -6,8 +7,9 @@ import { createOrderMutation, initCartMutation } from '../../../app-data/graphql
 import Layout from '../../../app-data/shared/components/Layout';
 import ContactInfo from './components/ContactInfo';
 import CartCheckout from './components/CartCheckout';
-import PaymentMethods from './components/PaymentMethods';
-import Footer from './components/Footer';
+
+const DynamicPaymentMethods = dynamic(import('./components/PaymentMethods'));
+const DynamicFooter = dynamic(import('./components/Footer'));
 
 const initialState = {
   order: {
@@ -132,7 +134,7 @@ const ShoppingCart = compose(
             </Col>
             {''}
             <Col sm={{ size: 12, order: 2 }} md={{ size: 6, order: 3 }} lg={{ size: 6, order: 3 }}>
-              <PaymentMethods
+              <DynamicPaymentMethods
                 handleOrder={handleOrder}
                 lang={lang}
                 order={order}
@@ -154,7 +156,7 @@ const ShoppingCart = compose(
           }
         </style>
       </Container>
-      <Footer />
+      <DynamicFooter />
     </Layout>
   );
 });

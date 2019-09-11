@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { Container } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import { getLocaleQuery, getProductsFromCart } from '../../../app-data/graphql/query';
 import { initCartMutation } from '../../../app-data/graphql/mutation';
 import Layout from '../../../app-data/shared/components/Layout';
-import Product from './components/Product';
-import Footer from '../../../app-data/shared/components/eshop/Footer';
 
 import styles from './styles/funnel.style';
 import locale from '../../../app-data/shared/localisation/eshop/funnel';
+
+const DynamicProduct = dynamic(import('./components/Product'));
+const DynamicFooter = dynamic(import('../../../app-data/shared/components/eshop/Footer'));
 
 const Funnel = compose(
   graphql(initCartMutation),
@@ -44,7 +46,7 @@ const Funnel = compose(
           <div className="funnel-heading-container">
             <h2 className="text-uppercase text-center pt-5 pb-5 mb-5">{locale[lang].funnelTitle}</h2>
           </div>
-          <Product
+          <DynamicProduct
             lang={lang}
             data={{
               title: locale[lang].lightLikeProTitle,
@@ -58,7 +60,7 @@ const Funnel = compose(
               },
             }}
           />
-          <Product
+          <DynamicProduct
             lang={lang}
             data={{
               title: locale[lang].soundLikeProTitle,
@@ -69,7 +71,7 @@ const Funnel = compose(
             }}
           />
         </Container>
-        <Footer lang={lang} />
+        <DynamicFooter lang={lang} />
         <style jsx>{styles}</style>
       </div>
     </Layout>

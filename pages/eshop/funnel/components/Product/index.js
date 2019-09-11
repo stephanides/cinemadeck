@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Col, Row } from 'reactstrap';
 import { graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 import { addProductToCartMutation } from '../../../../../app-data/graphql/mutation';
 
 import styles from './styles/funnel-product.style';
@@ -30,7 +31,9 @@ const Product = graphql(
       <Row className="mb-5 pb-5">
         <Col sm="12" md="6" lg="4">
           <aside className="product-image">
-            <img src={image} alt="" />
+            <LazyLoad height={280}>
+              <img src={image} alt="" />
+            </LazyLoad>
           </aside>
         </Col>
         <Col sm="12" md="6" lg="8">
@@ -64,7 +67,7 @@ const Product = graphql(
                 {
                   lang === 'cz'
                     ? (
-                      <div>
+                      <div className="mr-2">
                         <span className="position-relative">
                           {price[0]}
                           <small className="align-top text-uppercase mt-1 ml-1 position-absolute">

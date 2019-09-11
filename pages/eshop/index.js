@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { Container, Col, Row } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import { getLocaleQuery, getProductsFromCart } from '../../app-data/graphql/query';
 import { initCartMutation } from '../../app-data/graphql/mutation';
+import Layout from '../../app-data/shared/components/Layout';
 
 import styles from './styles/eshop.style';
-import Layout from '../../app-data/shared/components/Layout';
-import Product from './components/Product';
-import Footer from '../../app-data/shared/components/eshop/Footer';
-
 import locale from '../../app-data/shared/localisation/eshop';
+
+const DynamicProduct = dynamic(import('./components/Product'));
+const DynamicFooter = dynamic(import('../../app-data/shared/components/eshop/Footer'));
 
 const EshopPage = compose(
   graphql(initCartMutation),
@@ -49,7 +50,7 @@ const EshopPage = compose(
         {''}
         <Row>
           <Col md="12" lg="4">
-            <Product
+            <DynamicProduct
               lang={lang}
               productData={{
                 content: locale[lang].cardsContent,
@@ -63,7 +64,7 @@ const EshopPage = compose(
             />
           </Col>
           <Col md="12" lg="4">
-            <Product
+            <DynamicProduct
               lang={lang}
               productData={{
                 content: locale[lang].lightLikeProContent,
@@ -77,7 +78,7 @@ const EshopPage = compose(
             />
           </Col>
           <Col md="12" lg="4">
-            <Product
+            <DynamicProduct
               lang={lang}
               productData={{
                 content: locale[lang].soundLikeProContent,
@@ -91,11 +92,9 @@ const EshopPage = compose(
             />
           </Col>
         </Row>
+        <style jsx>{styles}</style>
       </Container>
-      <Footer lang={lang} />
-      <style jsx>
-        {styles}
-      </style>
+      <DynamicFooter lang={lang} />
     </Layout>
   );
 });

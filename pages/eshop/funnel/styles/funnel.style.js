@@ -2,6 +2,10 @@ import css from 'styled-jsx/css';
 
 export default css`
   @font-face {
+    font-family: ProximaNova-Bold;
+    src: url("/static/fonts/ProximaNova-Bold.otf");
+  }
+  @font-face {
     font-family: ProximaNova-SemiBold;
     src: url("/static/fonts/ProximaNova-Semibold.otf");
   }
@@ -11,13 +15,10 @@ export default css`
       margin-top: 90px;
     
       h2 {
-        font-family: 'ProximaNova-SemiBold';
+        font-family: 'ProximaNova-Bold';
         letter-spacing: .25rem;
-        color:black;
+        color: black;
       }
-    }
-    h3 {
-      font-family: 'ProximaNova-SemiBold';
     }
   }
 `;

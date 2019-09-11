@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { graphql } from 'react-apollo';
+import LazyLoad from 'react-lazyload';
 import PropTypes from 'prop-types';
+import { addProductToCartMutation } from '../../../../app-data/graphql/mutation';
 
 import styles from './styles/product.style';
-
-import { addProductToCartMutation } from '../../../../app-data/graphql/mutation';
 import locale from '../../../../app-data/shared/localisation/eshop';
 
 const Product = graphql(
@@ -30,13 +30,14 @@ const Product = graphql(
   return (
     <div className="product">
       <div className="product-bg">
-        <img
-          src={imageURL}
-          loading="lazy"
-          alt=""
-          width={350}
-          height={280}
-        />
+        <LazyLoad height={280}>
+          <img
+            src={imageURL}
+            alt=""
+            width={350}
+            height={280}
+          />
+        </LazyLoad>
         <h4 className="text-uppercase d-flex justify-content-between">
           <span
             className="font-weight-lighter"
