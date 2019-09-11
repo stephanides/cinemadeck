@@ -27,19 +27,23 @@ const Navigation = graphql(
   const [isOpen, toggle] = useState(false);
   const [isTop, isPageTop] = useState(true);
 
-  useEffect(() => {
-    const checkTop = () => {
-      const currentIsTop = window.scrollY < 100;
-      if (currentIsTop !== isTop) {
-        isPageTop(currentIsTop);
-      }
-    };
+  if (process.browser) {
+    useEffect(() => {
+      const checkTop = () => {
+        const currentIsTop = window.scrollY < 100;
+        if (currentIsTop !== isTop) {
+          isPageTop(currentIsTop);
+        }
+      };
 
-    checkTop();
-    document.addEventListener('scroll', () => {
       checkTop();
+      document.addEventListener('scroll', checkTop, true);
+
+      return () => {
+        document.removeEventListener('scroll', checkTop, true);
+      };
     }, []);
-  });
+  }
 
   return (
     <div>
