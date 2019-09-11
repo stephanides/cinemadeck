@@ -15,17 +15,17 @@ const CartCheckout = compose(
 )(({
   cart, lang, addProductToCart, removeProductFromCart,
 }) => {
-  const handleAddProductToCart = async (product) => {
+  const handleAddProductToCart = async (id) => {
     try {
-      await addProductToCart({ variables: { product } });
+      await addProductToCart({ variables: { id } });
     } catch (err) {
       console.log(err);
     }
   };
 
-  const handleRemoveProductFromCart = async (title) => {
+  const handleRemoveProductFromCart = async (id) => {
     try {
-      await removeProductFromCart({ variables: { title } });
+      await removeProductFromCart({ variables: { id } });
     } catch (err) {
       console.log(err);
     }
@@ -53,9 +53,9 @@ const CartCheckout = compose(
                       >
                         <span>{`${item.count}x ${item.title}`}</span>
                         <span className="d-flex">
-                          {item.totalPrice}
+                          {item.totalPrice.cz}
                           {' '}
-                          EUR
+                          CZK
                           {' '}
                           <span className="ml-3">
                             <span className="d-flex justify-content-between">
@@ -63,7 +63,7 @@ const CartCheckout = compose(
                                 type="button"
                                 className="d-flex align-items-center justify-content-center h-100"
                                 onClick={() => {
-                                  handleRemoveProductFromCart(item.title);
+                                  handleRemoveProductFromCart(item.id);
                                 }}
                               >
                                 -
@@ -72,13 +72,7 @@ const CartCheckout = compose(
                                 type="button"
                                 className="border-left pl-3 d-flex align-items-center justify-content-center h-100"
                                 onClick={() => {
-                                  const product = {
-                                    count: item.count,
-                                    price: item.price,
-                                    title: item.title,
-                                  };
-
-                                  handleAddProductToCart(product);
+                                  handleAddProductToCart(item.id);
                                 }}
                               >
                                 +
@@ -93,10 +87,10 @@ const CartCheckout = compose(
                     <span className="text-uppercase">{locale[lang].sum}</span>
                     <span className="font-weight-bold">
                       {
-                        cart.reduce((a, b) => (a + b.totalPrice), 0)
+                        cart.reduce((a, b) => (a + b.totalPrice.cz), 0)
                       }
                       {' '}
-                      EUR
+                      CZK
                     </span>
                   </p>
                   <button
@@ -144,9 +138,15 @@ CartCheckout.propTypes = {
   cart: PropTypes.arrayOf(
     PropTypes.shape({
       count: PropTypes.number,
-      price: PropTypes.number,
+      price: PropTypes.shape({
+        cz: PropTypes.number,
+        en: PropTypes.number,
+      }),
       title: PropTypes.string,
-      totalPrice: PropTypes.number,
+      totalPrice: PropTypes.shape({
+        cz: PropTypes.number,
+        en: PropTypes.number,
+      }),
     }),
   ),
   lang: PropTypes.string.isRequired,

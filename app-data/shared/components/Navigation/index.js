@@ -27,23 +27,21 @@ const Navigation = graphql(
   const [isOpen, toggle] = useState(false);
   const [isTop, isPageTop] = useState(true);
 
-  if (process.browser) {
-    useEffect(() => {
-      const checkTop = () => {
-        const currentIsTop = window.scrollY < 100;
-        if (currentIsTop !== isTop) {
-          isPageTop(currentIsTop);
-        }
-      };
+  useEffect(() => {
+    const checkTop = () => {
+      const currentIsTop = window.scrollY < 100;
+      if (currentIsTop !== isTop) {
+        isPageTop(currentIsTop);
+      }
+    };
 
-      checkTop();
-      document.addEventListener('scroll', checkTop, true);
+    checkTop();
+    document.addEventListener('scroll', checkTop, true);
 
-      return () => {
-        document.removeEventListener('scroll', checkTop, true);
-      };
-    }, []);
-  }
+    return () => {
+      document.removeEventListener('scroll', checkTop, true);
+    };
+  }, []);
 
   return (
     <div>
@@ -171,9 +169,15 @@ Navigation.propTypes = {
   cart: PropTypes.arrayOf(
     PropTypes.shape({
       count: PropTypes.number,
-      price: PropTypes.number,
+      price: PropTypes.shape({
+        cz: PropTypes.number,
+        en: PropTypes.number,
+      }),
       title: PropTypes.string,
-      totalPrice: PropTypes.number,
+      totalPrice: PropTypes.shape({
+        cz: PropTypes.number,
+        en: PropTypes.number,
+      }),
     }),
   ),
   isCart: PropTypes.bool,

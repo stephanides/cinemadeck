@@ -7,4 +7,36 @@ export default {
     error: false,
     visible: false,
   },
+  products: [
+    {
+      __typename: 'Product',
+      id: '001',
+      title: 'Cards',
+      price: {
+        __typename: 'Price',
+        cz: 950,
+        en: 37,
+      },
+    },
+    {
+      __typename: 'Product',
+      id: '002',
+      title: 'Light Like Pro',
+      price: {
+        __typename: 'Price',
+        cz: 180,
+        en: 7,
+      },
+    },
+    {
+      __typename: 'Product',
+      id: '003',
+      title: 'Sound Like Pro',
+      price: {
+        __typename: 'Price',
+        cz: 180,
+        en: 7,
+      },
+    },
+  ],
 };

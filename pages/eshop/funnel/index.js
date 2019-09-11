@@ -33,6 +33,8 @@ const Funnel = compose(
     };
 
     checkCart();
+
+    return () => null;
   }, []);
 
   return (

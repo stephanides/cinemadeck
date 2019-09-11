@@ -16,12 +16,12 @@ const Product = graphql(
   addProductToCartMutation,
 )(({ mutate, lang, productData }) => {
   const {
-    content, imageURL, price, productTitle, titleOne, titleTwo, knowMoreUrl,
+    content, id, imageURL, price, productTitle, titleOne, titleTwo, knowMoreUrl,
   } = productData;
 
-  const handleAddProductToCart = async (product) => {
+  const handleAddProductToCart = async (_id) => {
     try {
-      await mutate({ variables: { product } });
+      await mutate({ variables: { id: _id } });
     } catch (err) {
       console.log(err);
     }
@@ -85,13 +85,13 @@ const Product = graphql(
           type="button"
           className="button-add-to-cart text-uppercase"
           onClick={() => {
-            const product = {
+            /* const product = {
               count: 1,
               price: lang === 'cz' ? price[0] : price[1],
               title: productTitle,
-            };
+            }; */
 
-            handleAddProductToCart(product);
+            handleAddProductToCart(id);
           }}
         >
           {locale[lang].addToCart}
@@ -115,6 +115,8 @@ const Product = graphql(
 
 Product.propTypes = {
   productData: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
     imageURL: PropTypes.string,
     price: PropTypes.arrayOf(PropTypes.number),
     title: PropTypes.string,

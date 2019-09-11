@@ -35,6 +35,8 @@ const EshopPage = compose(
     };
 
     checkCart();
+
+    return () => null;
   }, []);
 
   return (
@@ -53,6 +55,7 @@ const EshopPage = compose(
             <DynamicProduct
               lang={lang}
               productData={{
+                id: '001',
                 content: locale[lang].cardsContent,
                 imageURL: '/static/images/CARD-BOX.png',
                 productTitle: 'Cards',
@@ -67,6 +70,7 @@ const EshopPage = compose(
             <DynamicProduct
               lang={lang}
               productData={{
+                id: '002',
                 content: locale[lang].lightLikeProContent,
                 imageURL: '/static/images/LIGHT-PRO.png',
                 productTitle: 'Light Like Pro',
@@ -81,6 +85,7 @@ const EshopPage = compose(
             <DynamicProduct
               lang={lang}
               productData={{
+                id: '003',
                 content: locale[lang].soundLikeProContent,
                 imageURL: '/static/images/SOUND-PRO.png',
                 productTitle: 'Sound Like Pro',

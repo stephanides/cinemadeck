@@ -32,13 +32,33 @@ export const getOrdersQuery = gql`
   }
 `;
 
+export const getProducts = gql`
+  query {
+    products @client {
+      id
+      price @client {
+        cz
+        en
+      }
+      title
+    }
+  }
+`;
+
 export const getProductsFromCart = gql`
   query {
     cart @client {
+      id @client
       count @client
-      price @client
+      price @client {
+        cz
+        en
+      }
       title @client
-      totalPrice @client
+      totalPrice @client {
+        cz
+        en
+      }
     }
   }
 `;

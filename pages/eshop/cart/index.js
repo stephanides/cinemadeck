@@ -59,6 +59,8 @@ const ShoppingCart = compose(
     };
 
     checkCart();
+
+    return () => null;
   }, []);
 
   const handleSubmitForm = async (e) => {

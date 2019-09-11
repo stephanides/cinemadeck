@@ -4,44 +4,52 @@ import { compose, graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { addProductToCartMutation, removeProductFromCartMutation } from '../../../../../graphql/mutation';
 
+import styles from './styles/cart-content.style';
+
 const CartContent = compose(
   graphql(addProductToCartMutation, { name: 'addProductToCart' }),
   graphql(removeProductFromCartMutation, { name: 'removeProductFromCart' }),
 )(({ cart, addProductToCart, removeProductFromCart }) => {
-  const handleAddProductToCart = async (product) => {
+  const handleAddProductToCart = async (id) => {
     try {
-      await addProductToCart({ variables: { product } });
+      await addProductToCart({ variables: { id } });
     } catch (err) {
       console.log(err);
     }
   };
-  const handleRemoveProductFromCart = async (title) => {
+  const handleRemoveProductFromCart = async (id) => {
     try {
-      await removeProductFromCart({ variables: { title } });
+      await removeProductFromCart({ variables: { id } });
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <div className="w-100">
+    <div className="cart-nav-content w-100 pt-2">
       {
         cart && cart.length > 0 && cart.map(
           (item, i) => (
             <div
-              className="d-flex justify-content-between w-100"
+              className="d-flex justify-content-between w-100 mb-3"
               key={i}
             >
               <span className="font-weight-smaller">{`${item.count}x ${item.title}`}</span>
               <span className="font-weight-smaller">
-                <strong>{item.totalPrice}</strong>
-                {' '}
-                EUR
+                <strong className="position-relative">
+                  {item.totalPrice.cz}
+                  <small className="position-absolute text-uppercase">czk</small>
+                </strong>
+                {' / '}
+                <strong className="position-relative">
+                  {item.totalPrice.en}
+                  <small className="position-absolute text-uppercase">eur</small>
+                </strong>
                 {' '}
                 <button
                   type="button"
                   onClick={() => {
-                    handleRemoveProductFromCart(item.title);
+                    handleRemoveProductFromCart(item.id);
                   }}
                 >
                   -
@@ -50,13 +58,7 @@ const CartContent = compose(
                   className="border-left"
                   type="button"
                   onClick={() => {
-                    const product = {
-                      count: item.count,
-                      price: item.price,
-                      title: item.title,
-                    };
-
-                    handleAddProductToCart(product);
+                    handleAddProductToCart(item.id);
                   }}
                 >
                   +
@@ -66,6 +68,7 @@ const CartContent = compose(
           ),
         )
       }
+      <style jsx>{styles}</style>
     </div>
   );
 });
@@ -77,9 +80,15 @@ CartContent.propTypes = {
   cart: PropTypes.arrayOf(
     PropTypes.shape({
       count: PropTypes.number,
-      price: PropTypes.number,
+      price: PropTypes.shape({
+        cz: PropTypes.number,
+        en: PropTypes.number,
+      }),
       title: PropTypes.string,
-      totalPrice: PropTypes.number,
+      totalPrice: PropTypes.shape({
+        cz: PropTypes.number,
+        en: PropTypes.number,
+      }),
     }),
   ),
 };
