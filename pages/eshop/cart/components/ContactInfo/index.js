@@ -106,9 +106,7 @@ const ContactInfo = ({ lang }) => (
     <style jsx>
       {
         `
-          .contact-info-container {
-            z-index: 2;
-          }
+          .contact-info-container { z-index: 2; }
         `
       }
     </style>

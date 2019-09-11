@@ -7,9 +7,7 @@ const Footer = () => (
     <style jsx>
       {
         `
-        .cart-footer-container {
-          height: 70px;
-        }
+        .cart-footer-container { height: 70px; }
         `
       }
     </style>

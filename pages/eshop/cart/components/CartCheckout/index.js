@@ -1,12 +1,12 @@
 /* eslint-disable max-len */
 /* eslint-disable react/no-array-index-key */
-import './scss/cartcheckout.scss';
 import React from 'react';
 import { FormGroup, Input, Label } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { addProductToCartMutation, removeProductFromCartMutation } from '../../../../../app-data/graphql/mutation';
 
+import styles from './styles/cartcheckout.style';
 import locale from '../../../../../app-data/shared/localisation/eshop/cart';
 
 const CartCheckout = compose(
@@ -132,6 +132,7 @@ const CartCheckout = compose(
           }
         </div>
       </div>
+      <style jsx>{styles}</style>
     </div>
   );
 });

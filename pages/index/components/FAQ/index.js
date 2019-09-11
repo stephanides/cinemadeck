@@ -1,14 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-danger */
-import './scss/faq.scss';
 import React from 'react';
 import { Container, Row } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import localisation from '../../../../app-data/shared/localisation/FAQ';
 import Question from './components/Question';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
 
+import styles from './styles/faq.style';
+import localisation from '../../../../app-data/shared/localisation/FAQ';
 
 const FAQ = ({ lang }) => (
   <div className="questions" id="questions">
@@ -120,6 +120,7 @@ const FAQ = ({ lang }) => (
         </div>
       </CustomContainer>
     </Container>
+    <style jsx>{styles}</style>
   </div>
 );
 

@@ -5,7 +5,6 @@ import { getLocaleQuery } from '../../app-data/graphql/query';
 
 import Layout from '../../app-data/shared/components/Layout';
 
-
 const ObchodnePodmienky = graphql(
   getLocaleQuery, { name: 'getLocale' },
 )(({ getLocale: { lang } }) => (

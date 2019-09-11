@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import './scss/footer.scss';
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import DefaultFooter from '../../Footer';
 
+import styles from './styles/footer.style';
 import locale from '../../../localisation/eshop';
 
 const Footer = ({ lang }) => (
@@ -17,6 +17,7 @@ const Footer = ({ lang }) => (
       </a>
     </Link>
     <DefaultFooter />
+    <style jsx>{styles}</style>
   </div>
 );
 

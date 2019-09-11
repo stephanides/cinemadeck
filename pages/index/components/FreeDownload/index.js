@@ -1,15 +1,17 @@
 /* eslint-disable react/no-danger */
-import './scss/freeDownload.scss';
 import React, { useState } from 'react';
 import {
   Container, Button, Modal, ModalBody, InputGroup, Input,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
+
+import styles from './styles/freeDownload.style';
 import localisation from '../../../../app-data/shared/localisation/FreeDownload';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].freeDownloadTitle });
 const FreeDownload = ({ lang }) => {
   const [modal, toggle] = useState(false);
+
   return (
     <div className="freedownload" id="freedownload">
       <Container fluid>
@@ -51,6 +53,7 @@ const FreeDownload = ({ lang }) => {
           </ModalBody>
         </Modal>
       </div>
+      <style jsx>{styles}</style>
     </div>
   );
 };

@@ -1,5 +1,6 @@
-import './scss/footer.scss';
 import React from 'react';
+
+import styles from './styles/footer.style';
 import CustomContainer from '../CustomContainer';
 
 const Footer = () => (
@@ -14,6 +15,7 @@ const Footer = () => (
         <li>Cookies</li>
       </ul>
     </CustomContainer>
+    <style jsx>{styles}</style>
   </div>
 );
 

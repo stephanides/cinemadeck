@@ -91,9 +91,7 @@ const PaymentMethods = ({ handleOrder, lang, order }) => {
       <style jsx>
         {
           `
-            .logo-line {
-              height: 57px;
-            }
+            .logo-line { height: 57px; }
           `
         }
       </style>

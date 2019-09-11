@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-danger */
-import './scss/content.scss';
 import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import localisation from '../../../../app-data/shared/localisation/Content';
 import Item from './components/Item';
+
+import styles from './styles/content.style';
+import localisation from '../../../../app-data/shared/localisation/Content';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].contentTitle });
 const Content = ({ lang }) => (
@@ -60,6 +61,7 @@ const Content = ({ lang }) => (
       </div>
       <AnchorLink href="#package" className="content-button">{localisation[lang].contentButton}</AnchorLink>
     </Container>
+    <style jsx>{styles}</style>
   </div>
 );
 

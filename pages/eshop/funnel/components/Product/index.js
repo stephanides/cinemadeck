@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-danger */
-import './scss/funnel-product.scss';
 import React, { useState } from 'react';
 import { Col, Row } from 'reactstrap';
 import { graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { addProductToCartMutation } from '../../../../../app-data/graphql/mutation';
 
+import styles from './styles/funnel-product.style';
 import locale from '../../../../../app-data/shared/localisation/eshop/funnel';
 
 const Product = graphql(
@@ -116,6 +116,7 @@ const Product = graphql(
           </div>
         </Col>
       </Row>
+      <style jsx>{styles}</style>
     </div>
   );
 });

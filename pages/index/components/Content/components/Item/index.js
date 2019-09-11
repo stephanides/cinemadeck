@@ -1,6 +1,7 @@
-import './scss/item.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import styles from './styles/item.style';
 
 const Item = ({ itemData }) => {
   const { imageURL, header, text } = itemData;
@@ -12,6 +13,7 @@ const Item = ({ itemData }) => {
         <h6>{header}</h6>
         <p>{text}</p>
       </div>
+      <style jsx>{styles}</style>
     </div>
   );
 };

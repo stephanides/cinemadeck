@@ -1,4 +1,3 @@
-import './scss/funnel.scss';
 import React, { useEffect } from 'react';
 import { Container } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
@@ -8,6 +7,7 @@ import Layout from '../../../app-data/shared/components/Layout';
 import Product from './components/Product';
 import Footer from '../../../app-data/shared/components/eshop/Footer';
 
+import styles from './styles/funnel.style';
 import locale from '../../../app-data/shared/localisation/eshop/funnel';
 
 const Funnel = compose(
@@ -68,8 +68,9 @@ const Funnel = compose(
               content: locale[lang].soundLikeProContent,
             }}
           />
-          <Footer lang={lang} />
         </Container>
+        <Footer lang={lang} />
+        <style jsx>{styles}</style>
       </div>
     </Layout>
   );

@@ -1,14 +1,14 @@
 /* eslint-disable react/no-danger */
-import './scss/cardcomposition.scss';
 import React, { useState } from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
+
+import styles from './styles/cardcomposition.style';
 import localisation from '../../../../app-data/shared/localisation/CardComposition';
 
-
-// eslint-disable-next-line arrow-body-style
 const CardComposition = ({ lang }) => {
   const [isOpen, toggle] = useState(false);
+
   return (
     <div className="cardcomposition" id="cardcomposition">
       <Container fluid>
@@ -197,6 +197,7 @@ const CardComposition = ({ lang }) => {
           </button>
         </Container>
       </Container>
+      <style jsx>{styles}</style>
     </div>
   );
 };

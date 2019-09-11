@@ -1,13 +1,12 @@
 /* eslint-disable react/no-danger */
-
-import './scss/slideshow.scss';
+import 'react-image-gallery/styles/css/image-gallery.css';
 import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import ImageGallery from 'react-image-gallery';
-import localisation from '../../../../app-data/shared/localisation/Slideshow';
-import 'react-image-gallery/styles/css/image-gallery.css';
 
+import styles from './styles/slideshow.style';
+import localisation from '../../../../app-data/shared/localisation/Slideshow';
 
 const SlideShow = ({ lang }) => {
   const images = [
@@ -52,6 +51,7 @@ const SlideShow = ({ lang }) => {
         </Container>
         <ImageGallery items={images} />
       </Container>
+      <style jsx>{styles}</style>
     </div>
   );
 };

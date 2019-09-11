@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-danger */
-import './scss/package.scss';
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+
+import styles from './styles/package.style';
 import localisation from '../../../../app-data/shared/localisation/Package';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
 
@@ -89,6 +90,7 @@ const Package = ({ lang }) => (
         </div>
       </CustomContainer>
     </Container>
+    <style jsx>{styles}</style>
   </div>
 );
 
