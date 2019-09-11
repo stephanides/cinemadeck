@@ -3,6 +3,7 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
 
 import styles from './styles/about.style';
@@ -19,8 +20,12 @@ const About = ({ lang }) => (
       <CustomContainer>
         <Container>
           <h1 className="text-center" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
-          <img className={lang === 'cz' ? 'd-block' : 'd-none'} src="/static/images/aboutKarty/spoluKarty.png" alt="Karty CinemaDeck" />
-          <img className={lang === 'cz' ? 'd-none' : 'd-block'} src="/static/images/aboutKarty/en/spoluKarty.png" alt="Karty CinemaDeck" />
+          <LazyLoad height={600}>
+            <img className={lang === 'cz' ? 'd-block' : 'd-none'} src="/static/images/aboutKarty/spoluKarty.png" alt="Karty CinemaDeck" />
+          </LazyLoad>
+          <LazyLoad height={600}>
+            <img className={lang === 'cz' ? 'd-none' : 'd-block'} src="/static/images/aboutKarty/en/spoluKarty.png" alt="Karty CinemaDeck" />
+          </LazyLoad>
           <p className="text-center mt-text" dangerouslySetInnerHTML={renderDangerHtmlText1(lang)} />
           <p className="text-center mt-4" dangerouslySetInnerHTML={renderDangerHtmlText2(lang)} />
         </Container>

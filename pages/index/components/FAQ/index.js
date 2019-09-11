@@ -4,6 +4,7 @@ import React from 'react';
 import { Container, Row } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
+import LazyLoad from 'react-lazyload';
 import Question from './components/Question';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
 
@@ -57,8 +58,12 @@ const FAQ = ({ lang }) => (
             <div className="faq-item">
               <h6>PRINT DATA</h6>
               <div className="img-holder">
-                <img src="/static/images/faq/en/kartaprint.png" className={lang === 'cz' ? 'd-none' : 'd-block '} alt="" />
-                <img src="/static/images/faq/kartaprint.png" className={lang === 'cz' ? 'd-block' : 'd-none '} alt="" />
+                <LazyLoad height={250}>
+                  <img src="/static/images/faq/en/kartaprint.png" className={lang === 'cz' ? 'd-none' : 'd-block '} alt="" />
+                </LazyLoad>
+                <LazyLoad height={250}>
+                  <img src="/static/images/faq/kartaprint.png" className={lang === 'cz' ? 'd-block' : 'd-none '} alt="" />
+                </LazyLoad>
               </div>
             </div>
           </div>
@@ -66,8 +71,12 @@ const FAQ = ({ lang }) => (
             <div className="faq-item">
               <h6>MOBILE PDF</h6>
               <div className="img-holder">
-                <img src="/static/images/faq/en/kartatelefon.png" className={lang === 'cz' ? 'd-none' : 'd-block '} alt="" />
-                <img src="/static/images/faq/kartatelefon.png" className={lang === 'cz' ? 'd-block' : 'd-none '} alt="" />
+                <LazyLoad height={250}>
+                  <img src="/static/images/faq/en/kartatelefon.png" className={lang === 'cz' ? 'd-none' : 'd-block '} alt="" />
+                </LazyLoad>
+                <LazyLoad height={250}>
+                  <img src="/static/images/faq/kartatelefon.png" className={lang === 'cz' ? 'd-block' : 'd-none '} alt="" />
+                </LazyLoad>
               </div>
             </div>
             <img src="/static/images/faq/plus.png" className="plus" alt="" />
@@ -76,8 +85,12 @@ const FAQ = ({ lang }) => (
             <div className="faq-item">
               <h6>TITLE PRESETS</h6>
               <div className="img-holder">
-                <img src="/static/images/faq/en/presets.png" className={lang === 'cz' ? 'd-none presets' : 'd-block presets'} alt="" />
-                <img src="/static/images/faq/presets.png" className={lang === 'cz' ? 'd-block presets' : 'd-none presets'} alt="" />
+                <LazyLoad height={250}>
+                  <img src="/static/images/faq/en/presets.png" className={lang === 'cz' ? 'd-none presets' : 'd-block presets'} alt="" />
+                </LazyLoad>
+                <LazyLoad height={250}>
+                  <img src="/static/images/faq/presets.png" className={lang === 'cz' ? 'd-block presets' : 'd-none presets'} alt="" />
+                </LazyLoad>
               </div>
             </div>
             <img src="/static/images/faq/plus.png" className="plus" alt="" />
@@ -86,7 +99,9 @@ const FAQ = ({ lang }) => (
             <div className="faq-item">
               <h6>CHECKLIST</h6>
               <div className="img-holder">
-                <img className="left-small" src="/static/images/faq/checklist.png" alt="" />
+                <LazyLoad height={250}>
+                  <img className="left-small" src="/static/images/faq/checklist.png" alt="" />
+                </LazyLoad>
               </div>
             </div>
             <img src="/static/images/faq/plus.png" className="plus special-plus" alt="" />
@@ -95,7 +110,9 @@ const FAQ = ({ lang }) => (
             <div className="faq-item">
               <h6>GUIDE</h6>
               <div className="img-holder">
-                <img className="left-small" src="/static/images/faq/guide.png" alt="" />
+                <LazyLoad height={250}>
+                  <img className="left-small" src="/static/images/faq/guide.png" alt="" />
+                </LazyLoad>
               </div>
             </div>
             <img src="/static/images/faq/plus.png" className="plus" alt="" />

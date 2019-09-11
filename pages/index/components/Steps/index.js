@@ -3,6 +3,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 
 import styles from './styles/steps.style';
 import localisation from '../../../../app-data/shared/localisation/Steps';
@@ -16,7 +17,9 @@ const Steps = ({ lang }) => (
       <Container>
         <h2 className="text-center">{localisation[lang].stepsTitle}</h2>
         <div className="image-holder">
-          <img src="/static/images/steps/image.png" alt="" />
+          <LazyLoad height={600}>
+            <img src="/static/images/steps/image.png" alt="" />
+          </LazyLoad>
           <p className="img-text img-text-1">{localisation[lang].stepsImageText1}</p>
           <p className="img-text img-text-2">{localisation[lang].stepsImageText2}</p>
           <p className="img-text img-text-3">{localisation[lang].stepsImageText3}</p>

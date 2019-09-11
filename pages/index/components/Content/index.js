@@ -4,6 +4,7 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import LazyLoad from 'react-lazyload';
 import Item from './components/Item';
 
 import styles from './styles/content.style';
@@ -42,19 +43,27 @@ const Content = ({ lang }) => (
         </div>
         <div className="right-items">
           <div className="right-item">
-            <img src="/static/images/content/lupa.png" alt="" />
+            <LazyLoad height={20}>
+              <img src="/static/images/content/lupa.png" alt="" />
+            </LazyLoad>
             <p>105 mm</p>
           </div>
           <div className="right-item">
-            <img src="/static/images/content/vzdialenost.png" alt="" />
+            <LazyLoad height={20}>
+              <img src="/static/images/content/vzdialenost.png" alt="" />
+            </LazyLoad>
             <p>3,5 m</p>
           </div>
           <div className="right-item">
-            <img src="/static/images/content/uhol.png" alt="" />
+            <LazyLoad height={20}>
+              <img src="/static/images/content/uhol.png" alt="" />
+            </LazyLoad>
             <p>30 °</p>
           </div>
           <div className="right-item">
-            <img src="/static/images/content/iso.png" alt="" />
+            <LazyLoad height={20}>
+              <img src="/static/images/content/iso.png" alt="" />
+            </LazyLoad>
             <p>100 ISO</p>
           </div>
         </div>

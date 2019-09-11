@@ -4,6 +4,7 @@ import {
   Container, Button, Modal, ModalBody, InputGroup, Input,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 
 import styles from './styles/freeDownload.style';
 import localisation from '../../../../app-data/shared/localisation/FreeDownload';
@@ -34,8 +35,12 @@ const FreeDownload = ({ lang }) => {
             </div>
           </div>
           <button type="button" onClick={() => toggle(!modal)}>{localisation[lang].freeDownloadButton}</button>
-          <img className={lang === 'cz' ? 'd-block free-image' : 'd-none free-image'} src="/static/images/freedownload/image.png" alt="" />
-          <img className={lang === 'cz' ? 'd-none free-image' : 'd-block free-image'} src="/static/images/freedownload/en/image.png" alt="" />
+          <LazyLoad height={700}>
+            <img className={lang === 'cz' ? 'd-block free-image' : 'd-none free-image'} src="/static/images/freedownload/image.png" alt="" />
+          </LazyLoad>
+          <LazyLoad height={700}>
+            <img className={lang === 'cz' ? 'd-none free-image' : 'd-block free-image'} src="/static/images/freedownload/en/image.png" alt="" />
+          </LazyLoad>
         </Container>
       </Container>
       <div>
@@ -48,8 +53,12 @@ const FreeDownload = ({ lang }) => {
               </InputGroup>
               <Button type="button" className="modal-button">{localisation[lang].freeDownloadButton}</Button>
             </div>
-            <img className={lang === 'cz' ? 'd-block free-image' : 'd-none free-image'} src="/static/images/freedownload/image.png" alt="" />
-            <img className={lang === 'cz' ? 'd-none free-image' : 'd-block free-image'} src="/static/images/freedownload/en/image.png" alt="" />
+            <LazyLoad height={700}>
+              <img className={lang === 'cz' ? 'd-block free-image' : 'd-none free-image'} src="/static/images/freedownload/image.png" alt="" />
+            </LazyLoad>
+            <LazyLoad height={700}>
+              <img className={lang === 'cz' ? 'd-none free-image' : 'd-block free-image'} src="/static/images/freedownload/en/image.png" alt="" />
+            </LazyLoad>
           </ModalBody>
         </Modal>
       </div>

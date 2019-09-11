@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 
 import styles from './styles/item.style';
 
@@ -8,7 +9,9 @@ const Item = ({ itemData }) => {
 
   return (
     <div className="item">
-      <img src={imageURL} alt="" />
+      <LazyLoad height={50}>
+        <img src={imageURL} alt="" />
+      </LazyLoad>
       <div className="itemText">
         <h6>{header}</h6>
         <p>{text}</p>

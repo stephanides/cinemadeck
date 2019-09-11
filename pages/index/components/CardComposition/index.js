@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 
 import styles from './styles/cardcomposition.style';
 import localisation from '../../../../app-data/shared/localisation/CardComposition';
@@ -18,12 +19,20 @@ const CardComposition = ({ lang }) => {
             <div className="flip-card">
               <div className={isOpen ? 'flip-card-holder-flipped' : 'flip-card-holder'}>
                 <div className="flip-card-front">
-                  <img className={lang === 'cz' ? 'd-block' : 'd-none'} src="/static/images/composition/karta1.png" alt="" />
-                  <img className={lang === 'cz' ? 'd-none' : 'd-block'} src="/static/images/composition/en/karta1.png" alt="" />
+                  <LazyLoad height={600}>
+                    <img className={lang === 'cz' ? 'd-block' : 'd-none'} src="/static/images/composition/karta1.png" alt="" />
+                  </LazyLoad>
+                  <LazyLoad height={600}>
+                    <img className={lang === 'cz' ? 'd-none' : 'd-block'} src="/static/images/composition/en/karta1.png" alt="" />
+                  </LazyLoad>
                 </div>
                 <div className="flip-card-back">
-                  <img className={lang === 'cz' ? 'd-block' : 'd-none'} src="/static/images/composition/karta2.png" alt="" />
-                  <img className={lang === 'cz' ? 'd-none' : 'd-block'} src="/static/images/composition/en/karta2.png" alt="" />
+                  <LazyLoad height={600}>
+                    <img className={lang === 'cz' ? 'd-block' : 'd-none'} src="/static/images/composition/karta2.png" alt="" />
+                  </LazyLoad>
+                  <LazyLoad height={600}>
+                    <img className={lang === 'cz' ? 'd-none' : 'd-block'} src="/static/images/composition/en/karta2.png" alt="" />
+                  </LazyLoad>
                 </div>
               </div>
             </div>

@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 
 import styles from './styles/refund.style';
 import localisation from '../../../../app-data/shared/localisation/Refund';
@@ -13,7 +14,9 @@ const Refund = ({ lang }) => (
   <div className="refund" id="refund">
     <Container fluid>
       <Container>
-        <img src="/static/images/refund/warranty.png" loading="lazyload" alt="" />
+        <LazyLoad height={250}>
+          <img src="/static/images/refund/warranty.png" loading="lazyload" alt="" />
+        </LazyLoad>
         <h2>{localisation[lang].refundTitle}</h2>
         <h6>{localisation[lang].refundSubTitle}</h6>
         <div className="text-holder">
