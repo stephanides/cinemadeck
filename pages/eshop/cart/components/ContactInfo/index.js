@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, FormGroup, Input } from 'reactstrap';
 import PropTypes from 'prop-types';
 
+import countries from './data/country-list';
 import locale from '../../../../../app-data/shared/localisation/eshop/cart';
 
 const ContactInfo = ({ lang }) => (
@@ -72,8 +73,16 @@ const ContactInfo = ({ lang }) => (
           required
         >
           <option defaultChecked value="">{locale[lang].state}</option>
-          <option value="cz">{locale[lang].czechRepublic}</option>
-          <option value="sk">{locale[lang].slovakRepublic}</option>
+          {
+            countries.map((country) => (
+              <option
+                value={country.value}
+                key={country.value}
+              >
+                {country.text}
+              </option>
+            ))
+          }
         </Input>
         <div className="invalid-feedback">
           {locale[lang].stateError}
