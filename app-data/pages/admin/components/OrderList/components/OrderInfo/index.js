@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -72,6 +73,18 @@ const OrderInfo = ({
                       <p className="mb-0" key={title}>{`${count}x ${title}`}</p>
                     );
                   })
+                }
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col>
+                <strong>Uhrazeno:</strong>
+              </Col>
+              <Col>
+                {
+                  paymentMethod > 0 ? (
+                    paymentMethod < 2 ? 'Prostřednictvím Pay Pal' : 'Bankovním převodem'
+                  ) : 'Platební kartou'
                 }
               </Col>
             </Row>
