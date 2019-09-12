@@ -27,6 +27,7 @@ const initialState = {
     products: [],
     totalPriceToPay: 0,
   },
+  stateSelected: 0,
 };
 const ShoppingCart = compose(
   graphql(createOrderMutation, { name: 'createOrder' }),
@@ -37,6 +38,7 @@ const ShoppingCart = compose(
   cartProducts: { cart }, createOrder, getLocale: { lang }, mutate,
 }) => {
   const [order, handleOrder] = useState(initialState.order);
+  const [stateSelected, handleStateChange] = useState(initialState.stateSelected);
 
   useEffect(() => {
     const checkCart = async () => {
@@ -95,7 +97,7 @@ const ShoppingCart = compose(
 
       console.log(orderData);
 
-      try {
+      /* try {
         await createOrder({
           variables: {
             order: orderData,
@@ -103,7 +105,7 @@ const ShoppingCart = compose(
         });
       } catch (err) {
         console.log(err);
-      }
+      } */
     }
 
     form.classList.add('was-validated');
@@ -124,7 +126,10 @@ const ShoppingCart = compose(
         >
           <Row>
             <Col sm={{ size: 12, order: 1 }} md={{ size: 6, order: 1 }} lg={{ size: 6, order: 1 }}>
-              <ContactInfo lang={lang} />
+              <ContactInfo
+                lang={lang}
+                handleStateChange={handleStateChange}
+              />
             </Col>
             <Col sm={{ size: 12, order: 3 }} md={{ size: 6, order: 2 }} lg={{ size: 6, order: 2 }}>
               <CartCheckout
@@ -132,6 +137,7 @@ const ShoppingCart = compose(
                 lang={lang}
                 order={order}
                 handleOrder={handleOrder}
+                stateSelected={stateSelected}
               />
             </Col>
             {''}

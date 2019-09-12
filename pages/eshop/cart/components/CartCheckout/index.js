@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable max-len */
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
@@ -13,7 +14,7 @@ const CartCheckout = compose(
   graphql(addProductToCartMutation, { name: 'addProductToCart' }),
   graphql(removeProductFromCartMutation, { name: 'removeProductFromCart' }),
 )(({
-  cart, lang, addProductToCart, removeProductFromCart,
+  cart, lang, addProductToCart, removeProductFromCart, stateSelected,
 }) => {
   const handleAddProductToCart = async (id) => {
     try {
@@ -31,6 +32,8 @@ const CartCheckout = compose(
     }
   };
 
+  console.log(stateSelected);
+
   return (
     <div className="cart-checkout-wrapper">
       <div className="bg-white position-fixed" />
@@ -46,18 +49,53 @@ const CartCheckout = compose(
                       <p
                         className={
                           i === cart.length - 1
-                            ? 'd-flex justify-content-between w-100 mb-5'
-                            : 'd-flex justify-content-between w-100'
+                            ? 'cart-item d-flex justify-content-between w-100 mb-5'
+                            : 'cart-item d-flex justify-content-between w-100'
                         }
                         key={i}
                       >
                         <span>{`${item.count}x ${item.title}`}</span>
                         <span className="d-flex">
-                          {item.totalPrice.cz}
-                          {' '}
-                          CZK
-                          {' '}
-                          <span className="ml-3">
+                          <span>
+                            {
+                              stateSelected < 1
+                                ? [
+                                  <span className="position-relative" key={0}>
+                                    {item.totalPrice.cz}
+                                    <small className="position-absolute text-uppercase">
+                                      czk
+                                    </small>
+                                  </span>,
+                                  <span key={1}>
+                                    {' / '}
+                                  </span>,
+                                  <span className="position-relative ml-1" key={2}>
+                                    {item.totalPrice.en}
+                                    <small className="position-absolute text-uppercase">
+                                      eur
+                                    </small>
+                                  </span>,
+                                ] : (
+                                  stateSelected > 1
+                                    ? (
+                                      <span className="position-relative">
+                                        {item.totalPrice.en}
+                                        <small className="position-absolute text-uppercase">
+                                          eur
+                                        </small>
+                                      </span>
+                                    ) : (
+                                      <span className="position-relative">
+                                        {item.totalPrice.cz}
+                                        <small className="position-absolute text-uppercase">
+                                          czk
+                                        </small>
+                                      </span>
+                                    )
+                                )
+                            }
+                          </span>
+                          <span className="ml-4">
                             <span className="d-flex justify-content-between">
                               <button
                                 type="button"
@@ -87,10 +125,41 @@ const CartCheckout = compose(
                     <span className="text-uppercase">{locale[lang].sum}</span>
                     <span className="font-weight-bold">
                       {
-                        cart.reduce((a, b) => (a + b.totalPrice.cz), 0)
+                        stateSelected < 1
+                          ? [
+                            <span className="position-relative" key={0}>
+                              {cart.reduce((a, b) => (a + b.totalPrice.cz), 0)}
+                              <small className="text-uppercase position-absolute">
+                                czk
+                              </small>
+                            </span>,
+                            <span key={1}>
+                              {' / '}
+                            </span>,
+                            <span className="position-relative" key={2}>
+                              {cart.reduce((a, b) => (a + b.totalPrice.en), 0)}
+                              <small className="text-uppercase position-absolute">
+                                eur
+                              </small>
+                            </span>,
+                          ] : (
+                            stateSelected > 1 ? (
+                              <span className="position-relative" key={2}>
+                                {cart.reduce((a, b) => (a + b.totalPrice.en), 0)}
+                                <small className="text-uppercase position-absolute">
+                                  eur
+                                </small>
+                              </span>
+                            ) : (
+                              <span className="position-relative" key={0}>
+                                {cart.reduce((a, b) => (a + b.totalPrice.cz), 0)}
+                                <small className="text-uppercase position-absolute">
+                                  czk
+                                </small>
+                              </span>
+                            )
+                          )
                       }
-                      {' '}
-                      CZK
                     </span>
                   </p>
                   <button
@@ -150,6 +219,7 @@ CartCheckout.propTypes = {
     }),
   ),
   lang: PropTypes.string.isRequired,
+  stateSelected: PropTypes.number.isRequired,
 };
 
 export default CartCheckout;
