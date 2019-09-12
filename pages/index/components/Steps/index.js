@@ -1,9 +1,10 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import './scss/steps.scss';
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
+
+import styles from './styles/steps.style';
 import localisation from '../../../../app-data/shared/localisation/Steps';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].stepsText1span });
@@ -53,6 +54,7 @@ const Steps = ({ lang }) => (
         </div>
       </Container>
     </Container>
+    <style jsx>{styles}</style>
   </div>
 );
 

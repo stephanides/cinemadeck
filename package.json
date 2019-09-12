@@ -48,7 +48,8 @@
     "react-dom": "^16.8.6",
     "react-image-gallery": "^0.9.1",
     "reactstrap": "^8.0.1",
-    "styled-components": "^4.3.2"
+    "styled-components": "^4.3.2",
+    "styled-jsx": "^3.2.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",

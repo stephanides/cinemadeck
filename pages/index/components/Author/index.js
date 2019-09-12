@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-
-import './scss/author.scss';
 import React from 'react';
 import Link from 'next/link';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
+
+import styles from './styles/author.style';
 import localisation from '../../../../app-data/shared/localisation/Author';
 
 const Author = ({ lang }) => (
@@ -35,6 +35,7 @@ const Author = ({ lang }) => (
         </div>
       </Container>
     </Container>
+    <style jsx>{styles}</style>
   </div>
 );
 

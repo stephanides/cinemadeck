@@ -1,10 +1,12 @@
-import './scss/customContainer.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import styles from './styles/CustomContainer.style';
 
 const CustomContainer = ({ children, flex }) => (
   <div className={flex ? 'custom-container d-flex' : 'custom-container'}>
     { children }
+    <style jsx>{styles}</style>
   </div>
 );
 

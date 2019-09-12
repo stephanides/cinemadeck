@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import './scss/navigation.scss';
 import React from 'react';
 import Link from 'next/link';
 import { Container } from 'reactstrap';
@@ -7,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 import { signOut } from '../../../../lib/auth';
+
+import styles from './styles/navigation.style';
 
 const Navigation = ({ userName }) => (
   <div className="border mb-4 p-2">
@@ -40,6 +41,7 @@ const Navigation = ({ userName }) => (
         </li>
       </ul>
     </Container>
+    <style jsx>{styles}</style>
   </div>
 );
 

@@ -1,11 +1,10 @@
 /* eslint-disable react/no-danger */
-
-import './scss/unique.scss';
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
-import localisation from '../../../../app-data/shared/localisation/Unique';
 
+import styles from './styles/unique.style';
+import localisation from '../../../../app-data/shared/localisation/Unique';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].uniqueCol2Header });
 const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].uniqueCol1Text });
@@ -57,6 +56,7 @@ const Unique = ({ lang }) => (
         </div>
       </Container>
     </Container>
+    <style jsx>{styles}</style>
   </div>
 );
 

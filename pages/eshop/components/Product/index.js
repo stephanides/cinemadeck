@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-danger */
-import './scss/product.scss';
 import React from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
+
+import styles from './styles/product.style';
+
 import { addProductToCartMutation } from '../../../../app-data/graphql/mutation';
 import locale from '../../../../app-data/shared/localisation/eshop';
 
@@ -103,6 +105,9 @@ const Product = graphql(
           </a>
         </Link>
       </p>
+      <style jsx>
+        {styles}
+      </style>
     </div>
   );
 });

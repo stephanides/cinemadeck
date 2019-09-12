@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/no-danger */
-import './scss/about.scss';
 import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
+
+import styles from './styles/about.style';
 import localisation from '../../../../app-data/shared/localisation/About';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].aboutTitle });
@@ -25,6 +26,7 @@ const About = ({ lang }) => (
         </Container>
       </CustomContainer>
     </Container>
+    <style jsx>{styles}</style>
   </div>
 );
 

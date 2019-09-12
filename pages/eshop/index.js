@@ -1,12 +1,10 @@
-import './scss/eshop.scss';
 import React, { useEffect } from 'react';
-import {
-  Container, Col, Row,
-} from 'reactstrap';
+import { Container, Col, Row } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import { getLocaleQuery, getProductsFromCart } from '../../app-data/graphql/query';
 import { initCartMutation } from '../../app-data/graphql/mutation';
 
+import styles from './styles/eshop.style';
 import Layout from '../../app-data/shared/components/Layout';
 import Product from './components/Product';
 import Footer from '../../app-data/shared/components/eshop/Footer';
@@ -93,8 +91,11 @@ const EshopPage = compose(
             />
           </Col>
         </Row>
-        <Footer lang={lang} />
       </Container>
+      <Footer lang={lang} />
+      <style jsx>
+        {styles}
+      </style>
     </Layout>
   );
 });

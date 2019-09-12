@@ -1,10 +1,11 @@
 /* eslint-disable react/no-danger */
-import './scss/header.scss';
 import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import CustomContainer from '../../../../app-data/shared/components/CustomContainer';
+
+import styles from './styles/header.style';
 import localisation from '../../../../app-data/shared/localisation/Header';
 
 const renderDangerHtmlHeader = (lang) => ({ __html: localisation[lang].headerText1 });
@@ -22,6 +23,7 @@ const Header = ({ lang }) => (
         <AnchorLink href="#about">{localisation[lang].findOutMore}</AnchorLink>
       </CustomContainer>
     </Container>
+    <style jsx global>{styles}</style>
   </div>
 );
 

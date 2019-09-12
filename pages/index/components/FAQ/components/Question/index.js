@@ -1,8 +1,8 @@
 /* eslint-disable react/no-danger */
-import './scss/question.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './styles/question.style';
 
 const Question = ({ itemData }) => {
   const { faqid, questionText, questionAnswer } = itemData;
@@ -15,6 +15,7 @@ const Question = ({ itemData }) => {
         <div className="faq-arrow" />
         <p className="faq-text" dangerouslySetInnerHTML={renderDangerHtml()} />
       </label>
+      <style jsx>{styles}</style>
     </div>
   );
 };

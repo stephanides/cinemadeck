@@ -1,10 +1,11 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import './scss/refund.scss';
 import React from 'react';
 import Link from 'next/link';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
+
+import styles from './styles/refund.style';
 import localisation from '../../../../app-data/shared/localisation/Refund';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].refundText3 });
@@ -26,6 +27,7 @@ const Refund = ({ lang }) => (
         </Link>
       </Container>
     </Container>
+    <style jsx>{styles}</style>
   </div>
 );
 

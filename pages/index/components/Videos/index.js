@@ -1,9 +1,10 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import './scss/videos.scss';
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
+
+import styles from './styles/videos.style';
 import localisation from '../../../../app-data/shared/localisation/Videos';
 
 const Videos = ({ lang }) => (
@@ -29,6 +30,7 @@ const Videos = ({ lang }) => (
         </Row>
       </Container>
     </Container>
+    <style jsx>{styles}</style>
   </div>
 );
 

@@ -149,9 +149,7 @@ const ShoppingCart = compose(
         <style jsx>
           {
             `
-              form {
-                margin-top: 100px;
-              }
+              form { margin-top: 100px; }
             `
           }
         </style>
