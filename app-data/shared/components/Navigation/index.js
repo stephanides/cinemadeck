@@ -111,12 +111,23 @@ const Navigation = graphql(
                     ? 'move move-left' : 'move'
                 }
               >
-                <AnchorLink
-                  href="#footer-main"
-                  className="nav-link pr-4"
-                >
-                  {localisation[lang].contact}
-                </AnchorLink>
+                {
+                  !isHome
+                    ? (
+                      <Link href="/#footer-main">
+                        <a className="nav-link pr-4">
+                          {localisation[lang].contact}
+                        </a>
+                      </Link>
+                    ) : (
+                      <AnchorLink
+                        href="#footer-main"
+                        className="nav-link pr-4"
+                      >
+                        {localisation[lang].contact}
+                      </AnchorLink>
+                    )
+                }
               </NavItem>
               {
                 !isCart && (
