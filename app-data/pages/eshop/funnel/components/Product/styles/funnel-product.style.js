@@ -28,7 +28,7 @@ export default css`
               & > small {
                 font-size: x-small;
                 top: -30px;
-                right: -15px;
+                right: -20px;
               }
             }
           }
