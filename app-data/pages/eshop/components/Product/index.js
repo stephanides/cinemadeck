@@ -30,17 +30,14 @@ const Product = graphql(
   return (
     <div className="product">
       <div className="product-bg">
-        <LazyLoad height={280}>
+        <LazyLoad height={250}>
           <img
             src={imageURL}
             alt=""
-            width={350}
-            height={280}
           />
         </LazyLoad>
         <h4 className="text-uppercase d-flex justify-content-between">
           <span
-            className="font-weight-lighter"
             dangerouslySetInnerHTML={{ __html: titleOne }}
           />
           <span className="font-weight-bold">
@@ -77,7 +74,7 @@ const Product = graphql(
           </span>
         </h4>
         <h5
-          className="text-uppercase font-weight-lighter mb-3"
+          className="text-uppercase mb-3"
           dangerouslySetInnerHTML={{ __html: titleTwo }}
         />
         <p className="mb-5 font-weight-lighter">{content}</p>
@@ -85,12 +82,6 @@ const Product = graphql(
           type="button"
           className="button-add-to-cart text-uppercase"
           onClick={() => {
-            /* const product = {
-              count: 1,
-              price: lang === 'cz' ? price[0] : price[1],
-              title: productTitle,
-            }; */
-
             handleAddProductToCart(id);
           }}
         >
@@ -106,9 +97,7 @@ const Product = graphql(
           </a>
         </Link>
       </p>
-      <style jsx>
-        {styles}
-      </style>
+      <style jsx global>{styles}</style>
     </div>
   );
 });

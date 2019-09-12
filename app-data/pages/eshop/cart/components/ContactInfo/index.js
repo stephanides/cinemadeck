@@ -7,9 +7,9 @@ import countries from './data/country-list';
 import locale from '../../../../../shared/localisation/eshop/cart';
 
 const ContactInfo = ({
-  lang, handleStateChange, order, handleOrder,
+  lang, // handleStateChange, order, handleOrder,
 }) => {
-  const stateChange = (value) => {
+  /* const stateChange = (value) => {
     let num = 0;
 
     if (value === 'CZ') {
@@ -27,7 +27,7 @@ const ContactInfo = ({
           num < 2 ? 'CZK' : 'EUR'
         ) : 'EUR',
     });
-  };
+  }; */
 
   return (
     <div className="pt-5 pr-5 contact-info-container position-relative mb-5">
@@ -94,11 +94,6 @@ const ContactInfo = ({
             id="state"
             name="state"
             className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
-            onChange={(e) => {
-              const val = e.currentTarget.options[e.currentTarget.selectedIndex].value;
-
-              stateChange(val);
-            }}
             required
           >
             <option defaultChecked value="">{locale[lang].state}</option>
@@ -153,7 +148,7 @@ const ContactInfo = ({
 
 ContactInfo.propTypes = {
   lang: PropTypes.string.isRequired,
-  handleStateChange: PropTypes.func.isRequired,
+  /* handleStateChange: PropTypes.func.isRequired,
   handleOrder: PropTypes.func.isRequired,
   order: PropTypes.shape({
     address: PropTypes.shape({
@@ -169,7 +164,7 @@ ContactInfo.propTypes = {
     paymentMethod: PropTypes.number,
     products: PropTypes.arrayOf(PropTypes.object),
     totalPriceToPay: PropTypes.number,
-  }).isRequired,
+  }).isRequired, */
 };
 
 export default ContactInfo;

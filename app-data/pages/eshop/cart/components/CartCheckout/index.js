@@ -56,7 +56,26 @@ const CartCheckout = compose(
                         <span className="d-flex">
                           <span>
                             {
-                              stateSelected < 1
+                              lang === 'cz' && [
+                                <span className="position-relative" key={0}>
+                                  {item.totalPrice.cz}
+                                  <small className="position-absolute text-uppercase">
+                                    czk
+                                  </small>
+                                </span>,
+                                <span key={1}>
+                                  {' / '}
+                                </span>,
+                              ]
+                            }
+                            <span className="position-relative ml-1" key={2}>
+                              {item.totalPrice.en}
+                              <small className="position-absolute text-uppercase">
+                                eur
+                              </small>
+                            </span>
+                            {
+                              /* stateSelected < 1
                                 ? [
                                   <span className="position-relative" key={0}>
                                     {item.totalPrice.cz}
@@ -90,7 +109,7 @@ const CartCheckout = compose(
                                         </small>
                                       </span>
                                     )
-                                )
+                                ) */
                             }
                           </span>
                           <span className="ml-4">
@@ -123,6 +142,26 @@ const CartCheckout = compose(
                     <span className="text-uppercase">{locale[lang].sum}</span>
                     <span className="font-weight-bold">
                       {
+                        lang === 'cz' && [
+                          <span className="position-relative" key={0}>
+                            {cart.reduce((a, b) => (a + b.totalPrice.cz), 0)}
+                            <small className="text-uppercase position-absolute">
+                              czk
+                            </small>
+                          </span>,
+                          <span key={1}>
+                            {' / '}
+                          </span>,
+                        ]
+                      }
+                      <span className="position-relative" key={2}>
+                        {cart.reduce((a, b) => (a + b.totalPrice.en), 0)}
+                        <small className="text-uppercase position-absolute">
+                          eur
+                        </small>
+                      </span>
+                      {
+                        /*
                         stateSelected < 1
                           ? [
                             <span className="position-relative" key={0}>
@@ -156,7 +195,7 @@ const CartCheckout = compose(
                                 </small>
                               </span>
                             )
-                          )
+                          ) */
                       }
                     </span>
                   </p>
