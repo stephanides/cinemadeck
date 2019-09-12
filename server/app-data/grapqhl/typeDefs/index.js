@@ -22,9 +22,7 @@ const typeDefs = gql`
 
   input OrderedProductInput {
     count: Int!
-    price: Float!
     title: String!
-    totalPrice: Float!
   }
 
   input UserLogInput {

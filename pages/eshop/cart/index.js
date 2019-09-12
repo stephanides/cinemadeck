@@ -48,11 +48,6 @@ const ShoppingCart = compose(
 
           if (cartStorageData && cartStorageData.length > 0) {
             await mutate({ variables: { cart: cartStorageData } });
-            handleOrder({
-              ...order,
-              products: cartStorageData,
-              totalPriceToPay: cartStorageData.reduce((a, b) => (a + b.totalPrice), 0),
-            });
           }
         }
       } catch (err) {
@@ -74,7 +69,24 @@ const ShoppingCart = compose(
       e.stopPropagation();
     } else {
       const formattedCart = cart.map((item) => {
-        const { __typename, ...reObject } = item;
+        const {
+          __typename,
+          id,
+          ...slicedObject
+        } = item;
+
+        /* const reObject = {
+          ...slicedObject,
+          price: {
+            cz: slicedObject.price.cz,
+            eur: slicedObject.price.en,
+          },
+          totalPrice: {
+            cz: slicedObject.price.cz,
+            eur: slicedObject.price.en,
+          },
+        }; */
+        const { price, totalPrice, ...reObject } = slicedObject;
 
         return reObject;
       });
@@ -92,12 +104,14 @@ const ShoppingCart = compose(
         email: form.email.value,
         products: formattedCart,
         note: form.note.value,
-        totalPriceToPay: cart.reduce((a, b) => (a + b.totalPrice), 0),
+        totalPriceToPay: stateSelected > 1
+          ? cart.reduce((a, b) => (a + b.totalPrice.en), 0)
+          : cart.reduce((a, b) => (a + b.totalPrice.cz), 0),
       };
 
       console.log(orderData);
 
-      /* try {
+      try {
         await createOrder({
           variables: {
             order: orderData,
@@ -105,7 +119,7 @@ const ShoppingCart = compose(
         });
       } catch (err) {
         console.log(err);
-      } */
+      }
     }
 
     form.classList.add('was-validated');
@@ -129,14 +143,14 @@ const ShoppingCart = compose(
               <ContactInfo
                 lang={lang}
                 handleStateChange={handleStateChange}
+                order={order}
+                handleOrder={handleOrder}
               />
             </Col>
             <Col sm={{ size: 12, order: 3 }} md={{ size: 6, order: 2 }} lg={{ size: 6, order: 2 }}>
               <CartCheckout
                 cart={cart}
                 lang={lang}
-                order={order}
-                handleOrder={handleOrder}
                 stateSelected={stateSelected}
               />
             </Col>

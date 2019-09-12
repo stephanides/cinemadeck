@@ -22,9 +22,7 @@ export const createOrderMutation = gql`
       paymentMethod
       products {
         count
-        price
         title
-        totalPrice
       }
       totalPriceToPay
     }

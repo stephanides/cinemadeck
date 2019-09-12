@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react';
 import { Col, FormGroup, Input } from 'reactstrap';
 import PropTypes from 'prop-types';
@@ -5,7 +6,9 @@ import PropTypes from 'prop-types';
 import countries from './data/country-list';
 import locale from '../../../../../app-data/shared/localisation/eshop/cart';
 
-const ContactInfo = ({ lang, handleStateChange }) => {
+const ContactInfo = ({
+  lang, handleStateChange, order, handleOrder,
+}) => {
   const stateChange = (value) => {
     let num = 0;
 
@@ -17,6 +20,13 @@ const ContactInfo = ({ lang, handleStateChange }) => {
     }
 
     handleStateChange(num);
+    handleOrder({
+      ...order,
+      currency: num > 0
+        ? (
+          num < 2 ? 'CZK' : 'EUR'
+        ) : 'EUR',
+    });
   };
 
   return (
@@ -144,6 +154,22 @@ const ContactInfo = ({ lang, handleStateChange }) => {
 ContactInfo.propTypes = {
   lang: PropTypes.string.isRequired,
   handleStateChange: PropTypes.func.isRequired,
+  handleOrder: PropTypes.func.isRequired,
+  order: PropTypes.shape({
+    address: PropTypes.shape({
+      city: PropTypes.string,
+      state: PropTypes.string,
+      street: PropTypes.string,
+      psc: PropTypes.string,
+    }),
+    currency: PropTypes.string,
+    email: PropTypes.string,
+    name: PropTypes.string,
+    note: PropTypes.string,
+    paymentMethod: PropTypes.number,
+    products: PropTypes.arrayOf(PropTypes.object),
+    totalPriceToPay: PropTypes.number,
+  }).isRequired,
 };
 
 export default ContactInfo;
