@@ -61,6 +61,7 @@ export default css`
               align-items: center;
               border: 0;
               border-radius: 0;
+              outline: none;
             }
           }
           button {
@@ -75,6 +76,10 @@ export default css`
             height: 70px;
             width: 265px;
             letter-spacing: .15rem;
+
+            &:hover {
+              background-color: #0098d8;
+            }
           }
         }
         .warranty {

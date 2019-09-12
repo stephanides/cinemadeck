@@ -32,8 +32,6 @@ const CartCheckout = compose(
     }
   };
 
-  console.log(stateSelected);
-
   return (
     <div className="cart-checkout-wrapper">
       <div className="bg-white position-fixed" />
