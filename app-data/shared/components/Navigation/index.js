@@ -126,7 +126,10 @@ const Navigation = graphql(
                         ? 'cart-content move move-top' : 'cart-content move'
                     }
                   >
-                    <CartContent cart={cart} />
+                    <CartContent
+                      cart={cart}
+                      lang={lang}
+                    />
                   </NavItem>
                 )
               }

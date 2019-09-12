@@ -9,7 +9,9 @@ import styles from './styles/cart-content.style';
 const CartContent = compose(
   graphql(addProductToCartMutation, { name: 'addProductToCart' }),
   graphql(removeProductFromCartMutation, { name: 'removeProductFromCart' }),
-)(({ cart, addProductToCart, removeProductFromCart }) => {
+)(({
+  cart, addProductToCart, removeProductFromCart, lang,
+}) => {
   const handleAddProductToCart = async (id) => {
     try {
       await addProductToCart({ variables: { id } });
@@ -36,11 +38,15 @@ const CartContent = compose(
             >
               <span className="font-weight-smaller">{`${item.count}x ${item.title}`}</span>
               <span className="font-weight-smaller">
-                <strong className="position-relative">
-                  {item.totalPrice.cz}
-                  <small className="position-absolute text-uppercase">czk</small>
-                </strong>
-                {' / '}
+                {
+                  lang === 'cz' && [
+                    <strong className="position-relative">
+                      {item.totalPrice.cz}
+                      <small className="position-absolute text-uppercase">czk</small>
+                    </strong>,
+                    <> / </>,
+                  ]
+                }
                 <strong className="position-relative">
                   {item.totalPrice.en}
                   <small className="position-absolute text-uppercase">eur</small>
@@ -91,6 +97,7 @@ CartContent.propTypes = {
       }),
     }),
   ),
+  lang: PropTypes.string.isRequired,
 };
 
 export default CartContent;
