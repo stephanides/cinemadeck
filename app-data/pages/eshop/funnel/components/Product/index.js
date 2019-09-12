@@ -44,7 +44,7 @@ const Product = graphql(
               <div>
                 <p className="font-weight-lighter">
                   <button
-                    className="infoLink"
+                    className="infoLink text-uppercase"
                     type="button"
                     onClick={() => toggleInfo(!infoShow)}
                   >

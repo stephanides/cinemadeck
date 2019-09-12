@@ -11,10 +11,10 @@ export default {
     {
       __typename: 'Product',
       id: '001',
-      title: 'Cards',
+      title: 'CinemaDeck Cards',
       price: {
         __typename: 'Price',
-        cz: 950,
+        cz: 947,
         en: 37,
       },
     },

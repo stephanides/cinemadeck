@@ -61,7 +61,7 @@ const EshopPage = compose(
                 productTitle: 'Cards',
                 titleOne: locale[lang].cardsTitleOne,
                 titleTwo: locale[lang].cardsTitleTwo,
-                price: [950, 37],
+                price: [947, 37],
                 knowMoreUrl: '/',
               }}
             />
