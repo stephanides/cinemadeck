@@ -22,7 +22,7 @@ export default css.global/* css */`
 
   .content{
     background-image: url("/static/images/content/background.png");
-    height: 1120px;
+    height: 1020px;
     background-size: cover;
     background-position: 90% 50%;
     background-repeat: no-repeat;

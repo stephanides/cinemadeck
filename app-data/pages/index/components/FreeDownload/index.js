@@ -34,14 +34,13 @@ const FreeDownload = ({ lang }) => {
               <p className="pl-3">{localisation[lang].freeDownloadText4}</p>
             </div>
           </div>
-          <div className="text-holder">
-            <p>{localisation[lang].email}</p>
+          <div className={modal ? 'text-holder show' : 'text-holder hide'}>
             <InputGroup>
-              <Input placeholder="Email" />
+              <Input placeholder={localisation[lang].email} />
             </InputGroup>
             <InputGroupText>
               <Input addon type="checkbox" aria-label="Checkbox for following text input" />
-              <span>Súhlasím so všeobecnými podmienkami</span>
+              <span>{localisation[lang].gdpr}</span>
             </InputGroupText>
           </div>
           <button type="button" onClick={() => toggle(!modal)}>{localisation[lang].freeDownloadButton}</button>
@@ -53,7 +52,7 @@ const FreeDownload = ({ lang }) => {
           </LazyLoad>
         </Container>
       </Container>
-      <style jsx>{styles}</style>
+      <style jsx global>{styles}</style>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-export default css`
+export default css.global/* css */`
   @font-face {
     font-family: ProximaNova-Regular;
     src: url("/static/fonts/ProximaNova-Regular.otf");

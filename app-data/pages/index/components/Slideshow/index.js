@@ -55,7 +55,7 @@ const SlideShow = ({ lang }) => {
           <ImageGallery items={images} />
         </LazyLoad>
       </Container>
-      <style jsx>{styles}</style>
+      <style jsx global>{styles}</style>
     </div>
   );
 };

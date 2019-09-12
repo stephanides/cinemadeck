@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-export default css`
+export default css.global/* css */`
   @font-face {
     font-family: ProximaNova-Regular;
     src: url("/static/fonts/ProximaNova-Regular.otf");
@@ -21,7 +21,7 @@ export default css`
   $break-xarge: 1400px;
 
   .cardcomposition{
-    padding-top: 60px;
+    padding-top: 120px;
     padding-bottom: 120px;
     overflow: hidden;
     h2{
@@ -296,7 +296,7 @@ export default css`
             img{
               position: absolute;
               left: -240px;
-              top: -10px;
+              top: 0px;
               @media screen and (max-width: $break-large) {
                 left: -175px;
               }

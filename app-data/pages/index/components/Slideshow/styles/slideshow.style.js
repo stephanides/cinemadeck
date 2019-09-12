@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-export default css`
+export default css.global/* css */`
   $break-xsmall: 400px;
   $break-small: 576px;
   $break-mobile:768px;

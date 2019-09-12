@@ -65,7 +65,7 @@ const Unique = ({ lang }) => (
         </div>
       </Container>
     </Container>
-    <style jsx>{styles}</style>
+    <style jsx global>{styles}</style>
   </div>
 );
 

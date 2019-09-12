@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-export default css`
+export default css.global/* css */`
   @font-face {
     font-family: ProximaNova-Regular;
     src: url("/static/fonts/ProximaNova-Regular.otf");
@@ -21,7 +21,7 @@ export default css`
   $break-xarge: 1400px;
 
   .unique{
-    padding-top: 80px;
+    padding-top: 120px;
     padding-bottom: 80px;
     h2{
       color:#2f3438;

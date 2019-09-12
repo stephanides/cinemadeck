@@ -21,7 +21,7 @@ export default css`
   $break-xarge: 1400px;
 
   .package{
-    padding-top: 60px;
+    padding-top: 120px;
     padding-bottom: 120px;
     @media screen and (max-width: $break-mobile) {
       padding-top: 80px;
