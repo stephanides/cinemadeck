@@ -40,11 +40,11 @@ const CartContent = compose(
               <span className="font-weight-smaller">
                 {
                   lang === 'cz' && [
-                    <strong className="position-relative">
+                    <strong className="position-relative" key={0}>
                       {item.totalPrice.cz}
                       <small className="position-absolute text-uppercase">czk</small>
                     </strong>,
-                    <> / </>,
+                    <span key={1}> / </span>,
                   ]
                 }
                 <strong className="position-relative">

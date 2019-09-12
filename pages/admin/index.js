@@ -5,7 +5,7 @@ import Layout from '../../app-data/shared/components/admin/Layout';
 import { redirectIfNotAuthenticated, getJwt } from '../../app-data/lib/auth';
 import { getCookie } from '../../app-data/lib/auth/session';
 
-import OrderList from './components/OrderList';
+import OrderList from '../../app-data/pages/admin/components/OrderList';
 
 const Admin = ({ userName }) => (
   <Layout userName={userName}>

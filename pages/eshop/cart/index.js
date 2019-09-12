@@ -5,11 +5,11 @@ import { compose, graphql } from 'react-apollo';
 import { getLocaleQuery, getProductsFromCart } from '../../../app-data/graphql/query';
 import { createOrderMutation, initCartMutation } from '../../../app-data/graphql/mutation';
 import Layout from '../../../app-data/shared/components/Layout';
-import ContactInfo from './components/ContactInfo';
-import CartCheckout from './components/CartCheckout';
+import ContactInfo from '../../../app-data/pages/eshop/cart/components/ContactInfo';
+import CartCheckout from '../../../app-data/pages/eshop/cart/components/CartCheckout';
 
-const DynamicPaymentMethods = dynamic(import('./components/PaymentMethods'));
-const DynamicFooter = dynamic(import('./components/Footer'));
+const DynamicPaymentMethods = dynamic(import('../../../app-data/pages/eshop/cart/components/PaymentMethods'));
+const DynamicFooter = dynamic(import('../../../app-data/pages/eshop/cart/components/Footer'));
 
 const initialState = {
   order: {

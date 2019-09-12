@@ -6,10 +6,10 @@ import { getLocaleQuery, getProductsFromCart } from '../../app-data/graphql/quer
 import { initCartMutation } from '../../app-data/graphql/mutation';
 import Layout from '../../app-data/shared/components/Layout';
 
-import styles from './styles/eshop.style';
+import styles from '../../app-data/pages/eshop/styles/eshop.style';
 import locale from '../../app-data/shared/localisation/eshop';
 
-const DynamicProduct = dynamic(import('./components/Product'));
+const DynamicProduct = dynamic(import('../../app-data/pages/eshop/components/Product'));
 const DynamicFooter = dynamic(import('../../app-data/shared/components/eshop/Footer'));
 
 const EshopPage = compose(
