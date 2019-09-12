@@ -51,6 +51,7 @@ const Funnel = compose(
           <DynamicProduct
             lang={lang}
             data={{
+              id: '002',
               title: locale[lang].lightLikeProTitle,
               image: '/static/images/LIGHT-PRO.png',
               price: [180, 7],
@@ -65,6 +66,7 @@ const Funnel = compose(
           <DynamicProduct
             lang={lang}
             data={{
+              id: '003',
               title: locale[lang].soundLikeProTitle,
               image: '/static/images/SOUND-PRO.png',
               price: [180, 7],
