@@ -53,29 +53,7 @@ const FreeDownload = ({ lang }) => {
           </LazyLoad>
         </Container>
       </Container>
-<<<<<<< HEAD
-=======
-      <div>
-        <Modal isOpen={modal} toggle={() => toggle(!modal)}>
-          <ModalBody>
-            <div className="text-holder">
-              <p>{localisation[lang].email}</p>
-              <InputGroup>
-                <Input placeholder="Email" />
-              </InputGroup>
-              <Button type="button" className="modal-button">{localisation[lang].freeDownloadButton}</Button>
-            </div>
-            <LazyLoad height={700}>
-              <img className={lang === 'cz' ? 'd-block free-image' : 'd-none free-image'} src="/static/images/freedownload/image.png" alt="" />
-            </LazyLoad>
-            <LazyLoad height={700}>
-              <img className={lang === 'cz' ? 'd-none free-image' : 'd-block free-image'} src="/static/images/freedownload/en/image.png" alt="" />
-            </LazyLoad>
-          </ModalBody>
-        </Modal>
-      </div>
       <style jsx>{styles}</style>
->>>>>>> 9b6f10d2bef3894c1e16db1ac0590e719b604b4b
     </div>
   );
 };
