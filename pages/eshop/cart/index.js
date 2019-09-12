@@ -72,7 +72,9 @@ const ShoppingCart = compose(
         const {
           __typename,
           id,
-          ...slicedObject
+          price,
+          totalPrice,
+          ...reObject
         } = item;
 
         /* const reObject = {
@@ -86,7 +88,7 @@ const ShoppingCart = compose(
             eur: slicedObject.price.en,
           },
         }; */
-        const { price, totalPrice, ...reObject } = slicedObject;
+        // const { price, totalPrice, ...reObject } = slicedObject;
 
         return reObject;
       });
@@ -101,12 +103,16 @@ const ShoppingCart = compose(
           street: form.street.value,
           psc: form.psc.value,
         },
+        currency: lang === 'cz' ? 'CZK' : 'EUR',
         email: form.email.value,
         products: formattedCart,
         note: form.note.value,
-        totalPriceToPay: stateSelected > 1
+        totalPriceToPay: lang === 'cz'
+          ? cart.reduce((a, b) => (a + b.totalPrice.cz), 0)
+          : cart.reduce((a, b) => (a + b.totalPrice.en), 0),
+        /* totalPriceToPay: stateSelected > 1
           ? cart.reduce((a, b) => (a + b.totalPrice.en), 0)
-          : cart.reduce((a, b) => (a + b.totalPrice.cz), 0),
+          : cart.reduce((a, b) => (a + b.totalPrice.cz), 0), */
       };
 
       console.log(orderData);

@@ -1,6 +1,15 @@
 import css from 'styled-jsx/css';
 
-export default css`
+export default css.global/* css */`
+  @font-face {
+    font-family: ProximaNova-Light;
+    src: url("/static/fonts/ProximaNova-Light.otf");
+  }
+  @font-face {
+    font-family: ProximaNova-Bold;
+    src: url("/static/fonts/ProximaNova-Bold.otf");
+  }
+
   .product {
     position: relative;
     padding-top: 8.5rem;
@@ -14,20 +23,34 @@ export default css`
       position: relative;
 
       h4 {
+        font-family: ProximaNova-Light;
+
         span {
+          & > strong {
+            font-family: ProximaNova-Bold;
+          }
           small {
-            font-size: xx-small;
+            font-size: x-small;
           }
           &.font-weight-bold {
+            font-family: ProximaNova-Bold;
+
             & > div {
               & > span {
                 & > small {
-                  top: -10px;
-                  right: -15px;
+                  top: -15px;
+                  right: -20px;
                 }
               }
             }
           }
+        }
+      }
+      h5 {
+        font-family: ProximaNova-Light;
+
+        strong {
+          font-family: ProximaNova-Bold;
         }
       }
 

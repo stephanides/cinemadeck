@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -13,6 +14,7 @@ const OrderInfo = ({
     orderNum,
     paymentMethod,
     products,
+    totalPriceToPay,
   },
 }) => {
   const [collapse, toggle] = useState(false);
@@ -38,11 +40,61 @@ const OrderInfo = ({
       <Collapse isOpen={collapse}>
         <Card>
           <CardBody>
-            <Row>
+            <Row className="mb-3">
               <Col>
                 <strong>Zákazník:</strong>
               </Col>
-              <Col>{name}</Col>
+              <Col>
+                <p className="mb-0">{name}</p>
+                <p className="mb-0">{email}</p>
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col>
+                <strong>Fakturační adresa:</strong>
+              </Col>
+              <Col>
+                <p className="mb-0">{address.street}</p>
+                <p className="mb-0">{address.psc}</p>
+                <p className="mb-0">{address.city}</p>
+                <p className="mb-0">{address.state}</p>
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col>
+                <strong>Zakoupené produkty:</strong>
+              </Col>
+              <Col>
+                {
+                  products.map((item) => {
+                    const { count, title } = item;
+
+                    return (
+                      <p className="mb-0" key={title}>{`${count}x ${title}`}</p>
+                    );
+                  })
+                }
+              </Col>
+            </Row>
+            <Row className="mb-3">
+              <Col>
+                <strong>Uhrazeno:</strong>
+              </Col>
+              <Col>
+                {
+                  paymentMethod > 0 ? (
+                    paymentMethod < 2 ? 'Prostřednictvím Pay Pal' : 'Bankovním převodem'
+                  ) : 'Platební kartou'
+                }
+              </Col>
+            </Row>
+            <Row>
+              <Col className="border-top pt-3">
+                <p className="text-uppercase font-weight-bold">Suma</p>
+              </Col>
+              <Col className="border-top pt-3">
+                <p className="text-uppercase font-weight-bold">{`${totalPriceToPay} ${currency}`}</p>
+              </Col>
             </Row>
           </CardBody>
         </Card>
