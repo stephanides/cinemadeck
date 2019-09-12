@@ -22,9 +22,7 @@ export const createOrderMutation = gql`
       paymentMethod
       products {
         count
-        price
         title
-        totalPrice
       }
       totalPriceToPay
     }
@@ -32,12 +30,19 @@ export const createOrderMutation = gql`
 `;
 
 export const addProductToCartMutation = gql`
-  mutation addProductToCart($product: ProductInput!) {
-    addProductToCart(product: $product) @client {
+  mutation addProductToCart($id: String!) {
+    addProductToCart(id: $id) @client {
+      id @client
       count @client
-      price @client
+      price @client {
+        cz
+        en
+      }
       title @client
-      totalPrice @client
+      totalPrice @client {
+        cz
+        en
+      }
     }
   }
 `;
@@ -45,21 +50,35 @@ export const addProductToCartMutation = gql`
 export const initCartMutation = gql`
   mutation initCart($cart: [Object]!) {
     initCart(cart: $cart) @client {
+      id @client
       count @client
-      price @client
+      price @client {
+        cz
+        en
+      }
       title @client
-      totalPrice @client
+      totalPrice @client {
+        cz
+        en
+      }
     }
   }
 `;
 
 export const removeProductFromCartMutation = gql`
-  mutation removeProductFromCart($title: String!) {
-    removeProductFromCart(title: $title) @client {
+  mutation removeProductFromCart($id: String!) {
+    removeProductFromCart(id: $id) @client {
+      id @client
       count @client
-      price @client
+      price @client {
+        cz
+        en
+      }
       title @client
-      totalPrice @client
+      totalPrice @client {
+        cz
+        en
+      }
     }
   }
 `;

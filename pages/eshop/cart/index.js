@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { Container, Col, Row } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import { getLocaleQuery, getProductsFromCart } from '../../../app-data/graphql/query';
@@ -6,8 +7,9 @@ import { createOrderMutation, initCartMutation } from '../../../app-data/graphql
 import Layout from '../../../app-data/shared/components/Layout';
 import ContactInfo from './components/ContactInfo';
 import CartCheckout from './components/CartCheckout';
-import PaymentMethods from './components/PaymentMethods';
-import Footer from './components/Footer';
+
+const DynamicPaymentMethods = dynamic(import('./components/PaymentMethods'));
+const DynamicFooter = dynamic(import('./components/Footer'));
 
 const initialState = {
   order: {
@@ -25,6 +27,7 @@ const initialState = {
     products: [],
     totalPriceToPay: 0,
   },
+  stateSelected: 0,
 };
 const ShoppingCart = compose(
   graphql(createOrderMutation, { name: 'createOrder' }),
@@ -35,6 +38,7 @@ const ShoppingCart = compose(
   cartProducts: { cart }, createOrder, getLocale: { lang }, mutate,
 }) => {
   const [order, handleOrder] = useState(initialState.order);
+  const [stateSelected, handleStateChange] = useState(initialState.stateSelected);
 
   useEffect(() => {
     const checkCart = async () => {
@@ -44,11 +48,6 @@ const ShoppingCart = compose(
 
           if (cartStorageData && cartStorageData.length > 0) {
             await mutate({ variables: { cart: cartStorageData } });
-            handleOrder({
-              ...order,
-              products: cartStorageData,
-              totalPriceToPay: cartStorageData.reduce((a, b) => (a + b.totalPrice), 0),
-            });
           }
         }
       } catch (err) {
@@ -57,6 +56,8 @@ const ShoppingCart = compose(
     };
 
     checkCart();
+
+    return () => null;
   }, []);
 
   const handleSubmitForm = async (e) => {
@@ -68,7 +69,24 @@ const ShoppingCart = compose(
       e.stopPropagation();
     } else {
       const formattedCart = cart.map((item) => {
-        const { __typename, ...reObject } = item;
+        const {
+          __typename,
+          id,
+          ...slicedObject
+        } = item;
+
+        /* const reObject = {
+          ...slicedObject,
+          price: {
+            cz: slicedObject.price.cz,
+            eur: slicedObject.price.en,
+          },
+          totalPrice: {
+            cz: slicedObject.price.cz,
+            eur: slicedObject.price.en,
+          },
+        }; */
+        const { price, totalPrice, ...reObject } = slicedObject;
 
         return reObject;
       });
@@ -86,7 +104,9 @@ const ShoppingCart = compose(
         email: form.email.value,
         products: formattedCart,
         note: form.note.value,
-        totalPriceToPay: cart.reduce((a, b) => (a + b.totalPrice), 0),
+        totalPriceToPay: stateSelected > 1
+          ? cart.reduce((a, b) => (a + b.totalPrice.en), 0)
+          : cart.reduce((a, b) => (a + b.totalPrice.cz), 0),
       };
 
       console.log(orderData);
@@ -120,19 +140,23 @@ const ShoppingCart = compose(
         >
           <Row>
             <Col sm={{ size: 12, order: 1 }} md={{ size: 6, order: 1 }} lg={{ size: 6, order: 1 }}>
-              <ContactInfo lang={lang} />
+              <ContactInfo
+                lang={lang}
+                handleStateChange={handleStateChange}
+                order={order}
+                handleOrder={handleOrder}
+              />
             </Col>
             <Col sm={{ size: 12, order: 3 }} md={{ size: 6, order: 2 }} lg={{ size: 6, order: 2 }}>
               <CartCheckout
                 cart={cart}
                 lang={lang}
-                order={order}
-                handleOrder={handleOrder}
+                stateSelected={stateSelected}
               />
             </Col>
             {''}
             <Col sm={{ size: 12, order: 2 }} md={{ size: 6, order: 3 }} lg={{ size: 6, order: 3 }}>
-              <PaymentMethods
+              <DynamicPaymentMethods
                 handleOrder={handleOrder}
                 lang={lang}
                 order={order}
@@ -154,7 +178,7 @@ const ShoppingCart = compose(
           }
         </style>
       </Container>
-      <Footer />
+      <DynamicFooter />
     </Layout>
   );
 });

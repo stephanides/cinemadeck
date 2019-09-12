@@ -1,24 +1,31 @@
 import gql from 'graphql-tag';
 
 export default gql`
-  extend input ProductInput {
+  extend type CartProduct {
+    id: String!
     count: Int!
-    price: Float!
+    price: Price!
     title: String!
+    totalPrice: Price!
   }
   extend type Product {
-    count: Int!
-    price: Float!
+    id: String!
+    price: Price!
     title: String!
-    totalPrice: Float!
+    totalPrice: Price!
+  }
+  extend type Price {
+    cz: Float!
+    en: Float!
   }
   extend type Query {
     lang: String!
-    cart: [Product]!
+    cart: [CartProduct]!
+    products: [Product]!
   }
   extend type Mutation {
     toggleLang(lang: String!): String
-    addProductToCart(product: ProductInput!): [Product]
+    addProductToCart(id: String!): [Product]
     initCart(cart: [Object]!): [Product]
     removeProductFromCart(title: String!): [Product]
   }

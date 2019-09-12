@@ -20,11 +20,34 @@ export default css`
         & > div {
           p {
             font-size: .9rem;
-
-            &.sum {
+            
+            &.cart-item {
               span {
+                & > span {
+                  & > span {
+                    small {
+                      font-size: xx-small;
+                      top: -10px;
+                      right: -20px;
+                    }
+                  }
+                }
+              }
+            }
+            &.sum {
+              & > span {
                 &:first-child {
                   letter-spacing: .25rem;
+                }
+
+                & > span {
+                  font-size: 1.25rem;
+
+                  small {
+                    font-size: xx-small;
+                    top: -10px;
+                    right: -20px;
+                  }
                 }
               }
             }
@@ -38,6 +61,7 @@ export default css`
               align-items: center;
               border: 0;
               border-radius: 0;
+              outline: none;
             }
           }
           button {
@@ -52,6 +76,10 @@ export default css`
             height: 70px;
             width: 265px;
             letter-spacing: .15rem;
+
+            &:hover {
+              background-color: #0098d8;
+            }
           }
         }
         .warranty {

@@ -1,7 +1,15 @@
 import css from 'styled-jsx/css';
 
 export default css`
+  @font-face {
+    font-family: ProximaNova-SemiBold;
+    src: url("/static/fonts/ProximaNova-Semibold.otf");
+  }
+
   .funnel-prod {
+    h3 {
+      font-family: 'ProximaNova-SemiBold';
+    }
     .product-image {
       img {
         display: block;

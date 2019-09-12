@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { Container } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import { getLocaleQuery, getProductsFromCart } from '../../../app-data/graphql/query';
 import { initCartMutation } from '../../../app-data/graphql/mutation';
 import Layout from '../../../app-data/shared/components/Layout';
-import Product from './components/Product';
-import Footer from '../../../app-data/shared/components/eshop/Footer';
 
 import styles from './styles/funnel.style';
 import locale from '../../../app-data/shared/localisation/eshop/funnel';
+
+const DynamicProduct = dynamic(import('./components/Product'));
+const DynamicFooter = dynamic(import('../../../app-data/shared/components/eshop/Footer'));
 
 const Funnel = compose(
   graphql(initCartMutation),
@@ -31,6 +33,8 @@ const Funnel = compose(
     };
 
     checkCart();
+
+    return () => null;
   }, []);
 
   return (
@@ -44,9 +48,10 @@ const Funnel = compose(
           <div className="funnel-heading-container">
             <h2 className="text-uppercase text-center pt-5 pb-5 mb-5">{locale[lang].funnelTitle}</h2>
           </div>
-          <Product
+          <DynamicProduct
             lang={lang}
             data={{
+              id: '002',
               title: locale[lang].lightLikeProTitle,
               image: '/static/images/LIGHT-PRO.png',
               price: [180, 7],
@@ -58,9 +63,10 @@ const Funnel = compose(
               },
             }}
           />
-          <Product
+          <DynamicProduct
             lang={lang}
             data={{
+              id: '003',
               title: locale[lang].soundLikeProTitle,
               image: '/static/images/SOUND-PRO.png',
               price: [180, 7],
@@ -69,7 +75,7 @@ const Funnel = compose(
             }}
           />
         </Container>
-        <Footer lang={lang} />
+        <DynamicFooter lang={lang} />
         <style jsx>{styles}</style>
       </div>
     </Layout>

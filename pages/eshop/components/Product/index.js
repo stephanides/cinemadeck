@@ -5,23 +5,23 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { graphql } from 'react-apollo';
+import LazyLoad from 'react-lazyload';
 import PropTypes from 'prop-types';
+import { addProductToCartMutation } from '../../../../app-data/graphql/mutation';
 
 import styles from './styles/product.style';
-
-import { addProductToCartMutation } from '../../../../app-data/graphql/mutation';
 import locale from '../../../../app-data/shared/localisation/eshop';
 
 const Product = graphql(
   addProductToCartMutation,
 )(({ mutate, lang, productData }) => {
   const {
-    content, imageURL, price, productTitle, titleOne, titleTwo, knowMoreUrl,
+    content, id, imageURL, price, productTitle, titleOne, titleTwo, knowMoreUrl,
   } = productData;
 
-  const handleAddProductToCart = async (product) => {
+  const handleAddProductToCart = async (_id) => {
     try {
-      await mutate({ variables: { product } });
+      await mutate({ variables: { id: _id } });
     } catch (err) {
       console.log(err);
     }
@@ -30,13 +30,14 @@ const Product = graphql(
   return (
     <div className="product">
       <div className="product-bg">
-        <img
-          src={imageURL}
-          loading="lazy"
-          alt=""
-          width={350}
-          height={280}
-        />
+        <LazyLoad height={280}>
+          <img
+            src={imageURL}
+            alt=""
+            width={350}
+            height={280}
+          />
+        </LazyLoad>
         <h4 className="text-uppercase d-flex justify-content-between">
           <span
             className="font-weight-lighter"
@@ -84,13 +85,13 @@ const Product = graphql(
           type="button"
           className="button-add-to-cart text-uppercase"
           onClick={() => {
-            const product = {
+            /* const product = {
               count: 1,
               price: lang === 'cz' ? price[0] : price[1],
               title: productTitle,
-            };
+            }; */
 
-            handleAddProductToCart(product);
+            handleAddProductToCart(id);
           }}
         >
           {locale[lang].addToCart}
@@ -114,6 +115,8 @@ const Product = graphql(
 
 Product.propTypes = {
   productData: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
     imageURL: PropTypes.string,
     price: PropTypes.arrayOf(PropTypes.number),
     title: PropTypes.string,

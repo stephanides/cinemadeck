@@ -31,9 +31,15 @@ Layout.propTypes = {
   cart: PropTypes.arrayOf(
     PropTypes.shape({
       count: PropTypes.number,
-      price: PropTypes.number,
+      price: PropTypes.shape({
+        cz: PropTypes.number,
+        en: PropTypes.number,
+      }),
       title: PropTypes.string,
-      totalPrice: PropTypes.number,
+      totalPrice: PropTypes.shape({
+        cz: PropTypes.number,
+        en: PropTypes.number,
+      }),
     }),
   ),
   children: PropTypes.oneOfType([

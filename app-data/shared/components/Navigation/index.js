@@ -36,10 +36,12 @@ const Navigation = graphql(
     };
 
     checkTop();
-    document.addEventListener('scroll', () => {
-      checkTop();
-    }, []);
-  });
+    document.addEventListener('scroll', checkTop, true);
+
+    return () => {
+      document.removeEventListener('scroll', checkTop, true);
+    };
+  }, []);
 
   return (
     <div>
@@ -124,7 +126,10 @@ const Navigation = graphql(
                         ? 'cart-content move move-top' : 'cart-content move'
                     }
                   >
-                    <CartContent cart={cart} />
+                    <CartContent
+                      cart={cart}
+                      lang={lang}
+                    />
                   </NavItem>
                 )
               }
@@ -167,9 +172,15 @@ Navigation.propTypes = {
   cart: PropTypes.arrayOf(
     PropTypes.shape({
       count: PropTypes.number,
-      price: PropTypes.number,
+      price: PropTypes.shape({
+        cz: PropTypes.number,
+        en: PropTypes.number,
+      }),
       title: PropTypes.string,
-      totalPrice: PropTypes.number,
+      totalPrice: PropTypes.shape({
+        cz: PropTypes.number,
+        en: PropTypes.number,
+      }),
     }),
   ),
   isCart: PropTypes.bool,

@@ -1,11 +1,16 @@
 /* eslint-disable no-underscore-dangle */
-import { getModalQuery, getProductsFromCart } from '../query';
+import { getModalQuery, getProductsFromCart, getProducts } from '../query';
 
 export default {
   Mutation: {
-    addProductToCart: (_root, { product }, { cache }) => {
-      const dough = { ...product, totalPrice: product.price, __typename: 'ProductInCart' };
+    addProductToCart: (_root, { id }, { cache }) => {
+      const { products } = cache.readQuery({ query: getProducts });
       const { cart } = cache.readQuery({ query: getProductsFromCart });
+      const product = products.find((item) => (item.id === id));
+      const dough = {
+        ...product, count: 1, totalPrice: product.price, __typename: 'ProductInCart',
+      };
+
       let cartData;
 
       if (cart.length > 0) {
@@ -13,10 +18,15 @@ export default {
         let productExist = false;
 
         while (i < cart.length) {
-          if (cart[i].title === product.title) {
+          if (cart[i].id === id) {
             productExist = true;
             dough.count = cart[i].count + 1;
-            dough.totalPrice *= dough.count;
+            dough.totalPrice = {
+              ...dough.totalPrice,
+              cz: dough.price.cz * dough.count,
+              en: dough.price.en * dough.count,
+            };
+
             cartData = Object.assign([...cart], { [i]: dough });
             break;
           }
@@ -49,23 +59,25 @@ export default {
 
       return cart;
     },
-    removeProductFromCart: (_root, { title }, { cache }) => {
+    removeProductFromCart: (_root, { id }, { cache }) => {
       const { cart } = cache.readQuery({ query: getProductsFromCart });
       let i = 0;
       let cartData;
 
       while (i < cart.length) {
-        if (cart[i].title === title) {
+        if (cart[i].id === id) {
           if (cart[i].count > 1) {
             cartData = Object.assign(
               [...cart],
               {
                 [i]: {
+                  ...cart[i],
                   count: cart[i].count - 1,
-                  price: cart[i].price,
-                  title,
-                  totalPrice: ((cart[i].count - 1) * cart[i].price),
-                  __typename: 'ProductInCart',
+                  totalPrice: {
+                    ...cart[i].totalPrice,
+                    cz: ((cart[i].count - 1) * cart[i].price.cz),
+                    en: ((cart[i].count - 1) * cart[i].price.en),
+                  },
                 },
               },
             );
