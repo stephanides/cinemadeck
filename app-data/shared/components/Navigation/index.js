@@ -25,23 +25,30 @@ const Navigation = graphql(
   cart, lang, isCart, isHome, toggleLang,
 }) => {
   const [isOpen, toggle] = useState(false);
-  const [isTop, isPageTop] = useState(true);
 
-  useEffect(() => {
-    const checkTop = () => {
-      const currentIsTop = window.scrollY < 100;
-      if (currentIsTop !== isTop) {
-        isPageTop(currentIsTop);
-      }
-    };
+  const checkPageTop = () => {
+    const [isPageTop, handleIsPageTop] = useState(true);
 
-    checkTop();
-    document.addEventListener('scroll', checkTop, true);
+    useEffect(() => {
+      const checkTop = () => {
+        const currentIsTop = window.scrollY < 100;
 
-    return () => {
-      document.removeEventListener('scroll', checkTop, true);
-    };
-  }, []);
+        if (currentIsTop !== isPageTop) {
+          handleIsPageTop(currentIsTop);
+        }
+      };
+
+      document.addEventListener('scroll', checkTop, true);
+
+      return () => {
+        document.removeEventListener('scroll', checkTop, true);
+      };
+    });
+
+    return isPageTop;
+  };
+
+  const isTop = checkPageTop();
 
   return (
     <div>

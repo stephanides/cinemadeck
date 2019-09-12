@@ -14,7 +14,7 @@ const renderDangerHtml = (lang) => ({ __html: localisation[lang].headerText2 });
 const Header = ({ lang }) => (
   <div className="header" id="header">
     <Container fluid>
-      <img src="/static/images/vizual.png" alt="Vizuál" />
+      <img src="/static/images/vizual.jpg" alt="Vizuál" />
       <CustomContainer>
         <div className="text_holder">
           <p dangerouslySetInnerHTML={renderDangerHtmlHeader(lang)} />

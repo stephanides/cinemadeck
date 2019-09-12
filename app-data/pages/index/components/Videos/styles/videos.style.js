@@ -21,7 +21,7 @@ export default css`
   $break-xarge: 1400px;
 
   .videos{
-      background-image: url("/static/images/steps/background.png");
+      background-image: url("/static/images/steps/background.jpg");
       padding-bottom: 100px;
     h2{
       padding-top: 100px;
@@ -46,7 +46,7 @@ export default css`
         padding-top: 40px;
       }
       .video{
-        background-image: url("/static/images/videos/video.png");
+        background-image: url("/static/images/videos/video.jpg");
         height: 315px;
         box-shadow: 0px 3px 14px 0px #252424;
         @media screen and (max-width: $break-mobile) {

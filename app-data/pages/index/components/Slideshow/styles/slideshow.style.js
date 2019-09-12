@@ -9,7 +9,7 @@ export default css`
   $break-xarge: 1400px;
 
   .slideshow {
-    background-image: url(/static/images/steps/background.png);
+    background-image: url(/static/images/steps/background.jpg);
     padding-bottom: 120px; 
     .image-gallery{
       max-width: 1400px;
