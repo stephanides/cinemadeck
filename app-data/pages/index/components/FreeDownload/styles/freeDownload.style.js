@@ -102,37 +102,37 @@ export default css.global/* css */`
         background-color: #008fcc;
         box-shadow: 0px 0px 7px 0px #82b6f1;
       }
+    }
+    .show{
+      height: 120px;
+    }
+    .hide{
+      height: 0px;
+    }
+  
+    .text-holder{
+      width: 460px;
+      transition: height 0.3s ease-out;
+      overflow:hidden;
+      .input-group{
+        padding-top: 40px;
+        padding-bottom:10px;
+        .form-control{
+          border-radius: .35rem;
+          height: calc(1.5em + .75rem + 6px);
+        }
+        input{
+          box-shadow: 0px 0px 6px 3px #dee2e6;
+        }
+      }
+      .input-group-text{
+        background-color:transparent;
+        border:none;
+        padding-left: 2px;
+        span{
+          padding-left:8px;
+        }
+      }
     } 
-  }
-  .show{
-    height: 120px;
-  }
-  .hide{
-    height: 0px;
-  }
-
-  .text-holder{
-    width: 460px;
-    transition: height 0.3s ease-out;
-    overflow:hidden;
-    .input-group{
-      padding-top: 40px;
-      padding-bottom:10px;
-      .form-control{
-        border-radius: .35rem;
-        height: calc(1.5em + .75rem + 6px);
-      }
-      input{
-        box-shadow: 0px 0px 6px 3px #dee2e6;
-      }
-    }
-    .input-group-text{
-      background-color:transparent;
-      border:none;
-      padding-left: 2px;
-      span{
-        padding-left:8px;
-      }
-    }
   }
 `;
