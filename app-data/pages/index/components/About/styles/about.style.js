@@ -45,11 +45,11 @@ export default css`
       }
     }
     img{
-      
       display: block;
       margin: 0 auto;
       margin-top: 60px;
       width: 100%;
+      max-width: 1095px;
     }
     p{
       font-family: 'Open Sans', sans-serif;
