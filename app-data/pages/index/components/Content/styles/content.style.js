@@ -24,7 +24,7 @@ export default css.global/* css */`
   $break-xarge: 1400px;
 
   .content{
-    background-image: url("/static/images/content/background.png");
+    background-image: url("/static/images/content/background.jpg");
     height: 1020px;
     background-size: cover;
     background-position: 90% 50%;
