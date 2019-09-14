@@ -10,6 +10,7 @@ export default css.global/* css */`
   @font-face {
     font-family: ProximaNova-Regular;
     src: url(/static/fonts/ProximaNova-Regular.otf);
+    font-display: swap;
   }
   .scroll_background {
     background-image: url(/static/images/steps/background.png);

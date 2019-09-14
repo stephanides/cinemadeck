@@ -4,10 +4,12 @@ export default css.global/* css */`
   @font-face {
     font-family: ProximaNova-Light;
     src: url("/static/fonts/ProximaNova-Light.otf");
+    font-display: swap;
   }
   @font-face {
     font-family: ProximaNova-Bold;
     src: url("/static/fonts/ProximaNova-Bold.otf");
+    font-display: swap;
   }
 
   .product {

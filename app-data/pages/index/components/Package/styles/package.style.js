@@ -4,14 +4,17 @@ export default css`
   @font-face {
     font-family: ProximaNova-Regular;
     src: url("/static/fonts/ProximaNova-Regular.otf");
+    font-display: swap;
   }
   @font-face {
     font-family: ProximaNova-Bold;
     src: url("/static/fonts/ProximaNova-Bold.otf");
+    font-display: swap;
   }
   @font-face {
     font-family: ProximaNova-SemiBold;
     src: url("/static/fonts/ProximaNova-Semibold.otf");
+    font-display: swap;
   }
   $break-xsmall: 400px;
   $break-small: 576px;
