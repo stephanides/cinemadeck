@@ -1,12 +1,6 @@
 import css from 'styled-jsx/css';
 
 export default css`
-  @font-face {
-    font-family: ProximaNova-Bold;
-    src: url("/static/fonts/ProximaNova-Bold.otf");
-    font-display: swap;
-  }
-
   .order-success-head {
     min-height: 250px;
     flex-direction: column;

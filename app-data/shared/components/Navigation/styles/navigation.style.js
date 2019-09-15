@@ -7,11 +7,6 @@ export default css.global/* css */`
   $break-large: 1200px;
   $break-xarge: 1400px;
 
-  @font-face {
-    font-family: ProximaNova-Regular;
-    src: url(/static/fonts/ProximaNova-Regular.otf);
-    font-display: swap;
-  }
   .scroll_background {
     background-image: url(/static/images/steps/background.png);
   }

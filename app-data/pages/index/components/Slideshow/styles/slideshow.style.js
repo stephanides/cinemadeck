@@ -7,13 +7,7 @@ export default css.global/* css */`
   $break-medium: 992px;
   $break-large: 1200px;
   $break-xarge: 1400px;
-
-  @font-face {
-    font-family: ProximaNova-Bold;
-    src: url("/static/fonts/ProximaNova-Bold.otf");
-    font-display: swap;
-  }
-
+  
   .slideshow {
     background-image: url(/static/images/steps/background.jpg);
     padding-bottom: 120px; 

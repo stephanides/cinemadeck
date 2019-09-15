@@ -1,5 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-svg-core/styles.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import React from 'react';
 import { Container } from 'reactstrap';
