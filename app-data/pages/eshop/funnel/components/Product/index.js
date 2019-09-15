@@ -34,6 +34,13 @@ const Product = graphql(
             <LazyLoad height={280}>
               <img src={image} alt="" />
             </LazyLoad>
+            {
+              (extraContent && extraContent.infoLine && extraContent.infoContent) && (
+                <LazyLoad height={180}>
+                  <img src="/static/images/funnel/light-like-PRO-info-thumb.jpg" alt="" />
+                </LazyLoad>
+              )
+            }
           </aside>
         </Col>
         <Col sm="12" md="6" lg="8">

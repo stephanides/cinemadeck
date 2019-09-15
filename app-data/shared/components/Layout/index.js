@@ -1,10 +1,12 @@
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import '@fortawesome/fontawesome-svg-core/styles.css';
+import '../../../../static/css/bootstrap/bootstrap.min.css';
+import '../../../../static/css/fortawesome/fortawesome.min.css';
 
 import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Navigation from '../Navigation';
+
+import styles from './styles/layout.style';
 
 const Layout = ({
   cart, isCart, isHome, lang, children,
@@ -19,6 +21,7 @@ const Layout = ({
     <Container fluid className="pl-0 pr-0">
       { children }
     </Container>
+    <style jsx global>{styles}</style>
   </div>
 );
 
