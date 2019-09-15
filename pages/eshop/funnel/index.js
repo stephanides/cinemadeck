@@ -1,5 +1,8 @@
-import React, { useEffect } from 'react';
+import '../../../static/css/react-image-lightbox/style.min.css';
+
+import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import Lightbox from 'react-image-lightbox';
 import { Container } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import { getLocaleQuery, getProductsFromCart } from '../../../app-data/graphql/query';
@@ -12,6 +15,10 @@ import locale from '../../../app-data/shared/localisation/eshop/funnel';
 const DynamicProduct = dynamic(import('../../../app-data/pages/eshop/funnel/components/Product'));
 const DynamicFooter = dynamic(import('../../../app-data/shared/components/eshop/Footer'));
 
+const initialState = {
+  photoIndex: 0,
+  isLightBoxOpen: false,
+};
 const Funnel = compose(
   graphql(initCartMutation),
   graphql(getLocaleQuery),
@@ -36,6 +43,7 @@ const Funnel = compose(
 
     return () => null;
   }, []);
+  const [isLightBoxOpen, toggleLightBox] = useState(initialState.isLightBoxOpen);
 
   return (
     <Layout
@@ -43,12 +51,21 @@ const Funnel = compose(
       lang={lang}
       isHome={false}
     >
+      {
+        isLightBoxOpen && (
+          <Lightbox
+            mainSrc="/static/images/funnel/light-like-PRO-info.jpg"
+            onCloseRequest={() => toggleLightBox(false)}
+          />
+        )
+      }
       <div className="funnel">
         <Container>
           <div className="funnel-heading-container">
             <h2 className="text-uppercase text-center pt-5 pb-5 mb-5">{locale[lang].funnelTitle}</h2>
           </div>
           <DynamicProduct
+            toggleLightBox={toggleLightBox}
             lang={lang}
             data={{
               id: '002',

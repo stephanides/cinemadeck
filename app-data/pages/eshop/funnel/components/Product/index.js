@@ -14,8 +14,8 @@ const Product = graphql(
   addProductToCartMutation,
 )(({
   data: {
-    id, content, extraContent, image, price, productTitle, title,
-  }, lang, mutate,
+    id, content, extraContent, image, price, title,
+  }, lang, mutate, toggleLightBox,
 }) => {
   const [infoShow, toggleInfo] = useState(false);
   const handleAddProductToCart = async (_id) => {
@@ -36,9 +36,14 @@ const Product = graphql(
             </LazyLoad>
             {
               (extraContent && extraContent.infoLine && extraContent.infoContent) && (
-                <LazyLoad height={180}>
-                  <img src="/static/images/funnel/light-like-PRO-info-thumb.jpg" alt="" />
-                </LazyLoad>
+                <button
+                  type="button"
+                  onClick={() => toggleLightBox(true)}
+                >
+                  <LazyLoad height={180}>
+                    <img src="/static/images/funnel/light-like-PRO-info-thumb.jpg" alt="" />
+                  </LazyLoad>
+                </button>
               )
             }
           </aside>
@@ -120,6 +125,7 @@ const Product = graphql(
 });
 
 Product.propTypes = {
+  toggleLightBox: PropTypes.oneOfType([PropTypes.func, PropTypes.any]),
   data: PropTypes.shape({
     id: PropTypes.string,
     content: PropTypes.string,

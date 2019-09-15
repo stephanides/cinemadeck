@@ -32,6 +32,9 @@ export default css.global/* css */`
     
   }
   .navbar {
+    &.fixed-top {
+      z-index: 999!important;
+    }
     padding: 20px 0;
     margin-bottom: 10px;
     @media screen and (max-width: $break-xarge) {

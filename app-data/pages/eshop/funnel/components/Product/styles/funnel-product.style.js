@@ -10,6 +10,11 @@ export default css`
         display: block;
         margin: 0 auto;
       }
+      button {
+        display: block;
+        margin: 1rem auto;
+        background-color: transparent;
+      }
     }
     .price-add-to-cart-container {
       & > div {
