@@ -33,7 +33,7 @@ const CartContent = compose(
         cart && cart.length > 0 && cart.map(
           (item, i) => (
             <div
-              className="d-flex justify-content-between w-100 mb-3"
+              className="d-flex justify-content-between w-100 mb-1"
               key={i}
             >
               <span className="font-weight-smaller">{`${item.count}x ${item.title}`}</span>

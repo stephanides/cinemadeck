@@ -6,6 +6,8 @@ import { getLocaleQuery } from '../../app-data/graphql/query';
 import Layout from '../../app-data/shared/components/Layout';
 import Header from '../../app-data/pages/index/components/Header';
 import Loader from '../../app-data/shared/components/admin/Loader';
+import FreeDownload from '../../app-data/pages/index/components/FreeDownload';
+import Footer from '../../app-data/pages/index/components/Footer';
 
 const DynamicAbout = dynamic(
   () => import('../../app-data/pages/index/components/About'),
@@ -42,13 +44,13 @@ const DynamicCardComposition = dynamic(
     loading: () => <Loader size="xs" />,
   },
 );
-const DynamicFreeDownload = dynamic(
+/* const DynamicFreeDownload = dynamic(
   import('../../app-data/pages/index/components/FreeDownload'),
   {
     ssr: false,
     loading: () => <Loader size="xs" />,
   },
-);
+); */
 const DynamicSteps = dynamic(
   import('../../app-data/pages/index/components/Steps'),
   {
@@ -91,13 +93,13 @@ const DynamicAuthor = dynamic(
     loading: () => <Loader size="xs" />,
   },
 );
-const DynamicFooter = dynamic(
+/* const DynamicFooter = dynamic(
   import('../../app-data/pages/index/components/Footer'),
   {
     ssr: false,
     loading: () => <Loader size="xs" />,
   },
-);
+); */
 
 const IndexPage = graphql(
   getLocaleQuery, { name: 'getLocale' },
@@ -112,14 +114,14 @@ const IndexPage = graphql(
     <DynamicContent lang={lang} />
     <DynamicSlideShow lang={lang} />
     <DynamicCardComposition lang={lang} />
-    <DynamicFreeDownload lang={lang} />
+    <FreeDownload lang={lang} />
     <DynamicSteps lang={lang} />
     <DynamicPackage lang={lang} />
     <DynamicVideos lang={lang} />
     <DynamicRefund lang={lang} />
     <DynamicFAQ lang={lang} />
     <DynamicAuthor lang={lang} />
-    <DynamicFooter />
+    <Footer />
   </Layout>
 ));
 
