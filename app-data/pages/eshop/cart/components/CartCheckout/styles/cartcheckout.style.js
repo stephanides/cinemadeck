@@ -14,6 +14,9 @@ export default css`
       position: relative;
       z-index: 1;
       
+      h3 {
+        font-family: ProximaNova-Bold;
+      }
       .checkout-content {
         min-height: 400px;
 

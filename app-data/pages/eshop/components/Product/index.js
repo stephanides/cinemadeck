@@ -16,7 +16,7 @@ const Product = graphql(
   addProductToCartMutation,
 )(({ mutate, lang, productData }) => {
   const {
-    content, id, imageURL, price, productTitle, titleOne, titleTwo, knowMoreUrl,
+    content, id, imageURL, price, titleOne, titleTwo, knowMoreUrl,
   } = productData;
 
   const handleAddProductToCart = async (_id) => {

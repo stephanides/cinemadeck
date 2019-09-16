@@ -20,12 +20,7 @@ const About = ({ lang }) => (
       <CustomContainer>
         <Container>
           <h1 className="text-center" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
-          <LazyLoad height={600}>
-            <img className={lang === 'cz' ? 'd-block' : 'd-none'} src="/static/images/aboutKarty/spoluKarty.png" alt="Karty CinemaDeck" />
-          </LazyLoad>
-          <LazyLoad height={600}>
-            <img className={lang === 'cz' ? 'd-none' : 'd-block'} src="/static/images/aboutKarty/en/spoluKarty.png" alt="Karty CinemaDeck" />
-          </LazyLoad>
+          <img load="lazy" src={`/static/images/aboutKarty/${lang === 'cz' ? '' : 'en/'}spoluKarty.png`} alt="Karty CinemaDeck" />
           <p className="text-center mt-text" dangerouslySetInnerHTML={renderDangerHtmlText1(lang)} />
           <p className="text-center mt-4" dangerouslySetInnerHTML={renderDangerHtmlText2(lang)} />
         </Container>

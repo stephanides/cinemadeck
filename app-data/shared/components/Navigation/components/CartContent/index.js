@@ -44,7 +44,7 @@ const CartContent = compose(
                       {item.totalPrice.cz}
                       <small className="position-absolute text-uppercase">czk</small>
                     </strong>,
-                    <span key={1}> / </span>,
+                    <span className="px-1" key={1}> / </span>,
                   ]
                 }
                 <strong className="position-relative">

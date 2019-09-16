@@ -1,5 +1,3 @@
-import '@fortawesome/fontawesome-svg-core/styles.css';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 

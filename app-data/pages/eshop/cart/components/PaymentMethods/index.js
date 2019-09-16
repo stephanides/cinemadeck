@@ -4,13 +4,14 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 
+import styles from './styles/PaymentMethods.style';
 import locale from '../../../../../shared/localisation/eshop/cart';
 
 const PaymentMethods = ({ handleOrder, lang, order }) => {
   const { paymentMethod } = order;
 
   return (
-    <div className="pt-5">
+    <div className="pt-5 payment-methods-container">
       <h3 className="text-uppercase mb-5">{locale[lang].methodOfPayment}</h3>
       <div className="pr-5">
         <div className="p-4 bg-white mb-5">
@@ -88,13 +89,7 @@ const PaymentMethods = ({ handleOrder, lang, order }) => {
           </Row>
         </div>
       </div>
-      <style jsx>
-        {
-          `
-            .logo-line { height: 57px; }
-          `
-        }
-      </style>
+      <style jsx>{styles}</style>
     </div>
   );
 };
