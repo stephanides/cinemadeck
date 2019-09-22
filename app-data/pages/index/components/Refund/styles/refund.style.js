@@ -58,7 +58,7 @@ export default css`
         text-align: center;
       }
     }
-    a{
+    a, button{
       background-color: #0098d8;
       color: white;
       font-family: ProximaNova-Regular;

@@ -162,7 +162,7 @@ export default css`
           padding-left: 2px;
         }
       }
-      a {
+      a, button {
         background-color: #0098d8;;
         box-shadow: 0px 0px 7px 0px #b8d6f7;
         color: white;

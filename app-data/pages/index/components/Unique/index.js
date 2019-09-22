@@ -11,6 +11,7 @@ const renderDangerHtml = (lang) => ({ __html: localisation[lang].uniqueCol2Heade
 const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].uniqueCol1Text });
 const renderDangerHtml3 = (lang) => ({ __html: localisation[lang].uniqueCol2Text });
 const renderDangerHtml4 = (lang) => ({ __html: localisation[lang].uniqueCol3Text });
+
 const Unique = ({ lang }) => (
   <div className="unique" id="unique">
     <Container fluid>
