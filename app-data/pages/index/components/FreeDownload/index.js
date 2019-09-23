@@ -43,7 +43,7 @@ const FreeDownload = ({ lang }) => {
             </InputGroupText>
           </div>
           <button type="button" onClick={() => toggle(!modal)}>{localisation[lang].freeDownloadButton}</button>
-          <img loading="lazy" className="free-image" src={`/static/images/freedownload/${lang === 'cz' ? '' : 'en/'}image.png`} alt="" />
+          <img className="free-image" src={`/static/images/freedownload/${lang === 'cz' ? '' : 'en/'}image.png`} alt="" />
         </Container>
       </Container>
       <style jsx global>{styles}</style>

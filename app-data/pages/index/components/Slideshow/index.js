@@ -4,7 +4,6 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import ImageGallery from 'react-image-gallery';
-import LazyLoad from 'react-lazyload';
 
 import styles from './styles/slideshow.style';
 import localisation from '../../../../shared/localisation/Slideshow';
@@ -51,9 +50,7 @@ const SlideShow = ({ lang }) => {
         <Container>
           <h2 className="text-center">{localisation[lang].slideshowTitle}</h2>
         </Container>
-        <LazyLoad haight={700}>
-          <ImageGallery items={images} />
-        </LazyLoad>
+        <ImageGallery items={images} />
       </Container>
       <style jsx global>{styles}</style>
     </div>

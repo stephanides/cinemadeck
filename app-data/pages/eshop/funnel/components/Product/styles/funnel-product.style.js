@@ -12,8 +12,10 @@ export default css`
       }
       button {
         display: block;
-        margin: 1rem auto;
+        margin: 1rem auto 1rem 8rem;
         background-color: transparent;
+        border: 1px solid #ececec;
+        outline: none;
       }
     }
     .price-add-to-cart-container {
