@@ -58,12 +58,7 @@ const FAQ = ({ lang }) => (
             <div className="faq-item">
               <h6>PRINT DATA</h6>
               <div className="img-holder">
-                <LazyLoad height={250}>
-                  <img src="/static/images/faq/en/kartaprint.png" className={lang === 'cz' ? 'd-none' : 'd-block '} alt="" />
-                </LazyLoad>
-                <LazyLoad height={250}>
-                  <img src="/static/images/faq/kartaprint.png" className={lang === 'cz' ? 'd-block' : 'd-none '} alt="" />
-                </LazyLoad>
+                <img loading="lazy" src={`/static/images/faq/${lang === 'cz' ? '' : 'en/'}kartaprint.png`} alt="" />
               </div>
             </div>
           </div>
@@ -71,12 +66,7 @@ const FAQ = ({ lang }) => (
             <div className="faq-item">
               <h6>MOBILE PDF</h6>
               <div className="img-holder">
-                <LazyLoad height={250}>
-                  <img src="/static/images/faq/en/kartatelefon.png" className={lang === 'cz' ? 'd-none' : 'd-block '} alt="" />
-                </LazyLoad>
-                <LazyLoad height={250}>
-                  <img src="/static/images/faq/kartatelefon.png" className={lang === 'cz' ? 'd-block' : 'd-none '} alt="" />
-                </LazyLoad>
+                <img loading="lazy" src={`/static/images/faq/${lang === 'cz' ? '' : 'en/'}kartatelefon.png`} alt="" />
               </div>
             </div>
             <img src="/static/images/faq/plus.png" className="plus" alt="" />
@@ -85,12 +75,7 @@ const FAQ = ({ lang }) => (
             <div className="faq-item">
               <h6>TITLE PRESETS</h6>
               <div className="img-holder">
-                <LazyLoad height={250}>
-                  <img src="/static/images/faq/en/presets.png" className={lang === 'cz' ? 'd-none presets' : 'd-block presets'} alt="" />
-                </LazyLoad>
-                <LazyLoad height={250}>
-                  <img src="/static/images/faq/presets.png" className={lang === 'cz' ? 'd-block presets' : 'd-none presets'} alt="" />
-                </LazyLoad>
+                <img loading="lazy" src={`/static/images/faq/${lang === 'cz' ? '' : 'en/'}presets.png`} className="presets" alt="" />
               </div>
             </div>
             <img src="/static/images/faq/plus.png" className="plus" alt="" />

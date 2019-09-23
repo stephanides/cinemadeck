@@ -4,7 +4,6 @@ import {
   Container, InputGroup, InputGroupText, Input,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
-import LazyLoad from 'react-lazyload';
 
 import styles from './styles/freeDownload.style';
 import localisation from '../../../../shared/localisation/FreeDownload';
@@ -44,12 +43,7 @@ const FreeDownload = ({ lang }) => {
             </InputGroupText>
           </div>
           <button type="button" onClick={() => toggle(!modal)}>{localisation[lang].freeDownloadButton}</button>
-          <LazyLoad height={700}>
-            <img className={lang === 'cz' ? 'd-block free-image' : 'd-none free-image'} src="/static/images/freedownload/image.png" alt="" />
-          </LazyLoad>
-          <LazyLoad height={700}>
-            <img className={lang === 'cz' ? 'd-none free-image' : 'd-block free-image'} src="/static/images/freedownload/en/image.png" alt="" />
-          </LazyLoad>
+          <img loading="lazy" className="free-image" src={`/static/images/freedownload/${lang === 'cz' ? '' : 'en/'}image.png`} alt="" />
         </Container>
       </Container>
       <style jsx global>{styles}</style>

@@ -30,12 +30,7 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
             <Col xl="4" md="6" sm="12">
               <h6 className="text-center">{localisation[lang].packageCol1Title}</h6>
               <div className="img-holder">
-                <LazyLoad height={250}>
-                  <img src="/static/images/package/en/kartaprint.png" className={lang === 'cz' ? 'd-none unique-img' : 'd-block unique-img'} alt="" />
-                </LazyLoad>
-                <LazyLoad height={250}>
-                  <img src="/static/images/package/kartaprint.png" className={lang === 'cz' ? 'd-block unique-img' : 'd-none unique-img'} alt="" />
-                </LazyLoad>
+                <img loading="lazy" src={`/static/images/package/${lang === 'cz' ? '' : 'en/'}kartaprint.png`} className="unique-img" alt="" />
                 <LazyLoad height={250}>
                   <img src="/static/images/package/pdf.png" className="unique-pdf-icon" alt="" />
                 </LazyLoad>
@@ -46,12 +41,7 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
             <Col xl="4" md="6" sm="12">
               <h6 className="text-center">{localisation[lang].packageCol2Title}</h6>
               <div className="img-holder">
-                <LazyLoad height={250}>
-                  <img src="/static/images/package/en/kartatelefon.png" className={lang === 'cz' ? 'd-none unique-img' : 'd-block unique-img'} alt="" />
-                </LazyLoad>
-                <LazyLoad height={250}>
-                  <img src="/static/images/package/kartatelefon.png" className={lang === 'cz' ? 'd-block unique-img' : 'd-none unique-img'} alt="" />
-                </LazyLoad>
+                <img loading="lazy" src={`/static/images/package/${lang === 'cz' ? '' : 'en/'}kartatelefon.png`} className="unique-img" alt="" />
                 <LazyLoad height={250}>
                   <img src="/static/images/package/pdf.png" className="pdf-icon" alt="" />
                 </LazyLoad>
@@ -62,12 +52,7 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
             <Col xl="4" md="6" sm="12">
               <h6 className="text-center">{localisation[lang].packageCol3Title}</h6>
               <div className="img-holder">
-                <LazyLoad height={250}>
-                  <img src="/static/images/package/en/kartapresets.png" className={lang === 'cz' ? 'd-none unique-img' : 'd-block unique-img'} alt="" />
-                </LazyLoad>
-                <LazyLoad height={250}>
-                  <img src="/static/images/package/kartapresets.png" className={lang === 'cz' ? 'd-block unique-img' : 'd-none unique-img'} alt="" />
-                </LazyLoad>
+                <img loading="lazy" src={`/static/images/package/${lang === 'cz' ? '' : 'en/'}kartapresets.png`} className="unique-img" alt="" />
               </div>
               <p className="text-header">{localisation[lang].packageCol3Header}</p>
               <p className="text-text">{localisation[lang].packageCol3Text}</p>
