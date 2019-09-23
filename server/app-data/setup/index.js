@@ -1,5 +1,5 @@
 /* eslint-disable no-async-promise-executor */
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const User = require('../db/models/User');
 
 const {
