@@ -1,15 +1,27 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 import { graphql } from 'react-apollo';
 import { getLocaleQuery } from '../../app-data/graphql/query';
 
 import Layout from '../../app-data/shared/components/Layout';
 import Header from '../../app-data/pages/index/components/Header';
-import Loader from '../../app-data/shared/components/admin/Loader';
+// import Loader from '../../app-data/shared/components/admin/Loader';
+
+import About from '../../app-data/pages/index/components/About';
+import Unique from '../../app-data/pages/index/components/Unique';
+import Content from '../../app-data/pages/index/components/Content';
+import SlideShow from '../../app-data/pages/index/components/Slideshow';
+import CardComposition from '../../app-data/pages/index/components/CardComposition';
 import FreeDownload from '../../app-data/pages/index/components/FreeDownload';
+import Steps from '../../app-data/pages/index/components/Steps';
+import Package from '../../app-data/pages/index/components/Package';
+import Videos from '../../app-data/pages/index/components/Videos';
+import Refund from '../../app-data/pages/index/components/Refund';
+import FAQ from '../../app-data/pages/index/components/FAQ';
+import Author from '../../app-data/pages/index/components/Author';
 import Footer from '../../app-data/pages/index/components/Footer';
 
-const DynamicAbout = dynamic(
+/* const DynamicAbout = dynamic(
   () => import('../../app-data/pages/index/components/About'),
   {
     ssr: false,
@@ -44,13 +56,13 @@ const DynamicCardComposition = dynamic(
     loading: () => <Loader size="xs" />,
   },
 );
-/* const DynamicFreeDownload = dynamic(
+const DynamicFreeDownload = dynamic(
   import('../../app-data/pages/index/components/FreeDownload'),
   {
     ssr: false,
     loading: () => <Loader size="xs" />,
   },
-); */
+);
 const DynamicSteps = dynamic(
   import('../../app-data/pages/index/components/Steps'),
   {
@@ -93,7 +105,7 @@ const DynamicAuthor = dynamic(
     loading: () => <Loader size="xs" />,
   },
 );
-/* const DynamicFooter = dynamic(
+const DynamicFooter = dynamic(
   import('../../app-data/pages/index/components/Footer'),
   {
     ssr: false,
@@ -109,18 +121,18 @@ const IndexPage = graphql(
     isHome
   >
     <Header lang={lang} />
-    <DynamicAbout lang={lang} />
-    <DynamicUnique lang={lang} />
-    <DynamicContent lang={lang} />
-    <DynamicSlideShow lang={lang} />
-    <DynamicCardComposition lang={lang} />
+    <About lang={lang} />
+    <Unique lang={lang} />
+    <Content lang={lang} />
+    <SlideShow lang={lang} />
+    <CardComposition lang={lang} />
     <FreeDownload lang={lang} />
-    <DynamicSteps lang={lang} />
-    <DynamicPackage lang={lang} />
-    <DynamicVideos lang={lang} />
-    <DynamicRefund lang={lang} />
-    <DynamicFAQ lang={lang} />
-    <DynamicAuthor lang={lang} />
+    <Steps lang={lang} />
+    <Package lang={lang} />
+    <Videos lang={lang} />
+    <Refund lang={lang} />
+    <FAQ lang={lang} />
+    <Author lang={lang} />
     <Footer />
   </Layout>
 ));
