@@ -18,7 +18,7 @@ const Unique = ({ lang }) => (
       <Container>
         <h2 className="text-center">{localisation[lang].uniqueTitle}</h2>
         <LazyLoad height={700}>
-          <img src="/static/images/unique/karty.png" alt="Vizuál" />
+          <img src={`/static/images/unique/${lang === 'cz' ? '' : 'en/'}karty.png`} alt="" />
         </LazyLoad>
         <p className="text-center text-p">{localisation[lang].uniqueText}</p>
         <div className="items_holder">

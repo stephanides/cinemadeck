@@ -95,7 +95,9 @@ export default css.global/* css */`
           @media screen and (max-width: $break-mobile) {
             font-size: 1.5em;
           }
-
+          &:hover {
+            color: #00a7f0;
+          }
           &.btn-link {
             &:hover {
               color: #00a7f0;

@@ -52,13 +52,14 @@ export default css.global/* css */`
       position: absolute;
       bottom: 0;
       right: 0;
+      pointer-events:none;
       @media screen and (max-width: $break-xarge) {
         right: -30px;
       }
       @media screen and (max-width: $break-large) {
         right: -232px;
       }
-      @media screen and (max-width: $break-mobile) {
+      @media screen and (max-width: $break-medium) {
         display: none;
       }
     }
