@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'next/app';
+// import { Container } from 'next/app';
 import Head from 'next/head';
 import { ApolloProvider } from 'react-apollo';
 import withApollo from '../app-data/graphql/withApollo';
@@ -11,14 +11,14 @@ const MyApp = (props) => {
   } = props;
 
   return (
-    <Container>
+    <>
       <Head>
         <title>{pageTitle || 'Cinema Deck'}</title>
       </Head>
       <ApolloProvider client={apollo}>
         <Component {...pageProps} />
       </ApolloProvider>
-    </Container>
+    </>
   );
 };
 

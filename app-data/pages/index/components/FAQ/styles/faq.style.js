@@ -217,8 +217,8 @@ export default css.global/* css */`
           padding-left: 2px;
         }
       }
-      a{
-        background-color: #0094d2;
+      button {
+        background-color: #0098d8;
         color: white;
         font-family: ProximaNova-Regular;
         font-size: 0.9em;
@@ -242,7 +242,7 @@ export default css.global/* css */`
           font-size: 0.7em;
         }
         &:hover{
-          background-color: #37baf1;
+          background-color: #008fcc;
           box-shadow: 0px 0px 7px 0px #82b6f1;
         }
       }
