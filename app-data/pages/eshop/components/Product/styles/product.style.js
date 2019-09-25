@@ -27,6 +27,7 @@ export default css.global/* css */`
             font-family: ProximaNova-Bold;
 
             & > div {
+              white-space: nowrap;
               & > span {
                 & > small {
                   top: -15px;
