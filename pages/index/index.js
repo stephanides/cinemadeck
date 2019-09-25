@@ -16,7 +16,6 @@ import FreeDownload from '../../app-data/pages/index/components/FreeDownload';
 import Steps from '../../app-data/pages/index/components/Steps';
 import Package from '../../app-data/pages/index/components/Package';
 import Videos from '../../app-data/pages/index/components/Videos';
-import Refund from '../../app-data/pages/index/components/Refund';
 import FAQ from '../../app-data/pages/index/components/FAQ';
 import Author from '../../app-data/pages/index/components/Author';
 import Footer from '../../app-data/pages/index/components/Footer';
@@ -130,7 +129,6 @@ const IndexPage = graphql(
     <Steps lang={lang} />
     <Package lang={lang} />
     <Videos lang={lang} />
-    <Refund lang={lang} />
     <FAQ lang={lang} />
     <Author lang={lang} />
     <Footer />

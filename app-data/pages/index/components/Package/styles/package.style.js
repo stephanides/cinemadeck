@@ -47,7 +47,7 @@ export default css`
       position: relative;
     }
     .presets-img{
-      left: -60px;
+      left: -40px;
       position: relative;
       @media screen and (max-width: $break-mobile) {
         padding-top: 40px;
@@ -87,7 +87,7 @@ export default css`
       margin: 0;
       width: unset;
       top: 50%;
-      left: 50%;
+      left: calc(50% - 10px);
       transform: translate(-50%, -50%);
     }
     .unique-pdf-icon{
@@ -95,7 +95,7 @@ export default css`
       margin: 0;
       width: unset;
       top: 50%;
-      left: calc(50% - 12px);
+      left: calc(50% - 20px);
       transform: translate(-50%, -50%);
     }
     .img-right{

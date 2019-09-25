@@ -7,7 +7,11 @@
     "uniqueCol3Header":"The exact aperture value",
     "uniqueCol1Text":"written instructions or spatial representation will show you exactly <strong>at what angle and distance the camera should be from your actor.</strong>",
     "uniqueCol2Text":"On each card you will find the information on the size of the zoom with which you can achieve the particular composition. So every time you shoot, you will know <strong>what lens you need for the selected composition.</strong>",
-    "uniqueCol3Text":"You will find an aperture value on each card to <strong>help you achieve the final composition.</strong>"
+    "uniqueCol3Text":"You will find an aperture value on each card to <strong>help you achieve the final composition.</strong>",
+    "buble1":"Camera Precision<br> Angle and Distance",
+    "buble2":"Specific Camera<br> Settings Values",
+    "buble3":"Spatial representation for better<br> orientation and much more",
+    "buble4":"Photo of the final<br> composition"
   },
   "cz": {
     "uniqueTitle":"V čem jsou karty cinemadeck unikátní",
@@ -17,6 +21,10 @@
     "uniqueCol3Header":"přesnou hodnotu clonového čísla",
     "uniqueCol1Text":"Psané instrukce, nebo prostorové znázornění vám přesně ukáže, <strong>v jakém uhlu a vzdálenosti má kamera od vašeho herce stát.</strong>",
     "uniqueCol2Text":"Na každé kartě najdete informaci, s jakou velikostí ohniska (zoom) dosáhnete danou kompozici. Na každé natáčení tak budete vědět, <strong>jaký objektív budete potřebovať.</strong>",
-    "uniqueCol3Text":"Na každé kartě najdete velikost clonového čísla, které vám <strong>pomuže dosáhnout finální vizuál kompozice.</strong>"
+    "uniqueCol3Text":"Na každé kartě najdete velikost clonového čísla, které vám <strong>pomuže dosáhnout finální vizuál kompozice.</strong>",
+    "buble1":"Přesný úhel a vzdálenost <br>kamery od herce",
+    "buble2":"Konkrétni hodnoty pro<br> nastavení vaší kamery",
+    "buble3":"Prostorové znázornení pro lepší<br> orientaci a mnoho dalšího",
+    "buble4":"Fotka finální<br> kompozice"
   }
 }

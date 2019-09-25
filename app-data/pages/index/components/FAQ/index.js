@@ -37,13 +37,6 @@ const FAQ = graphql(addProductToCartMutation)(({ lang, mutate }) => {
             />
             <Question
               itemData={{
-                faqid: 'faq-2',
-                questionText: localisation[lang].faqQuestion2,
-                questionAnswer: localisation[lang].faqAnswer2,
-              }}
-            />
-            <Question
-              itemData={{
                 faqid: 'faq-3',
                 questionText: localisation[lang].faqQuestion3,
                 questionAnswer: localisation[lang].faqAnswer3,

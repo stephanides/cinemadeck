@@ -11,6 +11,144 @@ export default css.global/* css */`
   .unique{
     padding-top: 120px;
     padding-bottom: 80px;
+    .unique-image-holder{
+      position: relative;
+      top:60px;
+      @media screen and (max-width: $break-mobile) {
+        top:0px;
+      }
+      .buble-holder{
+        position:absolute;
+        @media screen and (max-width: $break-mobile) {
+          display:none;
+        }
+        p{
+          background-color: grey;
+          color: white;
+          padding-left: 32px;
+          border-radius: 50px;
+          padding-right: 32px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          z-index: 2;
+          position: relative;
+          font-family: 'Open Sans', sans-serif;
+          @media screen and (max-width: $break-medium) {
+            font-size: 0.7em;
+            padding-left: 22px;
+            padding-right: 22px;
+          }
+        }
+        img{
+          position:relative;
+          z-index: 1;
+          @media screen and (max-width: $break-medium) {
+            width:unset;
+          }
+        }
+      }
+      .buble1{
+        top: 236px;
+        left: 84px;
+        @media screen and (max-width: $break-large) {
+          left:6px;
+        }
+        @media screen and (max-width: $break-medium) {
+          top:208px;
+        }
+        img{
+          top: -35px;
+          left: 46px;
+          @media screen and (max-width: $break-medium) {
+            top: -54px;
+            left: 34px;
+          }
+        }
+        p{
+          width: 250px;
+          @media screen and (max-width: $break-medium) {
+            width: 176px;
+          }
+        }
+      }
+      .buble2{
+        top: 580px;
+        left: 134px;
+        @media screen and (max-width: $break-large) {
+          left:42px;
+        }
+        @media screen and (max-width: $break-medium) {
+          left:52px;
+          top: 487px;
+        }
+        img{
+          top: -108px;
+          transform: rotateZ(280deg);
+          left: 26px;
+          @media screen and (max-width: $break-medium) {
+            left:-16px;
+          }
+        }
+        p{
+          width: 234px;
+          @media screen and (max-width: $break-medium) {
+            width: 172px;
+          }
+        }
+      }
+      .buble3{
+        top: 410px;
+        right: 100px;
+        @media screen and (max-width: $break-large) {
+          right:1px;
+        }
+        @media screen and (max-width: $break-medium) {
+          top: 334px;
+        }
+        img{
+          top: -124px;
+          transform: rotateZ(188deg);
+          right: 100px;
+          @media screen and (max-width: $break-medium) {
+            top: -89px;
+            right: 70px;
+          }
+        }
+        p{
+          width: 312px;
+          @media screen and (max-width: $break-medium) {
+            width:226px;
+          }
+        }
+      }
+      .buble4{
+        top: 100px;
+        left: 80px;
+        @media screen and (max-width: $break-large) {
+          left:1px;
+          top:80px;
+          @media screen and (max-width: $break-medium) {
+            top: 112px;
+            left:12px;
+          }
+        }
+        img{
+          top: -75px;
+          left: 94px;
+          transform: rotateZ(-28deg);
+          @media screen and (max-width: $break-medium) {
+            top: -88px;
+            left: 42px;
+          }
+        }
+        p{
+          width: 200px;
+          @media screen and (max-width: $break-medium) {
+            width: 136px;
+          }
+        }
+      }
+    }
     h2{
       color:#2f3438;
       font-family: ProximaNova-Bold;

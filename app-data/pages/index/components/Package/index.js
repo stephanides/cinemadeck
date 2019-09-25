@@ -26,7 +26,7 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
       <Container fluid>
         <CustomContainer>
           <h2>{localisation[lang].packageTitle}</h2>
-          <Row>
+          <Row className="justify-content-center">
             <Col xl="4" md="6" sm="12">
               <h6 className="text-center">{localisation[lang].packageCol1Title}</h6>
               <div className="img-holder">
@@ -43,7 +43,7 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
               <div className="img-holder">
                 <img loading="lazy" src={`/static/images/package/${lang === 'cz' ? '' : 'en/'}kartatelefon.png`} className="unique-img" alt="" />
                 <LazyLoad height={250}>
-                  <img src="/static/images/package/pdf.png" className="pdf-icon" alt="" />
+                  <img src="/static/images/package/pdf.png" className="unique-pdf-icon" alt="" />
                 </LazyLoad>
               </div>
               <p className="text-header">{localisation[lang].packageCol2Header}</p>
@@ -52,7 +52,7 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
             <Col xl="4" md="6" sm="12">
               <h6 className="text-center">{localisation[lang].packageCol3Title}</h6>
               <div className="img-holder">
-                <img loading="lazy" src={`/static/images/package/${lang === 'cz' ? '' : 'en/'}kartapresets.png`} className="unique-img" alt="" />
+                <img loading="lazy" src={`/static/images/package/${lang === 'cz' ? '' : 'en/'}kartapresets.png`} className="presets-img" alt="" />
               </div>
               <p className="text-header">{localisation[lang].packageCol3Header}</p>
               <p className="text-text">{localisation[lang].packageCol3Text}</p>
@@ -77,21 +77,11 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
                   <img src="/static/images/package/kartaguide.png" className="img-right" alt="" />
                 </LazyLoad>
                 <LazyLoad height={250}>
-                  <img src="/static/images/package/pdf.png" className="pdf-icon" alt="" />
+                  <img src="/static/images/package/pdf.png" className="unique-pdf-icon" alt="" />
                 </LazyLoad>
               </div>
               <p className="text-header">{localisation[lang].packageCol5Header}</p>
               <p className="text-text">{localisation[lang].packageCol5Text}</p>
-            </Col>
-            <Col xl="4" md="6" sm="12">
-              <h6 className="text-center">{localisation[lang].packageCol6Title}</h6>
-              <div className="img-holder">
-                <LazyLoad height={250}>
-                  <img src="/static/images/package/warianty.png" alt="" />
-                </LazyLoad>
-              </div>
-              <p className="text-header">{localisation[lang].packageCol6Header}</p>
-              <p className="text-text">{localisation[lang].packageCol6Text}</p>
             </Col>
           </Row>
           <div className="buy-package-holder">

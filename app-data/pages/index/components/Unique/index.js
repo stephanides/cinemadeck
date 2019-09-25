@@ -11,15 +11,45 @@ const renderDangerHtml = (lang) => ({ __html: localisation[lang].uniqueCol2Heade
 const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].uniqueCol1Text });
 const renderDangerHtml3 = (lang) => ({ __html: localisation[lang].uniqueCol2Text });
 const renderDangerHtml4 = (lang) => ({ __html: localisation[lang].uniqueCol3Text });
+const renderDangerHtmlBuble1 = (lang) => ({ __html: localisation[lang].buble1 });
+const renderDangerHtmlBuble2 = (lang) => ({ __html: localisation[lang].buble2 });
+const renderDangerHtmlBuble3 = (lang) => ({ __html: localisation[lang].buble3 });
+const renderDangerHtmlBuble4 = (lang) => ({ __html: localisation[lang].buble4 });
 
 const Unique = ({ lang }) => (
   <div className="unique" id="unique">
     <Container fluid>
       <Container>
         <h2 className="text-center">{localisation[lang].uniqueTitle}</h2>
-        <LazyLoad height={700}>
-          <img src={`/static/images/unique/${lang === 'cz' ? '' : 'en/'}karty.png`} alt="" />
-        </LazyLoad>
+        <div className="unique-image-holder">
+          <div className="buble-holder buble1">
+            <p className="icon_text" dangerouslySetInnerHTML={renderDangerHtmlBuble1(lang)} />
+            <LazyLoad height={60}>
+              <img src="/static/images/unique/arrow.png" className="icon" alt="Arrow" />
+            </LazyLoad>
+          </div>
+          <div className="buble-holder buble2">
+            <p className="icon_text" dangerouslySetInnerHTML={renderDangerHtmlBuble2(lang)} />
+            <LazyLoad height={60}>
+              <img src="/static/images/unique/arrow.png" className="icon" alt="Arrow" />
+            </LazyLoad>
+          </div>
+          <div className="buble-holder buble3">
+            <p className="icon_text" dangerouslySetInnerHTML={renderDangerHtmlBuble3(lang)} />
+            <LazyLoad height={60}>
+              <img src="/static/images/unique/arrow.png" className="icon" alt="Arrow" />
+            </LazyLoad>
+          </div>
+          <div className="buble-holder buble4">
+            <p className="icon_text" dangerouslySetInnerHTML={renderDangerHtmlBuble4(lang)} />
+            <LazyLoad height={60}>
+              <img src="/static/images/unique/arrow.png" className="icon" alt="Arrow" />
+            </LazyLoad>
+          </div>
+          <LazyLoad height={700}>
+            <img src={`/static/images/unique/${lang === 'cz' ? '' : 'en/'}karty.png`} alt="" />
+          </LazyLoad>
+        </div>
         <p className="text-center text-p">{localisation[lang].uniqueText}</p>
         <div className="items_holder">
           <Row>
