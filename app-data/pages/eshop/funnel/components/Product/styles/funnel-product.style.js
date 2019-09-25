@@ -99,7 +99,7 @@ export default css`
         height: 25px;
         margin-right: 1rem;
         position: relative;
-        width: 35px;
+        width: 25px;
 
         &.up:before {
           border-left: 8px solid transparent;
@@ -148,6 +148,26 @@ export default css`
           top: calc(50% - 2px);
           left: 50%;
           transform: translate(-50%, -50%);
+        }
+      }
+      @media screen and (min-width: 320px) {
+        & > div {
+          width: 35px;
+        }
+      }
+      @media screen and (min-width: 420px) {
+        & > div {
+          width: 25px;
+        }
+      }
+      @media screen and (min-width: 770px) {
+        & > div {
+          width: 35px;
+        }
+      }
+      @media screen and (min-width: 992px) {
+        & > div {
+          width: 25px;
         }
       }
     }
