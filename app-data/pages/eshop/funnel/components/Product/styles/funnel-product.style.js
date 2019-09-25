@@ -152,12 +152,12 @@ export default css`
       }
       @media screen and (min-width: 320px) {
         & > div {
-          width: 35px;
+          width: 40px;
         }
       }
-      @media screen and (min-width: 420px) {
+      @media screen and (min-width: 410px) {
         & > div {
-          width: 25px;
+          width: 30px;
         }
       }
       @media screen and (min-width: 770px) {
