@@ -65,9 +65,9 @@ export default css.global/* css */`
           }
         }
         p{
-          width: 250px;
+          width: 260px;
           @media screen and (max-width: $break-medium) {
-            width: 176px;
+            width: 184px;
           }
         }
       }
@@ -90,9 +90,9 @@ export default css.global/* css */`
           }
         }
         p{
-          width: 234px;
+          width: 242px;
           @media screen and (max-width: $break-medium) {
-            width: 172px;
+            width: 180px;
           }
         }
       }
