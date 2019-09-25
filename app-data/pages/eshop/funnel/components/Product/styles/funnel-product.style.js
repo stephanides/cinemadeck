@@ -17,21 +17,41 @@ export default css`
         border: 1px solid #ececec;
         outline: none;
       }
+      @media screen and (min-width: 760px) {
+        button {
+          margin: 1rem auto;
+        } 
+      }
+      @media screen and (min-width: 992px) {
+        button {
+          margin: 1rem auto 1rem 9rem;
+        } 
+      }
     }
     .price-add-to-cart-container {
       & > div {
         & > span {
           & > div {
             font-size: 3.5rem;
+            white-space: nowrap;
 
             & > span {
-              // font-size: 3.5rem;
-
               & > small {
                 font-size: x-small;
                 top: -30px;
                 right: -20px;
               }
+            }
+          }
+
+          @media screen and (min-width: 280px) {
+            & > div {
+              font-size: 2.5rem;
+            }
+          }
+          @media screen and (min-width: 992px) {
+            & > div {
+              font-size: 3.5rem;
             }
           }
 
@@ -128,6 +148,26 @@ export default css`
           top: calc(50% - 2px);
           left: 50%;
           transform: translate(-50%, -50%);
+        }
+      }
+      @media screen and (min-width: 320px) {
+        & > div {
+          width: 40px;
+        }
+      }
+      @media screen and (min-width: 410px) {
+        & > div {
+          width: 30px;
+        }
+      }
+      @media screen and (min-width: 770px) {
+        & > div {
+          width: 35px;
+        }
+      }
+      @media screen and (min-width: 992px) {
+        & > div {
+          width: 25px;
         }
       }
     }
