@@ -6,7 +6,11 @@ const MONGO_URL = `mongodb://localhost:27017/${dbName}`; // production
 
 const mongoStart = async () => {
   try {
-    mongoose.connect(MONGO_URL, { useFindAndModify: false, useNewUrlParser: true });
+    mongoose.connect(MONGO_URL, {
+      useFindAndModify: false,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
     const db = mongoose.connection;
 
