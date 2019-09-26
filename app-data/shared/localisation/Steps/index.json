@@ -19,14 +19,14 @@
     "stepsImageText1":"úhel a vzdálenost",
     "stepsImageText2":"clona a ohnisko",
     "stepsImageText3":"rule of thirds",
-    "stepsText1Header":"úhel a vzádelnost kamery",
-    "stepsText2Header":"clona a ohnisko objektivu",
-    "stepsText3Header":"pravidlo třetin rule of thirds",
-    "stepsText1p":"Podle psaných instrukcí nebo prostorového znázornění na kartě se nastaví potřebný úhel a vzálenost kamery od herce.",
+    "stepsText1Header":"Úhel a vzdálenost kamery",
+    "stepsText2Header":"Clona a ohnisko objektivu",
+    "stepsText3Header":"Pravidlo třetin",
+    "stepsText1p":"Podle psaných instrukcí nebo prostorového znázornění na kartě se nastaví potřebný úhel a vzdálenost kamery od herce.",
     "stepsText2p":"Když už kamera stojí na svém místě, následuje nastavení ohniska (zoom) a clony objektivu.",
-    "stepsText3p":"Finální kompozice se doladí díky pravidlu Rule Of third (pravidlo třetin).",
-    "stepsText1span":"<strong>příklad:</strong> postavím kameru do 40° úhlu a pak přiblížiím nebo vzdálím kameru od herce podle vzdáleností uvedené na kartě.",
-    "stepsText2span":"<strong>příklad:</strong> když kamera stojí ve správnem uhlu a vzdálenosti, nastaví se velikost cloveného čísla ´´f´´ a pak velikost ohniska (zoom) například 60mm.",
-    "stepsText3span":"<strong>příklad:</strong> když už kamera stojí a všechny hodnoty jsou nastaveny, podle znázornění pravidla ROT na kartičce kameru podvihnu, snížím, případně pootočím do levé, nebo pravé strany, aby se znázornění ROT na kartě shodovalo se znázorněním na displeji kamery."
+    "stepsText3p":"Finální kompozice se doladí díky pravidlu Rule Of Thirds (pravidlo třetin).",
+    "stepsText1span":"<strong>Příklad:</strong> postavíme kameru do 40 stupňového úhlu a pak přiblížíme nebo vzdálíme kameru od herce, podle vzdálenosti uvedené na kartě.",
+    "stepsText2span":"<strong>Příklad:</strong> když už kamera stojí na svém místě, následuje nastavení ohniska (zoom) a clony objektivu. Příklad: když kamera stojí ve správném úhlu a vzdálenosti, nastaví se velikost clonového čísla “f” a pak velikost ohniska (zoom), například 70 mm.",
+    "stepsText3span":"<strong>Příklad:</strong> když už kamera stojí na svém místě a všechny hodnoty jsou nastaveny, podle znázornění pravidla ROT, kameru zvednu nebo snížím, případně pootočím do levé, nebo pravé strany, aby se znázornění ROT na kartě shodovalo se znázorněním na displeji kamery."
   }
 }
