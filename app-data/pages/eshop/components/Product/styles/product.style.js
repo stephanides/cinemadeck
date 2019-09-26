@@ -69,6 +69,7 @@ export default css.global/* css */`
       padding: 0 28px !important;
       position: absolute;
       width: calc(100% - 5rem);
+      outline: none;
     
       &:hover {
           background-color: #0098d8;
