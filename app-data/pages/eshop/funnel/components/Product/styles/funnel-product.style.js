@@ -75,6 +75,7 @@ export default css`
         height: 70px;
         width: 265px;
         letter-spacing: .15rem;
+        outline: none;
 
         &:hover {
           background-color: #0098d8;

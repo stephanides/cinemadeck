@@ -218,14 +218,16 @@ const CartCheckout = compose(
                       </div>
                     </Label>
                   </FormGroup>
-                  <div className="warranty">
-                    <aside className="mr-2">
-                      <img src="/static/images/refund.png" alt="" />
-                    </aside>
-                    <p>
-                      {locale[lang].refund}
-                    </p>
-                  </div>
+                  {
+                    /* <div className="warranty">
+                      <aside className="mr-2">
+                        <img src="/static/images/refund.png" alt="" />
+                      </aside>
+                      <p>
+                        {locale[lang].refund}
+                      </p>
+                    </div> */
+                  }
                 </div>
               )
               : <p className="w-100 text-center">{locale[lang].cartIsEmpty}</p>
