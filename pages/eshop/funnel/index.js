@@ -28,11 +28,13 @@ const Funnel = compose(
     const checkCart = async () => {
       try {
         if (process.browser) {
-          const cartStorageData = JSON.parse(window.localStorage.getItem('cart'));
+          await mutate({ variables: { cart: [] } });
 
-          if (cartStorageData && cartStorageData.length > 0) {
+          setTimeout(async () => {
+            const cartStorageData = JSON.parse(window.localStorage.getItem('cart'));
+
             await mutate({ variables: { cart: cartStorageData } });
-          }
+          }, 1000);
         }
       } catch (err) {
         console.log(err);
