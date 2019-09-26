@@ -147,6 +147,12 @@ export default css.global/* css */`
             width: 136px;
           }
         }
+        .unique-text{
+          width:166px;
+          @media screen and (max-width: $break-medium) {
+            width: 116px;
+          }
+        }
       }
     }
     h2{

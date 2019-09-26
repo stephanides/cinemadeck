@@ -41,7 +41,7 @@ const Unique = ({ lang }) => (
             </LazyLoad>
           </div>
           <div className="buble-holder buble4">
-            <p className="icon_text" dangerouslySetInnerHTML={renderDangerHtmlBuble4(lang)} />
+            <p className={lang === 'cz' ? 'icon_text unique-text' : 'icon_text'} dangerouslySetInnerHTML={renderDangerHtmlBuble4(lang)} />
             <LazyLoad height={60}>
               <img src="/static/images/unique/arrow.png" className="icon" alt="Arrow" />
             </LazyLoad>
