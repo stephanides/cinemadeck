@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { Container, Col, Row } from 'reactstrap';
@@ -17,20 +18,17 @@ const EshopPage = compose(
   graphql(getProductsFromCart, { name: 'cartProducts' }),
   graphql(getLocaleQuery, { name: 'getLocale' }),
 )(({
-  getLocale: { lang }, cartProducts: { cart }, mutate,
+  getLocale: { lang }, cartProducts: { cart = [] }, mutate,
 }) => {
   useEffect(() => {
     const checkCart = async () => {
       try {
-        if (process.browser) {
-          await mutate({ variables: { cart: [] } });
+        setTimeout(async () => {
+          const cartStorageData = JSON.parse(window.localStorage.getItem('cart'));
+          console.log(cartStorageData);
 
-          setTimeout(async () => {
-            const cartStorageData = JSON.parse(window.localStorage.getItem('cart'));
-
-            await mutate({ variables: { cart: cartStorageData } });
-          }, 1000);
-        }
+          await mutate({ variables: { cart: cartStorageData } });
+        }, 1000);
       } catch (err) {
         console.log(err);
       }
