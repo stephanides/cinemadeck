@@ -5,7 +5,7 @@ export default {
   Mutation: {
     addProductToCart: (_root, { id }, { cache }) => {
       const { products } = cache.readQuery({ query: getProducts });
-      const { cart } = cache.readQuery({ query: getProductsFromCart });
+      const { cart = [] } = cache.readQuery({ query: getProductsFromCart });
       const product = products.find((item) => (item.id === id));
       const dough = {
         ...product, count: 1, totalPrice: product.price, __typename: 'ProductInCart',
@@ -13,7 +13,7 @@ export default {
 
       let cartData;
 
-      if (cart.length > 0) {
+      if (cart && cart.length > 0) {
         let i = 0;
         let productExist = false;
 
