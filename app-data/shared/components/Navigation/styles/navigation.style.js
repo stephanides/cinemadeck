@@ -169,7 +169,8 @@ export default css.global/* css */`
             padding: .5rem 1rem;
             position: absolute;
             right: 125px;
-            top: -399px;
+            top: 0;
+            transform: translateY(-399px);
             width: 300px;
             
             div {
@@ -177,10 +178,10 @@ export default css.global/* css */`
               margin-bottom: .5rem;
             }
             &.move {
-              transition: top 2s;
+              transition: transform 2s;
 
               &.move-top {
-                top: -25px;
+                transform: translateY(-25px);
               }
             }
           }

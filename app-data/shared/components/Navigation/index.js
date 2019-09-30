@@ -25,7 +25,15 @@ const Navigation = graphql(
   cart, lang, isCart, isHome, toggleLang,
 }) => {
   const [isOpen, toggle] = useState(false);
+  const [cartReady, handleCart] = useState(false);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      handleCart(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
   const checkPageTop = () => {
     const [isPageTop, handleIsPageTop] = useState(true);
 
@@ -114,7 +122,7 @@ const Navigation = graphql(
               </NavItem>
               <NavItem
                 className={
-                  (!isHome && !isCart && cart && cart.length > 0)
+                  ((!isHome && !isCart && cart && cart.length > 0) && cartReady)
                     ? 'move move-left' : 'move'
                 }
               >
@@ -136,21 +144,21 @@ const Navigation = graphql(
                     )
                 }
               </NavItem>
-              {
-                !isCart && (
-                  <NavItem
-                    className={
-                      (!isHome && cart && cart.length > 0)
-                        ? 'cart-content move move-top' : 'cart-content move'
-                    }
-                  >
+              <NavItem
+                className={
+                  ((!isHome && cart && cart.length > 0) && cartReady)
+                    ? 'cart-content move move-top' : 'cart-content move'
+                }
+              >
+                {
+                  (!isCart && cartReady) && (
                     <CartContent
                       cart={cart}
                       lang={lang}
                     />
-                  </NavItem>
-                )
-              }
+                  )
+                }
+              </NavItem>
               <NavItem>
                 {
                   isHome

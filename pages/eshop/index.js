@@ -25,7 +25,6 @@ const EshopPage = compose(
       try {
         setTimeout(async () => {
           const cartStorageData = JSON.parse(window.localStorage.getItem('cart'));
-          console.log(cartStorageData);
 
           await mutate({ variables: { cart: cartStorageData } });
         }, 1000);

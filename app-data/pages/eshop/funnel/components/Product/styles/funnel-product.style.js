@@ -92,13 +92,14 @@ export default css`
       display: flex;
       justify-content: space-between;
       outline: none;
+      padding: 0;
       position: relative;
 
       & > div {
         border: 2px solid #00bcf5;
         border-radius: 50%;
         height: 25px;
-        margin-right: 1rem;
+        margin-right: .5rem;
         position: relative;
         width: 25px;
 
