@@ -146,7 +146,7 @@ const Navigation = graphql(
               </NavItem>
               <NavItem
                 className={
-                  ((!isHome && cart && cart.length > 0) && cartReady)
+                  ((!isHome && !isCart && cart && cart.length > 0) && cartReady)
                     ? 'cart-content move move-top' : 'cart-content move'
                 }
               >
