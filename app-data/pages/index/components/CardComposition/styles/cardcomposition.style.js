@@ -171,6 +171,17 @@ export default css.global/* css */`
               width: 240px !important;
             }
           }
+          .text-3-en{
+            top:140px;
+            img{
+              position: absolute;
+              left: 260px;
+              top: 10px;
+            }
+            .text{
+              width: 240px !important;
+            }
+          }
           .text-4{
             top:180px;
             img{

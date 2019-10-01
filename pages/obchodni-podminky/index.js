@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'react-apollo';
-import { Container } from 'reactstrap';
 import { getLocaleQuery } from '../../app-data/graphql/query';
 
 import Layout from '../../app-data/shared/components/Layout';
+import Terms from '../../app-data/pages/obchodni-podminky/components/Terms';
 
 const ObchodnePodmienky = graphql(
   getLocaleQuery, { name: 'getLocale' },
@@ -12,9 +12,7 @@ const ObchodnePodmienky = graphql(
     lang={lang}
     isHome
   >
-    <Container>
-      <h2>Všeobecné obchodní podmínky</h2>
-    </Container>
+    <Terms lang={lang} />
   </Layout>
 ));
 

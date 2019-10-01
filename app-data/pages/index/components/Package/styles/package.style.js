@@ -134,6 +134,8 @@ export default css`
         justify-content: center;
         padding-bottom: 20px;
         padding-top: 10px;
+        left: -16px;
+        position: relative;
       }
       .price{
         font-family: ProximaNova-Bold;

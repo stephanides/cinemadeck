@@ -140,6 +140,7 @@ export default css.global/* css */`
         letter-spacing: 1px;
         font-size: 1.5em;
         color:white;
+        padding-right: 30px;
       }
       .icon_text{
         font-family: 'Open Sans', sans-serif;
