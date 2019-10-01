@@ -4,6 +4,8 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 
+import Footer from '../../../../shared/components/Footer';
+
 import styles from './styles/terms.style';
 import localisation from '../../../../shared/localisation/ObchodnePodmienky';
 
@@ -147,6 +149,9 @@ const Terms = ({ lang }) => (
         </div>
       </Container>
     </Container>
+    <div className="position-relative footer">
+      <Footer />
+    </div>
     <style jsx>{styles}</style>
   </div>
 );

@@ -4,6 +4,8 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 
+import Footer from '../../../../shared/components/Footer';
+
 import styles from './styles/gdpr.style';
 import localisation from '../../../../shared/localisation/Gdpr';
 
@@ -47,6 +49,9 @@ const Gdpr = ({ lang }) => (
         </ul>
       </Container>
     </Container>
+    <div className="position-relative footer">
+      <Footer />
+    </div>
     <style jsx>{styles}</style>
   </div>
 );
