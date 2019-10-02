@@ -173,5 +173,27 @@ export default css`
         }
       }
     }
+    .infoshow{
+      height:160px;
+      overflow:hidden;
+      transition: height .6s ease-out;
+      @media screen and (max-width: 1200px) {
+        height:180px;
+      }
+      @media screen and (max-width: 992px) {
+        height:250px;
+      }
+      @media screen and (max-width: 768px) {
+        height:220px;
+      }
+      @media screen and (max-width: 500px) {
+        height:240px;
+      }
+    }
+    .infohide{
+      height:0px;
+      overflow:hidden;
+      transition: height .6s ease-out;
+    }
   }
 `;

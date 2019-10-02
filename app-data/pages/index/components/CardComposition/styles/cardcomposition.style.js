@@ -291,6 +291,20 @@ export default css.global/* css */`
             }
           }
           .text-11{
+            top:360px;
+            img{
+              position: absolute;
+              left: -240px;
+              top: -6px;
+              @media screen and (max-width: $break-large) {
+                left: -175px;
+              }
+            }
+            .text{
+              width: 225px !important;
+            }
+          }
+          .text-11-en{
             top:380px;
             img{
               position: absolute;

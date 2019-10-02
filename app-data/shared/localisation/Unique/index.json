@@ -5,13 +5,13 @@
     "uniqueCol1Header":"How and where to place the camera",
     "uniqueCol2Header":"What lens to<br> use",
     "uniqueCol3Header":"The exact aperture value",
-    "uniqueCol1Text":"written instructions or spatial representation will show you exactly <strong>at what angle and distance the camera should be from your actor.</strong>",
+    "uniqueCol1Text":"Written instructions or spatial representation will show you exactly <strong>at what angle and distance the camera should be from your actor.</strong>",
     "uniqueCol2Text":"On each card you will find the information on the size of the zoom with which you can achieve the particular composition. So every time you shoot, you will know <strong>what lens you need for the selected composition.</strong>",
     "uniqueCol3Text":"You will find an aperture value on each card to <strong>help you achieve the final composition.</strong>",
-    "buble1":"Camera Precision<br> Angle and Distance",
-    "buble2":"Specific Camera<br> Settings Values",
+    "buble1":"Camera precision<br> angle and distance",
+    "buble2":"Specific camera<br> settings values",
     "buble3":"Spatial representation for better<br> orientation and much more",
-    "buble4":"Photo of the final<br> composition"
+    "buble4":"Photo of final<br> composition"
   },
   "cz": {
     "uniqueTitle":"V čem jsou karty CinemaDeck unikátní",

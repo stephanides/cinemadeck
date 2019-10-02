@@ -105,7 +105,7 @@ const CardComposition = ({ lang }) => {
                     <p>{localisation[lang].cardComposition10Text}</p>
                   </div>
                 </div>
-                <div className="text-item text-11">
+                <div className={lang === 'cz' ? 'text-item text-11' : 'text-item text-11-en'}>
                   <img src="/static/images/composition/arrow11.png" alt="" />
                   <div className="text">
                     <h6>{localisation[lang].cardComposition11Title}</h6>

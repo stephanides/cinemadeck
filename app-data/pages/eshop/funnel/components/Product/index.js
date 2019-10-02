@@ -49,7 +49,7 @@ const Product = graphql(
           </aside>
         </Col>
         <Col sm="12" md="6" lg="8">
-          <h3 className="text-uppercase">{title}</h3>
+          <h3 className="">{title}</h3>
           <p className="font-weight-lighter" dangerouslySetInnerHTML={{ __html: content }} />
           {
             (extraContent && extraContent.infoLine && extraContent.infoContent) && (
@@ -66,7 +66,7 @@ const Product = graphql(
                     {extraContent.infoLine}
                   </button>
                 </p>
-                <div className={infoShow ? 'd-block' : 'd-none'}>
+                <div className={infoShow ? 'infoshow' : 'infohide'}>
                   <p className="font-weight-lighter" dangerouslySetInnerHTML={{ __html: extraContent.infoContent }} />
                 </div>
               </div>

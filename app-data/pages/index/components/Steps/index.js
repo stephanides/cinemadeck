@@ -11,6 +11,7 @@ import localisation from '../../../../shared/localisation/Steps';
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].stepsText1span });
 const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].stepsText2span });
 const renderDangerHtml3 = (lang) => ({ __html: localisation[lang].stepsText3span });
+const renderDangerHtml4 = (lang) => ({ __html: localisation[lang].stepsText3Header });
 const Steps = ({ lang }) => (
   <div className="steps" id="steps">
     <Container fluid>
@@ -49,7 +50,7 @@ const Steps = ({ lang }) => (
                 <p>03</p>
                 <i className="icono-arrow2-left" />
               </div>
-              <h3 className="pt-2">{localisation[lang].stepsText3Header}</h3>
+              <h3 className="pt-2" dangerouslySetInnerHTML={renderDangerHtml4(lang)} />
               <p className="icon_text">{localisation[lang].stepsText3p}</p>
               <p className="icon_text_light pt-2" dangerouslySetInnerHTML={renderDangerHtml3(lang)} />
             </Col>

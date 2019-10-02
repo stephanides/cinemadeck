@@ -84,7 +84,7 @@ export default css`
     display: block;
     background: transparent;
     color: #4f7351;
-    height: 180px;
+    height: 200px;
     transition: height 0.8s;
     transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     border-bottom: 1px solid grey;
