@@ -191,6 +191,7 @@ export default css.global/* css */`
             }
             .text{
               width: 240px !important;
+              margin-top:20px;
             }
           }
         }
@@ -239,6 +240,7 @@ export default css.global/* css */`
             }
             .text{
               width: 225px !important;
+              margin-top: 30px;
             }
           }
         }
@@ -294,7 +296,7 @@ export default css.global/* css */`
             top:360px;
             img{
               position: absolute;
-              left: -240px;
+              left: -258px;
               top: -6px;
               @media screen and (max-width: $break-large) {
                 left: -175px;
@@ -308,7 +310,7 @@ export default css.global/* css */`
             top:380px;
             img{
               position: absolute;
-              left: -240px;
+              left: -258px;
               top: 0px;
               @media screen and (max-width: $break-large) {
                 left: -175px;

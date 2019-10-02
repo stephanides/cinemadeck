@@ -32,6 +32,7 @@ export default css`
       padding-right: 40px;
       padding-left: 20px;
   }
+  
 
   .faq {
     margin: 0 auto;

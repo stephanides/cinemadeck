@@ -184,7 +184,7 @@ const ShoppingCart = compose(
           }
         </style>
       </Container>
-      <DynamicFooter />
+      <DynamicFooter lang={lang} />
     </Layout>
   );
 });

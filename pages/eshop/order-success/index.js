@@ -35,7 +35,7 @@ const OrderSuccess = compose(
         Společně se tak učíme a zdokonalujeme své výsledky.
       </p>
     </div>
-    <DynamicFooter />
+    <DynamicFooter lang={lang} />
     <style jsx>{styles}</style>
   </Layout>
 ));

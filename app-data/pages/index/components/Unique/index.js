@@ -63,7 +63,7 @@ const Unique = ({ lang }) => (
                   <img src="/static/images/unique/icon3.png" className="icon" alt="Vizuál" />
                 </LazyLoad>
               </div>
-              <h3 className="pt-2">{localisation[lang].uniqueCol1Header}</h3>
+              <h3 className="pt-2 pr-4">{localisation[lang].uniqueCol1Header}</h3>
               <p className="icon_text" dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
             </Col>
             <Col lg="4">

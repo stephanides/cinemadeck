@@ -131,7 +131,7 @@ const IndexPage = graphql(
     <Videos lang={lang} />
     <FAQ lang={lang} />
     <Author lang={lang} />
-    <Footer />
+    <Footer lang={lang} />
   </Layout>
 ));
 

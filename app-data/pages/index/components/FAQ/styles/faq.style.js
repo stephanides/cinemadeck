@@ -262,5 +262,11 @@ export default css.global/* css */`
         display: none;
       }
     }
+    .faq-link{
+      color:#00a7f0;
+      &:hover{
+        color:#00a7f0;
+      }
+    }
   }
 `;

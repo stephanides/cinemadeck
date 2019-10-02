@@ -50,7 +50,7 @@ const Gdpr = ({ lang }) => (
       </Container>
     </Container>
     <div className="position-relative footer">
-      <Footer />
+      <Footer lang={lang} />
     </div>
     <style jsx>{styles}</style>
   </div>
