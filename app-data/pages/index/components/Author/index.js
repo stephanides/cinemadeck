@@ -25,7 +25,7 @@ const Author = ({ lang }) => (
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-brand"
-            href="https://facebook.com/"
+            href="https://www.facebook.com/groups/2372222099482622/"
           >
             <img src="/static/images/author/facebook.png" alt="Facebook" />
           </a>
@@ -34,9 +34,9 @@ const Author = ({ lang }) => (
           <img src="/static/images/author/mail.png" alt="" />
           <a
             className="navbar-brand"
-            href="mailto:info@cinemadeck.com"
+            href="mailto:martin@thecinemadeck.com"
           >
-            info@cinemadeck.com
+            martin@thecinemadeck.com
           </a>
         </div>
       </Container>

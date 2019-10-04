@@ -148,6 +148,12 @@ export default css`
           font-size: 14px;
           position: absolute;
           top:7px;
+          @media screen and (max-width: $break-small) {
+            font-size: 10px;
+          }
+        }
+        @media screen and (max-width: $break-small) {
+          font-size: 3em;
         }
       }
       .miniprice{

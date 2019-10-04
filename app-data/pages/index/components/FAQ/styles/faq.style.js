@@ -59,6 +59,7 @@ export default css.global/* css */`
       @media screen and (max-width: $break-mobile) {
         font-size: 1.5em;
         padding-bottom: 60px;
+        padding-top: 20px;
       }
       @media screen and (max-width: $break-xsmall) {
         font-size: 1.2em;
@@ -203,6 +204,12 @@ export default css.global/* css */`
           font-size: 14px;
           position: absolute;
           top:7px;
+          @media screen and (max-width: $break-small) {
+            font-size: 10px;
+          }
+        }
+        @media screen and (max-width: $break-small) {
+          font-size: 3em;
         }
       }
       .miniprice{
