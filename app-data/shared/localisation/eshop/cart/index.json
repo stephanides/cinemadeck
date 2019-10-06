@@ -31,9 +31,9 @@
     "notePlaceHolder": "Note"
   },
   "cz": {
-    "billingDataToFill": "Vyplňte prosím vaše fakturační Údaje",
+    "billingDataToFill": "Vyplňte prosím vaše fakturační ůdaje",
     "nameAddressContact": "Jméno, Adresa a Kontakt",
-    "namePlaceholder": "Jméno a Příjmení",
+    "namePlaceholder": "Jméno a příjmení",
     "nameError": "Prosím zadejte jméno.",
     "streetPlaceholder": "Ulice a číslo popisné",
     "streetError": "Prosím zadejte ulici a číslo popisné.",
@@ -52,7 +52,7 @@
     "buy": "Koupit",
     "methodOfPayment": "Způsob platby",
     "purchasedProductsInMail": "Všechny zakoupené produkty získáte na uvedený email v objednávce.",
-    "agreeSentence": "Souhlasím s podmínkami a se zpracováním osobních údajú",
+    "agreeSentence": "Souhlasím s podmínkami a se zpracováním osobních údajů",
     "agreeError": "Před odesláním objednávky musíte souhlasit.",
     "refund": "Když vám karty nebudou z jakéhokoliv dúvodu během 30 dnú vyhovovat, napište nám email a my vám vrátíme všechny vaše peníze.",
     "cartIsEmpty": "Košík je prázdny.",

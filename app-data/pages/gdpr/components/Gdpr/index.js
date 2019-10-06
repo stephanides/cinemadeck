@@ -10,7 +10,6 @@ import styles from './styles/gdpr.style';
 import localisation from '../../../../shared/localisation/Gdpr';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].text5 });
-const renderDangerHtml1 = (lang) => ({ __html: localisation[lang].text6 });
 
 const Gdpr = ({ lang }) => (
 
@@ -24,8 +23,6 @@ const Gdpr = ({ lang }) => (
         <h6 className="">{localisation[lang].header4}</h6>
         <h6 className="pt-4">{localisation[lang].header5}</h6>
         <p dangerouslySetInnerHTML={renderDangerHtml(lang)} />
-        <h6 className="pt-4">{localisation[lang].header6}</h6>
-        <p dangerouslySetInnerHTML={renderDangerHtml1(lang)} />
         <h6 className="pt-4">{localisation[lang].header7}</h6>
         <p>{localisation[lang].text7}</p>
         <h6 className="pt-4">{localisation[lang].header8}</h6>
