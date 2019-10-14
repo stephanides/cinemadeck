@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
@@ -57,6 +59,9 @@ const Navigation = graphql(
   };
 
   const isTop = checkPageTop();
+  const redirectHome = (e) => {
+    window.location.href = e.currentTarget.href;
+  };
 
   return (
     <div>
@@ -72,7 +77,7 @@ const Navigation = graphql(
       >
         <Container fluid className="navigation_holder">
           <Link href="/">
-            <a className="navbar-brand">
+            <a className="navbar-brand" onClick={redirectHome}>
               <img src={isHome ? '/static/images/logo-light.svg' : '/static/images/logo-dark.svg'} alt="Logo White" />
             </a>
           </Link>
@@ -130,7 +135,7 @@ const Navigation = graphql(
                   !isHome
                     ? (
                       <Link href="/#footer-main">
-                        <a className="nav-link pr-4">
+                        <a className="nav-link pr-4" onClick={redirectHome}>
                           {localisation[lang].contact}
                         </a>
                       </Link>
