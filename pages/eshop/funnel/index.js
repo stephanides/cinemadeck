@@ -56,7 +56,7 @@ const Funnel = compose(
       {
         isLightBoxOpen && (
           <Lightbox
-            mainSrc="/static/images/funnel/light-like-PRO-info.jpg"
+            mainSrc={lang === 'cz' ? '/static/images/funnel/light-like-PRO-info.png' : '/static/images/funnel/light-like-PRO_EN-LS1.jpg'}
             onCloseRequest={() => toggleLightBox(false)}
           />
         )

@@ -41,7 +41,7 @@ const Product = graphql(
                   onClick={() => toggleLightBox(true)}
                 >
                   <LazyLoad height={180}>
-                    <img src="/static/images/funnel/light-like-PRO-info-thumb.jpg" alt="" />
+                    <img src={lang === 'cz' ? '/static/images/funnel/light-like-PRO-info-thumb.png' : '/static/images/funnel/light-like-PRO_EN-LS1-thumb.jpg'} alt="" />
                   </LazyLoad>
                 </button>
               )

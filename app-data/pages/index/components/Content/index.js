@@ -40,6 +40,7 @@ const Content = ({ lang }) => (
               text: localisation[lang].contentCol3Text,
             }}
           />
+          <AnchorLink href="#package" className="content-button">{localisation[lang].contentButton}</AnchorLink>
         </div>
         <div className="right-items">
           <div className="right-item">
@@ -68,7 +69,6 @@ const Content = ({ lang }) => (
           </div>
         </div>
       </div>
-      <AnchorLink href="#package" className="content-button">{localisation[lang].contentButton}</AnchorLink>
     </Container>
     <style jsx global>{styles}</style>
   </div>

@@ -64,7 +64,7 @@ const Navigation = graphql(
         className={
           isHome
             ? (
-              isTop ? 'fixed-top background' : 'fixed-top scroll_background'
+              isTop ? 'fixed-top background navbar-lighter' : 'fixed-top scroll_background navbar-lighter'
             )
             : 'fixed-top bg-white navbar-light'
         }

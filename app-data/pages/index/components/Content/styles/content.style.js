@@ -44,6 +44,8 @@ export default css.global/* css */`
       padding-top: 100px;
       display: flex;
       justify-content: space-between;
+      max-width:1600px;
+      margin:0 auto;
       @media screen and (max-width: $break-xarge) {
         padding-top: 60px;
       }
@@ -109,7 +111,7 @@ export default css.global/* css */`
       display: block;
       margin-top: 56px;
       box-shadow: 0px 0px 8px 0px darkgrey;
-      margin-left: 150px;
+      margin-left: 0px;
       margin-top: 80px;
       text-align: center;
       text-decoration: none;

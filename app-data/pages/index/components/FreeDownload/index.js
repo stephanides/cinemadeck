@@ -14,7 +14,7 @@ const FreeDownload = ({ lang }) => {
 
   return (
     <div className="freedownload" id="freedownload">
-      <Container fluid>
+      <Container fluid className="borders">
         <Container>
           <h2 dangerouslySetInnerHTML={renderDangerHtml(lang)} />
           <p className="freetext">{localisation[lang].freeDownloadText}</p>

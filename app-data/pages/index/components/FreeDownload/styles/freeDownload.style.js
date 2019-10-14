@@ -50,14 +50,14 @@ export default css.global/* css */`
     }
     .free-image{
       position: absolute;
-      bottom: 0;
-      right: 0;
+      bottom: -100px;
+      right: -400px;
       pointer-events:none;
       @media screen and (max-width: $break-xarge) {
-        right: -30px;
+        right: -460px;
       }
       @media screen and (max-width: $break-large) {
-        right: -232px;
+        right: -660px;
       }
       @media screen and (max-width: $break-medium) {
         display: none;
@@ -123,5 +123,10 @@ export default css.global/* css */`
         }
       }
     } 
+    .borders{
+      max-width:1600px !important;
+      margin:0 auto;
+      position:relative;
+    }
   }
 `;
