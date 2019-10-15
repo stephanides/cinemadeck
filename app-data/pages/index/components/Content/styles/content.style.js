@@ -17,6 +17,9 @@ export default css.global/* css */`
     @media screen and (max-width: $break-xarge) {
       background-position: 50% 50%;
     }
+    @media screen and (min-width: 1400px) {
+      background-position: 50% 30%;
+    }
     @media screen and (max-width: $break-mobile) {
       background-image: url("/static/images/steps/background.png");
       background-repeat: repeat;
