@@ -1,4 +1,5 @@
 const express = require('express');
+const createLocaleMiddleware = require('express-locale');
 const { ApolloServer } = require('apollo-server-express');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
@@ -21,6 +22,7 @@ const App = async () => {
 
     app.use(helmet());
     app.use(bodyParser.json({ limit: '5mb', extended: true }));
+    app.use(createLocaleMiddleware());
 
     const server = new ApolloServer({
       context: async ({ req }) => {
@@ -49,6 +51,15 @@ const App = async () => {
     await setup();
 
     // Routes
+    app.get('/', (req, res) => {
+      res.redirect(`${req.locale.language}/home`);
+    });
+    app.get('/:lang/home', (req, res) => {
+      const actualPage = '/';
+      const queryParams = { locale: req.params.lang };
+
+      nextApp.render(req, res, actualPage, queryParams);
+    });
     app.get('*', (req, res) => handle(req, res));
 
     await app.listen({ port });
