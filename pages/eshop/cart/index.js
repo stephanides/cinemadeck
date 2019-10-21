@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Container, Col, Row } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
-import { getLocaleQuery, getProductsFromCart } from '../../../app-data/graphql/query';
+import { /* getLocaleQuery, */ getProductsFromCart } from '../../../app-data/graphql/query';
 import { createOrderMutation, initCartMutation } from '../../../app-data/graphql/mutation';
 import Layout from '../../../app-data/shared/components/Layout';
 import ContactInfo from '../../../app-data/pages/eshop/cart/components/ContactInfo';
@@ -33,9 +33,9 @@ const ShoppingCart = compose(
   graphql(createOrderMutation, { name: 'createOrder' }),
   graphql(initCartMutation),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
-  graphql(getLocaleQuery, { name: 'getLocale' }),
+  // graphql(getLocaleQuery, { name: 'getLocale' }),
 )(({
-  cartProducts: { cart }, createOrder, getLocale: { lang }, mutate,
+  cartProducts: { cart }, createOrder, lang, mutate,
 }) => {
   const [order, handleOrder] = useState(initialState.order);
   const [stateSelected, handleStateChange] = useState(initialState.stateSelected);
@@ -188,5 +188,7 @@ const ShoppingCart = compose(
     </Layout>
   );
 });
+
+ShoppingCart.getInitialProps = async ({ query }) => ({ lang: query.locale });
 
 export default ShoppingCart;

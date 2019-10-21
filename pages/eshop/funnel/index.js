@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import Lightbox from 'react-image-lightbox';
 import { Container } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
-import { getLocaleQuery, getProductsFromCart } from '../../../app-data/graphql/query';
+import { /* getLocaleQuery, */ getProductsFromCart } from '../../../app-data/graphql/query';
 import { initCartMutation } from '../../../app-data/graphql/mutation';
 import Layout from '../../../app-data/shared/components/Layout';
 
@@ -21,9 +21,9 @@ const initialState = {
 };
 const Funnel = compose(
   graphql(initCartMutation),
-  graphql(getLocaleQuery),
+  // graphql(getLocaleQuery),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
-)(({ data: { lang }, cartProducts: { cart }, mutate }) => {
+)(({ lang, cartProducts: { cart }, mutate }) => {
   useEffect(() => {
     const checkCart = async () => {
       try {
@@ -100,5 +100,7 @@ const Funnel = compose(
     </Layout>
   );
 });
+
+Funnel.getInitialProps = async ({ query }) => ({ lang: query.locale });
 
 export default Funnel;

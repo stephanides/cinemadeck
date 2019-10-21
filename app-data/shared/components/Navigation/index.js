@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { graphql } from 'react-apollo';
 import {
   Container,
@@ -26,6 +27,7 @@ const Navigation = graphql(
 )(({
   cart, lang, isCart, isHome, toggleLang,
 }) => {
+  const router = useRouter();
   const [isOpen, toggle] = useState(false);
   const [cartReady, handleCart] = useState(false);
 
@@ -62,6 +64,31 @@ const Navigation = graphql(
   const redirectHome = (e) => {
     window.location.href = e.currentTarget.href;
   };
+  const getLangUrl = (locale) => {
+    let url = '/';
+
+    switch (router.pathname) {
+      case '/':
+        url = `/${locale}/home`;
+        break;
+      case '/eshop':
+        url = `/${locale}/eshop`;
+        break;
+      case '/eshop/cart':
+        url = `/${locale}/eshop/cart`;
+        break;
+      case '/eshop/funnel':
+        url = `/${locale}/eshop`;
+        break;
+      default:
+        break;
+    }
+
+    return url;
+  };
+
+  const czUrl = getLangUrl('cz');
+  const enUrl = getLangUrl('en');
 
   return (
     <div>
@@ -87,38 +114,48 @@ const Navigation = graphql(
           <Collapse isOpen={isOpen} navbar>
             <Nav className={isHome ? 'ml-auto' : 'ml-auto not-homepage position-relative'} navbar>
               <NavItem>
-                <button
-                  type="button"
-                  onClick={async () => {
-                    try {
-                      if (lang !== 'cz') {
-                        await toggleLang({
-                          variables: { lang: 'cz' },
-                        });
-                      }
-                    } catch (err) {
-                      console.log(err);
-                    }
-                  }}
-                >
-                  {localisation[lang].czechLanguage}
-                </button>
-                <button
-                  type="button"
-                  onClick={async () => {
-                    try {
-                      if (lang !== 'en') {
-                        await toggleLang({
-                          variables: { lang: 'en' },
-                        });
-                      }
-                    } catch (err) {
-                      console.log(err);
-                    }
-                  }}
-                >
-                  {localisation[lang].englishLanguage}
-                </button>
+                <Link href={czUrl}>
+                  <a>{localisation[lang].czechLanguage}</a>
+                </Link>
+                <Link href={enUrl}>
+                  <a>{localisation[lang].englishLanguage}</a>
+                </Link>
+                {
+                  /*
+                    <button
+                      type="button"
+                      onClick={async () => {
+                        try {
+                          if (lang !== 'cz') {
+                            await toggleLang({
+                              variables: { lang: 'cz' },
+                            });
+                          }
+                        } catch (err) {
+                          console.log(err);
+                        }
+                      }}
+                    >
+                      {localisation[lang].czechLanguage}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={async () => {
+                        try {
+                          if (lang !== 'en') {
+                            await toggleLang({
+                              variables: { lang: 'en' },
+                            });
+                          }
+                        } catch (err) {
+                          console.log(err);
+                        }
+                      }}
+                    >
+                      {localisation[lang].englishLanguage}
+                    </button>
+                  */
+                }
               </NavItem>
               <NavItem>
                 <Link href="/eshop">

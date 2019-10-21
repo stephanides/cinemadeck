@@ -22,7 +22,10 @@ const App = async () => {
 
     app.use(helmet());
     app.use(bodyParser.json({ limit: '5mb', extended: true }));
-    app.use(createLocaleMiddleware());
+    app.use(createLocaleMiddleware({
+      priority: ['default', 'accept-language'],
+      default: 'cz-CS',
+    }));
 
     const server = new ApolloServer({
       context: async ({ req }) => {
@@ -54,8 +57,35 @@ const App = async () => {
     app.get('/', (req, res) => {
       res.redirect(`${req.locale.language}/home`);
     });
+    app.get('/eshop', (req, res) => {
+      res.redirect(`${req.locale.language}/eshop`);
+    });
+    app.get('/eshop/cart', (req, res) => {
+      res.redirect(`${req.locale.language}/eshop/cart`);
+    });
+    app.get('/eshop/funnel', (req, res) => {
+      res.redirect(`${req.locale.language}/eshop/funnel`);
+    });
     app.get('/:lang/home', (req, res) => {
       const actualPage = '/';
+      const queryParams = { locale: req.params.lang };
+
+      nextApp.render(req, res, actualPage, queryParams);
+    });
+    app.get('/:lang/eshop', (req, res) => {
+      const actualPage = '/eshop';
+      const queryParams = { locale: req.params.lang };
+
+      nextApp.render(req, res, actualPage, queryParams);
+    });
+    app.get('/:lang/eshop/cart', (req, res) => {
+      const actualPage = '/eshop/cart';
+      const queryParams = { locale: req.params.lang };
+
+      nextApp.render(req, res, actualPage, queryParams);
+    });
+    app.get('/:lang/eshop/funnel', (req, res) => {
+      const actualPage = '/eshop/funnel';
       const queryParams = { locale: req.params.lang };
 
       nextApp.render(req, res, actualPage, queryParams);

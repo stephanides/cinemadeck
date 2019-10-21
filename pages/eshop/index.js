@@ -16,9 +16,9 @@ const DynamicFooter = dynamic(import('../../app-data/shared/components/eshop/Foo
 const EshopPage = compose(
   graphql(initCartMutation),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
-  graphql(getLocaleQuery, { name: 'getLocale' }),
+  // graphql(getLocaleQuery, { name: 'getLocale' }),
 )(({
-  getLocale: { lang }, cartProducts: { cart = [] }, mutate,
+  /* getLocale: { lang }, */lang, cartProducts: { cart = [] }, mutate,
 }) => {
   useEffect(() => {
     const checkCart = async () => {
@@ -102,5 +102,7 @@ const EshopPage = compose(
     </Layout>
   );
 });
+
+EshopPage.getInitialProps = async ({ query }) => ({ lang: query.locale });
 
 export default EshopPage;

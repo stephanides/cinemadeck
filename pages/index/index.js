@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // import dynamic from 'next/dynamic';
-import { graphql } from 'react-apollo';
-import { getLocaleQuery } from '../../app-data/graphql/query';
+// import { graphql } from 'react-apollo';
+// import { getLocaleQuery } from '../../app-data/graphql/query';
 
 import Layout from '../../app-data/shared/components/Layout';
 import Header from '../../app-data/pages/index/components/Header';
@@ -112,9 +113,7 @@ const DynamicFooter = dynamic(
   },
 ); */
 
-const IndexPage = graphql(
-  getLocaleQuery, { name: 'getLocale' },
-)(({ getLocale: { lang } }) => (
+const IndexPage = ({ lang }) => (
   <Layout
     lang={lang}
     isHome
@@ -133,6 +132,19 @@ const IndexPage = graphql(
     <Author lang={lang} />
     <Footer lang={lang} />
   </Layout>
-));
+);
+
+IndexPage.getInitialProps = async ({ query }) => {
+  const { locale } = query;
+
+  return { lang: locale };
+};
+
+IndexPage.defaultProps = {
+  lang: 'cz',
+};
+IndexPage.propTypes = {
+  lang: PropTypes.string,
+};
 
 export default IndexPage;

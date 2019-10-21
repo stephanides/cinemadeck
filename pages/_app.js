@@ -1,5 +1,6 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-// import { Container } from 'next/app';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { ApolloProvider } from 'react-apollo';
 import withApollo from '../app-data/graphql/withApollo';
@@ -28,7 +29,6 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
   }
-
   return { pageProps };
 };
 
