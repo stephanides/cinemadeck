@@ -61,7 +61,7 @@ const Navigation = graphql(
   };
 
   const isTop = checkPageTop();
-  const redirectHome = (e) => { window.location.href = e.currentTarget.href; };
+  // const redirectHome = (e) => { window.location.href = e.currentTarget.href; };
   const getLangUrl = (locale) => {
     let path = '/';
     let asUrl = '/';
@@ -118,8 +118,8 @@ const Navigation = graphql(
         expand="md"
       >
         <Container fluid className="navigation_holder">
-          <Link href="/">
-            <a className="navbar-brand" onClick={redirectHome}>
+          <Link href={`/?locale=${lang}`} as={`/${lang}/home`}>
+            <a className="navbar-brand">
               <img src={isHome ? '/static/images/logo-light.svg' : '/static/images/logo-dark.svg'} alt="Logo White" />
             </a>
           </Link>
@@ -150,8 +150,8 @@ const Navigation = graphql(
                 {
                   !isHome
                     ? (
-                      <Link href={`/#footer-main?locale=${lang}`} as={`/${lang}/home#footer-main`}>
-                        <a className="nav-link pr-4" onClick={redirectHome}>
+                      <Link href={`/?locale=${lang}#footer-main`} as={`/${lang}/home#footer-main`}>
+                        <a className="nav-link pr-4">
                           {localisation[lang].contact}
                         </a>
                       </Link>
