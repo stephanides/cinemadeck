@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { Container, Col, Row } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
-import { getLocaleQuery, getProductsFromCart } from '../../app-data/graphql/query';
+import { /* getLocaleQuery, */ getProductsFromCart } from '../../app-data/graphql/query';
 import { initCartMutation } from '../../app-data/graphql/mutation';
 import Layout from '../../app-data/shared/components/Layout';
 
@@ -18,7 +18,7 @@ const EshopPage = compose(
   graphql(getProductsFromCart, { name: 'cartProducts' }),
   // graphql(getLocaleQuery, { name: 'getLocale' }),
 )(({
-  /* getLocale: { lang }, */lang, cartProducts: { cart = [] }, mutate,
+  lang, cartProducts: { cart = [] }, mutate,
 }) => {
   useEffect(() => {
     const checkCart = async () => {
