@@ -25,7 +25,7 @@ import localisation from '../../localisation/Navigation';
 const Navigation = graphql(
   toggleLangMutation, { name: 'toggleLang' },
 )(({
-  cart, lang, isCart, isHome, toggleLang,
+  cart, lang, isCart, isHome,
 }) => {
   const router = useRouter();
   const [isOpen, toggle] = useState(false);
@@ -61,9 +61,7 @@ const Navigation = graphql(
   };
 
   const isTop = checkPageTop();
-  const redirectHome = (e) => {
-    window.location.href = e.currentTarget.href;
-  };
+  const redirectHome = (e) => { window.location.href = e.currentTarget.href; };
   const getLangUrl = (locale) => {
     let path = '/';
     let asUrl = '/';
@@ -71,7 +69,7 @@ const Navigation = graphql(
     switch (router.pathname) {
       case '/':
         asUrl = `/${locale}/home`;
-        path = '/';
+        path = `/?locale=${locale}`;
         break;
       case '/eshop':
         asUrl = `/${locale}/eshop`;
@@ -84,6 +82,18 @@ const Navigation = graphql(
       case '/eshop/funnel':
         asUrl = `/${locale}/eshop/funnel`;
         path = `/eshop/funnel?locale=${locale}`;
+        break;
+      case '/obchodni-podminky':
+        asUrl = `/${locale}/obchodni-podminky`;
+        path = `/obchodni-podminky?locale=${locale}`;
+        break;
+      case '/terms-conditions':
+        asUrl = `/${locale}/terms-conditions`;
+        path = `/obchodni-podminky?locale=${locale}`;
+        break;
+      case '/ochrana-osobnych-udaju':
+        asUrl = `/${locale}/ochrana-osobnych-udaju`;
+        path = `/ochrana-osobnych-udaju?locale=${locale}`;
         break;
       default:
         break;
@@ -125,45 +135,9 @@ const Navigation = graphql(
                 <Link href={enUrl[1]} as={enUrl[0]}>
                   <a>{localisation[lang].englishLanguage}</a>
                 </Link>
-                {
-                  /*
-                    <button
-                      type="button"
-                      onClick={async () => {
-                        try {
-                          if (lang !== 'cz') {
-                            await toggleLang({
-                              variables: { lang: 'cz' },
-                            });
-                          }
-                        } catch (err) {
-                          console.log(err);
-                        }
-                      }}
-                    >
-                      {localisation[lang].czechLanguage}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={async () => {
-                        try {
-                          if (lang !== 'en') {
-                            await toggleLang({
-                              variables: { lang: 'en' },
-                            });
-                          }
-                        } catch (err) {
-                          console.log(err);
-                        }
-                      }}
-                    >
-                      {localisation[lang].englishLanguage}
-                    </button>
-                  */
-                }
               </NavItem>
               <NavItem>
-                <Link href="/eshop">
+                <Link href={`/eshop?locale=${lang}`} as={`/${lang}/eshop`}>
                   <a className="nav-link">ESHOP</a>
                 </Link>
               </NavItem>
@@ -176,7 +150,7 @@ const Navigation = graphql(
                 {
                   !isHome
                     ? (
-                      <Link href="/#footer-main">
+                      <Link href={`/#footer-main?locale=${lang}`} as={`/${lang}/home#footer-main`}>
                         <a className="nav-link pr-4" onClick={redirectHome}>
                           {localisation[lang].contact}
                         </a>
@@ -212,7 +186,7 @@ const Navigation = graphql(
                     ? (
                       <AnchorLink href="#freedownload" className="button-link">{localisation[lang].download}</AnchorLink>
                     ) : (
-                      <Link href="/eshop/cart">
+                      <Link href={`/eshop/cart?locale=${lang}`} as={`/${lang}/eshop/cart`}>
                         <a className="nav-link shopping-cart d-flex align-items-center">
                           <img src="/static/images/cart-logo.png" alt="" />
                           <div className="proceed-to-cart position-relative ml-2">

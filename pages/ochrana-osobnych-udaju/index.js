@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { compose, graphql } from 'react-apollo';
 import { initCartMutation } from '../../app-data/graphql/mutation';
-import { getLocaleQuery, getProductsFromCart } from '../../app-data/graphql/query';
+import { /* getLocaleQuery, */ getProductsFromCart } from '../../app-data/graphql/query';
 
 import Layout from '../../app-data/shared/components/Layout';
 import Gdpr from '../../app-data/pages/gdpr/components/Gdpr';
@@ -9,9 +9,9 @@ import Gdpr from '../../app-data/pages/gdpr/components/Gdpr';
 const OchranaUdajov = compose(
   graphql(initCartMutation),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
-  graphql(getLocaleQuery, { name: 'getLocale' }),
+  // graphql(getLocaleQuery, { name: 'getLocale' }),
 )(({
-  getLocale: { lang }, cartProducts: { cart = [] }, mutate,
+  lang, cartProducts: { cart = [] }, mutate,
 }) => {
   useEffect(() => {
     const checkCart = async () => {
@@ -41,5 +41,7 @@ const OchranaUdajov = compose(
     </Layout>
   );
 });
+
+OchranaUdajov.getInitialProps = async ({ query }) => ({ lang: query.locale });
 
 export default OchranaUdajov;

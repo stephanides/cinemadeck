@@ -16,7 +16,7 @@ const Product = graphql(
   addProductToCartMutation,
 )(({ mutate, lang, productData }) => {
   const {
-    content, id, imageURL, price, titleOne, titleTwo, knowMoreUrl,
+    content, id, imageURL, price, titleOne, titleTwo, knowMoreUrl, knowMoreUrlAs,
   } = productData;
 
   const handleAddProductToCart = async (_id) => {
@@ -91,7 +91,7 @@ const Product = graphql(
         </button>
       </div>
       <p className="text-center text-blue text-uppercase">
-        <Link href={knowMoreUrl}>
+        <Link href={knowMoreUrl} as={knowMoreUrlAs}>
           <a>
             {locale[lang].knowMore}
           </a>
@@ -110,6 +110,7 @@ Product.propTypes = {
     price: PropTypes.arrayOf(PropTypes.number),
     title: PropTypes.string,
     knowMoreUrl: PropTypes.string,
+    knowMoreUrlAs: PropTypes.string,
   }).isRequired,
 };
 

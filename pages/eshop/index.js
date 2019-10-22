@@ -61,7 +61,8 @@ const EshopPage = compose(
                 titleOne: locale[lang].cardsTitleOne,
                 titleTwo: locale[lang].cardsTitleTwo,
                 price: [947, 37],
-                knowMoreUrl: '/',
+                knowMoreUrl: `/?locale=${lang}`,
+                knowMoreUrlAs: `/${lang}/home`,
               }}
             />
           </Col>
@@ -76,7 +77,8 @@ const EshopPage = compose(
                 titleOne: locale[lang].lightLikeProTitleOne,
                 titleTwo: locale[lang].lightLikeProTitleTwo,
                 price: [180, 7],
-                knowMoreUrl: '/eshop/funnel',
+                knowMoreUrl: `/eshop/funnel?locale=${lang}`,
+                knowMoreUrlAs: `/${lang}/eshop/funnel`,
               }}
             />
           </Col>
@@ -91,7 +93,8 @@ const EshopPage = compose(
                 titleOne: locale[lang].soundLikeProTitleOne,
                 titleTwo: locale[lang].soundLikeProTitleTwo,
                 price: [180, 7],
-                knowMoreUrl: '/eshop/funnel',
+                knowMoreUrl: `/eshop/funnel?locale=${lang}`,
+                knowMoreUrlAs: `/${lang}/eshop/funnel`,
               }}
             />
           </Col>

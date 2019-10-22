@@ -53,7 +53,7 @@ const App = async () => {
     await db();
     await setup();
 
-    // Routes
+    // Redirects
     app.get('/', (req, res) => {
       res.redirect(`${req.locale.language}/home`);
     });
@@ -66,6 +66,16 @@ const App = async () => {
     app.get('/eshop/funnel', (req, res) => {
       res.redirect(`${req.locale.language}/eshop/funnel`);
     });
+    app.get('/obchodni-podminky', (req, res) => {
+      res.redirect(`${req.locale.language}/obchodni-podminky`);
+    });
+    app.get('/terms-conditions', (req, res) => {
+      res.redirect(`${req.locale.language}/terms-conditions`);
+    });
+    app.get('/ochrana-osobnych-udaju', (req, res) => {
+      res.redirect(`${req.locale.language}/ochrana-osobnych-udaju`);
+    });
+    // Routes
     app.get('/:lang/home', (req, res) => {
       const actualPage = '/';
       const queryParams = { locale: req.params.lang };
@@ -90,9 +100,33 @@ const App = async () => {
 
       nextApp.render(req, res, actualPage, queryParams);
     });
+    app.get('/:lang/obchodni-podminky', (req, res) => {
+      const actualPage = '/obchodni-podminky';
+      const queryParams = { locale: req.params.lang };
+
+      nextApp.render(req, res, actualPage, queryParams);
+    });
+    app.get('/:lang/terms-conditions', (req, res) => {
+      const actualPage = '/obchodni-podminky';
+      const queryParams = { locale: req.params.lang };
+
+      nextApp.render(req, res, actualPage, queryParams);
+    });
+    app.get('/:lang/ochrana-osobnych-udaju', (req, res) => {
+      const actualPage = '/ochrana-osobnych-udaju';
+      const queryParams = { locale: req.params.lang };
+
+      nextApp.render(req, res, actualPage, queryParams);
+    });
+    app.get('/:lang/gdpr', (req, res) => {
+      const actualPage = '/ochrana-osobnych-udaju';
+      const queryParams = { locale: req.params.lang };
+
+      nextApp.render(req, res, actualPage, queryParams);
+    });
     app.get('*', (req, res) => handle(req, res));
 
-    await app.listen({ port });
+    app.listen({ port });
 
     console.log(`🚀 Server ready at http://localhost:${port}${server.graphqlPath}`);
   } catch (err) {

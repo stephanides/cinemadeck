@@ -20,12 +20,12 @@ const Footer = ({ lang }) => (
         </ul>
         <ul className="footer-list d-flex">
           <li>
-            <Link href="/obchodni-podminky">
+            <Link href={`/${lang}/obchodni-podminky`} as={lang === 'cz' ? `/${lang}/obchodni-podminky` : `/${lang}/terms-conditions`}>
               <a>{localisation[lang].terms}</a>
             </Link>
           </li>
           <li>
-            <Link href="/ochrana-osobnych-udaju">
+            <Link href={`/${lang}/ochrana-osobnych-udaju`} as={lang === 'cz' ? `/${lang}/ochrana-osobnych-udaju` : `/${lang}/gdpr`}>
               <a>{localisation[lang].privacy}</a>
             </Link>
           </li>
