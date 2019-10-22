@@ -11,6 +11,7 @@ export default css`
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+    position:relative;
 
     @media screen and (min-width: $break-extraLarge) {
       max-width: 1340px;

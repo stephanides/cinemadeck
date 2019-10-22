@@ -32,8 +32,11 @@ export default css.global/* css */`
     img{
         position: absolute;
         right: 0px;
+        right: -450px;
+        width: 1440px;
         @media screen and (max-width: 1500px) {
           width: 1000px;
+          right: -150px;
         }
         @media screen and (max-width: $break-xarge) {
           width: 900px;
@@ -62,7 +65,7 @@ export default css.global/* css */`
         }
         @media screen and (max-width: $break-medium) {
           padding-top: 0;
-          margin-top: -40px;
+          margin-top: 60px;
           padding-left: 20px;
           padding-right: 20px;
         }
