@@ -65,26 +65,31 @@ const Navigation = graphql(
     window.location.href = e.currentTarget.href;
   };
   const getLangUrl = (locale) => {
-    let url = '/';
+    let path = '/';
+    let asUrl = '/';
 
     switch (router.pathname) {
       case '/':
-        url = `/${locale}/home`;
+        asUrl = `/${locale}/home`;
+        path = '/';
         break;
       case '/eshop':
-        url = `/${locale}/eshop`;
+        asUrl = `/${locale}/eshop`;
+        path = `/eshop?locale=${locale}`;
         break;
       case '/eshop/cart':
-        url = `/${locale}/eshop/cart`;
+        asUrl = `/${locale}/eshop/cart`;
+        path = `/eshop/cart?locale=${locale}`;
         break;
       case '/eshop/funnel':
-        url = `/${locale}/eshop`;
+        asUrl = `/${locale}/eshop/funnel`;
+        path = `/eshop/funnel?locale=${locale}`;
         break;
       default:
         break;
     }
 
-    return url;
+    return [asUrl, path];
   };
 
   const czUrl = getLangUrl('cz');
@@ -114,10 +119,10 @@ const Navigation = graphql(
           <Collapse isOpen={isOpen} navbar>
             <Nav className={isHome ? 'ml-auto' : 'ml-auto not-homepage position-relative'} navbar>
               <NavItem>
-                <Link href={czUrl}>
+                <Link href={czUrl[1]} as={czUrl[0]}>
                   <a>{localisation[lang].czechLanguage}</a>
                 </Link>
-                <Link href={enUrl}>
+                <Link href={enUrl[1]} as={enUrl[0]}>
                   <a>{localisation[lang].englishLanguage}</a>
                 </Link>
                 {
