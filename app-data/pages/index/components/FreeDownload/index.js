@@ -1,14 +1,17 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-danger */
 import React, { useState } from 'react';
 import {
   Container, InputGroup, InputGroupText, Input,
 } from 'reactstrap';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 import styles from './styles/freeDownload.style';
 import localisation from '../../../../shared/localisation/FreeDownload';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].freeDownloadTitle });
+const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].gdpr });
 const FreeDownload = ({ lang }) => {
   const [modal, toggle] = useState(false);
 
@@ -39,7 +42,9 @@ const FreeDownload = ({ lang }) => {
             </InputGroup>
             <InputGroupText>
               <Input addon type="checkbox" aria-label="Checkbox for following text input" />
-              <span>{localisation[lang].gdpr}</span>
+              <Link href={`/${lang}/ochrana-osobnych-udaju?locale=${lang}`} as={`/${lang}/ochrana-osobnych-udaju`}>
+                <a dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
+              </Link>
             </InputGroupText>
           </div>
           <button type="button" onClick={() => toggle(!modal)}>{localisation[lang].freeDownloadButton}</button>

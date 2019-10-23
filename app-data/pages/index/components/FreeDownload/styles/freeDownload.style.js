@@ -29,6 +29,10 @@ export default css.global/* css */`
         letter-spacing: 6px;
       }
     }
+    a{
+      cursor:pointer;
+      text-decoration:underline;
+    }
     p{
       font-family: 'Open Sans', sans-serif;
       font-size: 1em;
