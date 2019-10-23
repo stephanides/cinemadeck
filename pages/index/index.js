@@ -115,45 +115,27 @@ const DynamicFooter = dynamic(
 ); */
 
 const IndexPage = ({ lang }) => {
-  const [scrolled, toggleScrolled] = useState(false);
   const { asPath } = useRouter();
 
+  const scrollToRef = (element) => {
+    window.scrollTo(0, element.offsetTop);
+  };
+
   useEffect(() => {
-    const easeInCubic = (t) => (t * t * t);
+    const shouldScroll = () => {
+      const footerContainer = document.getElementById('footer-main');
 
-    const scrollToElem = (startTime, currentTime, duration, scrollEndElemTop, startScrollOffset, callback) => {
-      const runtime = currentTime - startTime;
-      let progress = runtime / duration;
-
-      progress = Math.min(progress, 1);
-
-      const ease = easeInCubic(progress);
-
-      window.scroll(0, startScrollOffset + (scrollEndElemTop * ease));
-
-      if (runtime < duration) {
-        requestAnimationFrame((timestamp) => {
-          const actualTime = timestamp || new Date().getTime();
-
-          scrollToElem(startTime, actualTime, duration, scrollEndElemTop, startScrollOffset, callback);
-        });
-      }
-
-      if (typeof callback === 'function') {
-        callback();
+      if (asPath.indexOf('footer') > -1 && footerContainer) {
+        setTimeout(() => {
+          scrollToRef(footerContainer);
+        }, 500);
       }
     };
 
-    if (asPath.indexOf('#footer-main') > -1 && !scrolled) {
-      const elemTop = document.getElementById('author').getBoundingClientRect().top;
-      const stamp = new Date().getTime();
+    shouldScroll();
 
-      console.log('SCROLL');
-      setTimeout(() => {
-        scrollToElem(stamp, stamp, 600, elemTop, window.pageYOffset, () => { toggleScrolled(true); });
-      }, 500);
-    }
-  }, [scrolled]);
+    return () => shouldScroll();
+  }, []);
 
   return (
     <Layout
