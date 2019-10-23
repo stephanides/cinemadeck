@@ -20,6 +20,15 @@ const Author = ({ lang }) => (
           <p className="text-center">{localisation[lang].text1}</p>
           <p className="text-center">{localisation[lang].text2}</p>
         </div>
+        <div className="email">
+          <img src="/static/images/author/mail.png" alt="" />
+          <a
+            className="navbar-brand"
+            href="mailto:martin@thecinemadeck.com"
+          >
+            martin@thecinemadeck.com
+          </a>
+        </div>
         <div className="social-networks">
           <a
             target="_blank"
@@ -29,14 +38,13 @@ const Author = ({ lang }) => (
           >
             <img src="/static/images/author/facebook.png" alt="Facebook" />
           </a>
-        </div>
-        <div className="email">
-          <img src="/static/images/author/mail.png" alt="" />
           <a
+            target="_blank"
+            rel="noopener noreferrer"
             className="navbar-brand"
-            href="mailto:martin@thecinemadeck.com"
+            href="https://www.youtube.com/channel/UC8ikhdM8fWu87pZ72E0aR9A"
           >
-            martin@thecinemadeck.com
+            <img src="/static/images/author/youtube.png" alt="Youtube" />
           </a>
         </div>
       </Container>

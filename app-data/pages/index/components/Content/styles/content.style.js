@@ -14,8 +14,13 @@ export default css.global/* css */`
     background-size: cover;
     background-position: 90% 50%;
     background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #0d0d0d;
+    @media (max-width: 1666px){
+      background-size: cover;
+    }
     @media screen and (max-width: $break-xarge) {
-      background-position: 50% 50%;
+      background-position: 25% 50%;
     }
     @media screen and (min-width: 1400px) {
       background-position: 50% 30%;
