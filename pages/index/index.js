@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 // import dynamic from 'next/dynamic';
 // import { graphql } from 'react-apollo';
@@ -113,26 +114,68 @@ const DynamicFooter = dynamic(
   },
 ); */
 
-const IndexPage = ({ lang }) => (
-  <Layout
-    lang={lang}
-    isHome
-  >
-    <Header lang={lang} />
-    <About lang={lang} />
-    <Unique lang={lang} />
-    <Content lang={lang} />
-    <SlideShow lang={lang} />
-    <CardComposition lang={lang} />
-    <FreeDownload lang={lang} />
-    <Steps lang={lang} />
-    <Package lang={lang} />
-    <Videos lang={lang} />
-    <FAQ lang={lang} />
-    <Author lang={lang} />
-    <Footer lang={lang} />
-  </Layout>
-);
+const IndexPage = ({ lang }) => {
+  const [scrolled, toggleScrolled] = useState(false);
+  const { asPath } = useRouter();
+
+  useEffect(() => {
+    const easeInCubic = (t) => (t * t * t);
+
+    const scrollToElem = (startTime, currentTime, duration, scrollEndElemTop, startScrollOffset, callback) => {
+      const runtime = currentTime - startTime;
+      let progress = runtime / duration;
+
+      progress = Math.min(progress, 1);
+
+      const ease = easeInCubic(progress);
+
+      window.scroll(0, startScrollOffset + (scrollEndElemTop * ease));
+
+      if (runtime < duration) {
+        requestAnimationFrame((timestamp) => {
+          const actualTime = timestamp || new Date().getTime();
+
+          scrollToElem(startTime, actualTime, duration, scrollEndElemTop, startScrollOffset, callback);
+        });
+      }
+
+      if (typeof callback === 'function') {
+        callback();
+      }
+    };
+
+    if (asPath.indexOf('#footer-main') > -1 && !scrolled) {
+      const elemTop = document.getElementById('author').getBoundingClientRect().top;
+      const stamp = new Date().getTime();
+
+      console.log('SCROLL');
+      setTimeout(() => {
+        scrollToElem(stamp, stamp, 600, elemTop, window.pageYOffset, () => { toggleScrolled(true); });
+      }, 500);
+    }
+  }, [scrolled]);
+
+  return (
+    <Layout
+      lang={lang}
+      isHome
+    >
+      <Header lang={lang} />
+      <About lang={lang} />
+      <Unique lang={lang} />
+      <Content lang={lang} />
+      <SlideShow lang={lang} />
+      <CardComposition lang={lang} />
+      <FreeDownload lang={lang} />
+      <Steps lang={lang} />
+      <Package lang={lang} />
+      <Videos lang={lang} />
+      <FAQ lang={lang} />
+      <Author lang={lang} />
+      <Footer lang={lang} />
+    </Layout>
+  );
+};
 
 IndexPage.getInitialProps = async ({ query }) => {
   const { locale } = query;
