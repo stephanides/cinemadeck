@@ -114,50 +114,26 @@ const DynamicFooter = dynamic(
   },
 ); */
 
-const IndexPage = ({ lang }) => {
-  /* const { asPath } = useRouter();
-
-  const scrollToRef = (element) => {
-    window.scrollTo(0, element.offsetTop);
-  };
-
-  useEffect(() => {
-    const shouldScroll = () => {
-      const footerContainer = document.getElementById('footer-main');
-
-      if (asPath.indexOf('footer') > -1 && footerContainer) {
-        setTimeout(() => {
-          scrollToRef(footerContainer);
-        }, 500);
-      }
-    };
-
-    shouldScroll();
-
-    return () => shouldScroll();
-  }, []); */
-
-  return (
-    <Layout
-      lang={lang}
-      isHome
-    >
-      <Header lang={lang} />
-      <About lang={lang} />
-      <Unique lang={lang} />
-      <Content lang={lang} />
-      <SlideShow lang={lang} />
-      <CardComposition lang={lang} />
-      <FreeDownload lang={lang} />
-      <Steps lang={lang} />
-      <Package lang={lang} />
-      <Videos lang={lang} />
-      <FAQ lang={lang} />
-      <Author lang={lang} />
-      <Footer lang={lang} />
-    </Layout>
-  );
-};
+const IndexPage = ({ lang }) => (
+  <Layout
+    lang={lang}
+    isHome
+  >
+    <Header lang={lang} />
+    <About lang={lang} />
+    <Unique lang={lang} />
+    <Content lang={lang} />
+    <SlideShow lang={lang} />
+    <CardComposition lang={lang} />
+    <FreeDownload lang={lang} />
+    <Steps lang={lang} />
+    <Package lang={lang} />
+    <Videos lang={lang} />
+    <FAQ lang={lang} />
+    <Author lang={lang} />
+    <Footer lang={lang} />
+  </Layout>
+);
 
 IndexPage.getInitialProps = async ({ query }) => {
   const { locale } = query;
