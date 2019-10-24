@@ -115,7 +115,7 @@ const DynamicFooter = dynamic(
 ); */
 
 const IndexPage = ({ lang }) => {
-  const { asPath } = useRouter();
+  /* const { asPath } = useRouter();
 
   const scrollToRef = (element) => {
     window.scrollTo(0, element.offsetTop);
@@ -135,7 +135,7 @@ const IndexPage = ({ lang }) => {
     shouldScroll();
 
     return () => shouldScroll();
-  }, []);
+  }, []); */
 
   return (
     <Layout
