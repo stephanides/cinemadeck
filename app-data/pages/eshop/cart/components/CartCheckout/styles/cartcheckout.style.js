@@ -17,6 +17,10 @@ export default css`
       h3 {
         font-family: ProximaNova-Bold;
       }
+      .cart-link {
+        cursor:pointer;
+        text-decoration:underline !important;
+      }
       .checkout-content {
         min-height: 400px;
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable max-len */
 /* eslint-disable react/no-array-index-key */
@@ -5,11 +6,14 @@ import React from 'react';
 import { FormGroup, Input, Label } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import { addProductToCartMutation, removeProductFromCartMutation } from '../../../../../graphql/mutation';
 
 import styles from './styles/cartcheckout.style';
 import locale from '../../../../../shared/localisation/eshop/cart';
 
+const renderDangerHtml = (lang) => ({ __html: locale[lang].agreeSentence });
+const renderDangerHtml2 = (lang) => ({ __html: locale[lang].agreeSentence2 });
 const CartCheckout = compose(
   graphql(addProductToCartMutation, { name: 'addProductToCart' }),
   graphql(removeProductFromCartMutation, { name: 'removeProductFromCart' }),
@@ -210,9 +214,12 @@ const CartCheckout = compose(
                     <Label check>
                       <Input type="checkbox" id="agree" name="agree" required />
                       {' '}
-                      <small>
-                        {locale[lang].agreeSentence}
-                      </small>
+                      <Link href={`/${lang}/obchodni-podminky?locale=${lang}`} as={`/${lang}/obchodni-podminky`}>
+                        <small dangerouslySetInnerHTML={renderDangerHtml(lang)} />
+                      </Link>
+                      <Link href={`/${lang}/ochrana-osobnych-udaju?locale=${lang}`} as={`/${lang}/ochrana-osobnych-udaju`}>
+                        <small dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
+                      </Link>
                       <div className="invalid-feedback">
                         {locale[lang].agreeError}
                       </div>
