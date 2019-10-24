@@ -82,6 +82,7 @@ export default css.global/* css */`
     
           &:hover {
             color: #00a7f0;
+            text-decoration: none;
           }
         }
     
