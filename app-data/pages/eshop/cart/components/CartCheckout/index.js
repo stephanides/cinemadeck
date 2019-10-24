@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-danger */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable max-len */
@@ -215,10 +216,14 @@ const CartCheckout = compose(
                       <Input type="checkbox" id="agree" name="agree" required />
                       {' '}
                       <Link href={`/${lang}/obchodni-podminky?locale=${lang}`} as={`/${lang}/obchodni-podminky`}>
-                        <small dangerouslySetInnerHTML={renderDangerHtml(lang)} />
+                        <a>
+                          <small dangerouslySetInnerHTML={renderDangerHtml(lang)} />
+                        </a>
                       </Link>
                       <Link href={`/${lang}/ochrana-osobnych-udaju?locale=${lang}`} as={`/${lang}/ochrana-osobnych-udaju`}>
-                        <small dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
+                        <a>
+                          <small dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
+                        </a>
                       </Link>
                       <div className="invalid-feedback">
                         {locale[lang].agreeError}
