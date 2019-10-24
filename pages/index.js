@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React from 'react';
 import PropTypes from 'prop-types';
 // import dynamic from 'next/dynamic';
 // import { graphql } from 'react-apollo';
