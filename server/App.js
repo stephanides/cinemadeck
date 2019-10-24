@@ -90,7 +90,10 @@ const App = async () => {
     });
     app.get('/:lang/eshop/cart', (req, res) => {
       const actualPage = '/eshop/cart';
-      const queryParams = { locale: req.params.lang };
+      const queryParams = {
+        locale: req.params.lang,
+        saleData: req.query.saleData,
+      };
 
       nextApp.render(req, res, actualPage, queryParams);
     });
