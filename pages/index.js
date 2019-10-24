@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 // import dynamic from 'next/dynamic';
 // import { graphql } from 'react-apollo';
 // import { getLocaleQuery } from '../../app-data/graphql/query';
 
-import Layout from '../../app-data/shared/components/Layout';
-import Header from '../../app-data/pages/index/components/Header';
+import Layout from '../app-data/shared/components/Layout';
+import Header from '../app-data/pages/index/components/Header';
 // import Loader from '../../app-data/shared/components/admin/Loader';
 
-import About from '../../app-data/pages/index/components/About';
-import Unique from '../../app-data/pages/index/components/Unique';
-import Content from '../../app-data/pages/index/components/Content';
-import SlideShow from '../../app-data/pages/index/components/Slideshow';
-import CardComposition from '../../app-data/pages/index/components/CardComposition';
-import FreeDownload from '../../app-data/pages/index/components/FreeDownload';
-import Steps from '../../app-data/pages/index/components/Steps';
-import Package from '../../app-data/pages/index/components/Package';
-import Videos from '../../app-data/pages/index/components/Videos';
-import FAQ from '../../app-data/pages/index/components/FAQ';
-import Author from '../../app-data/pages/index/components/Author';
-import Footer from '../../app-data/pages/index/components/Footer';
+import About from '../app-data/pages/index/components/About';
+import Unique from '../app-data/pages/index/components/Unique';
+import Content from '../app-data/pages/index/components/Content';
+import SlideShow from '../app-data/pages/index/components/Slideshow';
+import CardComposition from '../app-data/pages/index/components/CardComposition';
+import FreeDownload from '../app-data/pages/index/components/FreeDownload';
+import Steps from '../app-data/pages/index/components/Steps';
+import Package from '../app-data/pages/index/components/Package';
+import Videos from '../app-data/pages/index/components/Videos';
+import FAQ from '../app-data/pages/index/components/FAQ';
+import Author from '../app-data/pages/index/components/Author';
+import Footer from '../app-data/pages/index/components/Footer';
 
 /* const DynamicAbout = dynamic(
   () => import('../../app-data/pages/index/components/About'),
