@@ -33,11 +33,9 @@ const ShoppingCart = compose(
   graphql(createOrderMutation, { name: 'createOrder' }),
   graphql(initCartMutation),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
-  // graphql(getLocaleQuery, { name: 'getLocale' }),
 )(({
-  cartProducts: { cart }, createOrder, lang, mutate, saleData,
+  cartProducts: { cart }, createOrder, lang, mutate, orderDiscount,
 }) => {
-  console.log(saleData);
   const [order, handleOrder] = useState(initialState.order);
   const [stateSelected, handleStateChange] = useState(initialState.stateSelected);
 
@@ -143,6 +141,7 @@ const ShoppingCart = compose(
                 cart={cart}
                 lang={lang}
                 stateSelected={stateSelected}
+                orderDiscount={orderDiscount}
               />
             </Col>
             <Col sm={{ size: 12, order: 2 }} md={{ size: 6, order: 3 }} lg={{ size: 6, order: 3 }}>
@@ -175,7 +174,7 @@ const ShoppingCart = compose(
 
 ShoppingCart.getInitialProps = async ({ query }) => ({
   lang: query.locale,
-  saleData: query.saleData,
+  orderDiscount: query.orderDiscount,
 });
 
 export default ShoppingCart;

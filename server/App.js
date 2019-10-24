@@ -92,7 +92,7 @@ const App = async () => {
       const actualPage = '/eshop/cart';
       const queryParams = {
         locale: req.params.lang,
-        saleData: req.query.saleData,
+        orderDiscount: req.query.orderDiscount,
       };
 
       nextApp.render(req, res, actualPage, queryParams);

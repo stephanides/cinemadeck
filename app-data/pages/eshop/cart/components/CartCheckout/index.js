@@ -1,25 +1,73 @@
+/* eslint-disable react/jsx-curly-brace-presence */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-danger */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable max-len */
 /* eslint-disable react/no-array-index-key */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FormGroup, Input, Label } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import { addProductToCartMutation, removeProductFromCartMutation } from '../../../../../graphql/mutation';
+import { addProductToCartMutation, initCartMutation, removeProductFromCartMutation } from '../../../../../graphql/mutation';
 
 import styles from './styles/cartcheckout.style';
 import locale from '../../../../../shared/localisation/eshop/cart';
 
+const cartDiscountData = [{
+  id: '001',
+  count: 1,
+  price: {
+    cz: 795.8, // 947
+    en: 30.92, // 37
+    __typename: 'Price',
+  },
+  title: 'CinemaDeck Cards',
+  totalPrice: {
+    cz: 796, // 947
+    en: 31, // 37
+    __typename: 'Price',
+  },
+  __typename: 'ProductInCart',
+}, {
+  id: '002',
+  count: 1,
+  price: {
+    cz: 150, // 180
+    en: 5.5, // 7
+    __typename: 'Price',
+  },
+  title: 'Light Like Pro',
+  totalPrice: {
+    cz: 150, // 180
+    en: 5.5, // 7
+    __typename: 'Price',
+  },
+  __typename: 'ProductInCart',
+}, {
+  id: '003',
+  price: {
+    cz: 150, // 180
+    en: 5.5, // 7
+    __typename: 'Price',
+  },
+  title: 'Sound Like Pro',
+  __typename: 'ProductInCart',
+  count: 1,
+  totalPrice: {
+    cz: 150, // 180
+    en: 5.5, // 7
+    __typename: 'Price',
+  },
+}];
 const renderDangerHtml = (lang) => ({ __html: locale[lang].agreeSentence });
 const renderDangerHtml2 = (lang) => ({ __html: locale[lang].agreeSentence2 });
 const CartCheckout = compose(
+  graphql(initCartMutation),
   graphql(addProductToCartMutation, { name: 'addProductToCart' }),
   graphql(removeProductFromCartMutation, { name: 'removeProductFromCart' }),
 )(({
-  cart, lang, addProductToCart, removeProductFromCart, stateSelected,
+  cart, lang, addProductToCart, mutate, removeProductFromCart, orderDiscount, // stateSelected,
 }) => {
   const handleAddProductToCart = async (id) => {
     try {
@@ -36,6 +84,19 @@ const CartCheckout = compose(
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    const handleOrderDiscount = async () => {
+      // pLyGkyrY6z
+      if (orderDiscount && orderDiscount === 'pLyGkyrY6z') {
+        await mutate({ variables: { cart: cartDiscountData } });
+      }
+    };
+
+    handleOrderDiscount();
+
+    return () => handleOrderDiscount();
+  }, []);
 
   return (
     <div className="cart-checkout-wrapper">
@@ -128,15 +189,19 @@ const CartCheckout = compose(
                               >
                                 -
                               </button>
-                              <button
-                                type="button"
-                                className="border-left pl-3 d-flex align-items-center justify-content-center h-100"
-                                onClick={() => {
-                                  handleAddProductToCart(item.id);
-                                }}
-                              >
-                                +
-                              </button>
+                              {
+                                !orderDiscount && (
+                                  <button
+                                    type="button"
+                                    className="border-left pl-3 d-flex align-items-center justify-content-center h-100"
+                                    onClick={() => {
+                                      handleAddProductToCart(item.id);
+                                    }}
+                                  >
+                                    +
+                                  </button>
+                                )
+                              }
                             </span>
                           </span>
                         </span>
