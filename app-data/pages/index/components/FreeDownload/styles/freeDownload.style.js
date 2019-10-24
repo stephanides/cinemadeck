@@ -31,7 +31,7 @@ export default css.global/* css */`
     }
     a{
       cursor:pointer;
-      text-decoration:underline;
+      text-decoration:underline !important;
     }
     p{
       font-family: 'Open Sans', sans-serif;

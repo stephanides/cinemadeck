@@ -43,7 +43,7 @@ const FreeDownload = ({ lang }) => {
             <InputGroupText>
               <Input addon type="checkbox" aria-label="Checkbox for following text input" />
               <Link href={`/${lang}/ochrana-osobnych-udaju?locale=${lang}`} as={`/${lang}/ochrana-osobnych-udaju`}>
-                <a dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
+                <span dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
               </Link>
             </InputGroupText>
           </div>
