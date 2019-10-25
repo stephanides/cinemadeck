@@ -31,9 +31,21 @@ const FreeDownload = ({ lang }) => {
               <img src="/static/images/freedownload/check.png" alt="" />
               <p className="pl-3">{localisation[lang].freeDownloadText3}</p>
             </div>
+            {
+              /*
+                <div className="check-item d-flex align-items-center mb-1">
+                  <img src="/static/images/freedownload/check.png" alt="" />
+                  <p className="pl-3">{localisation[lang].freeDownloadText4}</p>
+                </div>
+              */
+            }
             <div className="check-item d-flex align-items-center mb-1">
               <img src="/static/images/freedownload/check.png" alt="" />
-              <p className="pl-3">{localisation[lang].freeDownloadText4}</p>
+              <p className="pl-3">{localisation[lang].freeDownloadText5}</p>
+            </div>
+            <div className="check-item d-flex align-items-center mb-1">
+              <img src="/static/images/freedownload/check.png" alt="" />
+              <p className="pl-3">{localisation[lang].freeDownloadText6}</p>
             </div>
           </div>
           <div className={modal ? 'text-holder show' : 'text-holder hide'}>

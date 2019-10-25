@@ -60,8 +60,7 @@ const cartDiscountData = [{
     __typename: 'Price',
   },
 }];
-const renderDangerHtml = (lang) => ({ __html: locale[lang].agreeSentence1 });
-const renderDangerHtml2 = (lang) => ({ __html: locale[lang].agreeSentence3 });
+
 const CartCheckout = compose(
   graphql(initCartMutation),
   graphql(addProductToCartMutation, { name: 'addProductToCart' }),
@@ -269,12 +268,6 @@ const CartCheckout = compose(
                       }
                     </span>
                   </p>
-                  <button
-                    type="submit"
-                    className="text-uppercase mx-auto mb-3"
-                  >
-                    {locale[lang].buy}
-                  </button>
                   <p><small>{locale[lang].purchasedProductsInMail}</small></p>
                   <FormGroup check className="mb-5">
                     <Label check>
@@ -283,13 +276,13 @@ const CartCheckout = compose(
                       {locale[lang].agreeSentence}
                       <Link href={`/${lang}/obchodni-podminky?locale=${lang}`} as={`/${lang}/obchodni-podminky`}>
                         <a>
-                          <small dangerouslySetInnerHTML={renderDangerHtml(lang)} />
+                          {locale[lang].agreeSentence1}
                         </a>
                       </Link>
                       {locale[lang].agreeSentence2}
                       <Link href={`/${lang}/ochrana-osobnych-udaju?locale=${lang}`} as={`/${lang}/ochrana-osobnych-udaju`}>
                         <a>
-                          <small dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
+                          {locale[lang].agreeSentence3}
                         </a>
                       </Link>
                       <div className="invalid-feedback">
@@ -297,6 +290,12 @@ const CartCheckout = compose(
                       </div>
                     </Label>
                   </FormGroup>
+                  <button
+                    type="submit"
+                    className="text-uppercase mx-auto mb-3"
+                  >
+                    {locale[lang].buy}
+                  </button>
                   {
                     /* <div className="warranty">
                       <aside className="mr-2">
