@@ -104,7 +104,6 @@ const Navigation = graphql(
   const czUrl = getLangUrl('cz');
   const enUrl = getLangUrl('en');
 
-  console.log(cart);
   return (
     <div>
       <Navbar

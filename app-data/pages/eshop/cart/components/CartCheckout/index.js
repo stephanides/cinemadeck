@@ -115,7 +115,7 @@ const CartCheckout = compose(
   return (
     <div className="cart-checkout-wrapper">
       <div className="bg-white position-fixed" />
-      <div className="cart-checkout-container px-5">
+      <div className="cart-checkout-container px-5 pt-5">
         <h3 className="text-uppercase mb-5">{locale[lang].cart}</h3>
         <div className="checkout-content">
           {
