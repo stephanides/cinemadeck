@@ -150,6 +150,58 @@ export default css.global/* css */`
           }
         }
       }
+
+      .shopping-cart {
+        color: #000;
+        font-size: 2.5rem;
+
+        .proceed-to-cart {
+          background-color: #37baf1;
+          border-radius: 50%;
+          color: #fff;
+          height: 30px;
+          width: 30px;
+
+          span {
+            font-size: .9rem;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            .chevron-icon {
+              position: absolute;
+              top: -9px;
+              left: -3px;
+              transform: translate(-50%, -50%);
+    
+              &:before {
+                content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                border-top: 8px solid transparent;
+                border-left: 8px solid #fff;
+                border-bottom: 8px solid transparent;
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+              &:after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 0;
+                border-top: 6px solid transparent;
+                border-left: 6px solid #37baf1;
+                border-bottom: 6px solid transparent;
+                position: absolute;
+                top: 2px;
+                left: 0;
+              }
+            }
+          }
+        }
+      }
     
       &.not-homepage {
         li {

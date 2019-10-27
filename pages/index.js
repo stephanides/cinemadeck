@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 // import dynamic from 'next/dynamic';
-// import { graphql } from 'react-apollo';
-// import { getLocaleQuery } from '../../app-data/graphql/query';
+import { graphql } from 'react-apollo';
+import { getProductsFromCart } from '../app-data/graphql/query';
 
 import Layout from '../app-data/shared/components/Layout';
 import Header from '../app-data/pages/index/components/Header';
@@ -113,8 +114,9 @@ const DynamicFooter = dynamic(
   },
 ); */
 
-const IndexPage = ({ lang }) => (
+const IndexPage = graphql(getProductsFromCart, { name: 'cartProducts' })(({ cartProducts: { cart = [] }, lang }) => (
   <Layout
+    cart={cart}
     lang={lang}
     isHome
   >
@@ -132,7 +134,7 @@ const IndexPage = ({ lang }) => (
     <Author lang={lang} />
     <Footer lang={lang} />
   </Layout>
-);
+));
 
 IndexPage.getInitialProps = async ({ query }) => {
   const { locale } = query;
