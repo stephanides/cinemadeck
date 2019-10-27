@@ -4,12 +4,14 @@ export default gql`
   extend type CartProduct {
     id: String!
     count: Int!
+    discount: Boolean
     price: Price!
     title: String!
     totalPrice: Price!
   }
   extend type Product {
     id: String!
+    discount: Boolean
     price: Price!
     title: String!
     totalPrice: Price!

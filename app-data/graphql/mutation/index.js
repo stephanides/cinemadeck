@@ -34,6 +34,7 @@ export const addProductToCartMutation = gql`
     addProductToCart(id: $id) @client {
       id @client
       count @client
+      discount @client
       price @client {
         cz
         en
@@ -51,6 +52,7 @@ export const initCartMutation = gql`
   mutation initCart($cart: [Object]!) {
     initCart(cart: $cart) @client {
       id @client
+      discount @client
       count @client
       price @client {
         cz
@@ -69,6 +71,7 @@ export const removeProductFromCartMutation = gql`
   mutation removeProductFromCart($id: String!) {
     removeProductFromCart(id: $id) @client {
       id @client
+      discount @client
       count @client
       price @client {
         cz
@@ -79,6 +82,25 @@ export const removeProductFromCartMutation = gql`
         cz
         en
       }
+    }
+  }
+`;
+
+export const replaceCartWithData = gql`
+  mutation replaceCartWithData($data: Object!) {
+    replaceCartWithData(data: $data) @client {
+      id @client
+      discount @client
+      count @client
+      price @client {
+        cz
+        en
+      }
+      title @client
+      totalPrice @client {
+        cz
+        en
+      } 
     }
   }
 `;

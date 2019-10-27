@@ -51,7 +51,7 @@ const Product = graphql(
                         czk
                       </small>
                     </span>
-                    {' / '}
+                    &nbsp;/&nbsp;
                     <span className="position-relative">
                       {price[1]}
                       <small className="align-top text-uppercase mt-1 ml-1 position-absolute">
