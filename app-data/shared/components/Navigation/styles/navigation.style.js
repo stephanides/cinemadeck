@@ -37,7 +37,7 @@ export default css.global/* css */`
     &.fixed-top {
       z-index: 999!important;
     }
-    padding: 20px 0;
+    padding: 27px 0;
     margin-bottom: 10px;
     @media screen and (max-width: $break-xarge) {
       padding-left: 50px;
@@ -172,7 +172,7 @@ export default css.global/* css */`
             padding: .5rem 1rem;
             position: absolute;
             right: 125px;
-            top: 0;
+            top: -7px;
             transform: translateY(-399px);
             width: 300px;
             
