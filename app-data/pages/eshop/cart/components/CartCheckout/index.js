@@ -9,12 +9,14 @@ import { FormGroup, Input, Label } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import { addProductToCartMutation, initCartMutation, removeProductFromCartMutation } from '../../../../../graphql/mutation';
+import {
+  addProductToCartMutation, replaceCartWithData, removeProductFromCartMutation,
+} from '../../../../../graphql/mutation';
 
 import styles from './styles/cartcheckout.style';
 import locale from '../../../../../shared/localisation/eshop/cart';
 
-const cartDiscountData = [{
+/* const cartDiscountData = [{
   id: '001',
   count: 1,
   price: {
@@ -59,15 +61,15 @@ const cartDiscountData = [{
     en: 5.5, // 7
     __typename: 'Price',
   },
-}];
-const renderDangerHtml = (lang) => ({ __html: locale[lang].agreeSentence1 });
-const renderDangerHtml2 = (lang) => ({ __html: locale[lang].agreeSentence3 });
+}]; */
+
 const CartCheckout = compose(
-  graphql(initCartMutation),
+  graphql(replaceCartWithData, { name: 'replaceItemsInCart' }),
   graphql(addProductToCartMutation, { name: 'addProductToCart' }),
   graphql(removeProductFromCartMutation, { name: 'removeProductFromCart' }),
 )(({
-  cart, lang, addProductToCart, mutate, removeProductFromCart, orderDiscount, // stateSelected,
+  cart, lang, addProductToCart, replaceItemsInCart,
+  removeProductFromCart, orderDiscount, // stateSelected,
 }) => {
   const handleAddProductToCart = async (id) => {
     try {
@@ -76,7 +78,22 @@ const CartCheckout = compose(
       console.log(err);
     }
   };
+  const handleOrderDiscount = async () => {
 
+    // pLyGkyrY6z - discount code
+    try {
+      await replaceItemsInCart({
+        variables: {
+          data: {
+            products: ['001', '002', '003'],
+            discount: true,
+          },
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const handleRemoveProductFromCart = async (id) => {
     try {
       await removeProductFromCart({ variables: { id } });
@@ -86,22 +103,19 @@ const CartCheckout = compose(
   };
 
   useEffect(() => {
-    const handleOrderDiscount = async () => {
-      // pLyGkyrY6z - discount code
-      if (orderDiscount && orderDiscount === 'pLyGkyrY6z') {
-        await mutate({ variables: { cart: cartDiscountData } });
-      }
-    };
+    if (orderDiscount && orderDiscount === 'pLyGkyrY6z') {
+      handleOrderDiscount();
+    }
 
-    handleOrderDiscount();
-
-    return () => handleOrderDiscount();
+    // return () => handleOrderDiscount();
   }, []);
+
+  console.log(cart);
 
   return (
     <div className="cart-checkout-wrapper">
       <div className="bg-white position-fixed" />
-      <div className="cart-checkout-container px-5">
+      <div className="cart-checkout-container px-5 pt-5">
         <h3 className="text-uppercase mb-5">{locale[lang].cart}</h3>
         <div className="checkout-content">
           {
@@ -140,43 +154,6 @@ const CartCheckout = compose(
                                 eur
                               </small>
                             </span>
-                            {
-                              /* stateSelected < 1
-                                ? [
-                                  <span className="position-relative" key={0}>
-                                    {item.totalPrice.cz}
-                                    <small className="position-absolute text-uppercase">
-                                      czk
-                                    </small>
-                                  </span>,
-                                  <span key={1}>
-                                    {' / '}
-                                  </span>,
-                                  <span className="position-relative ml-1" key={2}>
-                                    {item.totalPrice.en}
-                                    <small className="position-absolute text-uppercase">
-                                      eur
-                                    </small>
-                                  </span>,
-                                ] : (
-                                  stateSelected > 1
-                                    ? (
-                                      <span className="position-relative">
-                                        {item.totalPrice.en}
-                                        <small className="position-absolute text-uppercase">
-                                          eur
-                                        </small>
-                                      </span>
-                                    ) : (
-                                      <span className="position-relative">
-                                        {item.totalPrice.cz}
-                                        <small className="position-absolute text-uppercase">
-                                          czk
-                                        </small>
-                                      </span>
-                                    )
-                                ) */
-                            }
                           </span>
                           <span className="ml-4">
                             <span className="d-flex justify-content-between">
@@ -230,51 +207,8 @@ const CartCheckout = compose(
                           eur
                         </small>
                       </span>
-                      {
-                        /*
-                        stateSelected < 1
-                          ? [
-                            <span className="position-relative" key={0}>
-                              {cart.reduce((a, b) => (a + b.totalPrice.cz), 0)}
-                              <small className="text-uppercase position-absolute">
-                                czk
-                              </small>
-                            </span>,
-                            <span key={1}>
-                              {' / '}
-                            </span>,
-                            <span className="position-relative" key={2}>
-                              {cart.reduce((a, b) => (a + b.totalPrice.en), 0)}
-                              <small className="text-uppercase position-absolute">
-                                eur
-                              </small>
-                            </span>,
-                          ] : (
-                            stateSelected > 1 ? (
-                              <span className="position-relative" key={2}>
-                                {cart.reduce((a, b) => (a + b.totalPrice.en), 0)}
-                                <small className="text-uppercase position-absolute">
-                                  eur
-                                </small>
-                              </span>
-                            ) : (
-                              <span className="position-relative" key={0}>
-                                {cart.reduce((a, b) => (a + b.totalPrice.cz), 0)}
-                                <small className="text-uppercase position-absolute">
-                                  czk
-                                </small>
-                              </span>
-                            )
-                          ) */
-                      }
                     </span>
                   </p>
-                  <button
-                    type="submit"
-                    className="text-uppercase mx-auto mb-3"
-                  >
-                    {locale[lang].buy}
-                  </button>
                   <p><small>{locale[lang].purchasedProductsInMail}</small></p>
                   <FormGroup check className="mb-5">
                     <Label check>
@@ -283,13 +217,13 @@ const CartCheckout = compose(
                       {locale[lang].agreeSentence}
                       <Link href={`/${lang}/obchodni-podminky?locale=${lang}`} as={`/${lang}/obchodni-podminky`}>
                         <a>
-                          <small dangerouslySetInnerHTML={renderDangerHtml(lang)} />
+                          {locale[lang].agreeSentence1}
                         </a>
                       </Link>
                       {locale[lang].agreeSentence2}
                       <Link href={`/${lang}/ochrana-osobnych-udaju?locale=${lang}`} as={`/${lang}/ochrana-osobnych-udaju`}>
                         <a>
-                          <small dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
+                          {locale[lang].agreeSentence3}
                         </a>
                       </Link>
                       <div className="invalid-feedback">
@@ -297,16 +231,12 @@ const CartCheckout = compose(
                       </div>
                     </Label>
                   </FormGroup>
-                  {
-                    /* <div className="warranty">
-                      <aside className="mr-2">
-                        <img src="/static/images/refund.png" alt="" />
-                      </aside>
-                      <p>
-                        {locale[lang].refund}
-                      </p>
-                    </div> */
-                  }
+                  <button
+                    type="submit"
+                    className="text-uppercase mx-auto mb-3"
+                  >
+                    {locale[lang].buy}
+                  </button>
                 </div>
               )
               : <p className="w-100 text-center">{locale[lang].cartIsEmpty}</p>

@@ -4,6 +4,7 @@ import { getModalQuery, getProductsFromCart, getProducts } from '../query';
 export default {
   Mutation: {
     addProductToCart: (_root, { id }, { cache }) => {
+      console.log(id);
       const { products } = cache.readQuery({ query: getProducts });
       let { cart = [] } = cache.readQuery({ query: getProductsFromCart });
       const product = products.find((item) => (item.id === id));
@@ -14,7 +15,6 @@ export default {
       if (!cart) {
         cart = [];
       }
-
       let cartData;
 
       if (cart && cart.length > 0) {
@@ -50,6 +50,8 @@ export default {
         __typename: 'CartType',
       };
 
+      console.log(data);
+
       cache.writeData({ data });
 
       window.localStorage.setItem('cart', JSON.stringify(cartData));
@@ -62,6 +64,45 @@ export default {
       cache.writeData({ data });
 
       return cart;
+    },
+    replaceCartWithData: (_root, { data: cartDataDough }, { cache }) => {
+      const { products: productsDefs } = cache.readQuery({ query: getProducts });
+      // let { cart = [] } = cache.readQuery({ query: getProductsFromCart });
+
+      // console.log(productsDefs);
+      // console.log(cart);
+      console.log(cartDataDough);
+      const cartData = [];
+
+      for (let i = 0; i < productsDefs.length; i += 1) {
+        const item = {
+          ...productsDefs[i],
+          count: 1,
+          price: {
+            ...productsDefs[i].price,
+            cz: Math.round(productsDefs[i].price.cz - (productsDefs[i].price.cz * 0.16)),
+            en: Math.round(productsDefs[i].price.en - (productsDefs[i].price.en * 0.16)),
+          },
+          totalPrice: {
+            ...productsDefs[i].price,
+            cz: Math.round(productsDefs[i].price.cz - (productsDefs[i].price.cz * 0.16)),
+            en: Math.round(productsDefs[i].price.en - (productsDefs[i].price.en * 0.16)),
+          },
+        };
+
+        cartData.push(item);
+      }
+
+      console.log(cartData);
+      const data = {
+        cart: cartData,
+        __typename: 'CartType',
+      };
+
+      console.log(data);
+      cache.writeData({ data });
+
+      window.localStorage.setItem('cart', JSON.stringify(cartData));
     },
     removeProductFromCart: (_root, { id }, { cache }) => {
       const { cart } = cache.readQuery({ query: getProductsFromCart });

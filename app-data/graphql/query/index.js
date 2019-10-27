@@ -33,12 +33,12 @@ export const getOrdersQuery = gql`
 export const getProducts = gql`
   query {
     products @client {
-      id
+      id @client
       price @client {
-        cz
-        en
+        cz @client
+        en @client
       }
-      title
+      title @client
     }
   }
 `;
@@ -49,13 +49,13 @@ export const getProductsFromCart = gql`
       id @client
       count @client
       price @client {
-        cz
-        en
+        cz @client
+        en @client
       }
       title @client
       totalPrice @client {
-        cz
-        en
+        cz @client
+        en @client
       }
     }
   }

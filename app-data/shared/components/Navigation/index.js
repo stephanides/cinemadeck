@@ -61,7 +61,6 @@ const Navigation = graphql(
   };
 
   const isTop = checkPageTop();
-  const redirectHome = (e) => { window.location.href = e.currentTarget.href; };
   const getLangUrl = (locale) => {
     let path = '/';
     let asUrl = '/';
@@ -119,7 +118,7 @@ const Navigation = graphql(
       >
         <Container fluid className="navigation_holder">
           <Link href={`/?locale=${lang}`} as={`/${lang}/home`}>
-            <a className="navbar-brand" onClick={redirectHome}>
+            <a className="navbar-brand">
               <img src={isHome ? '/static/images/logo-light.svg' : '/static/images/logo-dark.svg'} alt="Logo White" />
             </a>
           </Link>
@@ -151,7 +150,7 @@ const Navigation = graphql(
                   !isHome
                     ? (
                       <Link href={`/?locale=${lang}#footer-main`} as={`/${lang}/home#footer-main`}>
-                        <a className="nav-link pr-4" onClick={redirectHome}>
+                        <a className="nav-link pr-4">
                           {localisation[lang].contact}
                         </a>
                       </Link>
@@ -172,7 +171,7 @@ const Navigation = graphql(
                 }
               >
                 {
-                  (!isCart && cartReady) && (
+                  (!isCart && cartReady && !isHome) && (
                     <CartContent
                       cart={cart}
                       lang={lang}
@@ -182,25 +181,25 @@ const Navigation = graphql(
               </NavItem>
               <NavItem>
                 {
-                  isHome
-                    ? (
-                      <AnchorLink href="#freedownload" className="button-link">{localisation[lang].download}</AnchorLink>
-                    ) : (
-                      <Link href={`/eshop/cart?locale=${lang}`} as={`/${lang}/eshop/cart`}>
-                        <a className="nav-link shopping-cart d-flex align-items-center">
-                          <img src="/static/images/cart-logo.png" alt="" />
-                          <div className="proceed-to-cart position-relative ml-2">
-                            <span className="font-weight-bold position-absolute">
-                              {
-                                cart && cart.length > 0
-                                  ? cart.reduce((a, b) => (a + b.count), 0) : <div className="chevron-icon" />
-                              }
-                            </span>
-                          </div>
-                        </a>
-                      </Link>
-                    )
+                  isHome && (
+                    <AnchorLink href="#freedownload" className="button-link">{localisation[lang].download}</AnchorLink>
+                  )
                 }
+              </NavItem>
+              <NavItem>
+                <Link href={`/eshop/cart?locale=${lang}`} as={`/${lang}/eshop/cart`}>
+                  <a className="nav-link shopping-cart d-flex align-items-center">
+                    <img src="/static/images/cart-logo.png" alt="" />
+                    <div className="proceed-to-cart position-relative ml-2">
+                      <span className="font-weight-bold position-absolute">
+                        {
+                          cart && cart.length > 0
+                            ? cart.reduce((a, b) => (a + b.count), 0) : <div className="chevron-icon" />
+                        }
+                      </span>
+                    </div>
+                  </a>
+                </Link>
               </NavItem>
             </Nav>
           </Collapse>

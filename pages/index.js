@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React from 'react';
 import PropTypes from 'prop-types';
+
 // import dynamic from 'next/dynamic';
-// import { graphql } from 'react-apollo';
-// import { getLocaleQuery } from '../../app-data/graphql/query';
+import { graphql } from 'react-apollo';
+import { getProductsFromCart } from '../app-data/graphql/query';
 
 import Layout from '../app-data/shared/components/Layout';
 import Header from '../app-data/pages/index/components/Header';
@@ -114,50 +114,27 @@ const DynamicFooter = dynamic(
   },
 ); */
 
-const IndexPage = ({ lang }) => {
-  const { asPath } = useRouter();
-
-  const scrollToRef = (element) => {
-    window.scrollTo(0, element.offsetTop);
-  };
-
-  useEffect(() => {
-    const shouldScroll = () => {
-      const footerContainer = document.getElementById('footer-main');
-
-      if (asPath.indexOf('footer') > -1 && footerContainer) {
-        setTimeout(() => {
-          scrollToRef(footerContainer);
-        }, 500);
-      }
-    };
-
-    shouldScroll();
-
-    return () => shouldScroll();
-  }, []);
-
-  return (
-    <Layout
-      lang={lang}
-      isHome
-    >
-      <Header lang={lang} />
-      <About lang={lang} />
-      <Unique lang={lang} />
-      <Content lang={lang} />
-      <SlideShow lang={lang} />
-      <CardComposition lang={lang} />
-      <FreeDownload lang={lang} />
-      <Steps lang={lang} />
-      <Package lang={lang} />
-      <Videos lang={lang} />
-      <FAQ lang={lang} />
-      <Author lang={lang} />
-      <Footer lang={lang} />
-    </Layout>
-  );
-};
+const IndexPage = graphql(getProductsFromCart, { name: 'cartProducts' })(({ cartProducts: { cart = [] }, lang }) => (
+  <Layout
+    cart={cart}
+    lang={lang}
+    isHome
+  >
+    <Header lang={lang} />
+    <About lang={lang} />
+    <Unique lang={lang} />
+    <Content lang={lang} />
+    <SlideShow lang={lang} />
+    <CardComposition lang={lang} />
+    <FreeDownload lang={lang} />
+    <Steps lang={lang} />
+    <Package lang={lang} />
+    <Videos lang={lang} />
+    <FAQ lang={lang} />
+    <Author lang={lang} />
+    <Footer lang={lang} />
+  </Layout>
+));
 
 IndexPage.getInitialProps = async ({ query }) => {
   const { locale } = query;
