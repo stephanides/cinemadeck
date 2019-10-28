@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { compose, graphql } from 'react-apollo';
-import { initCartMutation } from '../../app-data/graphql/mutation';
-import { /* getLocaleQuery, */ getProductsFromCart } from '../../app-data/graphql/query';
+import { initCartMutation } from '../app-data/graphql/mutation';
+import { /* getLocaleQuery, */ getProductsFromCart } from '../app-data/graphql/query';
 
-import Layout from '../../app-data/shared/components/Layout';
-import Gdpr from '../../app-data/pages/gdpr/components/Gdpr';
+import Layout from '../app-data/shared/components/Layout';
+import Gdpr from '../app-data/pages/gdpr/components/Gdpr';
 
 const OchranaUdajov = compose(
   graphql(initCartMutation),

@@ -2,12 +2,12 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import LazyLoad from 'react-lazyload';
 import { compose, graphql } from 'react-apollo';
-import { getLocaleQuery, getProductsFromCart } from '../../../app-data/graphql/query';
-import Layout from '../../../app-data/shared/components/Layout';
+import { getLocaleQuery, getProductsFromCart } from '../../app-data/graphql/query';
+import Layout from '../../app-data/shared/components/Layout';
 
-import styles from '../../../app-data/pages/eshop/order-success/styles/order-success.style';
+import styles from '../../app-data/pages/eshop/order-success/styles/order-success.style';
 
-const DynamicFooter = dynamic(import('../../../app-data/shared/components/Footer'));
+const DynamicFooter = dynamic(import('../../app-data/shared/components/Footer'));
 
 const OrderSuccess = compose(
   graphql(getLocaleQuery),

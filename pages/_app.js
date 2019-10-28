@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
+import '../static/css/empty.css';
 import React from 'react';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { ApolloProvider } from 'react-apollo';
 import withApollo from '../app-data/graphql/withApollo';

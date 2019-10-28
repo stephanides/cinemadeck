@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Container, Col, Row } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
-import { /* getLocaleQuery, */ getProductsFromCart } from '../../../app-data/graphql/query';
-import { createOrderMutation, initCartMutation } from '../../../app-data/graphql/mutation';
-import Layout from '../../../app-data/shared/components/Layout';
-import ContactInfo from '../../../app-data/pages/eshop/cart/components/ContactInfo';
-import CartCheckout from '../../../app-data/pages/eshop/cart/components/CartCheckout';
+import { /* getLocaleQuery, */ getProductsFromCart } from '../../app-data/graphql/query';
+import { createOrderMutation, initCartMutation } from '../../app-data/graphql/mutation';
+import Layout from '../../app-data/shared/components/Layout';
+import ContactInfo from '../../app-data/pages/eshop/cart/components/ContactInfo';
+import CartCheckout from '../../app-data/pages/eshop/cart/components/CartCheckout';
 
-const DynamicPaymentMethods = dynamic(import('../../../app-data/pages/eshop/cart/components/PaymentMethods'));
-const DynamicFooter = dynamic(import('../../../app-data/pages/eshop/cart/components/Footer'));
+const DynamicPaymentMethods = dynamic(import('../../app-data/pages/eshop/cart/components/PaymentMethods'));
+const DynamicFooter = dynamic(import('../../app-data/pages/eshop/cart/components/Footer'));
 
 const initialState = {
   order: {

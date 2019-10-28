@@ -1,19 +1,19 @@
-import '../../../static/css/react-image-lightbox/style.min.css';
+import '../../static/css/react-image-lightbox/style.min.css';
 
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Lightbox from 'react-image-lightbox';
 import { Container } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
-import { /* getLocaleQuery, */ getProductsFromCart } from '../../../app-data/graphql/query';
-import { initCartMutation } from '../../../app-data/graphql/mutation';
-import Layout from '../../../app-data/shared/components/Layout';
+import { /* getLocaleQuery, */ getProductsFromCart } from '../../app-data/graphql/query';
+import { initCartMutation } from '../../app-data/graphql/mutation';
+import Layout from '../../app-data/shared/components/Layout';
 
-import styles from '../../../app-data/pages/eshop/funnel/styles/funnel.style';
-import locale from '../../../app-data/shared/localisation/eshop/funnel';
+import styles from '../../app-data/pages/eshop/funnel/styles/funnel.style';
+import locale from '../../app-data/shared/localisation/eshop/funnel';
 
-const DynamicProduct = dynamic(import('../../../app-data/pages/eshop/funnel/components/Product'));
-const DynamicFooter = dynamic(import('../../../app-data/shared/components/eshop/Footer'));
+const DynamicProduct = dynamic(import('../../app-data/pages/eshop/funnel/components/Product'));
+const DynamicFooter = dynamic(import('../../app-data/shared/components/eshop/Footer'));
 
 const initialState = {
   photoIndex: 0,

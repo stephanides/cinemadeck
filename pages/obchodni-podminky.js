@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { compose, graphql } from 'react-apollo';
-import { initCartMutation } from '../../app-data/graphql/mutation';
-import { /* getLocaleQuery, */ getProductsFromCart } from '../../app-data/graphql/query';
+import { initCartMutation } from '../app-data/graphql/mutation';
+import { /* getLocaleQuery, */ getProductsFromCart } from '../app-data/graphql/query';
 
-import Layout from '../../app-data/shared/components/Layout';
-import Terms from '../../app-data/pages/obchodni-podminky/components/Terms';
+import Layout from '../app-data/shared/components/Layout';
+import Terms from '../app-data/pages/obchodni-podminky/components/Terms';
 
 const ObchodnePodmienky = compose(
   graphql(initCartMutation),
