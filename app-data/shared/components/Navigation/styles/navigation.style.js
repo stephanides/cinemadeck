@@ -112,6 +112,7 @@ export default css.global/* css */`
         .button-link {
           background-color: #0098d8;
           border-radius: 2px;
+          margin-right: .5rem;
           padding-right: 28px !important;
           padding-left: 28px !important;
           padding-top: 12px;
