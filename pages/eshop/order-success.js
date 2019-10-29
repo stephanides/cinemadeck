@@ -18,24 +18,28 @@ const OrderSuccess = compose(
     lang={lang}
     isHome={false}
   >
-    <div className="order-success-head d-flex align-items-center justify-content-center mt-3">
-      <h1 className="text-uppercase w-100 text-center">Vítej v rodine cinemadeck uživatelů!</h1>
-      <h2 className="text-uppercase w-100 text-center">Níže si můžeš stáhnout zakoupené produkty</h2>
+    <div className="order-success">
+      <div className="order-success-head d-flex align-items-center justify-content-center mt-3">
+        <h1 className="text-uppercase w-100 text-center">Vítej v rodine cinemadeck uživatelů!</h1>
+        <h2 className="text-uppercase w-100 text-center">Níže si můžeš stáhnout zakoupené produkty</h2>
+      </div>
+      <div className="order-success-content">
+        <LazyLoad height={380}>
+          <img className="d-block mx-auto pb-4" src="/static/images/order-sucess.jpg" alt="" />
+        </LazyLoad>
+        <button type="button" className="text-uppercase d-block mt-4 mb-4 mx-auto">Stáhnout</button>
+        <p className="text-center my-5">
+          V produktu GUIDE najdeš svůj kód do soukromé Facebook skupiny, ve které najdeš
+          <br />
+          ostatní uživatelé CinemaDeck. Můžeš tady sdílet svou práci a dostávat další rady a tipy.
+          <br />
+          Společně se tak učíme a zdokonalujeme své výsledky.
+        </p>
+      </div>
+      <div className="position-relative">
+        <DynamicFooter lang={lang} />
+      </div>
     </div>
-    <div className="order-success-content">
-      <LazyLoad height={380}>
-        <img className="d-block mx-auto pb-4" src="/static/images/order-sucess.jpg" alt="" />
-      </LazyLoad>
-      <button type="button" className="text-uppercase d-block mt-4 mb-4 mx-auto">Stáhnout</button>
-      <p className="text-center my-5">
-        V produktu GUIDE najdeš svůj kód do soukromé Facebook skupiny, ve které najdeš
-        <br />
-        ostatní uživatelé CinemaDeck. Můžeš tady sdílet svou práci a dostávat další rady a tipy.
-        <br />
-        Společně se tak učíme a zdokonalujeme své výsledky.
-      </p>
-    </div>
-    <DynamicFooter lang={lang} />
     <style jsx>{styles}</style>
   </Layout>
 ));

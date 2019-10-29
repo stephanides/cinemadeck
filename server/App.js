@@ -75,6 +75,9 @@ const App = async () => {
     app.get('/ochrana-osobnych-udaju', (req, res) => {
       res.redirect(`${req.locale.language}/ochrana-osobnych-udaju`);
     });
+    app.get('/eshop/order-success', (req, res) => {
+      res.redirect(`${req.locale.language}/eshop/order-success`);
+    });
     // Routes
     app.get('/:lang/home', (req, res) => {
       const actualPage = '/';
@@ -99,6 +102,12 @@ const App = async () => {
     });
     app.get('/:lang/eshop/funnel', (req, res) => {
       const actualPage = '/eshop/funnel';
+      const queryParams = { locale: req.params.lang };
+
+      nextApp.render(req, res, actualPage, queryParams);
+    });
+    app.get('/:lang/eshop/order-success', (req, res) => {
+      const actualPage = '/eshop/order-success';
       const queryParams = { locale: req.params.lang };
 
       nextApp.render(req, res, actualPage, queryParams);
