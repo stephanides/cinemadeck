@@ -9,7 +9,7 @@ import locale from '../../../localisation/eshop';
 
 const Footer = ({ lang }) => (
   <div className="footer-container d-flex justify-content-center position-relative">
-    <Link href="/eshop/cart">
+    <Link href={`/eshop/cart?locale=${lang}`} as={`/${lang}/eshop/cart`}>
       <a className="big-blue-anchor text-uppercase d-flex justify-content-center align-items-center mx-3">
         {locale[lang].proceedToCheckout}
         {' '}
