@@ -222,6 +222,10 @@ export default css.global/* css */`
 
             &.move-left {
               margin-right: 350px;
+
+              @media screen and (max-width: $break-mobile) {
+                margin-right: 0!important;
+              }
             }
           }
           &.cart-content {
@@ -240,6 +244,14 @@ export default css.global/* css */`
             transform: translateY(-399px);
             width: 300px;
             
+            @media screen and (max-width: $break-mobile) {
+              margin-top: 2.5rem!important;
+              position: static;
+              right: 0;
+              top: 0;
+              width: 100%;
+            }
+
             div {
               color: #8e979f;
               margin-bottom: .5rem;
