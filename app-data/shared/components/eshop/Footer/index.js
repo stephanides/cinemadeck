@@ -17,7 +17,7 @@ const Footer = ({ lang }) => (
       </a>
     </Link>
     <DefaultFooter lang={lang} />
-    <style jsx>{styles}</style>
+    <style jsx global>{styles}</style>
   </div>
 );
 

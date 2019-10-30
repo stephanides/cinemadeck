@@ -1,6 +1,8 @@
 import css from 'styled-jsx/css';
 
-export default css`
+export default css.global`
+  $break-mobile: 768px;
+
   .footer-container {
     background-color: #f8f8f8;
     min-height: 390px;
@@ -19,6 +21,10 @@ export default css`
         background-color: #0098d8;
         text-decoration: none;
       }
+    }
+
+    .main-footer-container {
+      position: absolute!important;
     }
   }
 `;

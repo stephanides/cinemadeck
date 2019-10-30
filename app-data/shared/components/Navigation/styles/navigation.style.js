@@ -255,6 +255,12 @@ export default css.global/* css */`
             div {
               color: #8e979f;
               margin-bottom: .5rem;
+
+              span {
+                @media screen and (max-width: $break-mobile) {
+                  font-size: .7rem;
+                }
+              }
             }
             &.move {
               transition: transform 2s;

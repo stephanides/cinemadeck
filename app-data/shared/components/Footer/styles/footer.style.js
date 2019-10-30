@@ -4,17 +4,18 @@ export default css`
 $transition-time:5s;
 $break-xsmall: 400px;
 $break-small: 576px;
-$break-mobile:768px;
+$break-mobile: 768px;
 $break-medium: 992px;
 $break-large: 1200px;
 $break-xarge: 1400px;
 
   .main-footer-container {
     bottom: 0;
-    position: absolute;
+    // position: absolute;
     width: 100%;
-    @media screen and (max-width: 768px) {
-      position:relative;
+  
+    @media screen and (max-width: $break-mobile) {
+      position: relative;
     }
 
     ul {
