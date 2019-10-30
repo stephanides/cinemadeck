@@ -13,6 +13,9 @@ $break-xarge: 1400px;
     bottom: 0;
     position: absolute;
     width: 100%;
+    @media screen and (max-width: 768px) {
+      position:relative;
+    }
 
     ul {
       &.footer-list {

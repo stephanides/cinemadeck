@@ -189,6 +189,9 @@ export default css`
       @media screen and (max-width: 500px) {
         height:240px;
       }
+      @media screen and (max-width: 350px) {
+        height:300px;
+      }
     }
     .infohide{
       height:0px;

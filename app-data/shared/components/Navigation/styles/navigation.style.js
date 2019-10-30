@@ -61,6 +61,9 @@ export default css.global/* css */`
         height: 100vh;
         padding-top: 100px;
       }
+      @media screen and (max-width: 576px) {
+        padding-top: 50px;
+      }
       li {
         display: flex;
         align-items: center;
@@ -78,6 +81,9 @@ export default css.global/* css */`
 
           @media screen and (max-width: $break-mobile) {
             font-size: 1.5em;
+          }
+          @media screen and (max-width: 576px) {
+            font-size: 1.3em;
           }
     
           &:hover {
@@ -201,6 +207,11 @@ export default css.global/* css */`
               }
             }
           }
+        }
+      }
+      .cart-content{
+        @media screen and (max-width: 576px) {
+          margin-top:0px !important;
         }
       }
     
