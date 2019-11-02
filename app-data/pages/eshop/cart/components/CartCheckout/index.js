@@ -110,8 +110,6 @@ const CartCheckout = compose(
     // return () => handleOrderDiscount();
   }, []);
 
-  console.log(cart);
-
   return (
     <div className="cart-checkout-wrapper">
       <div className="bg-white position-fixed" />
@@ -154,6 +152,19 @@ const CartCheckout = compose(
                                 eur
                               </small>
                             </span>
+                            {
+                              lang === 'en' && [
+                                <span key={0}>
+                                  {' / '}
+                                </span>,
+                                <span className="position-relative" key={1}>
+                                  {(item.totalPrice.en * 1.12).toFixed(2)}
+                                  <small className="position-absolute text-uppercase">
+                                    USD
+                                  </small>
+                                </span>,
+                              ]
+                            }
                           </span>
                           <span className="ml-4">
                             <span className="d-flex justify-content-between">
@@ -207,6 +218,19 @@ const CartCheckout = compose(
                           eur
                         </small>
                       </span>
+                      {
+                        lang === 'en' && [
+                          <span key={0}>
+                            {' / '}
+                          </span>,
+                          <span className="position-relative" key={1}>
+                            {(cart.reduce((a, b) => (a + b.totalPrice.en), 0) * 1.12).toFixed(2)}
+                            <small className="position-absolute text-uppercase">
+                              USD
+                            </small>
+                          </span>,
+                        ]
+                      }
                     </span>
                   </p>
                   <p><small>{locale[lang].purchasedProductsInMail}</small></p>

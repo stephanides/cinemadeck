@@ -77,14 +77,14 @@ const PaymentMethods = ({ handleOrder, lang, order }) => {
             </Col>
             <Col className="pl-0">
               <div className="border-bottom logo-line">
-                <img src="/static/images/payment-cards-logos.png" className="d-block ml-auto mr-3" alt="" />
+                <img src="https://help.gopay.com/cs/img.php?hash=d444576a72374717c48bc311dde864a3ca0320893f55dbbb903043fe673b476c.png" alt="" />
+                <img src="https://dl.dropboxusercontent.com/s/nvlzs6nk8tda2ni/mc_vrt_opt_pos_73_2x.png?dl=0" alt="" />
+                {/* <img src="/static/images/payment-cards-logos.png" className="d-block ml-auto mr-3" alt="" /> */}
               </div>
               <div className="border-bottom logo-line">
-                <img src="/static/images/paypal-logo.png" className="d-block ml-auto mr-3" alt="" />
+                <img src="/static/images/paypal-logo.png" alt="" />
               </div>
-              <div className="pt-3 pb-3">
-                {''}
-              </div>
+              <div className="pt-3 pb-3" />
             </Col>
           </Row>
         </div>

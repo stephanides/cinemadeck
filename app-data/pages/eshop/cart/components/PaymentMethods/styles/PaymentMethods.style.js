@@ -6,7 +6,15 @@ export default css`
       font-family: ProximaNova-Bold;
     }
     .logo-line {
+      display: flex;
+      align-items: center;
       height: 57px;
+      
+      img {
+        float: left;
+        margin-right: .5rem;
+        max-height: 55px;
+      }
     }
   }
 `;
