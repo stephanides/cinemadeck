@@ -67,5 +67,12 @@ $break-xarge: 1400px;
         text-align: center;
       }
     }
+    p {
+      &.text-right {
+        color: #bec3c7;
+        font-size: .75rem;    
+        margin: 0 35px 1rem;
+      }
+    }
   }
 `;

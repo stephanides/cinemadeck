@@ -18,6 +18,7 @@ const Footer = ({ lang }) => (
           <li>Designed by Jakub Carda</li>
           <li>Assembled by Codebrothers s. r. o.</li>
         </ul>
+
         <ul className="footer-list d-flex">
           <li>
             <Link href={`/${lang}/obchodni-podminky`} as={lang === 'cz' ? `/${lang}/obchodni-podminky` : `/${lang}/terms-conditions`}>
@@ -32,6 +33,7 @@ const Footer = ({ lang }) => (
           <li>Cookies</li>
         </ul>
       </div>
+      <p className="text-right">Tel: +420 602 968 942</p>
     </CustomContainer>
     <style jsx>{styles}</style>
   </div>
