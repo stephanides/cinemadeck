@@ -72,6 +72,10 @@ $break-xarge: 1400px;
         color: #bec3c7;
         font-size: .75rem;    
         margin: 0 35px 1rem;
+
+        @media screen and (max-width: $break-mobile) {
+          text-align: center!important;
+        }
       }
     }
   }

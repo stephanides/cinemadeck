@@ -196,7 +196,7 @@ const CartCheckout = compose(
                       </p>
                     ))
                   }
-                  <p className="d-flex justify-content-between sum mb-5">
+                  <p className="d-flex justify-content-between sum">
                     <span className="text-uppercase">{locale[lang].sum}</span>
                     <span className="font-weight-bold">
                       {
@@ -233,6 +233,7 @@ const CartCheckout = compose(
                       }
                     </span>
                   </p>
+                  <p className="text-right mb-5">{locale[lang].VAT}</p>
                   <p><small>{locale[lang].purchasedProductsInMail}</small></p>
                   <FormGroup check className="mb-5">
                     <Label check>

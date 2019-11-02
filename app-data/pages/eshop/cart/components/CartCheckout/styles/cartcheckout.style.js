@@ -27,6 +27,7 @@ export default css`
         & > div {
           p {
             font-size: .9rem;
+            white-space: nowrap;
             
             &.cart-item {
               span {
@@ -81,7 +82,8 @@ export default css`
             justify-content: center;
             font-size: .85rem;
             height: 70px;
-            width: 265px;
+            max-width: 265px;
+            width: 100%;
             letter-spacing: .15rem;
 
             &:hover {
