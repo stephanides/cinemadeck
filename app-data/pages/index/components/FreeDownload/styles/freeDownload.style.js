@@ -95,6 +95,10 @@ export default css.global/* css */`
         background-color: #008fcc;
         box-shadow: 0px 0px 7px 0px #82b6f1;
       }
+
+      &.free-download-file {
+        animation: shadow-pulse 1s 3;
+      }
     }
     .show{
       height: 120px;
@@ -131,6 +135,15 @@ export default css.global/* css */`
       max-width:1600px !important;
       margin:0 auto;
       position:relative;
+    }
+
+    @keyframes shadow-pulse {
+      0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+      }
+      100% {
+        box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+      }
     }
   }
 `;
