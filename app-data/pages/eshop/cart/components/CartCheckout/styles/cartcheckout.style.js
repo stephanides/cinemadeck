@@ -27,9 +27,10 @@ export default css`
         & > div {
           p {
             font-size: .9rem;
-            white-space: nowrap;
             
             &.cart-item {
+              white-space: nowrap;
+
               span {
                 & > span {
                   & > span {

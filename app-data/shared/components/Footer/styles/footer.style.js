@@ -12,6 +12,7 @@ $break-xarge: 1400px;
   .main-footer-container {
     bottom: 0;
     // position: absolute;
+    overflow: hidden;
     width: 100%;
   
     @media screen and (max-width: $break-mobile) {
@@ -70,12 +71,38 @@ $break-xarge: 1400px;
     p {
       &.text-right {
         color: #bec3c7;
-        font-size: .75rem;    
+        font-size: .75rem;  
         margin: 0 35px 1rem;
 
         @media screen and (max-width: $break-mobile) {
           text-align: center!important;
         }
+      }
+    }
+    .company-info {
+      ul {
+        list-style: none;
+        padding: .5rem 2rem;
+
+        li {
+          color: #bec3c7;
+          font-size: .75rem;
+
+          &.text-right {
+            @media screen and (max-width: $break-mobile) {
+              text-align: center!important;
+            }
+          }
+        }
+      }
+    }
+    .logos {
+      display: flex;
+      justify-content: space-around;
+      
+      img {
+        object-fit: contain;
+        height: 25px;
       }
     }
   }
