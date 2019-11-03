@@ -16,7 +16,7 @@ export default css.global`
       color: #fff;
       font-size: .85rem;
       height: 70px;
-      margin-bottom: 2rem;
+      margin-bottom: 105px;
       letter-spacing: .15rem;
       max-width: 480px;
       width: 90%;

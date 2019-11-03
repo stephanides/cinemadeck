@@ -10,6 +10,7 @@ export default css`
   $break-xarge: 1400px;
 
   .main-footer-container {
+    background-color: #fff;
     border-top: 1px solid rgba(0, 0, 0, .1);
     bottom: 0;
     // position: absolute;
@@ -17,6 +18,7 @@ export default css`
     width: 100%;
   
     &.home {
+      background-color: #0f141c;
       border-top: 1px solid rgba(255, 255, 255, .1);
     }
     @media screen and (max-width: $break-mobile) {
