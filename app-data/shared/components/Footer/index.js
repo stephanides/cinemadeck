@@ -10,8 +10,8 @@ import CustomContainer from '../CustomContainer';
 import localisation from '../../localisation/Footer';
 
 
-const Footer = ({ lang }) => (
-  <div className="main-footer-container">
+const Footer = ({ home, lang }) => (
+  <div className={home ? 'main-footer-container home pt-3' : 'main-footer-container pt-3'}>
     <CustomContainer>
       <div className="company-info">
         <Row>
@@ -37,7 +37,7 @@ const Footer = ({ lang }) => (
       </div>
       <div className="list_holder d-flex  justify-content-between">
         <ul className="footer-list d-flex justify-content-end">
-          <li>Copyright 2019 CinemaDeck s. r. o.</li>
+          <li>Copyright 2019 CinemaDeck</li>
           <li>Designed by Jakub Carda</li>
           <li>Assembled by Codebrothers s. r. o.</li>
         </ul>
@@ -53,7 +53,7 @@ const Footer = ({ lang }) => (
               <a>{localisation[lang].privacy}</a>
             </Link>
           </li>
-          <li>Cookies</li>
+          {/* <li>Cookies</li> */}
         </ul>
       </div>
       <div className="logos mb-3">
@@ -70,7 +70,11 @@ const Footer = ({ lang }) => (
   </div>
 );
 
+Footer.defaultProps = {
+  home: false,
+};
 Footer.propTypes = {
+  home: PropTypes.bool,
   lang: PropTypes.string.isRequired,
 };
 

@@ -1,20 +1,24 @@
 import css from 'styled-jsx/css';
 
 export default css`
-$transition-time:5s;
-$break-xsmall: 400px;
-$break-small: 576px;
-$break-mobile: 768px;
-$break-medium: 992px;
-$break-large: 1200px;
-$break-xarge: 1400px;
+  $transition-time:5s;
+  $break-xsmall: 400px;
+  $break-small: 576px;
+  $break-mobile: 768px;
+  $break-medium: 992px;
+  $break-large: 1200px;
+  $break-xarge: 1400px;
 
   .main-footer-container {
+    border-top: 1px solid rgba(0, 0, 0, .1);
     bottom: 0;
     // position: absolute;
     overflow: hidden;
     width: 100%;
   
+    &.home {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+    }
     @media screen and (max-width: $break-mobile) {
       position: relative;
     }
@@ -22,7 +26,7 @@ $break-xarge: 1400px;
     ul {
       &.footer-list {
         padding: 0;
-        margin: 0 35px 50px 35px;
+        margin: 0 32px 50px 32px;
         list-style: none;
 
         li {
