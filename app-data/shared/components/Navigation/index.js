@@ -123,9 +123,12 @@ const Navigation = graphql(
               <img src={isHome ? '/static/images/logo-light.svg' : '/static/images/logo-dark.svg'} alt="Logo White" />
             </a>
           </Link>
-          <NavbarToggler
-            onClick={() => toggle(!isOpen)}
-          />
+          <NavbarToggler onClick={() => toggle(!isOpen)} />
+          <div className="navbar-cart-info-holder">
+            <div className={cart && cart.length > 0 ? 'navbar-cart-info show-pulse' : 'navbar-cart-info'}>
+              { (cart && cart.length > 0) && cart.reduce((a, b) => (a + b.count), 0) }
+            </div>
+          </div>
           <Collapse isOpen={isOpen} navbar>
             <Nav className={isHome ? 'ml-auto' : 'ml-auto not-homepage position-relative'} navbar>
               <NavItem>

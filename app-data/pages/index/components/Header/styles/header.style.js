@@ -3,7 +3,7 @@ import css from 'styled-jsx/css';
 export default css.global/* css */`
   $break-xsmall: 400px;
   $break-small: 576px;
-  $break-mobile:768px;
+  $break-mobile: 768px;
   $break-medium: 992px;
   $break-large: 1200px;
   $break-xarge: 1400px;
@@ -143,12 +143,17 @@ export default css.global/* css */`
         width: 316px;
         text-decoration: none;
         text-align: center;
+        
         @media screen and (max-width: 1500px) {
           margin-top: 100px;
         }
         @media screen and (max-width: $break-large) {
           margin-top: 140px;
         }
+        @media screen and (max-width: $break-mobile) {
+          max-width: 85%;
+        }
+
         &:hover{
           background-color: #008fcc;
           box-shadow: 0px 0px 7px 0px #82b6f1;

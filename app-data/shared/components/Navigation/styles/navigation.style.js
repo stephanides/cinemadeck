@@ -14,8 +14,39 @@ export default css.global/* css */`
     /* background-image: url(data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E); */
     outline: none !important;
   }
-  .navbar-toggler{
+  .navbar-toggler {
     outline: none !important;
+    border: 0;
+  }
+  .navbar-cart-info-holder {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+
+    .navbar-cart-info {
+      background-color: #37baf1;
+      border-radius: 50%;
+      color: #fff;
+      display: none;
+      font-size: .8rem;
+      height: 25px;
+      opacity: 0;
+      right: 0;
+      position: absolute;
+      top: 0;
+      width: 25px;
+  
+      &.show-pulse {
+        opacity: 1;
+        animation: shadow-pulse 1s 3;
+        transition: opacity .5s;
+      }
+      @media screen and (max-width: $break-mobile) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
   .navigation_holder {
     padding-left: 60px;
@@ -351,6 +382,15 @@ export default css.global/* css */`
   .navbar-lighter{
     .navbar-toggler-icon{
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+  }
+
+  @keyframes shadow-pulse {
+    0% {
+      box-shadow: 0 0 0 0px rgba(55, 186, 241, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 35px rgba(55, 186, 241, 0);
     }
   }
 `;
