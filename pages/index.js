@@ -132,7 +132,7 @@ const IndexPage = graphql(getProductsFromCart, { name: 'cartProducts' })(({ cart
     <Videos lang={lang} />
     <FAQ lang={lang} />
     <Author lang={lang} />
-    <Footer lang={lang} />
+    <Footer home lang={lang} />
   </Layout>
 ));
 

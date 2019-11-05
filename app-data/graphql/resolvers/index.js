@@ -4,7 +4,6 @@ import { getModalQuery, getProductsFromCart, getProducts } from '../query';
 export default {
   Mutation: {
     addProductToCart: (_root, { id }, { cache }) => {
-      console.log(id);
       const { products } = cache.readQuery({ query: getProducts });
       let { cart = [] } = cache.readQuery({ query: getProductsFromCart });
       const product = products.find((item) => (item.id === id));
@@ -50,8 +49,6 @@ export default {
         __typename: 'CartType',
       };
 
-      console.log(data);
-
       cache.writeData({ data });
 
       window.localStorage.setItem('cart', JSON.stringify(cartData));
@@ -67,11 +64,6 @@ export default {
     },
     replaceCartWithData: (_root, { data: cartDataDough }, { cache }) => {
       const { products: productsDefs } = cache.readQuery({ query: getProducts });
-      // let { cart = [] } = cache.readQuery({ query: getProductsFromCart });
-
-      // console.log(productsDefs);
-      // console.log(cart);
-      console.log(cartDataDough);
       const cartData = [];
 
       for (let i = 0; i < productsDefs.length; i += 1) {
@@ -93,13 +85,11 @@ export default {
         cartData.push(item);
       }
 
-      console.log(cartData);
       const data = {
         cart: cartData,
         __typename: 'CartType',
       };
 
-      console.log(data);
       cache.writeData({ data });
 
       window.localStorage.setItem('cart', JSON.stringify(cartData));

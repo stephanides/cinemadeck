@@ -14,6 +14,18 @@ const renderDangerHtml = (lang) => ({ __html: localisation[lang].freeDownloadTit
 const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].gdpr });
 const FreeDownload = ({ lang }) => {
   const [modal, toggle] = useState(false);
+  const [highlightFD, switchHFD] = useState(false);
+
+  const handleEmail = (e) => {
+    const emailInput = e.currentTarget.value;
+    const emailTestString = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailTest = emailTestString.test(emailInput.toLowerCase());
+
+    if (emailTest) {
+      switchHFD(true);
+    }
+  };
+  // TODO: create handler to reset "highlightFD" to false after hit of the download button
 
   return (
     <div className="freedownload" id="freedownload">
@@ -50,7 +62,7 @@ const FreeDownload = ({ lang }) => {
           </div>
           <div className={modal ? 'text-holder show' : 'text-holder hide'}>
             <InputGroup>
-              <Input placeholder={localisation[lang].email} />
+              <Input placeholder={localisation[lang].email} onChange={handleEmail} />
             </InputGroup>
             <InputGroupText>
               <Input addon type="checkbox" aria-label="Checkbox for following text input" />
@@ -59,7 +71,7 @@ const FreeDownload = ({ lang }) => {
               </Link>
             </InputGroupText>
           </div>
-          <button type="button" onClick={() => toggle(!modal)}>{localisation[lang].freeDownloadButton}</button>
+          <button type="button" className={highlightFD ? 'free-download-file' : undefined} onClick={() => toggle(!modal)}>{localisation[lang].freeDownloadButton}</button>
           <img className="free-image" src={`/static/images/freedownload/${lang === 'cz' ? '' : 'en/'}image.png`} alt="" />
         </Container>
       </Container>

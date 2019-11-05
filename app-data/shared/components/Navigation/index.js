@@ -38,6 +38,7 @@ const Navigation = graphql(
 
     return () => clearTimeout(timer);
   }, []);
+
   const checkPageTop = () => {
     const [isPageTop, handleIsPageTop] = useState(true);
 
@@ -60,7 +61,6 @@ const Navigation = graphql(
     return isPageTop;
   };
 
-  const isTop = checkPageTop();
   const getLangUrl = (locale) => {
     let path = '/';
     let asUrl = '/';
@@ -101,6 +101,7 @@ const Navigation = graphql(
     return [asUrl, path];
   };
 
+  const isTop = checkPageTop();
   const czUrl = getLangUrl('cz');
   const enUrl = getLangUrl('en');
 
@@ -167,12 +168,12 @@ const Navigation = graphql(
               </NavItem>
               <NavItem
                 className={
-                  ((!isHome && !isCart && cart && cart.length > 0) && cartReady)
-                    ? 'cart-content move move-top' : 'cart-content move'
+                  ((!isHome && !isCart && (cart && cart.length > 0)) && cartReady)
+                    ? 'cart-content move move-top' : 'cart-content'
                 }
               >
                 {
-                  (!isCart && cartReady && !isHome) && (
+                  (!isCart && cartReady && !isHome && (cart && cart.length > 0)) && (
                     <CartContent
                       cart={cart}
                       lang={lang}

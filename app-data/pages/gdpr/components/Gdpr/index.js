@@ -19,8 +19,11 @@ const Gdpr = ({ lang }) => (
         <h1 className="text-center pb-4">{localisation[lang].header}</h1>
         <h6 className="">{localisation[lang].header1}</h6>
         <h6 className="">{localisation[lang].header2}</h6>
-        <h6 className="">{localisation[lang].header3}</h6>
-        <h6 className="">{localisation[lang].header4}</h6>
+        <h6 className="">{localisation[lang].header2_1}</h6>
+        <h6 className="">{localisation[lang].header2_2}</h6>
+        <h6 className="">{localisation[lang].header2_3}</h6>
+        <h6 className="">{localisation[lang].header2_4}</h6>
+        <h6 className="">{localisation[lang].header2_5}</h6>
         <h6 className="pt-4">{localisation[lang].header5}</h6>
         <p dangerouslySetInnerHTML={renderDangerHtml(lang)} />
         <h6 className="pt-4">{localisation[lang].header7}</h6>

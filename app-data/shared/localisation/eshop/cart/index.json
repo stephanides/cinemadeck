@@ -31,7 +31,8 @@
     "paymentCard": "Credit card",
     "payPal": "PayPal",
     "bankTransfer": "Bank transfer",
-    "notePlaceHolder": "Note"
+    "notePlaceHolder": "Note",
+    "VAT": "Including VAT."
   },
   "cz": {
     "billingDataToFill": "Vyplňte prosím vaše fakturační údaje",
@@ -65,6 +66,7 @@
     "paymentCard": "Platební karta",
     "payPal": "PayPal",
     "bankTransfer": "Bankovní prevod",
-    "notePlaceHolder": "Poznámka"
+    "notePlaceHolder": "Poznámka",
+    "VAT": "Ceny jsou uvedeny s DPH."
   }
 }

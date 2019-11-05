@@ -24,11 +24,11 @@ const Terms = ({ lang }) => (
           <p dangerouslySetInnerHTML={renderDangerHtml(lang)} className="pb-4" />
           <p>{localisation[lang].text1_1_1}</p>
           <p>{localisation[lang].text1_1_2}</p>
-          <p>{localisation[lang].text1_1_3}</p>
+          <p className="d-none">{localisation[lang].text1_1_3}</p>
           <p>{localisation[lang].text1_1_4}</p>
           <p>{localisation[lang].text1_1_5}</p>
           <p>{localisation[lang].text1_1_6}</p>
-          <p>{localisation[lang].text1_1_7}</p>
+          <p className="d-none">{localisation[lang].text1_1_7}</p>
           <p>{localisation[lang].text1_1_8}</p>
           <p>{localisation[lang].text1_1_9}</p>
           <p dangerouslySetInnerHTML={renderDangerHtml2(lang)} className="pb-4" />

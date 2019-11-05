@@ -1,10 +1,20 @@
 {
   "en": {
     "terms":"Terms and conditions",
-    "privacy":"Privacy policy"
+    "privacy":"Privacy policy",
+    "companyName": "Martin Hurai",
+    "companyID": "Company ID Num.: 08638039",
+    "companyAddress": "Address: Březinova 509/20, 180 00 Praha 8, Karlín",
+    "companyContact": "Contact: martin@thecinemadeck.com",
+    "companyCourt": "Registered at the competent municipal authority pursuant to § 71 par. 2 of the Trade Licensing Act: Municipal Authority of the administrative district Prague 8."
     },
   "cz": {
     "terms":"Obchodní podmínky",
-    "privacy":"Osobní údaje"
+    "privacy":"Osobní údaje",
+    "companyName": "Martin Hurai",
+    "companyID": "IČO: 08638039",
+    "companyAddress": "Adresa: Březinova 509/20, 180 00 Praha 8, Karlín",
+    "companyContact": "Kontakt: martin@thecinemadeck.com",
+    "companyCourt": "Zapsané na příslušným úřadě podle § 71 odst. 2 živnostenského zákona: Úřad městské části Praha 8"
    }
 }

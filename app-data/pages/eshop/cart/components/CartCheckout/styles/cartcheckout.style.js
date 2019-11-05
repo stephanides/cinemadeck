@@ -29,6 +29,8 @@ export default css`
             font-size: .9rem;
             
             &.cart-item {
+              white-space: nowrap;
+
               span {
                 & > span {
                   & > span {
@@ -81,7 +83,8 @@ export default css`
             justify-content: center;
             font-size: .85rem;
             height: 70px;
-            width: 265px;
+            max-width: 265px;
+            width: 100%;
             letter-spacing: .15rem;
 
             &:hover {
