@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-danger */
 import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import Link from 'next/link';
 import CustomContainer from '../../../../shared/components/CustomContainer';
 
 import styles from './styles/header.style';
@@ -20,7 +21,9 @@ const Header = ({ lang }) => (
           <p dangerouslySetInnerHTML={renderDangerHtmlHeader(lang)} />
           <h3 className="pt-4" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
         </div>
-        <AnchorLink href="#about">{localisation[lang].findOutMore}</AnchorLink>
+        <Link href={`/eshop/funnel?locale=${lang}`} as={`/${lang}/eshop/funnel`}>
+          <a>{localisation[lang].findOutMore}</a>
+        </Link>
       </CustomContainer>
     </Container>
     <style jsx global>{styles}</style>

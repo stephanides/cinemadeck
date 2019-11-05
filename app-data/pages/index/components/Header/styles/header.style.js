@@ -130,8 +130,8 @@ export default css.global/* css */`
         outline: none;
         padding-left: 60px;
         padding-right: 60px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 26px;
+        padding-bottom: 26px;
         letter-spacing: 2px;
         border-radius: 4px;
         margin: 0 auto;
@@ -140,7 +140,7 @@ export default css.global/* css */`
         box-shadow: 0px 0px 8px 0px darkgrey;
         z-index: 2;
         position: relative;
-        width: 272px;
+        width: 316px;
         text-decoration: none;
         text-align: center;
         @media screen and (max-width: 1500px) {
