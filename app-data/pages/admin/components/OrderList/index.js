@@ -31,7 +31,7 @@ const OrderList = graphql(
               }
             </ListGroup>
           )
-          : <p className="text-center">There is no orders yet.</p>
+          : <p className="text-center">Zatím neexistují žádné objednávky.</p>
       }
     </div>
   );
