@@ -121,7 +121,7 @@ export default css.global/* css */`
           font-weight: 600;
         }
       }
-      a{
+      button{
         background-color: #0098d8;
         color: white;
         font-family: ProximaNova-Regular;
