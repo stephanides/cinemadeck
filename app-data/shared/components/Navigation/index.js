@@ -187,7 +187,14 @@ const Navigation = graphql(
               <NavItem>
                 {
                   isHome && (
-                    <AnchorLink onClick={() => toggle(!isOpen)} href="#freedownload" className="button-link">{localisation[lang].download}</AnchorLink>
+                    <AnchorLink
+                      onClick={() => toggle(!isOpen)}
+                      href="#free-download-point"
+                      className="button-link"
+                      offset="100"
+                    >
+                      {localisation[lang].download}
+                    </AnchorLink>
                   )
                 }
               </NavItem>

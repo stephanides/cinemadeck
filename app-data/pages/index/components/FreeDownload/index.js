@@ -71,6 +71,7 @@ const FreeDownload = ({ lang }) => {
               </Link>
             </InputGroupText>
           </div>
+          <div id="free-download-point" className="free-download-point" />
           <button type="button" className={highlightFD ? 'free-download-file' : undefined} onClick={() => toggle(!modal)}>{localisation[lang].freeDownloadButton}</button>
           <img className="free-image" src={`/static/images/freedownload/${lang === 'cz' ? '' : 'en/'}image.png`} alt="" />
         </Container>
