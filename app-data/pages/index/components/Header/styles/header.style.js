@@ -98,6 +98,7 @@ export default css.global/* css */`
         color: #d4d9e2;
         font-weight: 300;
         width: 550px;
+        line-height: 54px;
         @media screen and (max-width: $break-xarge) {
           font-size: 2.15em;
         }
@@ -128,19 +129,19 @@ export default css.global/* css */`
         font-size: 1em;
         border: none;
         outline: none;
-        padding-left: 60px;
-        padding-right: 60px;
+        padding-left: 36px;
+        padding-right: 36px;
         padding-top: 26px;
         padding-bottom: 26px;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
         border-radius: 4px;
         margin: 0 auto;
         display: block;
         margin-top: 56px;
-        box-shadow: 0px 0px 8px 0px darkgrey;
+        box-shadow: 0px 0px 8px 0px #3ac5ff;
         z-index: 2;
         position: relative;
-        width: 316px;
+        width: 320px;
         text-decoration: none;
         text-align: center;
         

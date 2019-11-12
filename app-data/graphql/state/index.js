@@ -21,7 +21,7 @@ export default {
     {
       __typename: 'Product',
       id: '002',
-      title: 'Light Like Pro',
+      title: 'Title Presets',
       price: {
         __typename: 'Price',
         cz: 180,

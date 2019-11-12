@@ -53,14 +53,14 @@ const Funnel = compose(
       lang={lang}
       isHome={false}
     >
-      {
+      {/*
         isLightBoxOpen && (
           <Lightbox
             mainSrc={lang === 'cz' ? '/static/images/funnel/light-like-PRO-info.png' : '/static/images/funnel/light-like-PRO_EN-LS1.jpg'}
             onCloseRequest={() => toggleLightBox(false)}
           />
         )
-      }
+        */}
       <div className="funnel">
         <Container>
           <div className="funnel-heading-container">
@@ -72,14 +72,14 @@ const Funnel = compose(
             data={{
               id: '002',
               title: locale[lang].lightLikeProTitle,
-              image: '/static/images/LIGHT-PRO.png',
+              image: '/static/images/PRESETS.png',
               price: [180, 7],
               productTitle: 'Light Like Pro',
               content: locale[lang].lightLikeProContent,
-              extraContent: {
+              /* extraContent: {
                 infoLine: locale[lang].lightLikeProExtraInfoLine,
                 infoContent: locale[lang].lightLikeProExtraInfoContent,
-              },
+              }, */
             }}
           />
           <DynamicProduct

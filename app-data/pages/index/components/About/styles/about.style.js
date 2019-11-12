@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-export default css`
+export default css.global`
   $transition-time:5s;
   $break-xsmall: 400px;
   $break-small: 576px;
@@ -50,8 +50,8 @@ export default css`
         font-size: 1em;
       }
       strong{
-        color:white;
-        font-weight: 500;
+        color:white !important;
+        font-weight: 400 !important;
       }
     }
     .mt-text{

@@ -79,6 +79,7 @@ export default css.global/* css */`
     visibility:visible;
     backface-visibility: hidden;
         box-shadow: 1px 1px 60px 4px #888888;
+        border-radius: 16px;
       }
       .flip-card-front {
         color: black;

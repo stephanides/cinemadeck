@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-export default css`
+export default css.global`
   $break-xsmall: 400px;
   $break-small: 576px;
   $break-mobile:768px;
@@ -14,6 +14,12 @@ export default css`
     @media screen and (max-width: $break-mobile) {
       padding-top: 80px;
       padding-bottom: 80px;
+    }
+    .bottom-card{
+      margin-top:4rem;
+      @media screen and (max-width: $break-large) {
+        margin-top:1rem;
+      }
     }
     h2{
       color:#2f3438;
@@ -47,14 +53,12 @@ export default css`
       position: relative;
     }
     .presets-img{
-      left: -40px;
+      width: 80%;
       position: relative;
       @media screen and (max-width: $break-mobile) {
         padding-top: 40px;
         padding-bottom: 40px;
-      }
-      @media screen and (max-width: $break-xsmall) {
-        left: -40px;
+        width: 60%;
       }
     }
     .text-header{
@@ -73,7 +77,7 @@ export default css`
       padding-right: 30px;
     }
     .img-holder{
-      height: 420px;
+      height: 360px;
       position: relative;
       display: flex;
       align-items: center;

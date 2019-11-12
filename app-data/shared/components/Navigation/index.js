@@ -133,15 +133,15 @@ const Navigation = graphql(
             <Nav className={isHome ? 'ml-auto' : 'ml-auto not-homepage position-relative'} navbar>
               <NavItem>
                 <Link href={czUrl[1]} as={czUrl[0]}>
-                  <a onClick={() => toggle(!isOpen)}>{localisation[lang].czechLanguage}</a>
+                  <a onClick={() => toggle(false)}>{localisation[lang].czechLanguage}</a>
                 </Link>
                 <Link href={enUrl[1]} as={enUrl[0]}>
-                  <a onClick={() => toggle(!isOpen)}>{localisation[lang].englishLanguage}</a>
+                  <a onClick={() => toggle(false)}>{localisation[lang].englishLanguage}</a>
                 </Link>
               </NavItem>
               <NavItem>
                 <Link href={`/eshop?locale=${lang}`} as={`/${lang}/eshop`}>
-                  <a onClick={() => toggle(!isOpen)} className="nav-link">ESHOP</a>
+                  <a onClick={() => toggle(false)} className="nav-link">ESHOP</a>
                 </Link>
               </NavItem>
               <NavItem
@@ -162,7 +162,7 @@ const Navigation = graphql(
                       <AnchorLink
                         href="#footer-main"
                         className="nav-link pr-4"
-                        onClick={() => toggle(!isOpen)}
+                        onClick={() => toggle(false)}
                       >
                         {localisation[lang].contact}
                       </AnchorLink>
@@ -188,7 +188,7 @@ const Navigation = graphql(
                 {
                   isHome && (
                     <AnchorLink
-                      onClick={() => toggle(!isOpen)}
+                      onClick={() => toggle(false)}
                       href="#free-download-point"
                       className="button-link"
                       offset="100"
@@ -200,7 +200,7 @@ const Navigation = graphql(
               </NavItem>
               <NavItem>
                 <Link href={`/eshop/cart?locale=${lang}`} as={`/${lang}/eshop/cart`}>
-                  <a onClick={() => toggle(!isOpen)} className="nav-link shopping-cart d-flex align-items-center">
+                  <a onClick={() => toggle(false)} className="nav-link shopping-cart d-flex align-items-center">
                     <img src="/static/images/cart-logo.png" alt="" />
                     <div className="proceed-to-cart position-relative ml-2">
                       <span className="font-weight-bold position-absolute">

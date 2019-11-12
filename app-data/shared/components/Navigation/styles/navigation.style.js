@@ -154,7 +154,9 @@ export default css.global/* css */`
           padding-left: 28px !important;
           padding-top: 12px;
           padding-bottom: 12px;
+          letter-spacing:3px;
           text-decoration: none;
+          box-shadow: 0px 0px 6px 0px #3ac5ff;
 
           &:hover {
             background-color: #008fcc;

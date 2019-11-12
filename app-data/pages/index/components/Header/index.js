@@ -2,6 +2,8 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { graphql } from 'react-apollo';
 import Link from 'next/link';
 import CustomContainer from '../../../../shared/components/CustomContainer';
@@ -38,6 +40,7 @@ const Header = graphql(addProductToCartMutation)(({ lang, mutate }) => {
               className="btn btn-link"
             >
               {localisation[lang].findOutMore}
+              <FontAwesomeIcon className="ml-2" icon={faShoppingCart} />
             </button>
           </Link>
         </CustomContainer>

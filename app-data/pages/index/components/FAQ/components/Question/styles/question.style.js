@@ -88,7 +88,7 @@ export default css`
     height: 200px;
     transition: height 0.8s;
     transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #44474b;
     @media screen and (max-width: $break-mobile) {
       height: 380px;
     }
@@ -102,7 +102,7 @@ export default css`
     transition: height 0.8s;
     height: 60px;
     transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #44474b;
     @media screen and (max-width: $break-mobile) {
       height: 80px;
     }

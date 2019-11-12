@@ -118,7 +118,7 @@ export default css.global/* css */`
       margin: 0 auto;
       display: block;
       margin-top: 56px;
-      box-shadow: 0px 0px 8px 0px darkgrey;
+      box-shadow: 0px 0px 8px 0px #3ac5ff;
       margin-left: 0px;
       margin-top: 80px;
       text-align: center;

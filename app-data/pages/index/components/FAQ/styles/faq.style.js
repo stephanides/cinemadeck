@@ -158,7 +158,6 @@ export default css.global/* css */`
           }
         }
         .presets{
-          left:-50px;
         }
       }
     }
@@ -240,7 +239,7 @@ export default css.global/* css */`
         border-radius: 4px;
         margin: 0 auto;
         display: block;
-        box-shadow: 0px 0px 7px 0px #b8d6f7;
+        box-shadow: 0px 0px 7px 0px #3ac5ff;
         text-align: center;
         text-decoration: none;
         text-transform: uppercase;

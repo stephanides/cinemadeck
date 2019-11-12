@@ -34,7 +34,7 @@ const Product = graphql(
             <LazyLoad height={280}>
               <img src={image} alt="" />
             </LazyLoad>
-            {
+            {/*
               (extraContent && extraContent.infoLine && extraContent.infoContent) && (
                 <button
                   type="button"
@@ -45,11 +45,11 @@ const Product = graphql(
                   </LazyLoad>
                 </button>
               )
-            }
+            */}
           </aside>
         </Col>
         <Col sm="12" md="6" lg="8">
-          <h3 className="">{title}</h3>
+          <h3 className="text-uppercase">{title}</h3>
           <p className="font-weight-lighter" dangerouslySetInnerHTML={{ __html: content }} />
           {
             (extraContent && extraContent.infoLine && extraContent.infoContent) && (

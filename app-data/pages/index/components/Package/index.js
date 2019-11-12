@@ -12,6 +12,8 @@ import styles from './styles/package.style';
 import localisation from '../../../../shared/localisation/Package';
 import CustomContainer from '../../../../shared/components/CustomContainer';
 
+const renderDangerHtml = (lang) => ({ __html: localisation[lang].packageCol3Header });
+
 const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
   const handleAddProductToCart = async () => {
     try {
@@ -52,12 +54,12 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
             <Col xl="4" md="6" sm="12">
               <h6 className="text-center">{localisation[lang].packageCol3Title}</h6>
               <div className="img-holder">
-                <img loading="lazy" src={`/static/images/package/${lang === 'cz' ? '' : 'en/'}kartapresets.png`} className="presets-img" alt="" />
+                <img loading="lazy" src={`/static/images/package/${lang === 'cz' ? '' : 'en/'}LIGHT-PRO.png`} className="presets-img" alt="" />
               </div>
-              <p className="text-header">{localisation[lang].packageCol3Header}</p>
+              <p className="text-header" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
               <p className="text-text">{localisation[lang].packageCol3Text}</p>
             </Col>
-            <Col xl="4" md="6" sm="12">
+            <Col xl="4" md="6" sm="12" className="bottom-card">
               <h6 className="text-center">{localisation[lang].packageCol4Title}</h6>
               <div className="img-holder">
                 <LazyLoad height={250}>
@@ -70,7 +72,7 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
               <p className="text-header">{localisation[lang].packageCol4Header}</p>
               <p className="text-text">{localisation[lang].packageCol4Text}</p>
             </Col>
-            <Col xl="4" md="6" sm="12">
+            <Col xl="4" md="6" sm="12" className="bottom-card">
               <h6 className="text-center">{localisation[lang].packageCol5Title}</h6>
               <div className="img-holder">
                 <LazyLoad height={250}>
@@ -109,7 +111,7 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
           </div>
         </CustomContainer>
       </Container>
-      <style jsx>{styles}</style>
+      <style jsx global>{styles}</style>
     </div>
   );
 });
