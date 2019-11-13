@@ -70,12 +70,12 @@ const EshopPage = compose(
             <DynamicProduct
               lang={lang}
               productData={{
-                id: '002',
-                content: locale[lang].lightLikeProContent,
-                imageURL: '/static/images/PRESETS.png',
-                productTitle: 'Title presets',
-                titleOne: locale[lang].lightLikeProTitleOne,
-                titleTwo: locale[lang].lightLikeProTitleTwo,
+                id: '003',
+                content: locale[lang].soundLikeProContent,
+                imageURL: '/static/images/SOUND-PRO.png',
+                productTitle: 'Sound Like Pro',
+                titleOne: locale[lang].soundLikeProTitleOne,
+                titleTwo: locale[lang].soundLikeProTitleTwo,
                 price: [180, 7],
                 knowMoreUrl: `/eshop/funnel?locale=${lang}`,
                 knowMoreUrlAs: `/${lang}/eshop/funnel`,
@@ -86,12 +86,12 @@ const EshopPage = compose(
             <DynamicProduct
               lang={lang}
               productData={{
-                id: '003',
-                content: locale[lang].soundLikeProContent,
-                imageURL: '/static/images/SOUND-PRO.png',
-                productTitle: 'Sound Like Pro',
-                titleOne: locale[lang].soundLikeProTitleOne,
-                titleTwo: locale[lang].soundLikeProTitleTwo,
+                id: '002',
+                content: locale[lang].lightLikeProContent,
+                imageURL: '/static/images/PRESETS.png',
+                productTitle: 'Title presets',
+                titleOne: locale[lang].lightLikeProTitleOne,
+                titleTwo: locale[lang].lightLikeProTitleTwo,
                 price: [180, 7],
                 knowMoreUrl: `/eshop/funnel?locale=${lang}`,
                 knowMoreUrlAs: `/${lang}/eshop/funnel`,

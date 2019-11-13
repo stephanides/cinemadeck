@@ -67,6 +67,17 @@ const Funnel = compose(
             <h2 className="text-uppercase text-center pt-5 pb-5 mb-5">{locale[lang].funnelTitle}</h2>
           </div>
           <DynamicProduct
+            lang={lang}
+            data={{
+              id: '003',
+              title: locale[lang].soundLikeProTitle,
+              image: '/static/images/SOUND-PRO.png',
+              price: [180, 7],
+              productTitle: 'Sound Like Pro',
+              content: locale[lang].soundLikeProContent,
+            }}
+          />
+          <DynamicProduct
             toggleLightBox={toggleLightBox}
             lang={lang}
             data={{
@@ -80,17 +91,6 @@ const Funnel = compose(
                 infoLine: locale[lang].lightLikeProExtraInfoLine,
                 infoContent: locale[lang].lightLikeProExtraInfoContent,
               }, */
-            }}
-          />
-          <DynamicProduct
-            lang={lang}
-            data={{
-              id: '003',
-              title: locale[lang].soundLikeProTitle,
-              image: '/static/images/SOUND-PRO.png',
-              price: [180, 7],
-              productTitle: 'Sound Like Pro',
-              content: locale[lang].soundLikeProContent,
             }}
           />
         </Container>

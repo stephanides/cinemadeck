@@ -94,10 +94,10 @@ export default css.global/* css */`
       }
       h3{
         font-family: 'Open Sans', sans-serif;
-        font-size: 2.5em;
+        font-size: 2.25em;
         color: #d4d9e2;
         font-weight: 300;
-        width: 550px;
+        width: 600px;
         line-height: 54px;
         @media screen and (max-width: $break-xarge) {
           font-size: 2.15em;
