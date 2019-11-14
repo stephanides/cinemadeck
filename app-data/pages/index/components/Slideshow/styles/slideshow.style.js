@@ -26,12 +26,12 @@ export default css.global/* css */`
       @media screen and (max-width: $break-mobile) {
         font-size: 1.5em;
         padding-bottom: 40px;
-        padding-top: 0px;
+        padding-top: 80px;
       }
       @media screen and (max-width: $break-xsmall) {
         font-size: 1.2em;
         padding-bottom: 40px;
-        padding-top: 0px;
+        padding-top: 60px;
       }
     }
   }
