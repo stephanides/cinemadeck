@@ -10,7 +10,6 @@ export default css.global/* css */`
   
   .slideshow {
     background-image: url(/static/images/steps/background.jpg);
-    padding-bottom: 120px; 
     .image-gallery{
       max-width: 1400px;
       display: block;
@@ -22,7 +21,7 @@ export default css.global/* css */`
       font-family: ProximaNova-Bold;
       text-transform: uppercase;
       letter-spacing: 8px;
-      padding-top: 80px;
+      padding-top: 120px;
       padding-bottom: 60px;
       @media screen and (max-width: $break-mobile) {
         font-size: 1.5em;

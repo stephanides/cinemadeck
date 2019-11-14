@@ -9,6 +9,7 @@ import styles from './styles/light.style';
 import localisation from '../../../../shared/localisation/Light';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].lightLikeProExtraInfoContent });
+const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].lightLikeProContent });
 
 const Light = ({ lang }) => (
 
@@ -18,6 +19,8 @@ const Light = ({ lang }) => (
         <Container>
           <h1 className="text-center">{localisation[lang].packageCol3Header}</h1>
           <img loading="lazy" src="/static/images/light/LIGHT-PRO.png" alt="Karty CinemaDeck" />
+          <p className="text-center mt-text" dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
+          <p className="text-center mt-text">{localisation[lang].lightLikeProExtraInfoLine}</p>
           <p className="text-center mt-text" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
         </Container>
       </CustomContainer>

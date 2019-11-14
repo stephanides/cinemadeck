@@ -10,9 +10,8 @@ export default css`
 
   .videos{
       background-image: url("/static/images/steps/background.jpg");
-      padding-bottom: 100px;
     h2{
-      padding-top: 100px;
+      padding-top: 120px;
       font-family: ProximaNova-SemiBold;
       font-size: 2em;
       color:white; 

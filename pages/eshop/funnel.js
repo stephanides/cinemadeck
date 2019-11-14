@@ -83,7 +83,7 @@ const Funnel = compose(
             data={{
               id: '002',
               title: locale[lang].lightLikeProTitle,
-              image: '/static/images/PRESETS.png',
+              image: lang === 'cz' ? '/static/images/PRESETS.png' : '/static/images/PRESETSEN.png',
               price: [180, 7],
               productTitle: 'Light Like Pro',
               content: locale[lang].lightLikeProContent,

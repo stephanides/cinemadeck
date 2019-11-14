@@ -88,7 +88,7 @@ const EshopPage = compose(
               productData={{
                 id: '002',
                 content: locale[lang].lightLikeProContent,
-                imageURL: '/static/images/PRESETS.png',
+                imageURL: lang === 'cz' ? '/static/images/PRESETS.png' : '/static/images/PRESETSEN.png',
                 productTitle: 'Title presets',
                 titleOne: locale[lang].lightLikeProTitleOne,
                 titleTwo: locale[lang].lightLikeProTitleTwo,

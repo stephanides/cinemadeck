@@ -11,7 +11,7 @@ export default css.global`
 
   .light {
     background-image: url("/static/images/steps/background.jpg");
-    padding-top: 100px;
+    padding-top: 120px;
     position: relative;
     z-index: 2;
     padding-bottom: 160px;
@@ -27,7 +27,6 @@ export default css.global`
       color:white; 
       text-transform:uppercase;
       letter-spacing: 8px;
-      padding-top:4rem;
       padding-bottom:4rem;
       @media screen and (max-width: $break-mobile) {
         font-size: 1.5em;
@@ -40,8 +39,8 @@ export default css.global`
     img{
       display: block;
       margin: 0 auto;
-      margin-top: 60px;
-      width: 50%;
+      margin-top: 30px;
+      width: 35%;
       max-width: 500px;
       @media screen and (max-width: $break-medium) {
         width:80%;
@@ -61,9 +60,9 @@ export default css.global`
       }
     }
     .mt-text{
-      margin-top: 140px;
+      margin-top: 60px;
       @media screen and (max-width: $break-mobile) {
-        margin-top: 80px;
+        margin-top: 60px;
       }
     }
     .coverflow-container {

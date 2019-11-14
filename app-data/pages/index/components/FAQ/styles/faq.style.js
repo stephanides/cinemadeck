@@ -46,9 +46,9 @@ export default css.global/* css */`
 
   .questions{
     background-image: url("/static/images/steps/background.png");
-    padding-bottom: 140px;
+    padding-bottom: 120px;
     h2{
-      padding-top: 100px;
+      padding-top: 120px;
       padding-bottom: 100px;
       font-family: ProximaNova-SemiBold;
       font-size: 2em;
@@ -84,7 +84,7 @@ export default css.global/* css */`
     }
     .faq-items{
       align-items: center;
-      padding-top: 200px;
+      padding-top: 120px;
       padding-bottom: 60px;
       justify-content: center;
       padding-left: 20px;

@@ -10,7 +10,6 @@ export default css.global/* css */`
 
   .cardcomposition{
     padding-top: 120px;
-    padding-bottom: 120px;
     overflow: hidden;
     h2{
       color:#2f3438;
