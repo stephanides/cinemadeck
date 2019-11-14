@@ -170,5 +170,9 @@ export default css.global`
       padding: 0;
     }
   }
+  .question-light{
+    color:white;
+    text-transform:uppercase;
+  }
 }
 `;
