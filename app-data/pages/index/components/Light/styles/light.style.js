@@ -14,7 +14,7 @@ export default css.global`
     padding-top: 120px;
     position: relative;
     z-index: 2;
-    padding-bottom: 160px;
+    padding-bottom: 120px;
     @media screen and (max-width: $break-mobile) {
       padding-bottom: 80px;
     }
@@ -154,5 +154,21 @@ export default css.global`
     0% { transform: rotateY( 45deg ); }
     100% { transform: rotateY( 0deg ) translate3d( 150px,0,0 ) scale3d(1.2,1.2,1.2); }
   }*/
+  .product-image {
+    img {
+      display: block;
+      width: 64px;
+      margin: 0;
+    }
+    button {
+      display: block;
+      margin: 0 auto;
+      margin-top: 2rem;
+      background-color: transparent;
+      border: 1px solid #ececec;
+      outline: none;
+      padding: 0;
+    }
+  }
 }
 `;
