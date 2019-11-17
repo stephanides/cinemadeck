@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { Container, Col, Row } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import { /* getLocaleQuery, */ getProductsFromCart } from '../../app-data/graphql/query';
-import { createOrderMutation, initCartMutation } from '../../app-data/graphql/mutation';
+import { /* createOrderMutation, */ initCartMutation } from '../../app-data/graphql/mutation';
 import Layout from '../../app-data/shared/components/Layout';
 import ContactInfo from '../../app-data/pages/eshop/cart/components/ContactInfo';
 import CartCheckout from '../../app-data/pages/eshop/cart/components/CartCheckout';
@@ -30,11 +30,11 @@ const initialState = {
   stateSelected: 0,
 };
 const ShoppingCart = compose(
-  graphql(createOrderMutation, { name: 'createOrder' }),
+  // graphql(createOrderMutation, { name: 'createOrder' }),
   graphql(initCartMutation),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
 )(({
-  cartProducts: { cart }, createOrder, lang, mutate, orderDiscount,
+  cartProducts: { cart }, /* createOrder, */ lang, mutate, orderDiscount,
 }) => {
   const [order, handleOrder] = useState(initialState.order);
   const [stateSelected, handleStateChange] = useState(initialState.stateSelected);
@@ -68,6 +68,7 @@ const ShoppingCart = compose(
       e.stopPropagation();
     } else {
       const formattedCart = cart.map((item) => {
+        // console.log(item);
         const {
           __typename,
           id,
@@ -100,7 +101,7 @@ const ShoppingCart = compose(
 
       console.log(orderData);
 
-      try {
+      /* try {
         await createOrder({
           variables: {
             order: orderData,
@@ -108,7 +109,7 @@ const ShoppingCart = compose(
         });
       } catch (err) {
         console.log(err);
-      }
+      } */
     }
 
     form.classList.add('was-validated');

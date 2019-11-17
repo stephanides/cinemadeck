@@ -9,6 +9,8 @@ const resolvers = require('./app-data/grapqhl/resolvers');
 const db = require('./app-data/db');
 const setup = require('./app-data/setup');
 
+const PaymentRoute = require('./app-data/router/payment');
+
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = nextjsApp({ dev });
 const handle = nextApp.getRequestHandler();
@@ -78,6 +80,8 @@ const App = async () => {
     app.get('/eshop/order-success', (req, res) => {
       res.redirect(`${req.locale.language}/eshop/order-success`);
     });
+    //
+    app.use(PaymentRoute);
     // Routes
     app.get('/:lang/home', (req, res) => {
       const actualPage = '/';
