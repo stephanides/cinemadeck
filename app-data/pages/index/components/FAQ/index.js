@@ -83,7 +83,7 @@ const FAQ = graphql(addProductToCartMutation)(({ lang, mutate }) => {
               <img src="/static/images/faq/plus.png" className="plus" alt="" />
             </div>
             <div className="column-5">
-              <div className="faq-item">
+              <div className="faq-item light-mobile">
                 <h6>Light like pro</h6>
                 <div className="img-holder">
                   <img loading="lazy" src={`/static/images/faq/${lang === 'cz' ? '' : 'en/'}LIGHT-PRO.png`} className="presets" alt="" />

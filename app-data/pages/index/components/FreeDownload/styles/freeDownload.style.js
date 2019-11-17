@@ -23,6 +23,7 @@ export default css.global/* css */`
       @media screen and (max-width: $break-mobile) {
         font-size: 1.8em;
         letter-spacing: 6px;
+        padding-top: 80px;
       }
       @media screen and (max-width: $break-xsmall) {
         font-size: 1.5em;

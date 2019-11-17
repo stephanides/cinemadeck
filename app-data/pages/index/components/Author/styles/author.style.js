@@ -11,6 +11,9 @@ export default css`
     background-color: #0f141c;
     padding-top: 120px;
     padding-bottom: 60px;
+    @media screen and (max-width: $break-mobile) {
+      padding-top: 80px;
+    }
     .author-image{
       display: block;
       margin: 0 auto;

@@ -11,6 +11,9 @@ export default css.global/* css */`
   .cardcomposition{
     padding-top: 120px;
     overflow: hidden;
+    @media screen and (max-width: $break-mobile) {
+      padding-top: 80px;
+    }
     h2{
       color:#2f3438;
       font-family: ProximaNova-Bold;

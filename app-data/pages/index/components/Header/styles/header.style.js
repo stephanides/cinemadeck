@@ -153,6 +153,7 @@ export default css.global/* css */`
         }
         @media screen and (max-width: $break-mobile) {
           max-width: 85%;
+          margin-top: 80px;
         }
 
         &:hover{

@@ -119,7 +119,7 @@ const Product = graphql(
           </div>
         </Col>
       </Row>
-      <style jsx>{styles}</style>
+      <style jsx global>{styles}</style>
     </div>
   );
 });

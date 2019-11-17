@@ -17,6 +17,7 @@ export default css.global`
     padding-bottom: 120px;
     @media screen and (max-width: $break-mobile) {
       padding-bottom: 80px;
+      padding-top: 80px;
     }
     @media screen and (max-width: $break-xsmall) {
       padding-top: 80px;

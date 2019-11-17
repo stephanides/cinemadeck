@@ -47,6 +47,9 @@ export default css.global/* css */`
   .questions{
     background-image: url("/static/images/steps/background.png");
     padding-bottom: 120px;
+    @media screen and (max-width: $break-mobile) {
+      padding-top:80px;
+    }
     h2{
       padding-top: 120px;
       padding-bottom: 100px;
@@ -158,6 +161,14 @@ export default css.global/* css */`
           }
         }
         .presets{
+        }
+      }
+      .light-mobile{
+        @media screen and (max-width: 400px) {
+          height: 300px !important;
+          .img-holder{
+            height: 220px;
+          }
         }
       }
     }

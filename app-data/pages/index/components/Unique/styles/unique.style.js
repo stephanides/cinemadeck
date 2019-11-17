@@ -11,6 +11,9 @@ export default css.global/* css */`
   .unique{
     padding-top: 120px;
     padding-bottom: 80px;
+    @media screen and (max-width: $break-mobile) {
+      padding-top: 80px;
+    }
     .unique-image-holder{
       position: relative;
       top:60px;

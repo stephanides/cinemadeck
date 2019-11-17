@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-export default css`
+export default css.global`
   .funnel-prod {
     h3 {
       font-family: 'ProximaNova-Bold';
@@ -9,6 +9,10 @@ export default css`
       img {
         display: block;
         margin: 0 auto;
+        @media screen and (max-width: 568px) {
+          width:100%;
+          padding-bottom:1rem;
+        }
       }
       button {
         display: block;
@@ -39,7 +43,7 @@ export default css`
               & > small {
                 font-size: x-small;
                 top: -30px;
-                right: -20px;
+                right: -18px;
               }
             }
           }

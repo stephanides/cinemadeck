@@ -116,6 +116,9 @@ export default css.global/* css */`
           @media screen and (max-width: 576px) {
             font-size: 1.3em;
           }
+          @media screen and (max-width: 322px) {
+            font-size: 1em;
+          }
     
           &:hover {
             color: #00a7f0;
