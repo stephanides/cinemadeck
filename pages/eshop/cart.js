@@ -68,7 +68,7 @@ const ShoppingCart = compose(
       e.stopPropagation();
     } else {
       const formattedCart = cart.map((item) => {
-        // console.log(item);
+        const rPrice = lang === 'cz' ? item.price.cz : item.price.en;
         const {
           __typename,
           id,
@@ -76,8 +76,9 @@ const ShoppingCart = compose(
           totalPrice,
           ...reObject
         } = item;
+        const newObject = { ...reObject, price: rPrice };
 
-        return reObject;
+        return newObject;
       });
 
       const orderData = {
@@ -100,6 +101,28 @@ const ShoppingCart = compose(
       };
 
       console.log(orderData);
+
+      if (orderData.paymentMethod === 0) {
+        try {
+          const response = await fetch('/payment', {
+            method: 'POST',
+            body: JSON.stringify(orderData),
+            headers: { 'Content-Type': 'application/json;charset=utf-8' },
+          });
+
+          console.log(response);
+
+          if (response.status === 200) {
+            const responseJSON = await response.json();
+
+            console.log(responseJSON);
+          } else {
+            throw new Error(response.statusText);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      }
 
       /* try {
         await createOrder({

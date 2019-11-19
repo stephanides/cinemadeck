@@ -1,5 +1,8 @@
+/* eslint-disable camelcase */
 const gopay = require('gopay-nodejs');
+const mongoose = require('mongoose');
 const { gp: { ClientID, ClientSecret, SandBox } } = require('../../config');
+const Order = require('../../db/models/Order');
 
 class PaymentController {
   constructor() {
@@ -11,36 +14,52 @@ class PaymentController {
         type: 'ACCOUNT',
         goid: '8897572915',
       },
-      amount: 100,
-      currency: 'CZK',
-      order_number: '001',
-      items: [{
-        type: 'ITEM',
-        name: 'obuv',
-        product_url: 'http://localhost:3004/cz/eshop',
-        ean: '1234567890123',
-        amount: 100,
-        count: 1,
-        vat_rate: 21,
-      }],
       callback: {
         return_url: 'http://localhost:3004/cz/home',
-        notification_url: 'http://localhost:3004/cz/home',
+        // notification_url: 'http://localhost:3004/cz/home',
       },
     };
   }
 
-  async payment(req, res) {
-    this.setToken();
+  setPaymentData(data) {
+    this.paymentData = { ...data };
+  }
 
+  async payment(req, res) {
     try {
-      const paymentResult = await this.GoPay.createPayment(this.paymentData);
+      const orders = await Order.find().sort('orderNum');
+
+      const lastOrder = orders && orders.length > 0 ? orders.pop() : null;
+      const lastOrderNum = lastOrder ? lastOrder.orderNum : null;
+      const time = new Date();
+      const order_number = lastOrderNum ? String(parseInt(lastOrderNum, 10) + 1) : `${time.getFullYear}001`;
+
+      const items = req.body.products.map((item) => ({
+        count: item.count,
+        type: 'ITEM',
+        name: item.title,
+        product_url: 'http://localhost:3004/cz/eshop',
+        price: item.price * 100,
+        vat_rate: 20,
+      }));
+      const data = {
+        ...this.paymentData,
+        amount: req.body.totalPriceToPay * 100,
+        currency: req.body.currency,
+        order_number,
+        items,
+      };
+
+      this.setPaymentData(data);
+
+      res.json({ success: true, data: this.paymentData });
+      /* const paymentResult = await this.GoPay.createPayment(this.paymentData);
       console.log(paymentResult);
 
       res.json({
         token: this.token,
         paymentResult,
-      });
+      }); */
     } catch (err) {
       console.log(err);
     }

@@ -79,7 +79,6 @@ const CartCheckout = compose(
     }
   };
   const handleOrderDiscount = async () => {
-
     // pLyGkyrY6z - discount code
     try {
       await replaceItemsInCart({
