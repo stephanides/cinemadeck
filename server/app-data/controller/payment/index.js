@@ -27,6 +27,7 @@ class PaymentController {
 
   async payment(req, res) {
     try {
+      await this.setToken();
       const orders = await Order.find().sort('orderNum');
 
       const lastOrder = orders && orders.length > 0 ? orders.pop() : null;
@@ -39,8 +40,8 @@ class PaymentController {
         type: 'ITEM',
         name: item.title,
         product_url: 'http://localhost:3004/cz/eshop',
-        price: item.price * 100,
-        vat_rate: 20,
+        amount: (item.price * 100) * item.count,
+        vat_rate: 21,
       }));
       const data = {
         ...this.paymentData,
@@ -50,16 +51,17 @@ class PaymentController {
         items,
       };
 
+      console.log(data);
       this.setPaymentData(data);
 
-      res.json({ success: true, data: this.paymentData });
-      /* const paymentResult = await this.GoPay.createPayment(this.paymentData);
+      // res.json({ success: true, data: this.paymentData });
+      const paymentResult = await this.GoPay.createPayment(this.paymentData);
       console.log(paymentResult);
 
       res.json({
         token: this.token,
         paymentResult,
-      }); */
+      });
     } catch (err) {
       console.log(err);
     }

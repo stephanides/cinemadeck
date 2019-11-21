@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Container, Col, Row } from 'reactstrap';
@@ -115,7 +116,17 @@ const ShoppingCart = compose(
           if (response.status === 200) {
             const responseJSON = await response.json();
 
-            console.log(responseJSON);
+            const { paymentResult: { gw_url } } = responseJSON;
+
+            if (gw_url) {
+              console.log(gw_url);
+
+              /* if (window) {
+                window.location.href = gw_url;
+              } */
+            } else {
+              throw new Error(response.statusText);
+            }
           } else {
             throw new Error(response.statusText);
           }
