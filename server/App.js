@@ -10,7 +10,9 @@ const db = require('./app-data/db');
 const setup = require('./app-data/setup');
 
 const PaymentRoute = require('./app-data/router/payment');
+const PaymentController = require('./app-data/controller/payment');
 
+const paymentOrder = new PaymentController();
 const dev = process.env.NODE_ENV !== 'production';
 const nextApp = nextjsApp({ dev });
 const handle = nextApp.getRequestHandler();
@@ -110,11 +112,16 @@ const App = async () => {
 
       nextApp.render(req, res, actualPage, queryParams);
     });
-    app.get('/:lang/eshop/order-success', (req, res) => {
-      const actualPage = '/eshop/order-success';
-      const queryParams = { locale: req.params.lang };
+    app.get('/:lang/eshop/order-success', async (req, res) => {
+      try {
+        const paymentStatus = await paymentOrder.paymentStatus(req.query.id);
+        const actualPage = '/eshop/order-success';
+        const queryParams = { locale: req.params.lang, paymentStatus };
 
-      nextApp.render(req, res, actualPage, queryParams);
+        nextApp.render(req, res, actualPage, queryParams);
+      } catch (err) {
+        throw new Error(err);
+      }
     });
     app.get('/:lang/obchodni-podminky', (req, res) => {
       const actualPage = '/obchodni-podminky';

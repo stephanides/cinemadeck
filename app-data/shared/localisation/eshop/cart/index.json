@@ -32,7 +32,8 @@
     "payPal": "PayPal",
     "bankTransfer": "Bank transfer",
     "notePlaceHolder": "Note",
-    "VAT": "Including VAT."
+    "VAT": "Including VAT.",
+    "GPRedirect": "The CinemaDeck website will be redirected to payment gateway..."
   },
   "cz": {
     "billingDataToFill": "Vyplňte prosím vaše fakturační údaje",
@@ -67,6 +68,7 @@
     "payPal": "PayPal",
     "bankTransfer": "Bankovní prevod",
     "notePlaceHolder": "Poznámka",
-    "VAT": "Ceny jsou uvedeny s DPH."
+    "VAT": "Ceny jsou uvedeny s DPH.",
+    "GPRedirect": "Stránka CinemaDeck bude přesměrovaná na platobní bránu..."
   }
 }

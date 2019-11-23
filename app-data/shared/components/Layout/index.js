@@ -5,13 +5,15 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Navigation from '../Navigation';
+import GoPayRedirectModal from '../GoPayRedirectModal';
 
 import styles from './styles/layout.style';
 
 const Layout = ({
-  cart, isCart, isHome, lang, children,
+  cart, isCart, isHome, lang, children, goPayRedirect,
 }) => (
   <div className={isCart ? 'bg-light' : undefined}>
+    <GoPayRedirectModal lang={lang} show={goPayRedirect} />
     <Navigation
       cart={cart}
       lang={lang}
@@ -26,6 +28,7 @@ const Layout = ({
 );
 
 Layout.defaultProps = {
+  goPayRedirect: false,
   isCart: false,
   cart: [],
 };
@@ -49,6 +52,7 @@ Layout.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  goPayRedirect: PropTypes.bool,
   isHome: PropTypes.bool.isRequired,
   lang: PropTypes.string.isRequired,
 };

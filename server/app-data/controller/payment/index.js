@@ -1,8 +1,10 @@
 /* eslint-disable camelcase */
 const gopay = require('gopay-nodejs');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const { gp: { ClientID, ClientSecret, SandBox } } = require('../../config');
 const Order = require('../../db/models/Order');
+
+const dev = process.env.NODE_ENV === 'production';
 
 class PaymentController {
   constructor() {
@@ -13,10 +15,6 @@ class PaymentController {
       target: {
         type: 'ACCOUNT',
         goid: '8897572915',
-      },
-      callback: {
-        return_url: 'http://localhost:3004/cz/home',
-        // notification_url: 'http://localhost:3004/cz/home',
       },
     };
   }
@@ -39,24 +37,34 @@ class PaymentController {
         count: item.count,
         type: 'ITEM',
         name: item.title,
-        product_url: 'http://localhost:3004/cz/eshop',
+        product_url: `${dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/eshop`,
         amount: (item.price * 100) * item.count,
         vat_rate: 21,
       }));
       const data = {
         ...this.paymentData,
         amount: req.body.totalPriceToPay * 100,
+        callback: {
+          return_url: `${dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/eshop/order-success`,
+        },
         currency: req.body.currency,
+        payer: {
+          contact: {
+            first_name: req.body.name.split(' ')[0],
+            last_name: req.body.name.split(' ')[1],
+            email: req.body.email,
+            postal_code: req.body.address.psc,
+            country_code: req.body.address.state,
+          },
+        },
         order_number,
         items,
       };
 
-      console.log(data);
       this.setPaymentData(data);
 
-      // res.json({ success: true, data: this.paymentData });
       const paymentResult = await this.GoPay.createPayment(this.paymentData);
-      console.log(paymentResult);
+      // console.log(paymentResult);
 
       res.json({
         token: this.token,
@@ -64,6 +72,18 @@ class PaymentController {
       });
     } catch (err) {
       console.log(err);
+      throw new Error(err);
+    }
+  }
+
+  async paymentStatus(id) {
+    try {
+      const status = await this.GoPay.getStatus(id);
+
+      return status;
+    } catch (err) {
+      console.log(err);
+      throw new Error(err);
     }
   }
 

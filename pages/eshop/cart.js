@@ -39,6 +39,7 @@ const ShoppingCart = compose(
 }) => {
   const [order, handleOrder] = useState(initialState.order);
   const [stateSelected, handleStateChange] = useState(initialState.stateSelected);
+  const [redirectGP, handleRedirectGP] = useState(false);
 
   useEffect(() => {
     const checkCart = async () => {
@@ -94,6 +95,7 @@ const ShoppingCart = compose(
         },
         currency: lang === 'cz' ? 'CZK' : 'EUR',
         email: form.email.value,
+        lang,
         products: formattedCart,
         note: form.note.value,
         totalPriceToPay: lang === 'cz'
@@ -101,7 +103,7 @@ const ShoppingCart = compose(
           : cart.reduce((a, b) => (a + b.totalPrice.en), 0),
       };
 
-      console.log(orderData);
+      // console.log(orderData);
 
       if (orderData.paymentMethod === 0) {
         try {
@@ -111,19 +113,21 @@ const ShoppingCart = compose(
             headers: { 'Content-Type': 'application/json;charset=utf-8' },
           });
 
-          console.log(response);
-
           if (response.status === 200) {
             const responseJSON = await response.json();
 
             const { paymentResult: { gw_url } } = responseJSON;
 
             if (gw_url) {
-              console.log(gw_url);
+              handleRedirectGP(true);
 
-              /* if (window) {
-                window.location.href = gw_url;
-              } */
+              const timeToRedirect = setTimeout(() => {
+                if (window) {
+                  handleRedirectGP(false);
+                  clearTimeout(timeToRedirect);
+                  window.location.href = gw_url;
+                }
+              }, 2500);
             } else {
               throw new Error(response.statusText);
             }
@@ -155,6 +159,7 @@ const ShoppingCart = compose(
       lang={lang}
       isCart
       isHome={false}
+      goPayRedirect={redirectGP}
     >
       <Container>
         <form
