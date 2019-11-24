@@ -1,15 +1,16 @@
 /* eslint-disable camelcase */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import LazyLoad from 'react-lazyload';
 import { compose, graphql } from 'react-apollo';
 import { Container } from 'reactstrap';
 import { getProductsFromCart } from '../../app-data/graphql/query';
 import { initCartMutation } from '../../app-data/graphql/mutation';
 import Layout from '../../app-data/shared/components/Layout';
 
+import Failed from '../../app-data/pages/eshop/order-success/components/Failed';
+import Success from '../../app-data/pages/eshop/order-success/components/Succes';
+
 import styles from '../../app-data/pages/eshop/order-success/styles/order-success.style';
-import locale from '../../app-data/shared/localisation/eshop/order-success';
 
 const DynamicFooter = dynamic(import('../../app-data/shared/components/Footer'));
 
@@ -20,6 +21,7 @@ const OrderSuccess = compose(
 )(({
   lang, cartProducts: { cart }, mutate, paymentStatus: { order_number, state },
 }) => {
+  const [productImg, handleProductImg] = useState('order-success.jpg');
   useEffect(() => {
     const checkCart = async () => {
       try {
@@ -34,13 +36,27 @@ const OrderSuccess = compose(
         console.log(err);
       }
     };
+    const setProductImages = (cartData) => {
+      let img = '';
+
+      for (let i = 0; i < cartData.length; i += 1) {
+        if (img.indexOf(cartData[i].id) < 0) {
+          img += cartData[i].id;
+        }
+      }
+
+      return img;
+    };
+
+    const imgSrc = `order-success/${setProductImages(cart)}.png`;
 
     checkCart();
+    handleProductImg(imgSrc);
 
     return () => null;
-  }, []);
-  console.log(`${order_number}: ${state}`);
-  console.log(cart);
+  }, [cart]);
+  // console.log(`${order_number}: ${state}`);
+  // console.log(cart);
 
   return (
     <Layout
@@ -50,25 +66,21 @@ const OrderSuccess = compose(
     >
       <div className="order-success">
         <Container>
-          <div className="order-success-head d-flex align-items-center justify-content-center mt-3">
-            <h1 className="text-uppercase w-100 text-center">{locale[lang].welcomeToFamily}</h1>
-            <h2 className="text-uppercase w-100 text-center">{locale[lang].downloadFIlesBelow}</h2>
-          </div>
-          <div className="order-success-content">
-            <LazyLoad height={380}>
-              <img className="d-block mx-auto pb-4" src="/static/images/order-sucess.jpg" alt="" />
-            </LazyLoad>
-            <button type="button" className="text-uppercase d-block mt-4 mb-4 mx-auto">{locale[lang].downloadBtn}</button>
-            <p className="text-center my-5">
-              {locale[lang].descriptionText}
-            </p>
-          </div>
+          {
+            state === 'PAID'
+              ? (
+                <Success
+                  lang={lang}
+                  productImg={productImg}
+                />
+              ) : <Failed lang={lang} />
+          }
         </Container>
         <div className="position-relative">
           <DynamicFooter lang={lang} />
         </div>
       </div>
-      <style jsx>{styles}</style>
+      <style jsx global>{styles}</style>
     </Layout>
   );
 });

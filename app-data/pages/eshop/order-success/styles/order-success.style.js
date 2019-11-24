@@ -1,7 +1,10 @@
 import css from 'styled-jsx/css';
 
-export default css`
+export default css.global`
   .order-success {
+    .order-failed {
+      margin-top: 125px!important;
+    }
     .order-success-head {
       min-height: 250px;
       flex-direction: column;

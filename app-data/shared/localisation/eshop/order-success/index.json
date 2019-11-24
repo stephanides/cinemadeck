@@ -3,12 +3,16 @@
     "welcomeToFamily": "Welcome to the CINEMADECK family!",
     "downloadFIlesBelow": "You can download files below",
     "downloadBtn": "Download",
-    "descriptionText": "In the product GUIDE you will find your code to the private Facebook group, in which you will find other CinemaDeck users. You can share your work here and get more advice and tips. Together we learn and improve our results."
+    "descriptionText": "In the product GUIDE you will find your code to the private Facebook group, in which you will find other CinemaDeck users. You can share your work here and get more advice and tips. Together we learn and improve our results.",
+    "paymentFailed": "We are sorry payment was not successful.",
+    "returnToShopBtn": "Please return to shop cart to try again."
   },
   "cz": {
     "welcomeToFamily": "Vítej v rodine CINEMADECK Uživatelů!",
     "downloadFIlesBelow": "Níže si můžeš stáhnout zakoupené produkty",
     "downloadBtn": "Stáhnout",
-    "descriptionText": "V produktu GUIDE najdeš svůj kód do soukromé Facebook skupiny, ve které najdeš ostatní uživatelé CinemaDeck. Můžeš tady sdílet svou práci a dostávat další rady a tipy. Společně se tak učíme a zdokonalujeme své výsledky."
+    "descriptionText": "V produktu GUIDE najdeš svůj kód do soukromé Facebook skupiny, ve které najdeš ostatní uživatelé CinemaDeck. Můžeš tady sdílet svou práci a dostávat další rady a tipy. Společně se tak učíme a zdokonalujeme své výsledky.",
+    "paymentFailed": "Je nám líto platba nebyla úspěšná.",
+    "returnToShopBtn": "Prosím vraťte se do nákupního košíku a skuste to znovu."
   }
 }
