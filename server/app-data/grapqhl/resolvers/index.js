@@ -95,6 +95,7 @@ module.exports = {
           name,
           note,
           orderNum,
+          orderStatus: 'CREATED',
           paymentMethod,
           products,
           totalPriceToPay,
@@ -103,15 +104,17 @@ module.exports = {
         throw new Error(err.message);
       }
     },
-    updateOrder: async (root, { orderNum, orderStatus }) => {
+    updateOrder: async (root, { orderUpdate: { orderNum, orderStatus } }) => {
       try {
-        const orderToUpdate = Order.findOne({ orderNum });
+        const orderToUpdate = await Order.findOne({ orderNum });
 
         if (!orderToUpdate) {
           throw new Error('Order not found');
         }
 
-        const updatedOrder = await Order.findOneAndUpdate({ orderNum }, { $set: { orderStatus } });
+        const updatedOrder = await Order.findOneAndUpdate(
+          { orderNum }, { $set: { orderStatus } }, { uppsert: true, new: true },
+        );
 
         return updatedOrder;
       } catch (err) {

@@ -52,6 +52,7 @@ const typeDefs = gql`
     email: String!
     name: String!
     note: String
+    orderStatus: String!
     paymentMethod: Int!
     orderNum: String!
     products: [OrderedProduct]!

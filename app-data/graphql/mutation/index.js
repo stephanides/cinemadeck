@@ -20,6 +20,32 @@ export const createOrderMutation = gql`
       email
       name
       orderNum
+      orderStatus
+      paymentMethod
+      products {
+        count
+        price
+        title
+      }
+      totalPriceToPay
+    }
+  }
+`;
+
+export const updateOrderMutation = gql`
+  mutation updateOrder($orderUpdate: OrderUpdateInput) {
+    updateOrder(orderUpdate: $orderUpdate) {
+      address {
+        city
+        psc
+        state
+        street
+      }
+      currency
+      email
+      name
+      orderNum
+      orderStatus
       paymentMethod
       products {
         count

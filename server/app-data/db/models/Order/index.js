@@ -10,6 +10,7 @@ const Order = mongoose.Schema({
   email: String,
   name: String,
   orderNum: String,
+  orderStatus: String,
   paymentMethod: Number,
   products: [Object],
   totalPriceToPay: Number,

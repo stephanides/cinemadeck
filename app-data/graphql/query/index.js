@@ -20,6 +20,7 @@ export const getOrdersQuery = gql`
       email
       name
       orderNum
+      orderStatus
       paymentMethod
       products {
         count

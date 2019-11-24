@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { compose, graphql } from 'react-apollo';
 import { Container } from 'reactstrap';
 import { getProductsFromCart } from '../../app-data/graphql/query';
-import { initCartMutation } from '../../app-data/graphql/mutation';
+import { initCartMutation, updateOrderMutation } from '../../app-data/graphql/mutation';
 import Layout from '../../app-data/shared/components/Layout';
 
 import Failed from '../../app-data/pages/eshop/order-success/components/Failed';
@@ -18,8 +18,9 @@ const OrderSuccess = compose(
   // graphql(getLocaleQuery),
   graphql(initCartMutation),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
+  graphql(updateOrderMutation, { name: 'updateOrderMutate' }),
 )(({
-  lang, cartProducts: { cart }, mutate, paymentStatus,
+  lang, cartProducts: { cart }, mutate, updateOrderMutate, paymentStatus,
 }) => {
   let order_number;
   let state;
@@ -55,15 +56,24 @@ const OrderSuccess = compose(
 
       return img;
     };
+    const updateOrderData = async (orderNum, orderStatus) => {
+      try {
+        const updatedData = await updateOrderMutate({ variables: { orderUpdate: { orderNum, orderStatus } } });
+        console.log(updatedData);
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
     const imgSrc = `order-success/${setProductImages(cart)}.png`;
 
     checkCart();
     handleProductImg(imgSrc);
+    updateOrderData(order_number, state);
 
     return () => null;
-  }, [cart]);
-  // console.log(`${order_number}: ${state}`);
+  }, []);
+  console.log(`${order_number}: ${state}`);
   // console.log(cart);
 
   return (
