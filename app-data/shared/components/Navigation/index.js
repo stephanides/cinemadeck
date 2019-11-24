@@ -82,6 +82,10 @@ const Navigation = graphql(
         asUrl = `/${locale}/eshop/funnel`;
         path = `/eshop/funnel?locale=${locale}`;
         break;
+      case '/eshop/order-success':
+        asUrl = `/${locale}/eshop/order-success`;
+        path = `/eshop/order-success?locale=${locale}`;
+        break;
       case '/obchodni-podminky':
         asUrl = `/${locale}/obchodni-podminky`;
         path = `/obchodni-podminky?locale=${locale}`;

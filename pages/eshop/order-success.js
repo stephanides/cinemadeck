@@ -19,8 +19,16 @@ const OrderSuccess = compose(
   graphql(initCartMutation),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
 )(({
-  lang, cartProducts: { cart }, mutate, paymentStatus: { order_number, state },
+  lang, cartProducts: { cart }, mutate, paymentStatus,
 }) => {
+  let order_number;
+  let state;
+
+  if (paymentStatus) {
+    order_number = paymentStatus.order_number;
+    state = paymentStatus.state;
+  }
+
   const [productImg, handleProductImg] = useState('order-success.jpg');
   useEffect(() => {
     const checkCart = async () => {
