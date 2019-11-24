@@ -19,9 +19,11 @@ export const createOrderMutation = gql`
       currency
       email
       name
+      orderNum
       paymentMethod
       products {
         count
+        price
         title
       }
       totalPriceToPay

@@ -13,6 +13,7 @@ const typeDefs = gql`
     address: AddressInput!
     currency: String!
     email: String!
+    lang: String!
     name: String!
     note: String
     paymentMethod: Int!
@@ -22,7 +23,13 @@ const typeDefs = gql`
 
   input OrderedProductInput {
     count: Int!
+    price: Int!
     title: String!
+  }
+
+  input OrderUpdateInput {
+    orderNum: String
+    orderStatus: String
   }
 
   input UserLogInput {
@@ -46,7 +53,7 @@ const typeDefs = gql`
     name: String!
     note: String
     paymentMethod: Int!
-    orderNum: String!,
+    orderNum: String!
     products: [OrderedProduct]!
     totalPriceToPay: Float!
   }
@@ -77,6 +84,7 @@ const typeDefs = gql`
 
   type Mutation {
     createOrder(order: OrderInput): Order
+    updateOrder(orderUpdate: OrderUpdateInput): Order
     loginUser(user: UserLogInput): User
   }
 

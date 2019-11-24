@@ -29,9 +29,10 @@ class PaymentController {
       const orders = await Order.find().sort('orderNum');
 
       const lastOrder = orders && orders.length > 0 ? orders.pop() : null;
-      const lastOrderNum = lastOrder ? lastOrder.orderNum : null;
-      const time = new Date();
-      const order_number = lastOrderNum ? String(parseInt(lastOrderNum, 10) + 1) : `${time.getFullYear}001`;
+      const orderNum = lastOrder ? lastOrder.orderNum : null;
+      // const time = new Date();
+      const order_number = orderNum;
+      // ? String(parseInt(lastOrderNum, 10) + 1) : `${time.getFullYear}001`;
 
       const items = req.body.products.map((item) => ({
         count: item.count,

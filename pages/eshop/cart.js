@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { Container, Col, Row } from 'reactstrap';
 import { compose, graphql } from 'react-apollo';
 import { /* getLocaleQuery, */ getProductsFromCart } from '../../app-data/graphql/query';
-import { /* createOrderMutation, */ initCartMutation } from '../../app-data/graphql/mutation';
+import { createOrderMutation, initCartMutation } from '../../app-data/graphql/mutation';
 import Layout from '../../app-data/shared/components/Layout';
 import ContactInfo from '../../app-data/pages/eshop/cart/components/ContactInfo';
 import CartCheckout from '../../app-data/pages/eshop/cart/components/CartCheckout';
@@ -31,11 +31,11 @@ const initialState = {
   stateSelected: 0,
 };
 const ShoppingCart = compose(
-  // graphql(createOrderMutation, { name: 'createOrder' }),
+  graphql(createOrderMutation, { name: 'createOrder' }),
   graphql(initCartMutation),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
 )(({
-  cartProducts: { cart }, /* createOrder, */ lang, mutate, orderDiscount,
+  cartProducts: { cart }, createOrder, lang, mutate, orderDiscount,
 }) => {
   const [order, handleOrder] = useState(initialState.order);
   const [stateSelected, handleStateChange] = useState(initialState.stateSelected);
@@ -83,7 +83,7 @@ const ShoppingCart = compose(
         return newObject;
       });
 
-      const orderData = {
+      let orderData = {
         ...order,
         name: form.name.value,
         address: {
@@ -103,10 +103,21 @@ const ShoppingCart = compose(
           : cart.reduce((a, b) => (a + b.totalPrice.en), 0),
       };
 
-      // console.log(orderData);
+      try {
+        const { data: { createOrder: orderCreated } } = await createOrder({
+          variables: {
+            order: orderData,
+          },
+        });
 
-      if (orderData.paymentMethod === 0) {
-        try {
+        orderData = {
+          ...orderData,
+          orderNum: orderCreated.orderNum,
+        };
+
+        console.log(orderData);
+
+        if (orderData.paymentMethod === 0) {
           const response = await fetch('/payment', {
             method: 'POST',
             body: JSON.stringify(orderData),
@@ -134,20 +145,10 @@ const ShoppingCart = compose(
           } else {
             throw new Error(response.statusText);
           }
-        } catch (err) {
-          console.log(err);
         }
-      }
-
-      /* try {
-        await createOrder({
-          variables: {
-            order: orderData,
-          },
-        });
       } catch (err) {
         console.log(err);
-      } */
+      }
     }
 
     form.classList.add('was-validated');

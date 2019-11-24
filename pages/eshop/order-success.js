@@ -1,9 +1,10 @@
+/* eslint-disable camelcase */
 import React, { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import LazyLoad from 'react-lazyload';
 import { compose, graphql } from 'react-apollo';
 import { Container } from 'reactstrap';
-import { /* getLocaleQuery, */ getProductsFromCart } from '../../app-data/graphql/query';
+import { getProductsFromCart } from '../../app-data/graphql/query';
 import { initCartMutation } from '../../app-data/graphql/mutation';
 import Layout from '../../app-data/shared/components/Layout';
 
@@ -17,7 +18,7 @@ const OrderSuccess = compose(
   graphql(initCartMutation),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
 )(({
-  lang, cartProducts: { cart }, mutate, paymentStatus: { state },
+  lang, cartProducts: { cart }, mutate, paymentStatus: { order_number, state },
 }) => {
   useEffect(() => {
     const checkCart = async () => {
@@ -38,7 +39,7 @@ const OrderSuccess = compose(
 
     return () => null;
   }, []);
-  console.log(state);
+  console.log(`${order_number}: ${state}`);
   console.log(cart);
 
   return (

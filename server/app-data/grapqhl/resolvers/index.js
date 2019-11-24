@@ -82,6 +82,7 @@ module.exports = {
           name,
           note,
           orderNum,
+          orderStatus: 'CREATED',
           paymentMethod,
           products,
           totalPriceToPay,
@@ -100,6 +101,21 @@ module.exports = {
         };
       } catch (err) {
         throw new Error(err.message);
+      }
+    },
+    updateOrder: async (root, { orderNum, orderStatus }) => {
+      try {
+        const orderToUpdate = Order.findOne({ orderNum });
+
+        if (!orderToUpdate) {
+          throw new Error('Order not found');
+        }
+
+        const updatedOrder = await Order.findOneAndUpdate({ orderNum }, { $set: { orderStatus } });
+
+        return updatedOrder;
+      } catch (err) {
+        throw new Error(err);
       }
     },
     loginUser: async (root, { user: { email, password } }) => {
