@@ -58,7 +58,11 @@ const OrderSuccess = compose(
     };
     const updateOrderData = async (orderNum, orderStatus) => {
       try {
-        const updatedData = await updateOrderMutate({ variables: { orderUpdate: { orderNum, orderStatus } } });
+        const updatedData = await updateOrderMutate({
+          variables: {
+            orderUpdate: { orderNum, orderStatus },
+          },
+        });
         console.log(updatedData);
       } catch (err) {
         console.log(err);
@@ -67,14 +71,14 @@ const OrderSuccess = compose(
 
     const imgSrc = `order-success/${setProductImages(cart)}.png`;
 
-    checkCart();
-    handleProductImg(imgSrc);
-    updateOrderData(order_number, state);
+    if (order_number) {
+      checkCart();
+      handleProductImg(imgSrc);
+      updateOrderData(order_number, state);
+    }
 
     return () => null;
-  }, []);
-  console.log(`${order_number}: ${state}`);
-  // console.log(cart);
+  }, [cart]);
 
   return (
     <Layout
@@ -90,6 +94,7 @@ const OrderSuccess = compose(
                 <Success
                   lang={lang}
                   productImg={productImg}
+                  cart={cart}
                 />
               ) : <Failed lang={lang} />
           }
