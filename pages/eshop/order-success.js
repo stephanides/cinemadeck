@@ -47,6 +47,19 @@ const OrderSuccess = compose(
     };
     const setProductImages = (cartData) => {
       let img = '';
+      console.log(cartData);
+
+      const compare = (a, b) => {
+        if (a.id < b.id) {
+          return -1;
+        }
+        if (a.id > b.id) {
+          return 1;
+        }
+        return 0;
+      };
+
+      cartData.sort(compare);
 
       for (let i = 0; i < cartData.length; i += 1) {
         if (img.indexOf(cartData[i].id) < 0) {
@@ -79,6 +92,8 @@ const OrderSuccess = compose(
 
     return () => null;
   }, [cart]);
+
+  console.log(productImg);
 
   return (
     <Layout

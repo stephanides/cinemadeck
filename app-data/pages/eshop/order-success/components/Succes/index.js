@@ -13,6 +13,18 @@ const Success = ({ cart, lang, productImg }) => {
       const zip = new JSZip();
       let filesId = '';
 
+      const compare = (a, b) => {
+        if (a.id < b.id) {
+          return -1;
+        }
+        if (a.id > b.id) {
+          return 1;
+        }
+        return 0;
+      };
+
+      cart.sort(compare);
+
       for (let i = 0; i < cart.length; i += 1) {
         if (filesId.indexOf(cart[i].id) < 0) {
           filesId += cart[i].id;
