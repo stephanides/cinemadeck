@@ -11,11 +11,11 @@ import Header from '../app-data/pages/index/components/Header';
 
 import About from '../app-data/pages/index/components/About';
 import Unique from '../app-data/pages/index/components/Unique';
-import Content from '../app-data/pages/index/components/Content';
+// import Content from '../app-data/pages/index/components/Content';
 import SlideShow from '../app-data/pages/index/components/Slideshow';
 import CardComposition from '../app-data/pages/index/components/CardComposition';
 import FreeDownload from '../app-data/pages/index/components/FreeDownload';
-import Steps from '../app-data/pages/index/components/Steps';
+// import Steps from '../app-data/pages/index/components/Steps';
 import Package from '../app-data/pages/index/components/Package';
 import Videos from '../app-data/pages/index/components/Videos';
 import FAQ from '../app-data/pages/index/components/FAQ';
@@ -115,7 +115,11 @@ const DynamicFooter = dynamic(
   },
 ); */
 
-const IndexPage = graphql(getProductsFromCart, { name: 'cartProducts' })(({ cartProducts: { cart = [] }, lang }) => (
+const IndexPage = graphql(
+  getProductsFromCart, { name: 'cartProducts' },
+)(({
+  cartProducts: { cart = [] }, lang,
+}) => (
   <Layout
     cart={cart}
     lang={lang}

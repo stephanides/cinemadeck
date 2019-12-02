@@ -7,6 +7,30 @@ export const getLocaleQuery = gql`
   }
 `;
 
+export const getOrderByNumQuery = gql`
+  query order($orderNum: String) {
+    order(orderNum: $orderNum) {
+      address {
+        city
+        psc
+        state
+        street
+      }
+      currency
+      email
+      name
+      orderNum
+      orderStatus
+      paymentMethod
+      products {
+        count
+        title
+      }
+      totalPriceToPay
+    }
+  }
+`;
+
 export const getOrdersQuery = gql`
   query {
     orders {

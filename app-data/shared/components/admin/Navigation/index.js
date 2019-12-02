@@ -22,6 +22,7 @@ const Navigation = ({ userName }) => (
           <div>
             <span>{userName}</span>
           </div>
+          {/*
           <div>
             <div>
               <ul>
@@ -33,6 +34,7 @@ const Navigation = ({ userName }) => (
               </ul>
             </div>
           </div>
+          */}
         </li>
         <li className="ml-3">
           <button className="border-0 bg-transparent" type="button" onClick={signOut}>

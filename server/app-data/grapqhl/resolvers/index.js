@@ -12,9 +12,26 @@ const User = require('../../db/models/User');
 module.exports = {
   Query: {
     orders: async () => {
-      const orders = Order.find();
+      try {
+        const orders = await Order.find();
 
-      return orders;
+        return orders;
+      } catch (err) {
+        return err.message;
+      }
+    },
+    order: async (root, { orderNum }) => {
+      try {
+        const order = await Order.findOne({ orderNum });
+
+        if (!order) {
+          throw new Error('Order not found');
+        }
+
+        return order;
+      } catch (err) {
+        return err.message;
+      }
     },
     user: async (root, { id }) => {
       try {

@@ -9,6 +9,7 @@ const resolvers = require('./app-data/grapqhl/resolvers');
 const db = require('./app-data/db');
 const setup = require('./app-data/setup');
 
+const MailNotificationRoute = require('./app-data/router/mail');
 const PaymentRoute = require('./app-data/router/payment');
 const PaymentController = require('./app-data/controller/payment');
 
@@ -83,6 +84,7 @@ const App = async () => {
       res.redirect(`${req.locale.language}/eshop/order-success`);
     });
     //
+    app.use(MailNotificationRoute);
     app.use(PaymentRoute);
     // Routes
     app.get('/:lang/home', (req, res) => {

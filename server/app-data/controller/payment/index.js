@@ -33,6 +33,7 @@ class PaymentController {
       // const time = new Date();
       const order_number = orderNum;
       // ? String(parseInt(lastOrderNum, 10) + 1) : `${time.getFullYear}001`;
+      console.log('DEV: ', dev);
 
       const items = req.body.products.map((item) => ({
         count: item.count,
@@ -47,6 +48,7 @@ class PaymentController {
         amount: req.body.totalPriceToPay * 100,
         callback: {
           return_url: `${dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/eshop/order-success`,
+          notification_url: `${dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/send-order-notification}`,
         },
         currency: req.body.currency,
         payer: {

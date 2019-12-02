@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { compose, graphql } from 'react-apollo';
 import { Container } from 'reactstrap';
-import { getProductsFromCart } from '../../app-data/graphql/query';
+import { getProductsFromCart, getOrderByNumQuery } from '../../app-data/graphql/query';
 import { initCartMutation, updateOrderMutation } from '../../app-data/graphql/mutation';
 import Layout from '../../app-data/shared/components/Layout';
 
@@ -18,10 +18,21 @@ const OrderSuccess = compose(
   // graphql(getLocaleQuery),
   graphql(initCartMutation),
   graphql(getProductsFromCart, { name: 'cartProducts' }),
+  graphql(getOrderByNumQuery, {
+    name: 'getOrderByNum',
+    options: ({ paymentStatus: { order_number } }) => ({
+      variables: { orderNum: order_number },
+    }),
+  }),
   graphql(updateOrderMutation, { name: 'updateOrderMutate' }),
 )(({
-  lang, cartProducts: { cart }, mutate, updateOrderMutate, paymentStatus,
+  lang, cartProducts: { cart }, mutate, updateOrderMutate,
+  getOrderByNum: { error, order }, paymentStatus,
 }) => {
+  if (error) {
+    return <>{error}</>;
+  }
+
   let order_number;
   let state;
 
@@ -47,7 +58,7 @@ const OrderSuccess = compose(
     };
     const setProductImages = (cartData) => {
       let img = '';
-      console.log(cartData);
+      // console.log(cartData);
 
       const compare = (a, b) => {
         if (a.id < b.id) {
@@ -87,13 +98,14 @@ const OrderSuccess = compose(
     if (order_number) {
       checkCart();
       handleProductImg(imgSrc);
-      updateOrderData(order_number, state);
+
+      if (order && order.orderStatus !== state) {
+        updateOrderData(order_number, state);
+      }
     }
 
     return () => null;
   }, [cart]);
-
-  console.log(productImg);
 
   return (
     <Layout

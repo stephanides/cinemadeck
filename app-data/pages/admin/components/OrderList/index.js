@@ -8,7 +8,11 @@ import OrderInfo from './components/OrderInfo';
 
 const OrderList = graphql(
   getOrdersQuery,
-)(({ data: { error, loading, orders } }) => {
+)(({
+  data: {
+    error, loading, orders,
+  },
+}) => {
   if (error) {
     return <>{error}</>;
   }
@@ -19,14 +23,19 @@ const OrderList = graphql(
   return (
     <div>
       {
-        orders && orders.length > 0
+        (orders && orders.length > 0)
           ? (
             <ListGroup>
               {
                 orders.map((item) => {
                   const { orderNum } = item;
 
-                  return <OrderInfo data={item} key={orderNum} />;
+                  return (
+                    <OrderInfo
+                      data={item}
+                      key={orderNum}
+                    />
+                  );
                 })
               }
             </ListGroup>

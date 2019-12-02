@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -18,40 +17,55 @@ const OrderInfo = ({
   },
 }) => {
   const [collapse, toggle] = useState(false);
+  let paymentMethodResult = 'Platební kartou';
+
+  if (paymentMethod === 1) {
+    paymentMethodResult = 'Prostřednictvím Pay Pal';
+  }
+  if (paymentMethodResult === 2) {
+    paymentMethodResult = 'Bankovním převodem';
+  }
 
   return (
     <ListGroupItem>
       <div className="d-flex justify-content-between mb-3">
         <div>
-          Objednávka č.
+          Objednávka č.:
           {' '}
-          {orderNum}
+          <em>
+            {orderNum}
+          </em>
         </div>
         <div>
           <Button
-            color="primary"
+            color={collapse ? 'danger' : 'primary'}
             onClick={() => toggle(!collapse)}
           >
-            Info.
+            {collapse ? 'Zavřít' : 'Info.'}
           </Button>
         </div>
       </div>
-      {''}
       <Collapse isOpen={collapse}>
         <Card>
           <CardBody>
+            <h6 className="border-bottom font-weight-bold pb-3 mb-3">Zákazník</h6>
             <Row className="mb-3">
               <Col>
-                <strong>Zákazník:</strong>
+                <p className="mb-0"><strong>Jméno a Příjmení:</strong></p>
+                <p className="mb-0"><strong>e-mail:</strong></p>
               </Col>
               <Col>
                 <p className="mb-0">{name}</p>
                 <p className="mb-0">{email}</p>
               </Col>
             </Row>
+            <h6 className="border-bottom font-weight-bold pb-3 mb-3">Dodací adresa a fakturační údaje</h6>
             <Row className="mb-3">
               <Col>
-                <strong>Fakturační adresa:</strong>
+                <p className="mb-0"><strong>Ulice:</strong></p>
+                <p className="mb-0"><strong>PSČ:</strong></p>
+                <p className="mb-0"><strong>Město:</strong></p>
+                <p className="mb-0"><strong>Stát:</strong></p>
               </Col>
               <Col>
                 <p className="mb-0">{address.street}</p>
@@ -60,6 +74,7 @@ const OrderInfo = ({
                 <p className="mb-0">{address.state}</p>
               </Col>
             </Row>
+            <h6 className="border-bottom font-weight-bold pb-3 mb-3">Informace o objednaních produktech</h6>
             <Row className="mb-3">
               <Col>
                 <strong>Zakoupené produkty:</strong>
@@ -70,7 +85,12 @@ const OrderInfo = ({
                     const { count, title } = item;
 
                     return (
-                      <p className="mb-0" key={title}>{`${count}x ${title}`}</p>
+                      <p
+                        className="mb-0"
+                        key={title}
+                      >
+                        {`${count}x ${title}`}
+                      </p>
                     );
                   })
                 }
@@ -81,19 +101,15 @@ const OrderInfo = ({
                 <strong>Uhrazeno:</strong>
               </Col>
               <Col>
-                {
-                  paymentMethod > 0 ? (
-                    paymentMethod < 2 ? 'Prostřednictvím Pay Pal' : 'Bankovním převodem'
-                  ) : 'Platební kartou'
-                }
+                <p className="mb-0">{paymentMethodResult}</p>
               </Col>
             </Row>
             <Row>
               <Col className="border-top pt-3">
-                <p className="text-uppercase font-weight-bold">Suma</p>
+                <p className="text-uppercase font-weight-bold">Suma a měna</p>
               </Col>
               <Col className="border-top pt-3">
-                <p className="text-uppercase font-weight-bold">{`${totalPriceToPay} ${currency}`}</p>
+                <p className="text-uppercase font-weight-bold">{`${totalPriceToPay},- ${currency}`}</p>
               </Col>
             </Row>
           </CardBody>
