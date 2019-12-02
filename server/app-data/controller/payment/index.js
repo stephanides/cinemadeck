@@ -4,7 +4,7 @@ const gopay = require('gopay-nodejs');
 const { gp: { ClientID, ClientSecret, SandBox } } = require('../../config');
 const Order = require('../../db/models/Order');
 
-const dev = process.env.NODE_ENV === 'production';
+const dev = process.env.NODE_ENV !== 'production';
 
 class PaymentController {
   constructor() {
@@ -33,13 +33,13 @@ class PaymentController {
       // const time = new Date();
       const order_number = orderNum;
       // ? String(parseInt(lastOrderNum, 10) + 1) : `${time.getFullYear}001`;
-      console.log('DEV: ', dev);
+      // console.log('DEV: ', dev);
 
       const items = req.body.products.map((item) => ({
         count: item.count,
         type: 'ITEM',
         name: item.title,
-        product_url: `${dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/eshop`,
+        product_url: `${!dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/eshop`,
         amount: (item.price * 100) * item.count,
         vat_rate: 21,
       }));
@@ -47,8 +47,8 @@ class PaymentController {
         ...this.paymentData,
         amount: req.body.totalPriceToPay * 100,
         callback: {
-          return_url: `${dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/eshop/order-success`,
-          notification_url: `${dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/send-order-notification}`,
+          return_url: `${!dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/eshop/order-success`,
+          notification_url: `${!dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/send-order-notification}`,
         },
         currency: req.body.currency,
         payer: {
