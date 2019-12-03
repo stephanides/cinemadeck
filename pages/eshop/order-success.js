@@ -130,6 +130,7 @@ const OrderSuccess = compose(
                   lang={lang}
                   productImg={productImg}
                   cart={cart}
+                  orderNum={order_number}
                 />
               ) : <Failed lang={lang} />
           }

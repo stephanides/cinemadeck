@@ -57,6 +57,7 @@ const typeDefs = gql`
     orderNum: String!
     products: [OrderedProduct]!
     totalPriceToPay: Float!
+    userNotified: Boolean
   }
 
   type OrderedProduct {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import JSZip from 'jszip';
 import JSZipUtils from 'jszip-utils';
 import { saveAs } from 'file-saver';
@@ -7,7 +7,31 @@ import PropTypes from 'prop-types';
 
 import locale from '../../../../../shared/localisation/eshop/order-success';
 
-const Success = ({ cart, lang, productImg }) => {
+const Success = ({
+  cart, lang, productImg, orderNum,
+}) => {
+  useEffect(() => {
+    const handleSendSuccessMail = async () => {
+      const xhr = new XMLHttpRequest();
+      const url = '/send-order-notification';
+
+      xhr.open('POST', url);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      xhr.onload = () => {
+        if (xhr.status === 200 && xhr.responseText) {
+          console.log(xhr.responseText);
+        } else if (xhr.status !== 200) {
+          console.log(xhr.status);
+        }
+      };
+
+      xhr.send(JSON.stringify({ lang, orderNum }));
+    };
+
+    handleSendSuccessMail();
+  }, []);
+
   const handleDownloadZip = async () => {
     try {
       const zip = new JSZip();
@@ -181,6 +205,7 @@ Success.propTypes = {
   ).isRequired,
   lang: PropTypes.string.isRequired,
   productImg: PropTypes.string.isRequired,
+  orderNum: PropTypes.string.isRequired,
 };
 
 export default Success;

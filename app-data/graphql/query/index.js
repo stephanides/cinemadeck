@@ -27,6 +27,7 @@ export const getOrderByNumQuery = gql`
         title
       }
       totalPriceToPay
+      userNotified
     }
   }
 `;

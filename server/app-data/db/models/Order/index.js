@@ -14,6 +14,7 @@ const Order = mongoose.Schema({
   paymentMethod: Number,
   products: [Object],
   totalPriceToPay: Number,
+  userNotified: Boolean,
 });
 
 module.exports = mongoose.model('Order', Order);

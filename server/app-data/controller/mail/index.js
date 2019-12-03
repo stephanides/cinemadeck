@@ -18,15 +18,15 @@ class MailController {
 
   async sendOrderNotification(req, res, next) {
     try {
-      /* await this.transporter.sendMail({
+      await this.transporter.sendMail({
         from: 'info@codebrothers.sk',
         subject: `CinemaDeck | Objednávka: ${req.body.orderNum}`,
         html: `
         <h2>${localisation[req.body.lang].welcomeToFamily}</h2>
 
         `,
-        to: 'info@codebrothers.sk', // TODO change for Tonap e-mail address in production
-      }); */
+        to: 'viktor.vojtek@codebrothers.sk', // TODO change for Tonap e-mail address in production
+      });
 
       res.json({ message: 'Mail has been successfully sent', success: true });
     } catch (err) {
