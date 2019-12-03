@@ -1,5 +1,7 @@
 /* eslint-disable class-methods-use-this */
 const nodemailer = require('nodemailer');
+
+const Order = require('../../db/models/Order');
 const localisation = require('../../../../app-data/shared/localisation/eshop/order-success');
 
 class MailController {
@@ -27,6 +29,12 @@ class MailController {
         `,
         to: 'viktor.vojtek@codebrothers.sk', // TODO change for Tonap e-mail address in production
       });
+
+      await Order.findOneAndUpdate(
+        { orderNum: req.body.orderNum },
+        { $set: { userNotified: true } },
+        { uppsert: true, new: true },
+      );
 
       res.json({ message: 'Mail has been successfully sent', success: true });
     } catch (err) {

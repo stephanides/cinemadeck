@@ -3,13 +3,22 @@ import JSZip from 'jszip';
 import JSZipUtils from 'jszip-utils';
 import { saveAs } from 'file-saver';
 import LazyLoad from 'react-lazyload';
+import { graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 
+import { getOrderByNumQuery } from '../../../../../graphql/query';
 import locale from '../../../../../shared/localisation/eshop/order-success';
 
-const Success = ({
-  cart, lang, productImg, orderNum,
+const Success = graphql(getOrderByNumQuery)(({
+  cart, data: { error, loading, order }, lang, productImg, orderNum,
 }) => {
+  if (error) {
+    return <>{error}</>;
+  }
+  if (loading) {
+    return <>Loading</>;
+  }
+
   useEffect(() => {
     const handleSendSuccessMail = async () => {
       const xhr = new XMLHttpRequest();
@@ -29,7 +38,9 @@ const Success = ({
       xhr.send(JSON.stringify({ lang, orderNum }));
     };
 
-    handleSendSuccessMail();
+    if (order && !order.userNotified) {
+      handleSendSuccessMail();
+    }
   }, []);
 
   const handleDownloadZip = async () => {
@@ -182,7 +193,7 @@ const Success = ({
       </div>
     </>
   );
-};
+});
 
 Success.propTypes = {
   cart: PropTypes.arrayOf(
