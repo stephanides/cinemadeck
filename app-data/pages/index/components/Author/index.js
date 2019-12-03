@@ -34,7 +34,7 @@ const Author = ({ lang }) => (
             target="_blank"
             rel="noopener noreferrer"
             className="navbar-brand"
-            href="https://www.facebook.com/groups/2372222099482622/"
+            href="https://www.facebook.com/thecinemadeck/?view_public_for=105361277606740"
           >
             <img src="/static/images/author/facebook.png" alt="Facebook" />
           </a>
