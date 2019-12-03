@@ -4,6 +4,7 @@ const { ApolloServer } = require('apollo-server-express');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const nextjsApp = require('next');
+const cors = require('cors');
 const typeDefs = require('./app-data/grapqhl/typeDefs');
 const resolvers = require('./app-data/grapqhl/resolvers');
 const db = require('./app-data/db');
@@ -26,6 +27,7 @@ const App = async () => {
     const app = express();
 
     app.use(helmet());
+    app.use(cors());
     app.use(bodyParser.json({ limit: '5mb', extended: true }));
     app.use(createLocaleMiddleware({
       priority: ['default', 'accept-language'],

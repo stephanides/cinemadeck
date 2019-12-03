@@ -5,7 +5,7 @@ import resolvers from './resolvers';
 import data from './state';
 import typeDefs from './typeDefs';
 
-const domain = process.env.NODE_ENV === 'production' ? 'thecinemadeck.sk' : 'localhost';
+const domain = process.env.NODE_ENV === 'production' ? 'thecinemadeck.com' : 'localhost';
 const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
 const port = 3004;
 

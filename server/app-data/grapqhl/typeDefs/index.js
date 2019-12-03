@@ -78,10 +78,10 @@ const typeDefs = gql`
   # END OF TYPES, START OF QUERIES, MUTATIONS AND SCHEMA
 
   type Query {
-    order(orderNum: String): Order!
-    orders: [Order]!
-    user(id: String): User!
-    users: [User]!
+    order(orderNum: String): Order
+    orders: [Order]
+    user(id: String): User
+    users: [User]
   }
 
   type Mutation {

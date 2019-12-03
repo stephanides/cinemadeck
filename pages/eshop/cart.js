@@ -115,7 +115,7 @@ const ShoppingCart = compose(
           orderNum: orderCreated.orderNum,
         };
 
-        console.log(orderData);
+        // console.log(orderData);
 
         if (orderData.paymentMethod === 0) {
           const response = await fetch('/payment', {
