@@ -54,20 +54,6 @@ export default css`
   }
 
   .faq .faq-arrow {
-    width: 12px;
-    height: 12px;
-    transition: -webkit-transform 0.8s;
-    transition: transform 0.8s;
-    transition: transform 0.8s, -webkit-transform 0.8s;
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    border-top: 4px solid rgb(255, 255, 255);
-      border-right: 4px solid rgb(255, 255, 255);
-    float: right;
-    position: relative;
-    top: -60px;
-    right: 27px;
-    -webkit-transform: rotate(315deg);
-            transform: rotate(315deg);
     @media screen and (max-width: $break-mobile) {
       top: -76px;
     }
