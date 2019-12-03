@@ -12,7 +12,7 @@ const Failed = ({ lang }) => (
     </div>
     <div className="order-success-content">
       <p className="text-center">
-        <Link href={`/?locale=${lang}/eshop/cart`} as={`/${lang}/eshop/cart`}>
+        <Link href={`/eshop/cart?locale=${lang}`} as={`/${lang}/eshop/cart`}>
           <a>{locale[lang].returnToShopBtn}</a>
         </Link>
       </p>

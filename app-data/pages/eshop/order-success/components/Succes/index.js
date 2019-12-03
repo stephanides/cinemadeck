@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import JSZip from 'jszip';
 import JSZipUtils from 'jszip-utils';
 import { saveAs } from 'file-saver';

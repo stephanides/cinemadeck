@@ -176,7 +176,7 @@ const CartCheckout = compose(
                               >
                                 -
                               </button>
-                              {
+                              {/*
                                 !orderDiscount && (
                                   <button
                                     type="button"
@@ -188,7 +188,7 @@ const CartCheckout = compose(
                                     +
                                   </button>
                                 )
-                              }
+                              */}
                             </span>
                           </span>
                         </span>

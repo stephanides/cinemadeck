@@ -60,7 +60,7 @@ const CartContent = compose(
                 >
                   -
                 </button>
-                <button
+                {/* <button
                   className="border-left"
                   type="button"
                   onClick={() => {
@@ -68,7 +68,7 @@ const CartContent = compose(
                   }}
                 >
                   +
-                </button>
+                </button> */}
               </span>
             </div>
           ),

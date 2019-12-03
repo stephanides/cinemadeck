@@ -27,12 +27,16 @@ const OrderSuccess = compose(
   graphql(updateOrderMutation, { name: 'updateOrderMutate' }),
 )(({
   lang, cartProducts: { cart }, mutate, updateOrderMutate,
-  getOrderByNum: { error, order }, paymentStatus,
+  getOrderByNum: { error, loading, order }, paymentStatus,
 }) => {
   if (error) {
     return <>{error}</>;
   }
+  if (loading) {
+    return <>Loading</>;
+  }
 
+  const [productImg, handleProductImg] = useState('order-success.jpg');
   let order_number;
   let state;
 
@@ -41,7 +45,6 @@ const OrderSuccess = compose(
     state = paymentStatus.state;
   }
 
-  const [productImg, handleProductImg] = useState('order-success.jpg');
   useEffect(() => {
     const checkCart = async () => {
       try {
@@ -99,9 +102,14 @@ const OrderSuccess = compose(
       checkCart();
       handleProductImg(imgSrc);
 
-      if (order && order.orderStatus !== state) {
+      console.log(order);
+      if (order && order.orderStatus !== 'PAID') {
         updateOrderData(order_number, state);
       }
+    }
+
+    if (state === 'PAID' && (order && order.orderStatus !== 'PAID')) {
+      console.log('Going to send email to customer');
     }
 
     return () => null;
