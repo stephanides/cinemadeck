@@ -56,7 +56,7 @@ const FreeDownload = ({ lang }) => {
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       xhr.onload = () => {
         if (xhr.status === 200 && xhr.responseText) {
-          console.log(xhr.responseText);
+          // console.log(xhr.responseText);
           handleDownloadFreeDoc();
         } else if (xhr.status !== 200) {
           console.log(xhr.status);
