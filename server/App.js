@@ -27,12 +27,10 @@ const App = async () => {
     const app = express();
 
     app.use(helmet());
-    // app.use(cors());
-    app.use((req, res, next) => {
-      res.header('Access-Control-Allow-Origin', '*');
-      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-      next();
-    });
+    app.use(cors({
+      origin: true,
+      credentials: true,
+    }));
     app.use(bodyParser.json({ limit: '5mb', extended: true }));
     app.use(createLocaleMiddleware({
       priority: ['default', 'accept-language'],
@@ -60,7 +58,7 @@ const App = async () => {
       }) : true,
     });
 
-    server.applyMiddleware({ app, path: '/api' });
+    server.applyMiddleware({ app, path: '/api', cors: false });
 
     await db();
     await setup();
