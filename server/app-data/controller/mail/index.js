@@ -1,11 +1,21 @@
 /* eslint-disable class-methods-use-this */
 const nodemailer = require('nodemailer');
+const pdf = require('pdf-creator-node');
+const path = require('path');
+const fs = require('fs');
 
 const Order = require('../../db/models/Order');
 const localisation = require('../../../../app-data/shared/localisation/eshop/order-success');
 
 class MailController {
   constructor() {
+    this.pdfHtml = fs.readFileSync(path.join(__dirname, '../../../../static/html/pdfInvoiceTemplate/template.html'), 'utf8');
+    this.pdfOptions = {
+      format: 'A4',
+      orientation: 'portrait',
+      border: '10mm',
+    };
+    this.pdfDocument = {};
     this.transporter = nodemailer.createTransport({
       auth: {
         pass: 'windowsXP8975',
@@ -20,6 +30,17 @@ class MailController {
 
   async sendOrderNotification(req, res, next) {
     try {
+      this.pdfDocument = {
+        html: this.pdfHtml,
+        data: {
+          orderNum: req.body.orderNum,
+        },
+        path: path.join(__dirname, `../../../../static/download/invoices/invoice-${req.body.orderNum}.pdf`),
+      };
+      const pdfOutput = await pdf.create(this.pdfDocument, this.pdfOptions);
+
+      console.log(pdfOutput);
+
       await this.transporter.sendMail({
         from: 'info@codebrothers.sk',
         subject: `CinemaDeck | Objednávka: ${req.body.orderNum}`,
