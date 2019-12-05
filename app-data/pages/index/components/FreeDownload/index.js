@@ -49,12 +49,12 @@ const FreeDownload = ({ lang }) => {
     if (checked) {
       const xhr = new XMLHttpRequest();
       const url = lang === 'cz'
-        ? 'https://thecinemadeck.ecomailapp.cz/public/subscribe/2/2bb287d15897fe2f9d89c882af9a3a8b'
-        : 'https://thecinemadeck.ecomailapp.cz/public/subscribe/3/b6fcc542fb021c84fdaff536dd0a74a1';
+        ? 'https://api2.ecomailapp.cz/lists/2/subscribe'
+        : 'https://api2.ecomailapp.cz/lists/3/subscribe';
 
       console.log(url);
       xhr.open('POST', url);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.setRequestHeader('key', '5dc2ce81e93a85dc2ce81e9453');
       xhr.onload = () => {
         if (xhr.status === 200 && xhr.responseText) {
@@ -65,7 +65,12 @@ const FreeDownload = ({ lang }) => {
         }
       };
 
-      xhr.send(encodeURI(`email=${data}`));
+      // xhr.send(encodeURI(`email=${data}`));
+      xhr.send(JSON.stringify({
+        subscriber_data: {
+          email: data,
+        },
+      }));
     }
   };
   const handleToggle = () => {
