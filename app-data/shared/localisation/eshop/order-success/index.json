@@ -5,7 +5,9 @@
     "downloadBtn": "Download",
     "descriptionText": "In the product GUIDE you will find your code to the private Facebook group, in which you will find other CinemaDeck users. You can share your work here and get more advice and tips. Together we learn and improve our results.",
     "paymentFailed": "We are sorry payment was not successful.",
-    "returnToShopBtn": "Please return to shop cart to try again."
+    "returnToShopBtn": "Please return to shop cart to try again.",
+    "emailTitle":"Welcome to the family of CinemaDeck users",
+    "emailHeader":"You can download files below"
   },
   "cz": {
     "welcomeToFamily": "Vítej v rodine CINEMADECK Uživatelů!",
@@ -13,6 +15,8 @@
     "downloadBtn": "Stáhnout",
     "descriptionText": "V produktu GUIDE najdeš svůj kód do soukromé Facebook skupiny, ve které najdeš ostatní uživatelé CinemaDeck. Můžeš tady sdílet svou práci a dostávat další rady a tipy. Společně se tak učíme a zdokonalujeme své výsledky.",
     "paymentFailed": "Je nám líto platba nebyla úspěšná.",
-    "returnToShopBtn": "Prosím vraťte se do nákupního košíku a skuste to znovu."
+    "returnToShopBtn": "Prosím vraťte se do nákupního košíku a skuste to znovu.", 
+    "emailTitle":"VÍTEJ V RODINĚ CINEMADECK UŽÍVATElů",
+    "emailHeader":"Níže si můžeš stáhnout zakoupené produkty"
   }
 }

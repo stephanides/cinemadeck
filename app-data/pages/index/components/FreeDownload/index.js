@@ -52,8 +52,10 @@ const FreeDownload = ({ lang }) => {
         ? 'https://thecinemadeck.ecomailapp.cz/public/subscribe/2/2bb287d15897fe2f9d89c882af9a3a8b'
         : 'https://thecinemadeck.ecomailapp.cz/public/subscribe/3/b6fcc542fb021c84fdaff536dd0a74a1';
 
+      console.log(url);
       xhr.open('POST', url);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.setRequestHeader('key', '5dc2ce81e93a85dc2ce81e9453');
       xhr.onload = () => {
         if (xhr.status === 200 && xhr.responseText) {
           // console.log(xhr.responseText);

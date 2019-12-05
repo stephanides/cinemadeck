@@ -24,7 +24,10 @@ class MailController {
         from: 'info@codebrothers.sk',
         subject: `CinemaDeck | Objednávka: ${req.body.orderNum}`,
         html: `
-        <h2>${localisation[req.body.lang].welcomeToFamily}</h2>
+        <h6>${localisation[req.body.lang].emailTitle}</h6>
+        <h2>${localisation[req.body.lang].emailHeader}</h2>
+        <
+        <p>${localisation[req.body.lang].descriptionText}</p>
 
         `,
         to: 'viktor.vojtek@codebrothers.sk', // TODO change for Tonap e-mail address in production
