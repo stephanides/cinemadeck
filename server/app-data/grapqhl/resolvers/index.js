@@ -23,6 +23,7 @@ module.exports = {
     },
     order: async (root, { orderNum }) => {
       try {
+        console.log(orderNum);
         const order = await Order.findOne({ orderNum });
 
         if (!order) {
