@@ -2,37 +2,62 @@
 <html>
     <head>
         <mate charest="utf-8" />
-        <title>Faktúra číslo: {orderNum}</title>
+        <title>Faktúra číslo: {{orderNum}}</title>
     </head>
-    <body style="padding:2rem;">
-        <div style="display:flex; align-items:center">
-            <div style="width:50%">
-                <h1>Faktúra {orderNum}</h1>
-                <h2>CinemaDeck</h2>
-            </div>
-            <div style="width:50%">
-                <img style="position:relative; float:right; right: 100px;width:200px;" src="file:///static/images/logo-dark.png" alt="logo" />
-            </div>
-        </div>
-        <div style="display:flex; justify-content: space-between;">
-            <div style="width:50%;">
-                <h4>DODÁVATEĽ</h4>
-                <p style="margin:0;margin-top:.3rem">Martin Hurai</p>
-                <p style="margin:0;margin-top:.3rem">IČO: 08638039</p>
-                <p style="margin:0;margin-top:.3rem">DIČ: CZ684991705</p>
-                <p style="margin:0;margin-top:.3rem">Březinova 509/20</p>
-                <p style="margin:0;margin-top:.3rem">180 00 Praha 8, Karlín</p>
-                <p style="margin:0;margin-top:.3rem">Česká republika</p>
-                <p style="margin:0;margin-top:.3rem">Tel: +420 602 968 942</p>
-                <p style="margin:0;margin-top:.3rem">martin@thecinemadeck.com</p>
-            </div>
-            <div style="width:50%;">
-                <h4>ODBERATEĽ</h4>
-                <p style="margin:0;margin-top:.3rem">Datum vystavení: {{date}}</p>
-                <p style="margin:0;margin-top:.3rem">Datum dodania: {{date}}</p>
-                <P style="margin:0;margin-top:.3rem">Datum splatnosti: {{date}}</P>
-            </div>
-        </div>
+    <body>
+        <style>
+          html table tr td, html table tr th, p { font-size: 12px; }
+        </style>
+        <table>
+            <tr>
+                <td width="70%">
+                    <h1>Faktúra: {{orderNum}}</h1>
+                    <h2>CinemaDeck</h2>
+                </td>
+                <td>
+                    <img style=" width: 150px;" src="{{logo}}" alt="logo" />
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td width="70%">DODAVATEL</td>
+                <td>ODBERATEL</td>
+            </tr>
+            <tr>
+                <td width="70%">
+                    Martin Hurai
+                </td>
+                <td>
+                    Datum vystavení: {{date}}
+                </td>
+            </tr>
+            <tr>
+                <td width="70%">IČO: 08638039</td>
+                <td>Datum dodania: {{date}}</td>
+            </tr>
+            <tr>
+                <td width="70%">DIČ: CZ684991705</td>
+                <td>Datum splatnosti: {{date}}</td>
+            </tr>
+            <tr>
+                <td width="70%">Březinova 509/20</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td width="70%">180 00 Praha 8, Karlín</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td width="70%">Česká republika</td><td></td>
+            </tr>
+            <tr>
+                <td width="70%">Tel: +420 602 968 942</td><td></td>
+            </tr>
+            <tr>
+                <td width="70%">martin@thecinemadeck.com</td><td></td>
+            </tr>
+        </table>
         <p>
             Dobrý den, fakturujeme Vám nasledovní položky:
         </p>
@@ -73,9 +98,12 @@
                 </tr>
             </tbody>
         </table>
-        <p style="margin-top:2rem">Vystavil, podpis:</p>
-        <p>
-            <img src="file:///static/images/signature.jpg" alt="Signature" />
-        </p>
+        <p>&nbsp;</p>
+        <table>
+            <tr>
+                <td>Posted by, signature:</td>
+                <td><img src="{{signatureImg}}" style="width: 125px;" alt="Signature" /></td>
+            </tr>
+        </table>
     </body>
 </html>

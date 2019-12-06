@@ -25,7 +25,7 @@ const Download = compose(
   graphql(getOrderByNumQuery, {
     name: 'getOrderByNum',
     options: ({ uniqUid }) => ({
-      variables: { orderNum: uniqUid.split('-')[1] },
+      variables: { orderNum: uniqUid ? uniqUid.split('-')[1] : false },
     }),
   }),
   graphql(updateOrderMutation, { name: 'updateOrderMutate' }),

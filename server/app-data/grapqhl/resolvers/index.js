@@ -24,7 +24,7 @@ module.exports = {
     order: async (root, { orderNum }) => {
       try {
         console.log(orderNum);
-        const order = await Order.findOne({ orderNum });
+        const order = orderNum ? await Order.findOne({ orderNum }) : false;
 
         if (!order) {
           throw new Error('Order not found');

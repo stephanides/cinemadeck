@@ -70,6 +70,8 @@ class MailController {
           date: `${day}.${month}.${year}`,
           orderNum: req.body.orderNum,
           paymentMethod: paymentMethodFinal,
+          signatureImg: `file://${path.join(__dirname, '../../../../static/images/signature.png')}`,
+          logo: `file://${path.join(__dirname, '../../../../static/images/logo-dark.png')}`,
           products,
           totalPrice,
           totalPriceVat,
@@ -86,7 +88,6 @@ class MailController {
         html: `
         <h4 style="text-transform:uppercase; text-align:center;">${localisation[req.body.lang].emailTitle}</h4>
         <h2 style="text-align:center;color:#0098d8">${localisation[req.body.lang].emailHeader}</h2>
-        
         <p style="text-align:center;">${localisation[req.body.lang].emailText1}</p>
         <p style="text-align:center;">${localisation[req.body.lang].emailText2}</p>
         <p style="text-align:center;font-weight:bold">${localisation[req.body.lang].emailText3}</p>
@@ -99,7 +100,7 @@ class MailController {
         <p style="text-align:center;">${localisation[req.body.lang].emailText10}</p>
         <p style="text-align:center;">${localisation[req.body.lang].emailText11}</p>
         <p style="text-align:center;">Martin</p>
-        <a href="http://localhost:3004/${lang}/eshop/download/${orderUid}" style="background-color: #0098d8;color: white;width: 300px;padding-top: 24px;padding-bottom: 24px;letter-spacing: 4px;border-radius: 4px;box-shadow: 0px 0px 7px 0px #3ac5ff;text-decoration: none;text-transform: uppercase;display: block;margin: 0 auto;margin-bottom:4rem;text-align:center">
+        <a href="https://thecinemadeck.com/${lang}/eshop/download/${orderUid}" style="background-color: #0098d8;color: white;width: 300px;padding-top: 24px;padding-bottom: 24px;letter-spacing: 4px;border-radius: 4px;box-shadow: 0px 0px 7px 0px #3ac5ff;text-decoration: none;text-transform: uppercase;display: block;margin: 0 auto;margin-bottom:4rem;text-align:center">
         ${localisation[req.body.lang].downloadBtn}</a>
         `,
         to: 'viktor.vojtek@codebrothers.sk', // TODO change for Tonap e-mail address in production
