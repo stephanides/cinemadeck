@@ -27,12 +27,7 @@ const App = async () => {
     const app = express();
 
     app.use(helmet());
-    // app.use(cors());
-    app.use((req, res, next) => {
-      res.header('Access-Control-Allow-Origin', '*');
-      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-      next();
-    });
+    app.use(cors());
     app.use(bodyParser.json({ limit: '5mb', extended: true }));
     app.use(createLocaleMiddleware({
       priority: ['default', 'accept-language'],
@@ -75,6 +70,9 @@ const App = async () => {
     app.get('/eshop/cart', (req, res) => {
       res.redirect(`${req.locale.language}/eshop/cart`);
     });
+    app.get('/eshop/download', (req, res) => {
+      res.redirect(`${req.locale.language}/eshop/download`);
+    });
     app.get('/eshop/funnel', (req, res) => {
       res.redirect(`${req.locale.language}/eshop/funnel`);
     });
@@ -111,6 +109,15 @@ const App = async () => {
       const queryParams = {
         locale: req.params.lang,
         orderDiscount: req.query.orderDiscount,
+      };
+
+      nextApp.render(req, res, actualPage, queryParams);
+    });
+    app.get('/:lang/eshop/download/:uniqUid', (req, res) => {
+      const actualPage = '/eshop/download';
+      const queryParams = {
+        locale: req.params.lang,
+        uniqUid: req.params.uniqUid,
       };
 
       nextApp.render(req, res, actualPage, queryParams);

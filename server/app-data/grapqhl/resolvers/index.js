@@ -2,6 +2,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
+const uniqid = require('uniqid');
 const { superSecret } = require('../../config');
 // const uniqid = require('uniqid');
 const { findLastOrderNum } = require('../../lib');
@@ -22,6 +23,7 @@ module.exports = {
     },
     order: async (root, { orderNum }) => {
       try {
+        console.log(orderNum);
         const order = await Order.findOne({ orderNum });
 
         if (!order) {
@@ -91,6 +93,7 @@ module.exports = {
                   : `00${lastOrderNum + 1}`
               )
           ) : `${new Date().getFullYear()}001`;
+        const orderUid = uniqid('', `-${orderNum}`);
 
         await Order.create({
           address,
@@ -99,6 +102,7 @@ module.exports = {
           name,
           note,
           orderNum,
+          orderUid,
           orderStatus: 'CREATED',
           paymentMethod,
           products,
@@ -112,6 +116,7 @@ module.exports = {
           name,
           note,
           orderNum,
+          orderUid,
           orderStatus: 'CREATED',
           paymentMethod,
           products,

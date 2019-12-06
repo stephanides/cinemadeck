@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <mate charest="utf-8" />
+        <title>Faktúra číslo: {orderNum}</title>
+    </head>
+    <body>
+        <h1>Faktúra</h1>
+        <h2>CinemaDeck</h2>
+        <table>
+            <tr>
+                <td>Martin Hurai</td><td>Číslo faktúry: {{orderNum}}</td>
+            </tr>
+            <tr>
+                <td>Březinova 509/20</td><td>Datum vystavení: {{date}}</td>
+            </tr>
+            <tr>
+                <td>180 00 Praha 8, Karlín</td><td>Datum splatnosti: {{date}}</td>
+            </tr>
+            <tr>
+                <td>Česká republika</td><td></td>
+            </tr>
+        </table>
+        <p>
+            Dobrý den, fakturujeme Vám nasledovní položky:
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>NÁZEV POLOŽKY</th>
+                    <th>DPH %</th>
+                    <th>DPH ({{currency}})</th>
+                    <th>SUMA ({{currency}})</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                <tr>
+                  <td>{{this.title}}</td>
+                  <td>21%</td>
+                  <td>{{this.priceVat}}</td>
+                  <td>{{this.price}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <table>
+            <tbody>
+                <tr>
+                    <td>CELKEM BEZ DPH</td>
+                    <td>{{totalPriceVat}} {{currency}}</td>
+                </tr>
+                <tr>
+                    <td>DPH</td>
+                    <td>{{VAT}} {{currency}}</td>
+                </tr>
+                <tr>
+                    <td>SUMA CELKEM</td>
+                    <td>{{totalPrice}} {{currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Vystavil, podpis:</p>
+        <p>
+            <img src="file:///static/images/signature.jpg" alt="Signature" />
+        </p>
+    </body>
+</html>

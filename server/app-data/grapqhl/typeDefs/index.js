@@ -55,6 +55,7 @@ const typeDefs = gql`
     orderStatus: String!
     paymentMethod: Int!
     orderNum: String!
+    orderUid: String!
     products: [OrderedProduct]!
     totalPriceToPay: Float!
     userNotified: Boolean

@@ -20,10 +20,12 @@ export const getOrderByNumQuery = gql`
       email
       name
       orderNum
+      orderUid
       orderStatus
       paymentMethod
       products {
         count
+        price
         title
       }
       totalPriceToPay
@@ -45,6 +47,7 @@ export const getOrdersQuery = gql`
       email
       name
       orderNum
+      orderUid
       orderStatus
       paymentMethod
       products {

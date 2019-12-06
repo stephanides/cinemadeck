@@ -48,7 +48,7 @@ class PaymentController {
         amount: req.body.totalPriceToPay * 100,
         callback: {
           return_url: `${!dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/eshop/order-success`,
-          notification_url: `${!dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/send-order-notification}`,
+          notification_url: `${!dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/send-order-notification`,
         },
         currency: req.body.currency,
         payer: {
@@ -67,7 +67,6 @@ class PaymentController {
       this.setPaymentData(data);
 
       const paymentResult = await this.GoPay.createPayment(this.paymentData);
-      // console.log(paymentResult);
 
       res.json({
         token: this.token,
