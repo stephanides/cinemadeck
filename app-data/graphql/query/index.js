@@ -24,6 +24,7 @@ export const getOrderByNumQuery = gql`
       paymentMethod
       products {
         count
+        price
         title
       }
       totalPriceToPay

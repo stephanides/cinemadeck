@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <mate charest="utf-8" />
+        <title>Invoice no.: {orderNum}</title>
+    </head>
+    <body>
+        <h1>Invoice</h1>
+        <h2>CinemaDeck</h2>
+        <table>
+            <tr>
+                <td>Martin Hurai</td><td>Invoice number: {{orderNum}}</td>
+            </tr>
+            <tr>
+                <td>Březinova 509/20</td><td>Date of issue: {{date}}</td>
+            </tr>
+            <tr>
+                <td>180 00 Praha 8, Karlín</td><td>Due date: {{date}}</td>
+            </tr>
+            <tr>
+                <td>Česká republika</td><td></td>
+            </tr>
+        </table>
+        <p>
+            Hello, we bill you the following items:
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ITEM TITLE</th>
+                    <th>VAT %</th>
+                    <th>VAT ({{currency}})</th>
+                    <th>SUM ({{currency}})</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                <tr>
+                  <td>{{this.title}}</td>
+                  <td>21%</td>
+                  <td>{{this.priceVat}}</td>
+                  <td>{{this.price}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <p>&nbsp;</p>
+        <table>
+            <tbody>
+                <tr>
+                    <td>FULL PRICE WITHOUT VAT</td>
+                    <td>{{totalPriceVat}} {{currency}}</td>
+                </tr>
+                <tr>
+                    <td>VAT</td>
+                    <td>{{VAT}} {{currency}}</td>
+                </tr>
+                <tr>
+                    <td>FULL PRICE</td>
+                    <td>{{totalPrice}} {{currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Posted by, signature:</p>
+        <p>
+            <img src="/static/images/signature.jpg" alt="Signature" />
+        </p>
+    </body>
+</html>

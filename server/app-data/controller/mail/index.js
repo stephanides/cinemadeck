@@ -9,7 +9,7 @@ const localisation = require('../../../../app-data/shared/localisation/eshop/ord
 
 class MailController {
   constructor() {
-    this.pdfHtml = fs.readFileSync(path.join(__dirname, '../../../../static/html/pdfInvoiceTemplate/template.html'), 'utf8');
+    this.pdfHtml = '';
     this.pdfOptions = {
       format: 'A4',
       orientation: 'portrait',
@@ -30,16 +30,55 @@ class MailController {
 
   async sendOrderNotification(req, res, next) {
     try {
+      const dateObj = new Date();
+      const day = dateObj.getDay();
+      const month = dateObj.getMonth();
+      const year = dateObj.getYear();
+      const {
+        lang, paymentMethod, products, totalPrice, totalPriceVat, VAT,
+      } = req.body;
+
+      let paymentMethodFinal = '';
+
+      if (lang === 'cz') {
+        if (paymentMethod === 'PAYMENT_CARD') {
+          paymentMethodFinal = 'Platba kartou';
+        } else {
+          paymentMethodFinal = 'Bankovní převod';
+        }
+      } else if (paymentMethod === 'PAYMENT_CARD') {
+        paymentMethodFinal = 'Payed by card';
+      } else {
+        paymentMethodFinal = 'Bank transfer';
+      }
+
+      /* const newProducts = [];
+
+      for (let i = 0; i < products.length; i += 1) {
+        const priceVat = products[i].price * 0.21;
+        const modProd = { ...products[i], priceVat };
+
+        newProducts.push(modProd);
+      } */
+
+      this.pdfHtml = fs.readFileSync(path.join(__dirname, `../../../../static/html/pdfInvoiceTemplate/${lang}/template.html`), 'utf8');
+
       this.pdfDocument = {
         html: this.pdfHtml,
         data: {
+          currency: lang === 'cz' ? 'CZK' : '€',
+          date: `${day}.${month}.${year}`,
           orderNum: req.body.orderNum,
+          paymentMethod: paymentMethodFinal,
+          products,
+          totalPrice,
+          totalPriceVat,
+          VAT,
         },
-        path: path.join(__dirname, `../../../../static/download/invoices/invoice-${req.body.orderNum}.pdf`),
+        path: path.join(__dirname, `../../../../static/download/invoices/${lang}/invoice-${req.body.orderNum}.pdf`),
       };
-      const pdfOutput = await pdf.create(this.pdfDocument, this.pdfOptions);
 
-      console.log(pdfOutput);
+      await pdf.create(this.pdfDocument, this.pdfOptions);
 
       await this.transporter.sendMail({
         from: 'info@codebrothers.sk',
@@ -64,6 +103,11 @@ class MailController {
         ${localisation[req.body.lang].downloadBtn}</a>
         `,
         to: 'viktor.vojtek@codebrothers.sk', // TODO change for Tonap e-mail address in production
+        attachments: [{
+          filename: `Invoice-${req.body.orderNum}.pdf`,
+          path: path.join(__dirname, `../../../../static/download/invoices/${lang}/invoice-${req.body.orderNum}.pdf`),
+          contentType: 'application/pdf',
+        }],
       });
 
       await Order.findOneAndUpdate(

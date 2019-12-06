@@ -10,7 +10,7 @@ import { getOrderByNumQuery } from '../../../../../graphql/query';
 import locale from '../../../../../shared/localisation/eshop/order-success';
 
 const Success = graphql(getOrderByNumQuery)(({
-  cart, data: { error, loading, order }, lang, productImg, orderNum,
+  cart, data: { error, loading, order }, lang, productImg, orderNum, paymentMethod,
 }) => {
   if (error) {
     return <>{error}</>;
@@ -19,10 +19,34 @@ const Success = graphql(getOrderByNumQuery)(({
     return <>Loading</>;
   }
 
+  console.log(order);
+
   useEffect(() => {
     const handleSendSuccessMail = async () => {
       const xhr = new XMLHttpRequest();
       const url = '/send-order-notification';
+      const { products, totalPriceToPay } = order;
+      const newProducts = [];
+      let data = {
+        lang, orderNum, paymentMethod, // products: order.products,
+      };
+
+      for (let i = 0; i < products.length; i += 1) {
+        const priceVat = products[i].price * 0.21;
+        const modProd = { ...products[i], priceVat };
+
+        newProducts.push(modProd);
+      }
+
+      data = {
+        ...data,
+        products: newProducts,
+        totalPrice: totalPriceToPay,
+        totalPriceVat: (totalPriceToPay - (totalPriceToPay * 0.21)).toFixed(2),
+        VAT: (totalPriceToPay * 0.21).toFixed(2),
+      };
+      console.log('POSIELAM');
+      console.log(data);
 
       xhr.open('POST', url);
       xhr.setRequestHeader('Content-Type', 'application/json');
@@ -35,7 +59,7 @@ const Success = graphql(getOrderByNumQuery)(({
         }
       };
 
-      xhr.send(JSON.stringify({ lang, orderNum }));
+      xhr.send(JSON.stringify(data));
     };
 
     if (order && !order.userNotified) {
@@ -66,7 +90,7 @@ const Success = graphql(getOrderByNumQuery)(({
         }
       }
 
-      console.log(filesId);
+      // console.log(filesId);
 
       switch (filesId) {
         case '001': {

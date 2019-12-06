@@ -27,10 +27,7 @@ const App = async () => {
     const app = express();
 
     app.use(helmet());
-    app.use(cors({
-      origin: true,
-      credentials: true,
-    }));
+    app.use(cors());
     app.use(bodyParser.json({ limit: '5mb', extended: true }));
     app.use(createLocaleMiddleware({
       priority: ['default', 'accept-language'],
