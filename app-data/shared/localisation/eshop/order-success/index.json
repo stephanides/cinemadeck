@@ -18,7 +18,8 @@
     "emailText8":"I spent thousands of hours working on the cards so we can, as the filmmakers, achieve the desired results.",
     "emailText9":"Therefore, I would like to ask you not to copy the cards. If you know someone who would like to have them and also think it is fair, please recommend buying them.",
     "emailText10":"Thank you for that.",
-    "emailText11":"After all, now we can, also thanks to you, change the world of interviews :)."
+    "emailText11":"After all, now we can, also thanks to you, change the world of interviews :).",
+    "orderNotExist": "Sorry, order and it's data you are looking for not exist."
   },
   "cz": {
     "welcomeToFamily": "Vítej v rodine CINEMADECK Uživatelů!",
@@ -39,6 +40,7 @@
     "emailText8":"Na kartách jsem strávil tisíce hodin práce, abychom my filmaři mohli dosáhnout svých vytoužených výsledků.",
     "emailText9":"Proto bych rád řekl a poprosil tě, abys karty dál nešířil, resp. pokud znáš někoho a považuješ to za fér, doporučil mu je ke koupi.",
     "emailText10":"Děkuju ti za to.",
-    "emailText11":"A konec konců, teď i díky tobě můžeme změnit svět interview :)."
+    "emailText11":"A konec konců, teď i díky tobě můžeme změnit svět interview :).",
+    "orderNotExist": "Litujeme, objednávka a data, která hledáte, neexistují."
   }
 }

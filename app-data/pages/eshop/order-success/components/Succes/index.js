@@ -19,7 +19,7 @@ const Success = graphql(getOrderByNumQuery)(({
     return <>Loading</>;
   }
 
-  console.log(order);
+  // console.log(order);
 
   useEffect(() => {
     const handleSendSuccessMail = async () => {

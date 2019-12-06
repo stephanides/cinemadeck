@@ -40,7 +40,7 @@ const OrderSuccess = compose(
   let order_number;
   let state;
 
-  console.log(paymentStatus);
+  // console.log(paymentStatus);
   if (paymentStatus) {
     order_number = paymentStatus.order_number;
     state = paymentStatus.state;
