@@ -111,7 +111,7 @@ const CartCheckout = compose(
 
   return (
     <div className="cart-checkout-wrapper">
-      <div className="bg-white position-fixed" />
+      <div className="bg-white position-fixed right-side" />
       <div className="cart-checkout-container px-5 pt-5">
         <h3 className="text-uppercase mb-5">{locale[lang].cart}</h3>
         <div className="checkout-content">
@@ -261,6 +261,7 @@ const CartCheckout = compose(
                   >
                     {locale[lang].buy}
                   </button>
+                  <img className="secure-payment" src="/static/images/gopay.png" alt="secure payment" />
                 </div>
               )
               : <p className="w-100 text-center">{locale[lang].cartIsEmpty}</p>

@@ -55,7 +55,7 @@ const App = async () => {
       }) : true,
     });
 
-    server.applyMiddleware({ app, path: '/api', cors: false });
+    server.applyMiddleware({ app, path: '/api' });
 
     await db();
     await setup();

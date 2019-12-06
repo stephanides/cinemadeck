@@ -101,4 +101,13 @@ export default css`
       }
     }
   }
+  .secure-payment{
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .right-side{
+    @media screen and (max-width: 768px) {
+      display:none;
+    }
+  }
 `;
