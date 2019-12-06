@@ -25,10 +25,10 @@ const Success = graphql(getOrderByNumQuery)(({
     const handleSendSuccessMail = async () => {
       const xhr = new XMLHttpRequest();
       const url = '/send-order-notification';
-      const { products, totalPriceToPay } = order;
+      const { orderUid, products, totalPriceToPay } = order;
       const newProducts = [];
       let data = {
-        lang, orderNum, paymentMethod, // products: order.products,
+        lang, orderNum, orderUid, paymentMethod, // products: order.products,
       };
 
       for (let i = 0; i < products.length; i += 1) {
@@ -45,8 +45,6 @@ const Success = graphql(getOrderByNumQuery)(({
         totalPriceVat: (totalPriceToPay - (totalPriceToPay * 0.21)).toFixed(2),
         VAT: (totalPriceToPay * 0.21).toFixed(2),
       };
-      console.log('POSIELAM');
-      console.log(data);
 
       xhr.open('POST', url);
       xhr.setRequestHeader('Content-Type', 'application/json');

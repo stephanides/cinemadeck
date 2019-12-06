@@ -35,7 +35,7 @@ class MailController {
       const month = dateObj.getMonth();
       const year = dateObj.getYear();
       const {
-        lang, paymentMethod, products, totalPrice, totalPriceVat, VAT,
+        lang, orderUid, paymentMethod, products, totalPrice, totalPriceVat, VAT,
       } = req.body;
 
       let paymentMethodFinal = '';
@@ -99,7 +99,7 @@ class MailController {
         <p style="text-align:center;">${localisation[req.body.lang].emailText10}</p>
         <p style="text-align:center;">${localisation[req.body.lang].emailText11}</p>
         <p style="text-align:center;">Martin</p>
-        <a style="background-color: #0098d8;color: white;width: 300px;padding-top: 24px;padding-bottom: 24px;letter-spacing: 4px;border-radius: 4px;box-shadow: 0px 0px 7px 0px #3ac5ff;text-decoration: none;text-transform: uppercase;display: block;margin: 0 auto;margin-bottom:4rem;text-align:center">
+        <a href="http://localhost:3004/${lang}/eshop/download/${orderUid}" style="background-color: #0098d8;color: white;width: 300px;padding-top: 24px;padding-bottom: 24px;letter-spacing: 4px;border-radius: 4px;box-shadow: 0px 0px 7px 0px #3ac5ff;text-decoration: none;text-transform: uppercase;display: block;margin: 0 auto;margin-bottom:4rem;text-align:center">
         ${localisation[req.body.lang].downloadBtn}</a>
         `,
         to: 'viktor.vojtek@codebrothers.sk', // TODO change for Tonap e-mail address in production

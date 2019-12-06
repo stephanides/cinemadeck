@@ -20,6 +20,7 @@ export const getOrderByNumQuery = gql`
       email
       name
       orderNum
+      orderUid
       orderStatus
       paymentMethod
       products {
@@ -46,6 +47,7 @@ export const getOrdersQuery = gql`
       email
       name
       orderNum
+      orderUid
       orderStatus
       paymentMethod
       products {
