@@ -4,64 +4,76 @@
         <mate charest="utf-8" />
         <title>Invoice no.: {orderNum}</title>
     </head>
-    <body>
-        <h1>Invoice</h1>
-        <h2>CinemaDeck</h2>
-        <table>
-            <tr>
-                <td>Martin Hurai</td><td>Invoice number: {{orderNum}}</td>
-            </tr>
-            <tr>
-                <td>Březinova 509/20</td><td>Date of issue: {{date}}</td>
-            </tr>
-            <tr>
-                <td>180 00 Praha 8, Karlín</td><td>Due date: {{date}}</td>
-            </tr>
-            <tr>
-                <td>Česká republika</td><td></td>
-            </tr>
-        </table>
+    <body style="padding:2rem;">
+        <div style="display:flex; align-items:center">
+            <div style="width:50%">
+                <h1>Invoice {orderNum}</h1>
+                <h2>CinemaDeck</h2>
+            </div>
+            <div style="width:50%">
+                <img style="position:relative; float:right; right: 100px;width:200px;" src="file:///static/images/logo-dark.png" alt="logo" />
+            </div>
+        </div>
+        <div style="display:flex; justify-content: space-between;">
+            <div style="width:50%;">
+                <h4>SUPPLIER</h4>
+                <p style="margin:0;margin-top:.3rem">Martin Hurai</p>
+                <p style="margin:0;margin-top:.3rem">IČO: 08638039</p>
+                <p style="margin:0;margin-top:.3rem">DIČ: CZ684991705</p>
+                <p style="margin:0;margin-top:.3rem">Březinova 509/20</p>
+                <p style="margin:0;margin-top:.3rem">180 00 Praha 8, Karlín</p>
+                <p style="margin:0;margin-top:.3rem">Česká republika</p>
+                <p style="margin:0;margin-top:.3rem">Tel: +420 602 968 942</p>
+                <p style="margin:0;margin-top:.3rem">martin@thecinemadeck.com</p>
+            </div>
+            <div style="width:50%;">
+                <h4>PURCHASER</h4>
+                <p style="margin:0;margin-top:.3rem">Date of issue: {{date}}</p>
+                <p style="margin:0;margin-top:.3rem">Delivery date {{date}}</p>
+                <P style="margin:0;margin-top:.3rem">Due date: {{date}}</P>
+            </div>
+        </div>
         <p>
-            Hello, we bill you the following items:
+                Hello, we bill you the following items:
         </p>
-        <table>
+        <table style="border-collapse: collapse;width: 100%;">
             <thead>
                 <tr>
-                    <th>ITEM TITLE</th>
-                    <th>VAT %</th>
-                    <th>VAT ({{currency}})</th>
-                    <th>SUM ({{currency}})</th>
+                    <th style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">ITEM TITLE</th>
+                    <th style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">VAT %</th>
+                    <th style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">VAT ({{currency}})</th>
+                    <th style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">SUM ({{currency}})</th>
                 </tr>
             </thead>
             <tbody>
                 {{#each products}}
                 <tr>
-                  <td>{{this.title}}</td>
-                  <td>21%</td>
-                  <td>{{this.priceVat}}</td>
-                  <td>{{this.price}}</td>
+                  <td style="border: 1px solid #ddd;padding: 8px;">{{this.title}}</td>
+                  <td style="border: 1px solid #ddd;padding: 8px;">21%</td>
+                  <td style="border: 1px solid #ddd;padding: 8px;">{{this.priceVat}}</td>
+                  <td style="border: 1px solid #ddd;padding: 8px;">{{this.price}}</td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
         <p>&nbsp;</p>
-        <table>
+        <table style="border-collapse: collapse;width: 70%;">
             <tbody>
                 <tr>
-                    <td>FULL PRICE WITHOUT VAT</td>
-                    <td>{{totalPriceVat}} {{currency}}</td>
+                    <td style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">FULL PRICE WITHOUT VAT</td>
+                    <td style="border: 1px solid #ddd;padding: 8px;">{{totalPriceVat}} {{currency}}</td>
                 </tr>
                 <tr>
-                    <td>VAT</td>
-                    <td>{{VAT}} {{currency}}</td>
+                    <td style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">VAT</td>
+                    <td style="border: 1px solid #ddd;padding: 8px;">{{VAT}} {{currency}}</td>
                 </tr>
                 <tr>
-                    <td>FULL PRICE</td>
-                    <td>{{totalPrice}} {{currency}}</td>
+                    <td style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">FULL PRICE</td>
+                    <td style="border: 1px solid #ddd;padding: 8px;">{{totalPrice}} {{currency}}</td>
                 </tr>
             </tbody>
         </table>
-        <p>Posted by, signature:</p>
+        <p style="margin-top:2rem">Posted by, signature:</p>
         <p>
             <img src="file:///static/images/signature.jpg" alt="Signature" />
         </p>
