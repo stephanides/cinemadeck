@@ -70,6 +70,7 @@ const FreeDownload = ({ lang }) => {
         subscriber_data: {
           email: data,
         },
+        trigger_autoresponders: true,
       }));
     }
   };
