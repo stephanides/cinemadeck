@@ -35,7 +35,10 @@ class MailController {
       const month = dateObj.getMonth();
       const year = dateObj.getYear();
       const {
-        lang, orderUid, paymentMethod, products, totalPrice, totalPriceVat, VAT,
+        address: {
+          city, psc, street, state,
+        }, email, name, lang, orderUid, paymentMethod,
+        products, totalPrice, totalPriceVat, VAT,
       } = req.body;
 
       let paymentMethodFinal = '';
@@ -66,6 +69,12 @@ class MailController {
       this.pdfDocument = {
         html: this.pdfHtml,
         data: {
+          state,
+          street,
+          psc,
+          city,
+          email,
+          name,
           currency: lang === 'cz' ? 'CZK' : '€',
           date: `${day}.${month}.${year}`,
           orderNum: req.body.orderNum,

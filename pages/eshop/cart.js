@@ -103,6 +103,8 @@ const ShoppingCart = compose(
           : cart.reduce((a, b) => (a + b.totalPrice.en), 0),
       };
 
+      console.log(orderData);
+
       try {
         const { data: { createOrder: orderCreated } } = await createOrder({
           variables: {
@@ -125,10 +127,12 @@ const ShoppingCart = compose(
           });
 
           if (response.status === 200) {
+            console.log(200);
             const responseJSON = await response.json();
 
             const { paymentResult: { gw_url } } = responseJSON;
 
+            console.log(gw_url);
             if (gw_url) {
               handleRedirectGP(true);
 

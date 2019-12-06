@@ -25,10 +25,12 @@ const Success = graphql(getOrderByNumQuery)(({
     const handleSendSuccessMail = async () => {
       const xhr = new XMLHttpRequest();
       const url = '/send-order-notification';
-      const { orderUid, products, totalPriceToPay } = order;
+      const {
+        name, email, address, orderUid, products, totalPriceToPay,
+      } = order;
       const newProducts = [];
       let data = {
-        lang, orderNum, orderUid, paymentMethod, // products: order.products,
+        address, email, name, lang, orderNum, orderUid, paymentMethod, // products: order.products,
       };
 
       for (let i = 0; i < products.length; i += 1) {
@@ -46,6 +48,8 @@ const Success = graphql(getOrderByNumQuery)(({
         VAT: (totalPriceToPay * 0.21).toFixed(2),
       };
 
+      console.log(data);
+
       xhr.open('POST', url);
       xhr.setRequestHeader('Content-Type', 'application/json');
 
@@ -53,7 +57,7 @@ const Success = graphql(getOrderByNumQuery)(({
         if (xhr.status === 200 && xhr.responseText) {
           console.log(xhr.responseText);
         } else if (xhr.status !== 200) {
-          console.log(xhr.status);
+          console.log(xhr);
         }
       };
 

@@ -68,16 +68,16 @@ const CartCheckout = compose(
   graphql(addProductToCartMutation, { name: 'addProductToCart' }),
   graphql(removeProductFromCartMutation, { name: 'removeProductFromCart' }),
 )(({
-  cart, lang, addProductToCart, replaceItemsInCart,
+  cart, lang, /* addProductToCart, */ replaceItemsInCart,
   removeProductFromCart, orderDiscount, // stateSelected,
 }) => {
-  const handleAddProductToCart = async (id) => {
+  /* const handleAddProductToCart = async (id) => {
     try {
       await addProductToCart({ variables: { id } });
     } catch (err) {
       console.log(err);
     }
-  };
+  }; */
   const handleOrderDiscount = async () => {
     // pLyGkyrY6z - discount code
     try {
