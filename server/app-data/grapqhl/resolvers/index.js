@@ -12,18 +12,24 @@ const User = require('../../db/models/User');
 
 module.exports = {
   Query: {
-    orders: async () => {
+    orders: async (root, { ordersQuery: { offset, limit } }) => {
       try {
+        let items = [];
+        let itemsCount = 0;
         const orders = await Order.find();
 
-        return orders;
+        if (orders) {
+          items = offset !== undefined ? orders.slice(offset, offset + limit) : orders;
+          itemsCount = orders.length;
+        }
+
+        return { items, itemsCount };
       } catch (err) {
         return err.message;
       }
     },
     order: async (root, { orderNum }) => {
       try {
-        console.log(orderNum);
         const order = orderNum ? await Order.findOne({ orderNum }) : false;
 
         if (!order) {

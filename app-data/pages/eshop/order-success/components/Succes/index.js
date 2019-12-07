@@ -3,14 +3,18 @@ import JSZip from 'jszip';
 import JSZipUtils from 'jszip-utils';
 import { saveAs } from 'file-saver';
 import LazyLoad from 'react-lazyload';
-import { graphql } from 'react-apollo';
+import { compose, graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 
+import { removeProductFromCartMutation } from '../../../../../graphql/mutation';
 import { getOrderByNumQuery } from '../../../../../graphql/query';
 import locale from '../../../../../shared/localisation/eshop/order-success';
 
-const Success = graphql(getOrderByNumQuery)(({
-  cart, data: { error, loading, order }, lang, productImg, orderNum, paymentMethod,
+const Success = compose(
+  graphql(removeProductFromCartMutation, { name: 'removeProduct' }),
+  graphql(getOrderByNumQuery),
+)(({
+  cart, data: { error, loading, order }, lang, productImg, removeProduct, orderNum, paymentMethod,
 }) => {
   if (error) {
     return <>{error}</>;
@@ -48,14 +52,42 @@ const Success = graphql(getOrderByNumQuery)(({
         VAT: (totalPriceToPay * 0.21).toFixed(2),
       };
 
-      console.log(data);
+      // console.log(data);
 
       xhr.open('POST', url);
       xhr.setRequestHeader('Content-Type', 'application/json');
 
-      xhr.onload = () => {
+      xhr.onload = async () => {
         if (xhr.status === 200 && xhr.responseText) {
-          console.log(xhr.responseText);
+          // console.log(xhr.responseText);
+          try {
+            const productIds = [];
+            // console.log(order);
+            if (order) {
+              for (let i = 0; i < order.products.length; i += 1) {
+                // await removeProduct({ variables: { id:  } });
+                if (order.products[i].title === 'CinemaDeck Cards') {
+                  productIds.push('001');
+                } else if (order.products[i].title === 'Title Presets') {
+                  productIds.push('002');
+                } else {
+                  productIds.push('003');
+                }
+              }
+
+              let j = 0;
+              const promises = [];
+
+              while (j < productIds.length) {
+                promises.push(removeProduct({ variables: { id: productIds[j] } }));
+                j += 1;
+              }
+
+              Promise.all(promises);
+            }
+          } catch (err) {
+            console.log(err);
+          }
         } else if (xhr.status !== 200) {
           console.log(xhr);
         }

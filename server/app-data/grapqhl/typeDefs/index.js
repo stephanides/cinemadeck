@@ -21,6 +21,11 @@ const typeDefs = gql`
     totalPriceToPay: Float!
   }
 
+  input OrdersInput {
+    offset: Int
+    limit: Int
+  }
+
   input OrderedProductInput {
     count: Int!
     price: Int!
@@ -61,6 +66,11 @@ const typeDefs = gql`
     userNotified: Boolean
   }
 
+  type OrderList {
+    items: [Order]!
+    itemsCount: Int!
+  }
+
   type OrderedProduct {
     count: Int!
     price: Float!
@@ -81,7 +91,7 @@ const typeDefs = gql`
 
   type Query {
     order(orderNum: String): Order
-    orders: [Order]
+    orders(ordersQuery: OrdersInput): OrderList
     user(id: String): User
     users: [User]
   }

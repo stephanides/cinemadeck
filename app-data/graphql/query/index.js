@@ -35,26 +35,29 @@ export const getOrderByNumQuery = gql`
 `;
 
 export const getOrdersQuery = gql`
-  query {
-    orders {
-      address {
-        city
-        psc
-        state
-        street
+  query orders($ordersQuery: OrdersInput) {
+    orders(ordersQuery: $ordersQuery) {
+      items {
+        address {
+          city
+          psc
+          state
+          street
+        }
+        currency
+        email
+        name
+        orderNum
+        orderUid
+        orderStatus
+        paymentMethod
+        products {
+          count
+          title
+        }
+        totalPriceToPay
       }
-      currency
-      email
-      name
-      orderNum
-      orderUid
-      orderStatus
-      paymentMethod
-      products {
-        count
-        title
-      }
-      totalPriceToPay
+      itemsCount
     }
   }
 `;
