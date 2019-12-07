@@ -18,10 +18,10 @@ class MailController {
     this.pdfDocument = {};
     this.transporter = nodemailer.createTransport({
       auth: {
-        pass: 'Presov51230890Mh',
-        user: 'martin@thecinemadeck.com', // 'martin@thecinemadeck.com',
+        pass: 'windowsXP8975', // 'Presov51230890Mh',
+        user: 'info@codebrothers.sk', // 'martin@thecinemadeck.com', // 'martin@thecinemadeck.com',
       },
-      host: 'email09.active24.com', // 'email09.active24.com',
+      host: 'smtp.zoho.eu', // 'email09.active24.com', // 'email09.active24.com',
       port: 465,
       secure: true, // ssl
       ignoreTLS: true,
@@ -31,9 +31,9 @@ class MailController {
   async sendOrderNotification(req, res, next) {
     try {
       const dateObj = new Date();
-      const day = dateObj.getDay();
-      const month = dateObj.getMonth();
-      const year = dateObj.getYear();
+      const day = dateObj.getDate();
+      const month = dateObj.getMonth() + 1;
+      const year = dateObj.getFullYear();
       const {
         address: {
           city, psc, street, state,
@@ -92,27 +92,26 @@ class MailController {
       await pdf.create(this.pdfDocument, this.pdfOptions);
 
       await this.transporter.sendMail({
-        from: 'martin@thecinemadeck.com',
-        subject: `CinemaDeck | Objednávka: ${req.body.orderNum}`,
+        from: 'info@codebrothers.sk', // 'martin@thecinemadeck.com',
+        subject: `${localisation[req.body.lang].mailSubject}`,
         html: `
-        <h4 style="text-transform:uppercase; text-align:center;">${localisation[req.body.lang].emailTitle}</h4>
-        <h2 style="text-align:center;color:#0098d8">${localisation[req.body.lang].emailHeader}</h2>
-        <p style="text-align:center;">${localisation[req.body.lang].emailText1}</p>
-        <p style="text-align:center;">${localisation[req.body.lang].emailText2}</p>
-        <p style="text-align:center;font-weight:bold">${localisation[req.body.lang].emailText3}</p>
-        <p style="text-align:center;">${localisation[req.body.lang].emailText4}</p>
-        <p style="text-align:center;">${localisation[req.body.lang].emailText5}</p>
-        <p style="text-align:center;">${localisation[req.body.lang].emailText6}<a href="mailto:martin@thecinemadeck.com" style="color:#0098d8;cursor:pointer;">martin@thecinemadeck.com</a></p>
-        <p style="text-align:center;">${localisation[req.body.lang].emailText7}</p>
-        <p style="text-align:center;font-weight:bold">${localisation[req.body.lang].emailText8}</p>
-        <p style="text-align:center;font-weight:bold">${localisation[req.body.lang].emailText9}</p>
-        <p style="text-align:center;">${localisation[req.body.lang].emailText10}</p>
-        <p style="text-align:center;">${localisation[req.body.lang].emailText11}</p>
-        <p style="text-align:center;">Martin</p>
+        <div style="width: 40%; display: block; margin: 0 auto;">
+          <p style="text-align:justify;">${localisation[req.body.lang].emailText1}</p>
+          <p style="text-align:justify;">${localisation[req.body.lang].emailText2}</p>
+          <p style="text-align:justify;font-weight:bold">${localisation[req.body.lang].emailText3}</p>
+          <p style="text-align:justify;">${localisation[req.body.lang].emailText4}</p>
+          <p style="text-align:justify;">${localisation[req.body.lang].emailText5}</p>
+          <p style="text-align:justify;">${localisation[req.body.lang].emailText6}<a href="mailto:martin@thecinemadeck.com" style="color:#0098d8;cursor:pointer;">martin@thecinemadeck.com</a></p>
+          <p style="text-align:justify;">${localisation[req.body.lang].emailText7}</p>
+          <p style="text-align:justify;font-weight:bold">${localisation[req.body.lang].emailText8}</p>
+          <p style="text-align:justify;font-weight:bold">${localisation[req.body.lang].emailText9}</p>
+          <p style="text-align:justify;">${localisation[req.body.lang].emailText10}</p>
+          <p style="text-align:justify;">Martin</p>
+        </div>
         <a href="https://thecinemadeck.com/${lang}/eshop/download/${orderUid}" style="background-color: #0098d8;color: white;width: 300px;padding-top: 24px;padding-bottom: 24px;letter-spacing: 4px;border-radius: 4px;box-shadow: 0px 0px 7px 0px #3ac5ff;text-decoration: none;text-transform: uppercase;display: block;margin: 0 auto;margin-bottom:4rem;text-align:center">
         ${localisation[req.body.lang].downloadBtn}</a>
         `,
-        to: `${email}`,
+        to: 'viktor.vojtek@codebrothers.sk', // `${email}`,
         attachments: [{
           filename: `Invoice-${req.body.orderNum}.pdf`,
           path: path.join(__dirname, `../../../../static/download/invoices/${lang}/invoice-${req.body.orderNum}.pdf`),
@@ -120,7 +119,7 @@ class MailController {
         }],
       });
 
-      await this.transporter.sendMail({
+      /* await this.transporter.sendMail({
         from: 'martin@thecinemadeck.com',
         subject: `CinemaDeck | Nová objednávka: ${req.body.orderNum}`,
         text: `Faktúra číslo: ${req.body.orderNum}`,
@@ -131,7 +130,7 @@ class MailController {
           path: path.join(__dirname, `../../../../static/download/invoices/${lang}/invoice-${req.body.orderNum}.pdf`),
           contentType: 'application/pdf',
         }],
-      });
+      }); */
 
       await Order.findOneAndUpdate(
         { orderNum: req.body.orderNum },

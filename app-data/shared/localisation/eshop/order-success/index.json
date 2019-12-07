@@ -19,7 +19,8 @@
     "emailText9":"Therefore, I would like to ask you not to copy the cards. If you know someone who would like to have them and also think it is fair, please recommend buying them.",
     "emailText10":"Thank you for that.",
     "emailText11":"After all, now we can, also thanks to you, change the world of interviews :).",
-    "orderNotExist": "Sorry, order and it's data you are looking for not exist."
+    "orderNotExist": "Sorry, order and it's data you are looking for not exist.",
+    "mailSubject": "Welcome to the CinemaDeck family"
   },
   "cz": {
     "welcomeToFamily": "Vítej v rodine CINEMADECK Uživatelů!",
@@ -35,12 +36,13 @@
     "emailText3":"Moc si vážím toho, že ses pro karty rozhodl.",
     "emailText4":"Čekají teď na tebe podobné výsledky, po kterých jsem toužil i já sám. A z toho mám velkou radost.",
     "emailText5":"Pokud se náhodou stalo, že se ti z nějakého důvodu karty po zakoupení nestáhly, tak dole v tomto e-mailu najdeš tlačítko pro stáhnutí.",
-    "emailText6":"Kdybys měl jakékoliv dotazy ohledně CinemaDeck, napiš mi na",
+    "emailText6":"Kdybys měl jakékoliv dotazy ohledně CinemaDeck, napiš mi na ",
     "emailText7":"Nerad to připomínám, protože věřím, že komunita nás filmařů je poctivá. ",
     "emailText8":"Na kartách jsem strávil tisíce hodin práce, abychom my filmaři mohli dosáhnout svých vytoužených výsledků.",
-    "emailText9":"Proto bych rád řekl a poprosil tě, abys karty dál nešířil, resp. pokud znáš někoho a považuješ to za fér, doporučil mu je ke koupi.",
+    "emailText9":"Proto bych rád řekl a poprosil tě, abys karty dál nešířil, resp. pokud znáš někoho a považuješ to za fér, mu je místo šíření doporučil ke koupi.",
     "emailText10":"Děkuju ti za to.",
     "emailText11":"A konec konců, teď i díky tobě můžeme změnit svět interview :).",
-    "orderNotExist": "Litujeme, objednávka a data, která hledáte, neexistují."
+    "orderNotExist": "Litujeme, objednávka a data, která hledáte, neexistují.",
+    "mailSubject": "Vítej v rodině CinemaDeck (Welcome to the CinemaDeck family)"
   }
 }
