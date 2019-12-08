@@ -105,6 +105,11 @@ const OrderInfo = ({
               </Col>
             </Row>
             <Row>
+              <Col sm="12">
+                <a target="_blank" rel="noopener noreferrer" href={`/static/download/invoices/${currency === 'CZK' ? 'cz' : 'en'}/invoice-${orderNum}.pdf`}>Faktura</a>
+              </Col>
+            </Row>
+            <Row>
               <Col className="border-top pt-3">
                 <p className="text-uppercase font-weight-bold">Suma a měna</p>
               </Col>
