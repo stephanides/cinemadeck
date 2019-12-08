@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useState } from 'react';
+import React from 'react';
 import { ListGroup } from 'reactstrap';
 import { graphql } from 'react-apollo';
 import Pagination from 'react-js-pagination';
@@ -9,10 +9,14 @@ import OrderInfo from './components/OrderInfo';
 
 const OrderList = graphql(
   getOrdersQuery, {
-    options: () => ({ variables: { ordersQuery: { offset: 0, limit: 10 } } }),
+    options: ({ activePage, limit }) => ({
+      variables: {
+        ordersQuery: { offset: (activePage - 1) * limit, limit },
+      },
+    }),
   },
 )(({
-  data: { error, loading, orders },
+  data: { error, loading, orders }, activePage, changePage,
 }) => {
   if (error) {
     return <>{error}</>;
@@ -21,15 +25,10 @@ const OrderList = graphql(
     return <Loader size="sm" />;
   }
 
-  const [activePage, setActivePage] = useState(1);
   const { items, itemsCount } = orders;
 
-  const handleChangePage = (pageNum) => {
-    setActivePage(pageNum);
-  };
-
   return (
-    <div>
+    <>
       {
         (items && items.length > 0)
           ? (
@@ -51,15 +50,16 @@ const OrderList = graphql(
               <Pagination
                 activePage={activePage}
                 itemsCountPerPage={10}
+                itemClass="page-item"
                 totalItemsCount={itemsCount}
                 pageRangeDisplayed={5}
-                onChange={handleChangePage}
+                onChange={changePage}
               />
             </>
           )
           : <p className="text-center">Zatím neexistují žádné objednávky.</p>
       }
-    </div>
+    </>
   );
 });
 
