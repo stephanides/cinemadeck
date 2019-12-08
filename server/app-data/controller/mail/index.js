@@ -18,10 +18,10 @@ class MailController {
     this.pdfDocument = {};
     this.transporter = nodemailer.createTransport({
       auth: {
-        pass: 'windowsXP8975', // 'Presov51230890Mh',
-        user: 'info@codebrothers.sk', // 'martin@thecinemadeck.com', // 'martin@thecinemadeck.com',
+        pass: 'Presov51230890Mh', // 'windowsXP8975', // 'Presov51230890Mh',
+        user: 'martin@thecinemadeck.com', // 'info@codebrothers.sk', // 'martin@thecinemadeck.com', // 'martin@thecinemadeck.com',
       },
-      host: 'smtp.zoho.eu', // 'email09.active24.com', // 'email09.active24.com',
+      host: 'email09.active24.com', // 'smtp.zoho.eu', // 'email09.active24.com', // 'email09.active24.com',
       port: 465,
       secure: true, // ssl
       ignoreTLS: true,
@@ -92,7 +92,7 @@ class MailController {
       await pdf.create(this.pdfDocument, this.pdfOptions);
 
       await this.transporter.sendMail({
-        from: 'info@codebrothers.sk', // 'martin@thecinemadeck.com',
+        from: 'martin@thecinemadeck.com', // 'info@codebrothers.sk', // 'martin@thecinemadeck.com',
         subject: `${localisation[req.body.lang].mailSubject}`,
         html: `
         <div style="width: 40%; display: block; margin: 0 auto;">
@@ -111,7 +111,7 @@ class MailController {
         <a href="https://thecinemadeck.com/${lang}/eshop/download/${orderUid}" style="background-color: #0098d8;color: white;width: 300px;padding-top: 24px;padding-bottom: 24px;letter-spacing: 4px;border-radius: 4px;box-shadow: 0px 0px 7px 0px #3ac5ff;text-decoration: none;text-transform: uppercase;display: block;margin: 0 auto;margin-bottom:4rem;text-align:center">
         ${localisation[req.body.lang].downloadBtn}</a>
         `,
-        to: 'viktor.vojtek@codebrothers.sk', // `${email}`,
+        to: `${email}`, // 'viktor.vojtek@codebrothers.sk', // `${email}`,
         attachments: [{
           filename: `Invoice-${req.body.orderNum}.pdf`,
           path: path.join(__dirname, `../../../../static/download/invoices/${lang}/invoice-${req.body.orderNum}.pdf`),
@@ -119,7 +119,7 @@ class MailController {
         }],
       });
 
-      /* await this.transporter.sendMail({
+      await this.transporter.sendMail({
         from: 'martin@thecinemadeck.com',
         subject: `CinemaDeck | Nová objednávka: ${req.body.orderNum}`,
         text: `Faktúra číslo: ${req.body.orderNum}`,
@@ -130,7 +130,7 @@ class MailController {
           path: path.join(__dirname, `../../../../static/download/invoices/${lang}/invoice-${req.body.orderNum}.pdf`),
           contentType: 'application/pdf',
         }],
-      }); */
+      });
 
       await Order.findOneAndUpdate(
         { orderNum: req.body.orderNum },
