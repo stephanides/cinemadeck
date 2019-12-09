@@ -97,11 +97,15 @@ const OrderSuccess = compose(
       }
     };
 
+    console.log(order);
     const imgSrc = `order-success/${setProductImages(cart)}.png`;
 
     if (order_number) {
       checkCart();
-      handleProductImg(imgSrc);
+
+      if (productImg === 'order-success/.png' || productImg === 'order-success.jpg') {
+        handleProductImg(imgSrc);
+      }
 
       console.log(order);
       if (order && order.orderStatus !== 'PAID') {
@@ -114,7 +118,9 @@ const OrderSuccess = compose(
     }
 
     return () => null;
-  }, [cart]);
+  }, [cart]); // cart
+
+  console.log(productImg);
 
   return (
     <Layout
