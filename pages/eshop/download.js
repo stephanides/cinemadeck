@@ -47,9 +47,9 @@ const Download = compose(
         let id = '001';
 
         if (order.products[i].title === 'Sound Like Pro') {
-          id = '002';
-        } else if (order.products[i].title === 'Title Presets') {
           id = '003';
+        } else if (order.products[i].title === 'Title Presets') {
+          id = '002';
         }
 
         const product = {
