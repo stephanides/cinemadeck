@@ -105,22 +105,38 @@ const Success = compose(
     try {
       const zip = new JSZip();
       let filesId = '';
+      const productIds = [];
+
+      for (let i = 0; i < order.products.length; i += 1) {
+        // await removeProduct({ variables: { id:  } });
+        if (order.products[i].title === 'CinemaDeck Cards') {
+          productIds.push('001');
+        } else if (order.products[i].title === 'Title Presets') {
+          productIds.push('002');
+        } else {
+          productIds.push('003');
+        }
+      }
+
+      // console.log(productIds);
 
       const compare = (a, b) => {
-        if (a.id < b.id) {
+        if (a < b) {
           return -1;
         }
-        if (a.id > b.id) {
+        if (a > b) {
           return 1;
         }
         return 0;
       };
 
-      cart.sort(compare);
+      productIds.sort(compare);
 
-      for (let i = 0; i < cart.length; i += 1) {
-        if (filesId.indexOf(cart[i].id) < 0) {
-          filesId += cart[i].id;
+      // console.log(productIds);
+
+      for (let i = 0; i < productIds.length; i += 1) {
+        if (filesId.indexOf(productIds[i]) < 0) {
+          filesId += productIds[i]; // .id;
         }
       }
 
