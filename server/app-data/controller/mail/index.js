@@ -95,18 +95,19 @@ class MailController {
         from: 'martin@thecinemadeck.com', // 'info@codebrothers.sk', // 'martin@thecinemadeck.com',
         subject: `${localisation[req.body.lang].mailSubject}`,
         html: `
-        <div style="width: 40%; display: block; margin: 0 auto;">
-          <p style="text-align:justify;">${localisation[req.body.lang].emailText1}</p>
-          <p style="text-align:justify;">${localisation[req.body.lang].emailText2}</p>
-          <p style="text-align:justify;font-weight:bold">${localisation[req.body.lang].emailText3}</p>
-          <p style="text-align:justify;">${localisation[req.body.lang].emailText4}</p>
-          <p style="text-align:justify;">${localisation[req.body.lang].emailText5}</p>
-          <p style="text-align:justify;">${localisation[req.body.lang].emailText6}<a href="mailto:martin@thecinemadeck.com" style="color:#0098d8;cursor:pointer;">martin@thecinemadeck.com</a></p>
-          <p style="text-align:justify;">${localisation[req.body.lang].emailText7}</p>
-          <p style="text-align:justify;font-weight:bold">${localisation[req.body.lang].emailText8}</p>
-          <p style="text-align:justify;font-weight:bold">${localisation[req.body.lang].emailText9}</p>
-          <p style="text-align:justify;">${localisation[req.body.lang].emailText10}</p>
-          <p style="text-align:justify;">Martin</p>
+        <div style="width: 50%; display: block; margin: 0 auto;">
+          <img style="width: 100%" src="https://thecinemadeck.com/static/images/logomail.png" alt="logo" />
+          <p style="text-align:center;">${localisation[req.body.lang].emailText1}</p>
+          <p style="text-align:center;">${localisation[req.body.lang].emailText2}</p>
+          <p style="text-align:center;font-weight:bold">${localisation[req.body.lang].emailText3}</p>
+          <p style="text-align:center;">${localisation[req.body.lang].emailText4}</p>
+          <p style="text-align:center;">${localisation[req.body.lang].emailText5}</p>
+          <p style="text-align:center;">${localisation[req.body.lang].emailText6}<a href="mailto:martin@thecinemadeck.com" style="color:#0098d8;cursor:pointer;"> martin@thecinemadeck.com</a></p>
+          <p style="text-align:center;">${localisation[req.body.lang].emailText7}</p>
+          <p style="text-align:center;font-weight:bold">${localisation[req.body.lang].emailText8}</p>
+          <p style="text-align:center;font-weight:bold">${localisation[req.body.lang].emailText9}</p>
+          <p style="text-align:center;">${localisation[req.body.lang].emailText10}</p>
+          <p style="text-align:center;">Martin</p>
         </div>
         <a href="https://thecinemadeck.com/${lang}/eshop/download/${orderUid}" style="background-color: #0098d8;color: white;width: 300px;padding-top: 24px;padding-bottom: 24px;letter-spacing: 4px;border-radius: 4px;box-shadow: 0px 0px 7px 0px #3ac5ff;text-decoration: none;text-transform: uppercase;display: block;margin: 0 auto;margin-bottom:4rem;text-align:center">
         ${localisation[req.body.lang].downloadBtn}</a>
