@@ -3,7 +3,7 @@ module.exports = {
   gp: {
     ClientID: '1209532907', // '1421225531',
     ClientSecret: 'J3EMGn8d', // 'QYGKXDut',
-    SandBox: true,
+    SandBox: false, // true,
   },
   superAdmin: {
     superAdminEmail: 'info@codebrothers.sk',
