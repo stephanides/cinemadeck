@@ -59,6 +59,9 @@
             <tr>
                 <td width="70%">martin@thecinemadeck.com</td><td></td>
             </tr>
+            <tr>
+                <td>I am not VAT registered subject</td><td></td>
+            </tr>
         </table>
         <p>
             Hello, we bill you the following items:
@@ -67,8 +70,6 @@
             <thead>
                 <tr>
                     <th style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">ITEM TITLE</th>
-                    <th style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">VAT %</th>
-                    <th style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">VAT ({{currency}})</th>
                     <th style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">SUM ({{currency}})</th>
                 </tr>
             </thead>
@@ -76,8 +77,6 @@
                 {{#each products}}
                 <tr>
                   <td style="border: 1px solid #ddd;padding: 8px;">{{this.title}}</td>
-                  <td style="border: 1px solid #ddd;padding: 8px;">21%</td>
-                  <td style="border: 1px solid #ddd;padding: 8px;">{{this.priceVat}}</td>
                   <td style="border: 1px solid #ddd;padding: 8px;">{{this.price}}</td>
                 </tr>
                 {{/each}}
@@ -86,14 +85,6 @@
         <p>&nbsp;</p>
         <table style="border-collapse: collapse;width: 70%;">
             <tbody>
-                <tr>
-                    <td style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">FULL PRICE WITHOUT VAT</td>
-                    <td style="border: 1px solid #ddd;padding: 8px;">{{totalPriceVat}} {{currency}}</td>
-                </tr>
-                <tr>
-                    <td style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">VAT</td>
-                    <td style="border: 1px solid #ddd;padding: 8px;">{{VAT}} {{currency}}</td>
-                </tr>
                 <tr>
                     <td style="border: 1px solid #ddd;padding: 8px;padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #0098d8;color: white;">FULL PRICE</td>
                     <td style="border: 1px solid #ddd;padding: 8px;">{{totalPrice}} {{currency}}</td>

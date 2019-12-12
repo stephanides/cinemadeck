@@ -35,6 +35,7 @@ const typeDefs = gql`
   input OrderUpdateInput {
     orderNum: String
     orderStatus: String
+    paymentMethod: Int
   }
 
   input UserLogInput {

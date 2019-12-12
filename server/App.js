@@ -128,16 +128,30 @@ const App = async () => {
 
       nextApp.render(req, res, actualPage, queryParams);
     });
-    app.get('/:lang/eshop/order-success', async (req, res) => {
+    app.get('/:lang/eshop/order-success', (req, res) => {
       try {
-        const paymentStatus = await paymentOrder.paymentStatus(req.query.id);
+        // const paymentStatus = await paymentOrder.paymentStatus(req.query.id);
         const actualPage = '/eshop/order-success';
-        const queryParams = { locale: req.params.lang, paymentStatus };
+        const queryParams = {
+          locale: req.params.lang,
+          orderNum: req.query.orN,
+          paymentId: req.query.id,
+        };
 
         nextApp.render(req, res, actualPage, queryParams);
       } catch (err) {
         throw new Error(err);
       }
+    });
+    app.get('/:lang/get-payment-status', async (req, res) => {
+      const paymentStatus = await paymentOrder.paymentStatus(req.query.id);
+
+      res.json({ paymentStatus });
+    });
+    app.post('/:lang/get-payment-status', async (req, res) => {
+      const paymentStatus = await paymentOrder.paymentStatus(req.body.id);
+
+      res.json({ paymentStatus });
     });
     app.get('/:lang/obchodni-podminky', (req, res) => {
       const actualPage = '/obchodni-podminky';

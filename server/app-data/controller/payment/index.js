@@ -47,8 +47,8 @@ class PaymentController {
         ...this.paymentData,
         amount: req.body.totalPriceToPay * 100,
         callback: {
-          return_url: `${!dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/eshop/order-success`,
-          notification_url: `${!dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/send-order-notification`,
+          return_url: `${!dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/eshop/order-success?orN=${orderNum}`,
+          notification_url: `${!dev ? 'https://thecinemadeck.com' : 'http://localhost:3004'}/${req.body.lang}/get-payment-status`,
         },
         currency: req.body.currency,
         payer: {

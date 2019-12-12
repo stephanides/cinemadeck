@@ -4,7 +4,7 @@ const PaymentController = require('../../controller/payment');
 const Router = express.Router();
 const order = new PaymentController();
 
-Router.post('/payment', async (req, res) => {
+Router.post('/payment', (req, res) => {
   order.payment(req, res);
 });
 

@@ -14,7 +14,7 @@ const Success = compose(
   graphql(removeProductFromCartMutation, { name: 'removeProduct' }),
   graphql(getOrderByNumQuery),
 )(({
-  cart, data: { error, loading, order }, lang, productImg, removeProduct, orderNum, paymentMethod,
+  /* cart, */ data: { error, loading, order }, lang, productImg, removeProduct, orderNum, paymentMethod,
 }) => {
   if (error) {
     return <>{error}</>;

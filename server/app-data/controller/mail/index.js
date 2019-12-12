@@ -19,9 +19,9 @@ class MailController {
     this.transporter = nodemailer.createTransport({
       auth: {
         pass: 'Presov51230890Mh', // 'windowsXP8975', // 'Presov51230890Mh',
-        user: 'martin@thecinemadeck.com', // 'info@codebrothers.sk', // 'martin@thecinemadeck.com', // 'martin@thecinemadeck.com',
+        user: 'martin@thecinemadeck.com', // 'info@codebrothers.sk', // 'martin@thecinemadeck.com'
       },
-      host: 'email09.active24.com', // 'smtp.zoho.eu', // 'email09.active24.com', // 'email09.active24.com',
+      host: 'email09.active24.com', // 'smtp.zoho.eu', // 'email09.active24.com'
       port: 465,
       secure: true, // ssl
       ignoreTLS: true,

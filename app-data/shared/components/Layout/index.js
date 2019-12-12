@@ -15,7 +15,7 @@ const Layout = ({
 }) => {
   useEffect(() => {
     ReactGA.initialize('UA-152606775-1', {
-      debug: true,
+      debug: false,
     });
     ReactGA.set({ page: window.location.pathname });
     ReactGA.pageview(window.location.pathname);

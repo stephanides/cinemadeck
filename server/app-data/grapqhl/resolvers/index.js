@@ -132,7 +132,7 @@ module.exports = {
         throw new Error(err.message);
       }
     },
-    updateOrder: async (root, { orderUpdate: { orderNum, orderStatus } }) => {
+    updateOrder: async (root, { orderUpdate: { orderNum, orderStatus, paymentMethod } }) => {
       try {
         const orderToUpdate = await Order.findOne({ orderNum });
 
@@ -141,7 +141,7 @@ module.exports = {
         }
 
         const updatedOrder = await Order.findOneAndUpdate(
-          { orderNum }, { $set: { orderStatus } }, { uppsert: true, new: true },
+          { orderNum }, { $set: { orderStatus, paymentMethod } }, { uppsert: true, new: true },
         );
 
         return updatedOrder;

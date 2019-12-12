@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable camelcase */
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
@@ -20,14 +21,14 @@ const OrderSuccess = compose(
   graphql(getProductsFromCart, { name: 'cartProducts' }),
   graphql(getOrderByNumQuery, {
     name: 'getOrderByNum',
-    options: ({ paymentStatus: { order_number } }) => ({
-      variables: { orderNum: order_number },
+    options: ({ orderNum }) => ({
+      variables: { orderNum },
     }),
   }),
   graphql(updateOrderMutation, { name: 'updateOrderMutate' }),
 )(({
   lang, cartProducts: { cart }, mutate, updateOrderMutate,
-  getOrderByNum: { error, loading, order }, paymentStatus,
+  getOrderByNum: { error, loading, order }, orderNum, paymentId, // paymentStatus,
 }) => {
   if (error) {
     return <>{error}</>;
@@ -36,15 +37,17 @@ const OrderSuccess = compose(
     return <>Loading</>;
   }
 
+  const [orderState, setOrderState] = useState('UNDEFINED');
+  const [paymentInstrument, setPaymentInstrument] = useState('UNDEFINED');
   const [productImg, handleProductImg] = useState('order-success.jpg');
-  let order_number;
-  let state;
+  // let order_number;
+  // let state;
 
   // console.log(paymentStatus);
-  if (paymentStatus) {
+  /* if (paymentStatus) {
     order_number = paymentStatus.order_number;
     state = paymentStatus.state;
-  }
+  } */
 
   useEffect(() => {
     const checkCart = async () => {
@@ -84,23 +87,60 @@ const OrderSuccess = compose(
 
       return img;
     };
-    const updateOrderData = async (orderNum, orderStatus) => {
+    const updateOrderData = async (orderNumber, orderStatus, paymentMethod) => {
       try {
-        const updatedData = await updateOrderMutate({
+        await updateOrderMutate({
           variables: {
-            orderUpdate: { orderNum, orderStatus },
+            orderUpdate: { orderNum: orderNumber, orderStatus, paymentMethod },
           },
         });
-        console.log(updatedData);
+        // console.log(updatedData);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    const checkOrderStatus = async () => {
+      try {
+        // console.log(paymentId);
+        const paymentStatusResponse = await fetch(`/${lang}/get-payment-status`, {
+          method: 'POST',
+          body: JSON.stringify({ id: paymentId }),
+          headers: { 'Content-Type': 'application/json;charset=utf-8' },
+        });
+
+        // console.log(paymentStatusResponse);
+
+        const respJson = await paymentStatusResponse.json();
+
+        // console.log(respJson);
+        const { paymentStatus: { order_number, state, payment_instrument } } = respJson;
+
+        // console.log(payment_instrument);
+        setOrderState(state);
+        setPaymentInstrument(payment_instrument);
+
+        if (order_number) {
+          checkCart();
+
+          const imgSrc = `order-success/${setProductImages(cart)}.png`;
+
+          if (productImg === 'order-success/.png' || productImg === 'order-success.jpg') {
+            handleProductImg(imgSrc);
+          }
+
+          if (order && order.orderStatus !== 'PAID') {
+            updateOrderData(order_number, state, payment_instrument === 'PAYMENT_CARD' ? 0 : 1);
+          }
+        }
       } catch (err) {
         console.log(err);
       }
     };
 
-    console.log(order);
-    const imgSrc = `order-success/${setProductImages(cart)}.png`;
+    // console.log(order);
+    // const imgSrc = `order-success/${setProductImages(cart)}.png`;
 
-    if (order_number) {
+    /* if (order_number) {
       checkCart();
 
       if (productImg === 'order-success/.png' || productImg === 'order-success.jpg') {
@@ -108,19 +148,22 @@ const OrderSuccess = compose(
       }
 
       console.log(order);
+
       if (order && order.orderStatus !== 'PAID') {
-        updateOrderData(order_number, state);
+        // updateOrderData(order_number, state);
       }
     }
 
     if (state === 'PAID' && (order && order.orderStatus !== 'PAID')) {
       console.log('Going to send email to customer');
-    }
+    } */
+
+    checkOrderStatus();
 
     return () => null;
   }, [cart]); // cart
 
-  console.log(productImg);
+  // console.log(productImg);
 
   return (
     <Layout
@@ -131,16 +174,20 @@ const OrderSuccess = compose(
       <div className="order-success">
         <Container>
           {
-            state === 'PAID'
-              ? (
-                <Success
-                  lang={lang}
-                  productImg={productImg}
-                  cart={cart}
-                  paymentMethod={paymentStatus.payment_instrument}
-                  orderNum={order_number}
-                />
-              ) : <Failed lang={lang} />
+            orderState === 'UNDEFINED'
+              ? <>Loading</>
+              : (
+                orderState === 'PAID'
+                  ? (
+                    <Success
+                      lang={lang}
+                      productImg={productImg}
+                      cart={cart}
+                      paymentMethod={paymentInstrument}
+                      orderNum={orderNum}
+                    />
+                  ) : <Failed lang={lang} />
+              )
           }
         </Container>
         <div className="position-relative">
@@ -154,7 +201,9 @@ const OrderSuccess = compose(
 
 OrderSuccess.getInitialProps = async ({ query }) => ({
   lang: query.locale,
-  paymentStatus: query.paymentStatus,
+  // paymentStatus: query.paymentStatus,
+  orderNum: query.orderNum,
+  paymentId: query.paymentId,
 });
 
 export default OrderSuccess;

@@ -130,9 +130,12 @@ const ShoppingCart = compose(
             console.log(200);
             const responseJSON = await response.json();
 
-            const { paymentResult: { gw_url } } = responseJSON;
+            console.log(responseJSON.paymentResult);
+
+            const { paymentResult: { gw_url, id } } = responseJSON;
 
             console.log(gw_url);
+            console.log(id);
             if (gw_url) {
               handleRedirectGP(true);
 
