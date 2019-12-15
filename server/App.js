@@ -9,6 +9,7 @@ const typeDefs = require('./app-data/grapqhl/typeDefs');
 const resolvers = require('./app-data/grapqhl/resolvers');
 const db = require('./app-data/db');
 const setup = require('./app-data/setup');
+const User = require('./app-data/db/models/User');
 
 const MailNotificationRoute = require('./app-data/router/mail');
 const PaymentRoute = require('./app-data/router/payment');
@@ -176,6 +177,20 @@ const App = async () => {
       const queryParams = { locale: req.params.lang };
 
       nextApp.render(req, res, actualPage, queryParams);
+    });
+    app.get('/auth/register', async (req, res) => {
+      try {
+        const admin = await User.findOne({ role: 1 });
+
+        if (admin) {
+          res.redirect('/auth/login');
+        } else {
+          const actualPage = '/auth/register';
+          nextApp.render(req, res, actualPage);
+        }
+      } catch (err) {
+        throw new Error(err);
+      }
     });
     app.get('*', (req, res) => handle(req, res));
 
