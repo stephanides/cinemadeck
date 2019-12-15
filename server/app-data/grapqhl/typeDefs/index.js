@@ -43,6 +43,13 @@ const typeDefs = gql`
     password: String!
   }
 
+  input UserRegInput {
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+  }
+
   # END OF INPUTS, START OF TYPES
 
   type Address {
@@ -101,6 +108,7 @@ const typeDefs = gql`
     createOrder(order: OrderInput): Order
     updateOrder(orderUpdate: OrderUpdateInput): Order
     loginUser(user: UserLogInput): User
+    registerUser(user: UserRegInput): User
   }
 
   schema {

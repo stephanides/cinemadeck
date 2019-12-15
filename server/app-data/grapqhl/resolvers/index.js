@@ -132,6 +132,51 @@ module.exports = {
         throw new Error(err.message);
       }
     },
+    registerUser: async (root, {
+      user: {
+        firstName, lastName, email, password,
+      },
+    }) => {
+      try {
+        const userExist = await User.findOne({ email });
+
+        if (userExist) {
+          throw new Error('User exist');
+        }
+
+        const role = 1;
+        const approved = true;
+
+        const createUser = await User.create({
+          approved,
+          firstName,
+          lastName,
+          email,
+          password: await bcrypt.hash(password, 10),
+          role,
+        });
+        const { _id } = createUser;
+
+        const token = await jwt.sign(
+          { _id },
+          superSecret,
+          { expiresIn: 31536000 },
+        );
+
+        return {
+          _id,
+          approved,
+          firstName,
+          lastName,
+          email,
+          jwt: token,
+          role,
+        };
+      } catch (err) {
+        // console.log(err);
+        throw new Error(err);
+      }
+    },
     updateOrder: async (root, { orderUpdate: { orderNum, orderStatus, paymentMethod } }) => {
       try {
         const orderToUpdate = await Order.findOne({ orderNum });

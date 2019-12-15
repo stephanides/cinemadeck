@@ -133,6 +133,19 @@ export const replaceCartWithData = gql`
   }
 `;
 
+export const registerUserMutation = gql`
+  mutation registerUser($user: UserRegInput) {
+    registerUser(user: $user) {
+      _id
+      approved
+      firstName
+      lastName
+      jwt
+      role
+    }
+  }
+`;
+
 export const loginUserMutation = gql`
   mutation loginUser($user: UserLogInput) {
     loginUser(user: $user) {

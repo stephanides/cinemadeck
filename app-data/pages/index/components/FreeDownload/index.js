@@ -43,22 +43,23 @@ const FreeDownload = ({ lang }) => {
       console.log(err);
     }
   };
-  const handleSubscribe = (data) => {
+  const handleSubscribe = async (data) => {
     const { checked } = document.getElementById('agreeData');
 
     if (checked) {
-      const xhr = new XMLHttpRequest();
+      // const xhr = new XMLHttpRequest();
       const url = lang === 'cz'
         ? 'https://api2.ecomailapp.cz/lists/2/subscribe'
         : 'https://api2.ecomailapp.cz/lists/3/subscribe';
 
       console.log(url);
-      xhr.open('POST', url);
-      xhr.setRequestHeader('Content-Type', 'application/json');
+      /* xhr.open('POST', url);
+      xhr.setRequestHeader('Content-Type', 'application/jsonp'); // 'application/json'
       xhr.setRequestHeader('key', '5dc2ce81e93a85dc2ce81e9453');
       xhr.onload = () => {
+        console.log(xhr);
         if (xhr.status === 200 && xhr.responseText) {
-          // console.log(xhr.responseText);
+          console.log(xhr.responseText);
           handleDownloadFreeDoc();
         } else if (xhr.status !== 200) {
           console.log(xhr.status);
@@ -71,7 +72,30 @@ const FreeDownload = ({ lang }) => {
           email: data,
         },
         trigger_autoresponders: true,
-      }));
+      })); */
+
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json',
+            // eslint-disable-next-line quote-props
+            'key': '5dc2ce81e93a85dc2ce81e9453',
+          },
+          body: JSON.stringify({
+            subscriber_data: {
+              email: data,
+            },
+            trigger_autoresponders: true,
+          }),
+        });
+
+        const resJSON = await res.json();
+        console.log(resJSON);
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
   const handleToggle = () => {

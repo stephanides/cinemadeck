@@ -22,7 +22,7 @@ const setup = () => new Promise(async (resolve, reject) => {
         email: superAdminEmail,
         lastName: superAdminLastName,
         password: await bcrypt.hash(superAdminPassword, 10),
-        role: 1,
+        role: 0,
       };
 
       await User.create(superAdminData);

@@ -9,6 +9,7 @@ import Modal from '../../../app-data/shared/components/admin/Modal';
 import { loginUserMutation, toggleModalMutation } from '../../../app-data/graphql/mutation';
 import { signIn, redirectIfAuthenticated } from '../../../app-data/lib/auth';
 import { getCookie, removeCookie } from '../../../app-data/lib/auth/session';
+import Layout from '../../../app-data/pages/admin/components/Layout';
 
 const Login = compose(
   graphql(loginUserMutation, { name: 'mutateLoginUser' }),
@@ -44,7 +45,7 @@ const Login = compose(
   };
 
   return (
-    <Container className="vh-100 d-flex align-items-center">
+    <Layout>
       <Modal />
       <Form className="border rounded m-auto p-3" onSubmit={submitForm}>
         <h2 className="text-center mb-4">Login</h2>
@@ -56,7 +57,7 @@ const Login = compose(
         </FormGroup>
         <Button color="primary" className="w-100 mb-2" type="submit">Odeslat</Button>
       </Form>
-    </Container>
+    </Layout>
   );
 });
 
