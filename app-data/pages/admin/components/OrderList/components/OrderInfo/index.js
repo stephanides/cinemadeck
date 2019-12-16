@@ -11,6 +11,7 @@ const OrderInfo = ({
     email,
     name,
     orderNum,
+    orderStatus,
     paymentMethod,
     products,
     totalPriceToPay,
@@ -98,7 +99,7 @@ const OrderInfo = ({
             </Row>
             <Row className="mb-3">
               <Col>
-                <strong>Uhrazeno:</strong>
+                <strong>Zvolená platební metoda:</strong>
               </Col>
               <Col>
                 <p className="mb-0">{paymentMethodResult}</p>
@@ -106,7 +107,19 @@ const OrderInfo = ({
             </Row>
             <Row>
               <Col sm="12">
-                <a target="_blank" rel="noopener noreferrer" href={`/static/download/invoices/${currency === 'CZK' ? 'cz' : 'en'}/invoice-${orderNum}.pdf`}>Faktura</a>
+                {
+                  orderStatus === 'CREATED'
+                    ? 'Vytvořeno, nezaplaceno'
+                    : (
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={`/static/download/invoices/${currency === 'CZK' ? 'cz' : 'en'}/invoice-${orderNum}.pdf`}
+                      >
+                      Faktura
+                      </a>
+                    )
+                }
               </Col>
             </Row>
             <Row>

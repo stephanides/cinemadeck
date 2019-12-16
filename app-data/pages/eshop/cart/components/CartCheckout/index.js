@@ -68,7 +68,7 @@ const CartCheckout = compose(
   graphql(addProductToCartMutation, { name: 'addProductToCart' }),
   graphql(removeProductFromCartMutation, { name: 'removeProductFromCart' }),
 )(({
-  cart, lang, /* addProductToCart, */ replaceItemsInCart,
+  cart, disabled, lang, /* addProductToCart, */ replaceItemsInCart,
   removeProductFromCart, orderDiscount, // stateSelected,
 }) => {
   /* const handleAddProductToCart = async (id) => {
@@ -256,6 +256,7 @@ const CartCheckout = compose(
                     </Label>
                   </FormGroup>
                   <button
+                    disabled={disabled}
                     type="submit"
                     className="text-uppercase mx-auto mb-3"
                   >

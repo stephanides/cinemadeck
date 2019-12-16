@@ -14,7 +14,7 @@ class PaymentController {
     this.paymentData = {
       target: {
         type: 'ACCOUNT',
-        goid: '8772247550', // '8897572915',
+        goid: '8772247550', // '8772247550', // '8897572915',
       },
     };
   }
@@ -68,12 +68,16 @@ class PaymentController {
 
       const paymentResult = await this.GoPay.createPayment(this.paymentData);
 
+      /* console.log('\n');
+      console.log(paymentResult);
+      console.log('\n'); */
+
       res.json({
         token: this.token,
         paymentResult,
       });
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       throw new Error(err);
     }
   }

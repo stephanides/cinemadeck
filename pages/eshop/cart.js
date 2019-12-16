@@ -37,6 +37,7 @@ const ShoppingCart = compose(
 )(({
   cartProducts: { cart }, createOrder, lang, mutate, orderDiscount,
 }) => {
+  const [submitted, toggleSubmitted] = useState(false);
   const [order, handleOrder] = useState(initialState.order);
   const [stateSelected, handleStateChange] = useState(initialState.stateSelected);
   const [redirectGP, handleRedirectGP] = useState(false);
@@ -63,6 +64,8 @@ const ShoppingCart = compose(
 
   const handleSubmitForm = async (e) => {
     e.preventDefault();
+
+    toggleSubmitted(true);
 
     const form = e.currentTarget;
 
@@ -126,16 +129,19 @@ const ShoppingCart = compose(
             headers: { 'Content-Type': 'application/json;charset=utf-8' },
           });
 
+          // console.log(response);
+
           if (response.status === 200) {
-            console.log(200);
+            // console.log(200);
             const responseJSON = await response.json();
 
-            console.log(responseJSON.paymentResult);
+            // console.log(responseJSON.paymentResult);
 
             const { paymentResult: { gw_url, id } } = responseJSON;
 
-            console.log(gw_url);
-            console.log(id);
+            // console.log(gw_url);
+            // console.log(id);
+
             if (gw_url) {
               handleRedirectGP(true);
 
@@ -143,17 +149,21 @@ const ShoppingCart = compose(
                 if (window) {
                   handleRedirectGP(false);
                   clearTimeout(timeToRedirect);
+                  toggleSubmitted(false);
                   window.location.href = gw_url;
                 }
               }, 2500);
             } else {
+              // toggleSubmitted(false);
               throw new Error(response.statusText);
             }
           } else {
+            // toggleSubmitted(false);
             throw new Error(response.statusText);
           }
         }
       } catch (err) {
+        toggleSubmitted(false);
         console.log(err);
       }
     }
@@ -189,6 +199,7 @@ const ShoppingCart = compose(
                 cart={cart}
                 lang={lang}
                 stateSelected={stateSelected}
+                disabled={submitted}
                 orderDiscount={orderDiscount}
               />
             </Col>
