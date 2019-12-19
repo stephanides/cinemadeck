@@ -1,0 +1,10 @@
+{
+  "en": {
+    "title":"Sorry, this action is already over.",
+    "button":"Homepage"
+  },
+  "cz": {
+    "title":"Litujeme, ale tato akce již byla ukončena.",
+    "button":"Domov"
+  }
+}

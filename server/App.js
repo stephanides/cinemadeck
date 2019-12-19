@@ -89,6 +89,9 @@ const App = async () => {
     app.get('/eshop/order-success', (req, res) => {
       res.redirect(`${req.locale.language}/eshop/order-success`);
     });
+    app.get('/code-not-found', (req, res) => {
+      res.redirect(`${req.locale.language}/code-not-found`);
+    });
     //
     app.use(MailNotificationRoute);
     app.use(PaymentRoute);
@@ -156,6 +159,12 @@ const App = async () => {
     });
     app.get('/:lang/obchodni-podminky', (req, res) => {
       const actualPage = '/obchodni-podminky';
+      const queryParams = { locale: req.params.lang };
+
+      nextApp.render(req, res, actualPage, queryParams);
+    });
+    app.get('/:lang/code-not-found', (req, res) => {
+      const actualPage = '/code-not-found';
       const queryParams = { locale: req.params.lang };
 
       nextApp.render(req, res, actualPage, queryParams);
