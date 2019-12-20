@@ -1,19 +1,24 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import { ListGroup } from 'reactstrap';
+// import { ListGroup } from 'reactstrap';
 import { graphql } from 'react-apollo';
-import Pagination from 'react-js-pagination';
+// import Pagination from 'react-js-pagination';
 import { getOrdersQuery } from '../../../../graphql/query';
-import Loader from '../../../../shared/components/admin/Loader';
-import OrderInfo from './components/OrderInfo';
+// import Loader from '../../../../shared/components/admin/Loader';
+// import OrderInfo from './components/OrderInfo';
 
 const OrderList = graphql(
   getOrdersQuery, {
-    options: ({ activePage, limit }) => ({
-      variables: {
-        ordersQuery: { offset: (activePage - 1) * limit, limit },
-      },
-    }),
+    options: ({ activePage, limit }) => {
+      const activeP = activePage || 1;
+      const limitP = limit || 10;
+
+      return ({
+        variables: {
+          ordersQuery: { offset: (activeP - 1) * limitP, limit: limitP },
+        },
+      });
+    },
   },
 )(({
   data: { error, loading, orders }, activePage, changePage,
@@ -22,20 +27,24 @@ const OrderList = graphql(
     return <>{error}</>;
   }
   if (loading) {
-    return <Loader size="sm" />;
+    return <>LOADING</>;
   }
 
-  const { items, itemsCount } = orders;
+  // const { items, itemsCount } = orders;
+  console.log(orders);
+  console.log(activePage);
 
   return (
     <>
-      {
+      <p>LIST</p>
+      {/*
         (items && items.length > 0)
           ? (
             <>
               <ListGroup>
                 {
                   items.map((item) => {
+                    console.log(item);
                     const { orderNum } = item;
 
                     return (
@@ -58,7 +67,7 @@ const OrderList = graphql(
             </>
           )
           : <p className="text-center">Zatím neexistují žádné objednávky.</p>
-      }
+      */}
     </>
   );
 });

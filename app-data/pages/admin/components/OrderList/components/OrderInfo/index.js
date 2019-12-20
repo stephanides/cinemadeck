@@ -5,7 +5,10 @@ import {
 } from 'reactstrap';
 
 const OrderInfo = ({
-  data: {
+  data,
+}) => {
+  console.log(data);
+  const {
     address,
     currency,
     email,
@@ -15,8 +18,7 @@ const OrderInfo = ({
     paymentMethod,
     products,
     totalPriceToPay,
-  },
-}) => {
+  } = data;
   const [collapse, toggle] = useState(false);
   let paymentMethodResult = 'Platební kartou';
 
@@ -108,7 +110,7 @@ const OrderInfo = ({
             <Row>
               <Col sm="12">
                 {
-                  orderStatus === 'CREATED'
+                  orderStatus && (orderStatus === 'CREATED')
                     ? 'Vytvořeno, nezaplaceno'
                     : (
                       <a
@@ -149,6 +151,7 @@ OrderInfo.propTypes = {
     email: PropTypes.string,
     name: PropTypes.string,
     orderNum: PropTypes.string,
+    orderStatus: PropTypes.string,
     paymentMethod: PropTypes.number,
     products: PropTypes.arrayOf(
       PropTypes.shape({

@@ -21,14 +21,15 @@ class MailController {
         pass: 'Presov51230890Mh', // 'windowsXP8975', // 'Presov51230890Mh',
         user: 'martin@thecinemadeck.com', // 'info@codebrothers.sk', // 'martin@thecinemadeck.com'
       },
-      host: 'email09.active24.com', // 'smtp.zoho.eu', // 'email09.active24.com'
-      port: 465,
-      secure: true, // ssl
+      host: 'email.active24.com', // 'email09.active24.com', // 'smtp.zoho.eu', // 'email09.active24.com'
+      port: 465, // 587,
+      secure: true, // true, // ssl
       ignoreTLS: true,
     });
   }
 
   async sendOrderNotification(req, res, next) {
+    // console.log('Mail controller send notif.');
     try {
       const dateObj = new Date();
       const day = dateObj.getDate();
@@ -89,7 +90,11 @@ class MailController {
         path: path.join(__dirname, `../../../../static/download/invoices/${lang}/invoice-${req.body.orderNum}.pdf`),
       };
 
+      // console.log('Going to create PDF');
+
       await pdf.create(this.pdfDocument, this.pdfOptions);
+
+      // console.log(pdfCreated);
 
       await this.transporter.sendMail({
         from: 'martin@thecinemadeck.com', // 'info@codebrothers.sk', // 'martin@thecinemadeck.com',
@@ -121,11 +126,11 @@ class MailController {
       });
 
       await this.transporter.sendMail({
-        from: 'martin@thecinemadeck.com',
+        from: 'martin@thecinemadeck.com', // 'info@codebrothers.sk', // 'martin@thecinemadeck.com',
         subject: `CinemaDeck | Nová objednávka: ${req.body.orderNum}`,
         text: `Faktúra číslo: ${req.body.orderNum}`,
-        to: 'faktury@thecinemadeck.com',
-        cc: 'martin@thecinemadeck.com',
+        to: 'faktury@thecinemadeck.com', // 'viktor.vojtek@codebrothers.sk', // 'faktury@thecinemadeck.com',
+        cc: 'martin@thecinemadeck.com', // 'viktor.vojtek@codebrothers.sk', // 'martin@thecinemadeck.com',
         attachments: [{
           filename: `Invoice-${req.body.orderNum}.pdf`,
           path: path.join(__dirname, `../../../../static/download/invoices/${lang}/invoice-${req.body.orderNum}.pdf`),

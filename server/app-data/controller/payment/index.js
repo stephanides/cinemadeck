@@ -14,7 +14,7 @@ class PaymentController {
     this.paymentData = {
       target: {
         type: 'ACCOUNT',
-        goid: '8897572915', // '8772247550', // '8897572915',
+        goid: '8772247550', // prod: '8772247550', // test: '8897572915',
       },
     };
   }

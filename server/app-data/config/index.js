@@ -1,8 +1,8 @@
 module.exports = {
   dbName: 'cinemadeck',
   gp: {
-    ClientID: '1209532907', // '1209532907', // '1421225531',
-    ClientSecret: 'J3EMGn8d', // 'J3EMGn8d', // 'QYGKXDut',
+    ClientID: '1209532907', // prod: '1209532907', // test: '1421225531',
+    ClientSecret: 'J3EMGn8d', // prod: 'J3EMGn8d', // test: 'QYGKXDut',
     SandBox: false, // true,
   },
   superAdmin: {

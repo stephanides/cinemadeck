@@ -78,14 +78,14 @@ module.exports = {
       },
     }) => {
       try {
-        const orderExist = await Order.findOne({
+        /* const orderExist = await Order.findOne({
           email,
           dateCreated: new Date().toISOString(),
         });
 
         if (orderExist) {
           throw new Error('Allready Exist');
-        }
+        } */
 
         const lastOrderNum = await findLastOrderNum();
 
@@ -113,6 +113,7 @@ module.exports = {
           paymentMethod,
           products,
           totalPriceToPay,
+          userNotified: false,
         });
 
         return {
@@ -127,6 +128,7 @@ module.exports = {
           paymentMethod,
           products,
           totalPriceToPay,
+          userNotified: false,
         };
       } catch (err) {
         throw new Error(err.message);

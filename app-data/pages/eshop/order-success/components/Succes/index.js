@@ -59,7 +59,8 @@ const Success = compose(
 
       xhr.onload = async () => {
         if (xhr.status === 200 && xhr.responseText) {
-          // console.log(xhr.responseText);
+          console.log(xhr);
+          console.log(xhr.responseText);
           try {
             const productIds = [];
             // console.log(order);
@@ -96,6 +97,7 @@ const Success = compose(
       xhr.send(JSON.stringify(data));
     };
 
+    console.log(order);
     if (order && !order.userNotified) {
       handleSendSuccessMail();
     }

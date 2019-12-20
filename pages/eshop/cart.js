@@ -43,6 +43,14 @@ const ShoppingCart = compose(
   const [redirectGP, handleRedirectGP] = useState(false);
 
   useEffect(() => {
+    if (orderDiscount) {
+      const dateRaw = new Date().getTime();
+
+      if (dateRaw >= 1577141999000) {
+        window.location.href = `https://thecinemadeck.com/${lang}/code-not-found`;
+      }
+    }
+
     const checkCart = async () => {
       try {
         if (process.browser) {
@@ -65,13 +73,13 @@ const ShoppingCart = compose(
   const handleSubmitForm = async (e) => {
     e.preventDefault();
 
-    toggleSubmitted(true);
-
     const form = e.currentTarget;
 
     if (form.checkValidity() === false) {
       e.stopPropagation();
     } else {
+      toggleSubmitted(true);
+
       const formattedCart = cart.map((item) => {
         const rPrice = lang === 'cz' ? item.price.cz : item.price.en;
         const {
@@ -106,7 +114,7 @@ const ShoppingCart = compose(
           : cart.reduce((a, b) => (a + b.totalPrice.en), 0),
       };
 
-      console.log(orderData);
+      // console.log(orderData);
 
       try {
         const { data: { createOrder: orderCreated } } = await createOrder({
@@ -135,9 +143,9 @@ const ShoppingCart = compose(
             // console.log(200);
             const responseJSON = await response.json();
 
-            // console.log(responseJSON.paymentResult);
+            // console.log(responseJSON);
 
-            const { paymentResult: { gw_url, id } } = responseJSON;
+            const { paymentResult: { gw_url /* , id */ } } = responseJSON;
 
             // console.log(gw_url);
             // console.log(id);
