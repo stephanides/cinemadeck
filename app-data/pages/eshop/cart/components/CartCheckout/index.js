@@ -103,7 +103,7 @@ const CartCheckout = compose(
 
   useEffect(() => {
     if (orderDiscount && orderDiscount === 'pLyGkyrY6z') {
-      handleOrderDiscount();
+      //handleOrderDiscount();
     }
 
     // return () => handleOrderDiscount();

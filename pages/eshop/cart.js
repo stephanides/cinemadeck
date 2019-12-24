@@ -42,10 +42,18 @@ const ShoppingCart = compose(
   const [stateSelected, handleStateChange] = useState(initialState.stateSelected);
   const [redirectGP, handleRedirectGP] = useState(false);
 
-  useEffect(() => {
+  useEffect((orderDiscount) => {
+
+
+    if (window.location.href.indexOf("pLyGkyrY6z") > -1) {
+      window.localStorage.removeItem('cart');
+      window.location.href = `https://thecinemadeck.com/${lang}/code-not-found`;
+    }
+    else{
+      checkCart();
+    }
     if (orderDiscount) {
       const dateRaw = new Date().getTime();
-
       if (dateRaw >= 1577141999000) {
         window.location.href = `https://thecinemadeck.com/${lang}/code-not-found`;
       }
