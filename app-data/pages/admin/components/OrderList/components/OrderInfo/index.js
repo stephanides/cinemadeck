@@ -7,7 +7,7 @@ import {
 const OrderInfo = ({
   data,
 }) => {
-  console.log(data);
+  // console.log(data);
   const {
     address,
     currency,

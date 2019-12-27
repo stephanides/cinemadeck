@@ -1,11 +1,11 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-// import { ListGroup } from 'reactstrap';
+import { ListGroup } from 'reactstrap';
 import { graphql } from 'react-apollo';
-// import Pagination from 'react-js-pagination';
+import Pagination from 'react-js-pagination';
 import { getOrdersQuery } from '../../../../graphql/query';
 // import Loader from '../../../../shared/components/admin/Loader';
-// import OrderInfo from './components/OrderInfo';
+import OrderInfo from './components/OrderInfo';
 
 const OrderList = graphql(
   getOrdersQuery, {
@@ -30,21 +30,20 @@ const OrderList = graphql(
     return <>LOADING</>;
   }
 
-  // const { items, itemsCount } = orders;
-  console.log(orders);
-  console.log(activePage);
+  const { items, itemsCount } = orders;
+  // console.log(orders);
+  // console.log(activePage);
 
   return (
     <>
-      <p>LIST</p>
-      {/*
+      {
         (items && items.length > 0)
           ? (
             <>
               <ListGroup>
                 {
                   items.map((item) => {
-                    console.log(item);
+                    // console.log(item);
                     const { orderNum } = item;
 
                     return (
@@ -67,7 +66,7 @@ const OrderList = graphql(
             </>
           )
           : <p className="text-center">Zatím neexistují žádné objednávky.</p>
-      */}
+      }
     </>
   );
 });
