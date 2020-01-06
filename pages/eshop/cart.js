@@ -49,9 +49,6 @@ const ShoppingCart = compose(
       window.localStorage.removeItem('cart');
       window.location.href = `https://thecinemadeck.com/${lang}/code-not-found`;
     }
-    else{
-      checkCart();
-    }
     if (orderDiscount) {
       const dateRaw = new Date().getTime();
       if (dateRaw >= 1577141999000) {
