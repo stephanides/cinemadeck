@@ -49,7 +49,7 @@ export default css.global`
     }
     p{
       font-family: 'Open Sans', sans-serif;
-      font-size: 1.5em;
+      font-size: 1.3em;
       color: #b1b6be;
       font-weight: 400;
       @media screen and (max-width: $break-mobile) {

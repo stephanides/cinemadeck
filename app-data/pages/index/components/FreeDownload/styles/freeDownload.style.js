@@ -24,6 +24,7 @@ export default css.global/* css */`
         font-size: 1.8em;
         letter-spacing: 6px;
         padding-top: 80px;
+        padding-bottom: 40px;
       }
       @media screen and (max-width: $break-xsmall) {
         font-size: 1.5em;

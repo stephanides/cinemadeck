@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import styles from './styles/cardcomposition.style';
 import localisation from '../../../../shared/localisation/CardComposition';
 
+const renderDangerHtml = (lang) => ({ __html: localisation[lang].cardCompositionInfo });
 const CardComposition = ({ lang }) => {
   const [isOpen, toggle] = useState(false);
 
@@ -14,6 +15,7 @@ const CardComposition = ({ lang }) => {
       <Container fluid>
         <Container className="pl-0 pr-0">
           <h2 className="text-center">{localisation[lang].cardCompositionTitle}</h2>
+          <p className="text-p" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
           <div className="holder">
             <div className="flip-card">
               <div className={isOpen ? 'flip-card-holder-flipped' : 'flip-card-holder'}>

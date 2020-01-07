@@ -27,6 +27,25 @@ export default css`
         font-size: 1.2em;
       }
     }
+    .text-p{
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.3em;
+      color: white;
+      font-weight: 400;
+      text-align: center;
+      padding-bottom: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 0rem;
+      @media screen and (max-width: $break-mobile) {
+        font-size: 1em;
+        padding-top: 60px;
+        margin:0;
+      }
+      @media screen and (max-width: $break-xsmall) {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
     .video-holder{
       padding-top: 60px;
       @media screen and (max-width: $break-xsmall) {

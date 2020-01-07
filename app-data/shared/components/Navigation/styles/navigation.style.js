@@ -103,12 +103,22 @@ export default css.global/* css */`
           justify-content: center;
           margin-top: 20px;
         }
+        @media screen and (max-width: 322px) {
+          margin-top: 12px;
+        }
 
         a {
           font-family: ProximaNova-Regular;
           color:white;
           font-size: 0.8em;
           padding: 0 .5rem;
+          @media screen and (max-width: 1300px) {
+            font-size: 0.7em;
+          }
+          @media screen and (max-width: 1150px) {
+            font-size: 0.6em;
+            padding: 0 .2rem;
+          }
 
           @media screen and (max-width: $break-mobile) {
             font-size: 1.5em;
@@ -118,6 +128,7 @@ export default css.global/* css */`
           }
           @media screen and (max-width: 322px) {
             font-size: 1em;
+            padding: 0 .4rem;
           }
     
           &:hover {
@@ -153,6 +164,7 @@ export default css.global/* css */`
           background-color: #0098d8;
           border-radius: 2px;
           margin-right: .5rem;
+          margin-left: .5rem;
           padding-right: 28px !important;
           padding-left: 28px !important;
           padding-top: 12px;

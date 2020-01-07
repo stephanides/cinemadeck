@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import styles from './styles/videos.style';
 import localisation from '../../../../shared/localisation/Videos';
 
+const renderDangerHtml = (lang) => ({ __html: localisation[lang].videoText });
+
 const Videos = ({ lang }) => (
   <div className="videos" id="videos">
     <Container fluid>
@@ -28,6 +30,7 @@ const Videos = ({ lang }) => (
             </div>
           </Col>
         </Row>
+        <p className="text-p" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
       </Container>
     </Container>
     <style jsx>{styles}</style>

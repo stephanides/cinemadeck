@@ -1,17 +1,16 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/no-danger */
 import React from 'react';
 import { Container } from 'reactstrap';
 import PropTypes from 'prop-types';
-import LazyLoad from 'react-lazyload';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import CustomContainer from '../../../../shared/components/CustomContainer';
 
 import styles from './styles/about.style';
 import localisation from '../../../../shared/localisation/About';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].aboutTitle });
-const renderDangerHtmlText1 = (lang) => ({ __html: localisation[lang].aboutText1 });
-const renderDangerHtmlText2 = (lang) => ({ __html: localisation[lang].aboutText2 });
 
 const About = ({ lang }) => (
 
@@ -19,10 +18,18 @@ const About = ({ lang }) => (
     <Container fluid>
       <CustomContainer>
         <Container>
+          <img loading="lazy" className="logo-image" src="/static/images/logo-light.svg" alt="Karty CinemaDeck" />
           <h1 className="text-center" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
           <img loading="lazy" src={`/static/images/aboutKarty/${lang === 'cz' ? '' : 'en/'}spoluKarty.png`} alt="Karty CinemaDeck" />
-          <p className="text-center mt-text" dangerouslySetInnerHTML={renderDangerHtmlText1(lang)} />
-          <p className="text-center mt-4" dangerouslySetInnerHTML={renderDangerHtmlText2(lang)} />
+          <div className="link_holder">
+            <AnchorLink
+              href="#free-download-point"
+              className="button-link"
+              offset="100"
+            >
+              {localisation[lang].try}
+            </AnchorLink>
+          </div>
         </Container>
       </CustomContainer>
     </Container>

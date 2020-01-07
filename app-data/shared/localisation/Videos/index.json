@@ -1,8 +1,11 @@
 {
   "en": {
-    "videosTitle":"Interviews made with CinemaDeck cards"
+    "videosTitle":"Interviews made with CinemaDeck cards",
+    "videoText":"In all of the interviews <strong>the combinations of the CinemaDeck cards</strong> (detail, semi-detail, whole ...) are used for the composition, and <strong>the “Light Like Pro” guide</strong> is used for the correct lighting, which is also included in the package. Thanks to all this, you can easily shoot a similar interview."
   },
   "cz": {
-    "videosTitle":"Rozhovory natočené podle karet cinemadeck"
+    "videosTitle":"Rozhovory natočené podle karet cinemadeck",
+    "videoText":"Pro kompozici jsou ve všech rozhovorech využité <strong>kombinace karet CinemaDeck</strong> (detail, polodetail, celek...), a pro nasvícení <strong>přesný návod “Light Like Pro”</strong>, který je také součástí balíku. Díky tomu všemu zvládnete podobné interview natáčet s úplnou lehkostí."
+
   }
 }

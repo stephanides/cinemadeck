@@ -1,6 +1,7 @@
 {
   "en": {
-    "cardCompositionTitle":"What you can find on the CinemaDeck card",
+    "cardCompositionTitle":"how does cinemadeck cards work?",
+    "cardCompositionInfo":"CinemaDeck offers <strong>a brand new way</strong> to give your interviews a film visual just in a few minutes. The package contains <strong>60 cards - 60 professional compositions</strong> in total. Each of them <strong>comes with own instructions</strong> on how to achieve the selected composition. You will know exactly where to place the camera, how to set all values and how to achieve the desired cinametic lighting.",
     "cardComposition1Title":"Shot Size",
     "cardComposition1Text":"Whole, Half, Detail…",
     "cardComposition2Title":"Card Sequence Number",
@@ -26,7 +27,8 @@
     "cardSide":"Other side of the card"
   },
   "cz": {
-    "cardCompositionTitle":"Co všechno na kartě CinemaDeck najdete",
+    "cardCompositionTitle":"JAK fungují karty cinemadeck?",
+    "cardCompositionInfo":"CinemaDeck je úplně <strong>nový způsob</strong>, jak v několika minutách dosáhnete filmový vizuál vašich interview. Balík obsahuje celkem <strong>60 karet - 60 profesionálních kompozic.</strong> Při každé jedné z nich najdete <strong>konkrétní instrukce, </strong>jak vybranou kompozici docílit. Budete přesně vědět kde postavit kameru, nastavení všech hodnot a také jak získat správné filmové nasvícení.",
     "cardComposition1Title":"Velikost záběru",
     "cardComposition1Text":"Celek, polocelek, detail…",
     "cardComposition2Title":"Pořadové číslo karty",

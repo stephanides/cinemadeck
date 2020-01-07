@@ -13,6 +13,7 @@ import localisation from '../../../../shared/localisation/Package';
 import CustomContainer from '../../../../shared/components/CustomContainer';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].packageCol3Header });
+const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].packageInfo });
 
 const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
   const handleAddProductToCart = async () => {
@@ -28,6 +29,7 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
       <Container fluid>
         <CustomContainer>
           <h2>{localisation[lang].packageTitle}</h2>
+          <p className="text-p" dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
           <Row className="justify-content-center">
             <Col xl="4" md="6" sm="12">
               <h6 className="text-center">{localisation[lang].packageCol1Title}</h6>

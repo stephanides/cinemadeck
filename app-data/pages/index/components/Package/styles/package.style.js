@@ -21,16 +21,34 @@ export default css.global`
         margin-top:1rem;
       }
     }
+    .text-p{
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.3em;
+      color: #2f3438;
+      font-weight: 400;
+      text-align: center;
+      padding-bottom: 2rem;
+      padding: 2rem;
+      padding-top: 0;
+      @media screen and (max-width: $break-mobile) {
+        font-size: 1.2em;
+        padding-top: 60px;
+      }
+      @media screen and (max-width: $break-xsmall) {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
     h2{
       color:#2f3438;
       font-family: ProximaNova-Bold;
       text-transform: uppercase;
       letter-spacing: 8px;
-      padding-bottom: 80px;
+      padding-bottom: 60px;
       text-align: center;
       @media screen and (max-width: $break-mobile) {
         font-size: 1.5em;
-        padding-bottom: 40px;
+        padding-bottom: 0px;
       }
     }
     h6{

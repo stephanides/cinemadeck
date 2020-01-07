@@ -125,17 +125,17 @@ const IndexPage = graphql(
     lang={lang}
     isHome
   >
-    <Header lang={lang} />
+    {/* <Header lang={lang} /> */}
     <About lang={lang} />
-    <Unique lang={lang} />
+    <CardComposition lang={lang} />
+    <Videos lang={lang} />
+    <SlideShow lang={lang} />
+    {/* <Unique lang={lang} /> */}
     {/* <Content lang={lang} /> */}
     <Light lang={lang} />
-    <CardComposition lang={lang} />
     <Package lang={lang} />
     <FreeDownload lang={lang} />
-    <SlideShow lang={lang} />
     {/* <Steps lang={lang} /> */}
-    <Videos lang={lang} />
     <FAQ lang={lang} />
     <Author lang={lang} />
     <Footer home lang={lang} />

@@ -148,6 +148,86 @@ const Navigation = graphql(
                 </Link>
               </NavItem>
               <NavItem>
+                {
+                  !isHome
+                    ? (
+                      <Link href={`/?locale=${lang}#cardcomposition`} as={`/${lang}/home#cardcomposition`}>
+                        <a className="nav-link">
+                          {localisation[lang].about}
+                        </a>
+                      </Link>
+                    ) : (
+                      <AnchorLink
+                        href="#cardcomposition"
+                        className="nav-link"
+                        onClick={() => toggle(false)}
+                      >
+                        {localisation[lang].about}
+                      </AnchorLink>
+                    )
+                }
+              </NavItem>
+              <NavItem>
+                {
+                  !isHome
+                    ? (
+                      <Link href={`/?locale=${lang}#videos`} as={`/${lang}/home#videos`}>
+                        <a className="nav-link">
+                          {localisation[lang].talks}
+                        </a>
+                      </Link>
+                    ) : (
+                      <AnchorLink
+                        href="#videos"
+                        className="nav-link"
+                        onClick={() => toggle(false)}
+                      >
+                        {localisation[lang].talks}
+                      </AnchorLink>
+                    )
+                }
+              </NavItem>
+              <NavItem>
+                {
+                  !isHome
+                    ? (
+                      <Link href={`/?locale=${lang}#slideshow`} as={`/${lang}/home#slideshow`}>
+                        <a className="nav-link">
+                          {localisation[lang].compositions}
+                        </a>
+                      </Link>
+                    ) : (
+                      <AnchorLink
+                        href="#slideshow"
+                        className="nav-link"
+                        onClick={() => toggle(false)}
+                      >
+                        {localisation[lang].compositions}
+                      </AnchorLink>
+                    )
+                }
+              </NavItem>
+              <NavItem>
+                {
+                  !isHome
+                    ? (
+                      <Link href={`/?locale=${lang}#package`} as={`/${lang}/home#package`}>
+                        <a className="nav-link">
+                          {localisation[lang].price}
+                        </a>
+                      </Link>
+                    ) : (
+                      <AnchorLink
+                        href="#package"
+                        className="nav-link"
+                        onClick={() => toggle(false)}
+                      >
+                        {localisation[lang].price}
+                      </AnchorLink>
+                    )
+                }
+              </NavItem>
+              <NavItem>
                 <Link href={`/eshop?locale=${lang}`} as={`/${lang}/eshop`}>
                   <a onClick={() => toggle(false)} className="nav-link">ESHOP</a>
                 </Link>
@@ -162,14 +242,14 @@ const Navigation = graphql(
                   !isHome
                     ? (
                       <Link href={`/?locale=${lang}#footer-main`} as={`/${lang}/home#footer-main`}>
-                        <a className="nav-link pr-4">
+                        <a className="nav-link">
                           {localisation[lang].contact}
                         </a>
                       </Link>
                     ) : (
                       <AnchorLink
                         href="#footer-main"
-                        className="nav-link pr-4"
+                        className="nav-link"
                         onClick={() => toggle(false)}
                       >
                         {localisation[lang].contact}

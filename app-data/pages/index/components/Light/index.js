@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/no-danger */
 import '../../../../../static/css/react-image-lightbox/style.min.css';
@@ -38,8 +39,6 @@ const Light = ({ lang }) => {
               <h1 className="text-center">{localisation[lang].packageCol3Header}</h1>
               <img loading="lazy" src="/static/images/light/LIGHT-PRO.png" alt="Karty CinemaDeck" />
               <p className="text-center mt-text" dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
-              <p className="text-center mt-text question-light">{localisation[lang].lightLikeProExtraInfoLine}</p>
-              <p className="text-center mt-text" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
               <div className="product-image">
                 <button
                   type="button"

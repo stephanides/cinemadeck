@@ -5,7 +5,12 @@
     "contact":"CONTACT",
     "download":"FREE DOWNLOAD",
     "homeLink": "Home",
-    "subPageLink": "Sub Page"
+    "subPageLink": "Sub Page",
+    "about":"ABOUT",
+    "talks":"INTERVIEWS",
+    "compositions":"COMPOSITIONS",
+    "price":"PRICE"
+
     
   },
   "cz": {
@@ -14,6 +19,10 @@
     "contact":"KONTAKT",
     "download":"STÁHNOUT ZDARMA",
     "homeLink": "Domov",
-    "subPageLink": "Podstránka"
+    "subPageLink": "Podstránka",
+    "about":"O CINEMADECK",
+    "talks":"ROZHOVORY",
+    "compositions":"KOMPOZICE",
+    "price":"CENA"
   }
 }

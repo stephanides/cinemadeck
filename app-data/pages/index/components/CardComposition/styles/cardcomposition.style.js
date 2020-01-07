@@ -14,6 +14,22 @@ export default css.global/* css */`
     @media screen and (max-width: $break-mobile) {
       padding-top: 80px;
     }
+    .text-p{
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.3em;
+      color: #2f3438;
+      font-weight: 400;
+      text-align: center;
+      padding-bottom: 2rem;
+      @media screen and (max-width: $break-mobile) {
+        font-size: 1.2em;
+        padding-top: 60px;
+      }
+      @media screen and (max-width: $break-xsmall) {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
     h2{
       color:#2f3438;
       font-family: ProximaNova-Bold;
@@ -22,7 +38,7 @@ export default css.global/* css */`
       padding-bottom: 60px;
       @media screen and (max-width: $break-mobile) {
         font-size: 1.5em;
-        padding-bottom: 40px;
+        padding-bottom: 0px;
       }
       @media screen and (max-width: $break-xsmall) {
         font-size: 1.2em;
@@ -379,7 +395,7 @@ export default css.global/* css */`
           display: flex;
           align-items: center;
           .text{
-            width: 200px;
+            width: 180px;
             @media screen and (max-width: $break-xsmall) {
               width: 100%;
             }
@@ -417,6 +433,7 @@ export default css.global/* css */`
       outline:none;
       margin: 0 auto;
       margin-top: 60px;
+      margin-bottom: 60px;
       @media screen and (max-width: $break-mobile) {
         margin-top: 0;
       }
@@ -432,16 +449,6 @@ export default css.global/* css */`
           background-image: url("/static/images/composition/fliphover.png") !important;
         }
       }
-    }
-    .text-p{
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1.5em;
-      color: #4b4f53;
-      font-weight: 400;
-      letter-spacing: 1px;
-      padding-top: 100px;
-      padding-left: 13%;
-      padding-right: 13%;
     }
     .slideshow{
       width: 100%;
