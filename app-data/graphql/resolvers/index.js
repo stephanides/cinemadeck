@@ -72,13 +72,13 @@ export default {
           count: 1,
           price: {
             ...productsDefs[i].price,
-            cz: Math.round(productsDefs[i].price.cz - (productsDefs[i].price.cz * 0.15)), // 0.16
-            en: Math.round(productsDefs[i].price.en - (productsDefs[i].price.en * 0.15)),
+            cz: Math.round(productsDefs[i].price.cz - (productsDefs[i].price.cz * 0.24)), // 0.16, 0.15
+            en: Math.round(productsDefs[i].price.en - (productsDefs[i].price.en * 0.24)),
           },
           totalPrice: {
             ...productsDefs[i].price,
-            cz: Math.round(productsDefs[i].price.cz - (productsDefs[i].price.cz * 0.15)),
-            en: Math.round(productsDefs[i].price.en - (productsDefs[i].price.en * 0.15)),
+            cz: Math.round(productsDefs[i].price.cz - (productsDefs[i].price.cz * 0.24)),
+            en: Math.round(productsDefs[i].price.en - (productsDefs[i].price.en * 0.24)),
           },
         };
 
