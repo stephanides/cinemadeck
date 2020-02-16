@@ -14,6 +14,7 @@ const Order = mongoose.Schema({
   orderStatus: String,
   paymentMethod: Number,
   products: [Object],
+  note: String,
   totalPriceToPay: Number,
   userNotified: Boolean,
 });
