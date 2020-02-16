@@ -22,6 +22,7 @@ import FAQ from '../app-data/pages/index/components/FAQ';
 import Author from '../app-data/pages/index/components/Author';
 import Footer from '../app-data/pages/index/components/Footer';
 import Light from '../app-data/pages/index/components/Light';
+import Compare from '../app-data/pages/index/components/Compare';
 
 /* const DynamicAbout = dynamic(
   () => import('../../app-data/pages/index/components/About'),
@@ -127,6 +128,7 @@ const IndexPage = graphql(
   >
     {/* <Header lang={lang} /> */}
     <About lang={lang} />
+    <Compare lang={lang} />
     <CardComposition lang={lang} />
     <Videos lang={lang} />
     <SlideShow lang={lang} />
