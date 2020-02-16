@@ -78,14 +78,14 @@ const CartCheckout = compose(
       console.log(err);
     }
   }; */
-  const handleOrderDiscount = async () => {
+  const handleOrderDiscount = async (disc) => {
     // pLyGkyrY6z - discount code
     try {
       await replaceItemsInCart({
         variables: {
           data: {
             products: ['001', '002', '003'],
-            discount: true,
+            discount: disc,
           },
         },
       });
@@ -93,6 +93,7 @@ const CartCheckout = compose(
       console.log(err);
     }
   };
+
   const handleRemoveProductFromCart = async (id) => {
     try {
       await removeProductFromCart({ variables: { id } });
@@ -103,7 +104,10 @@ const CartCheckout = compose(
 
   useEffect(() => {
     if (orderDiscount && orderDiscount === 'pLyGkyrY7z') {
-      handleOrderDiscount();
+      handleOrderDiscount(0.24);
+    }
+    if (orderDiscount && orderDiscount === 'oGsGCEdBaD') {
+      handleOrderDiscount(0.15);
     }
 
     // return () => handleOrderDiscount();

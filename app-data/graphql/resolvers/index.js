@@ -62,7 +62,7 @@ export default {
 
       return cart;
     },
-    replaceCartWithData: (_root, { data: cartDataDough }, { cache }) => {
+    replaceCartWithData: (_root, { data: { discount } }, { cache }) => {
       const { products: productsDefs } = cache.readQuery({ query: getProducts });
       const cartData = [];
 
@@ -71,14 +71,14 @@ export default {
           ...productsDefs[i],
           count: 1,
           price: {
-            ...productsDefs[i].price,
-            cz: Math.round(productsDefs[i].price.cz - (productsDefs[i].price.cz * 0.24)), // 0.16, 0.15
-            en: Math.round(productsDefs[i].price.en - (productsDefs[i].price.en * 0.24)),
+            ...productsDefs[i].price, // 0.16, 0.15
+            cz: Math.round(productsDefs[i].price.cz - (productsDefs[i].price.cz * discount)),
+            en: Math.round(productsDefs[i].price.en - (productsDefs[i].price.en * discount)),
           },
           totalPrice: {
             ...productsDefs[i].price,
-            cz: Math.round(productsDefs[i].price.cz - (productsDefs[i].price.cz * 0.24)),
-            en: Math.round(productsDefs[i].price.en - (productsDefs[i].price.en * 0.24)),
+            cz: Math.round(productsDefs[i].price.cz - (productsDefs[i].price.cz * discount)),
+            en: Math.round(productsDefs[i].price.en - (productsDefs[i].price.en * discount)),
           },
         };
 
