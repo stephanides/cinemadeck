@@ -50,6 +50,9 @@ const ShoppingCart = compose(
     if (window.location.href.indexOf('pLyGkyrY7z') > -1) {
       window.localStorage.removeItem('cart');
     }
+    if (window.location.href.indexOf('nzf4dWvJku') > -1) {
+      window.localStorage.removeItem('cart');
+    }
 
     const checkCart = async () => {
       try {
