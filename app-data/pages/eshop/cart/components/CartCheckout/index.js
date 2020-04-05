@@ -109,6 +109,9 @@ const CartCheckout = compose(
     if (orderDiscount && orderDiscount === 'oGsGCEdBaD') {
       handleOrderDiscount(0.15);
     }
+    if (orderDiscount && orderDiscount === 'nzf4dWvJku') {
+      handleOrderDiscount(0.5);
+    }
 
     // return () => handleOrderDiscount();
   }, []);
