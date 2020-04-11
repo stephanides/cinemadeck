@@ -18,7 +18,7 @@ class MailController {
     this.pdfDocument = {};
     this.transporter = nodemailer.createTransport({
       auth: {
-        pass: '1MN1bRemPARE', // 'windowsXP8975', // 'Presov51230890Mh',
+        pass: 'rUYLbs28ZBOY', // 'windowsXP8975', // 'Presov51230890Mh',
         user: 'martin@thecinemadeck.com', // 'info@codebrothers.sk', // 'martin@thecinemadeck.com'
       },
       host: 'email.active24.com', // 'email09.active24.com', // 'smtp.zoho.eu', // 'email09.active24.com'
