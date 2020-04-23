@@ -109,6 +109,7 @@ export default css`
         justify-content: space-around;
         .with-cross{
           position: relative;
+          transform: scale(0.8);
           .cross{
             width: 124px;
             position: absolute;
