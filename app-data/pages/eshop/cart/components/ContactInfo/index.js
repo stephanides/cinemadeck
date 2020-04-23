@@ -8,7 +8,7 @@ import styles from './styles/ContactInfo.style';
 import locale from '../../../../../shared/localisation/eshop/cart';
 
 const ContactInfo = ({ lang }) => (
-  <div className="pt-5 pr-5 contact-info-container position-relative mb-5">
+  <div className="pt-5  contact-info-container position-relative mb-5">
     <p className="text-uppercase"><small>{locale[lang].billingDataToFill}</small></p>
     <h3 className="text-uppercase mb-5">{locale[lang].nameAddressContact}</h3>
     <div className="bg-white p-5">

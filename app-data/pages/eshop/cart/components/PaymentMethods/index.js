@@ -13,7 +13,7 @@ const PaymentMethods = ({ handleOrder, lang, order }) => {
   return (
     <div className="pt-5 payment-methods-container">
       <h3 className="text-uppercase mb-5">{locale[lang].methodOfPayment}</h3>
-      <div className="pr-5">
+      <div className="">
         <div className="p-4 bg-white mb-5">
           <Row>
             <Col className="pr-0">

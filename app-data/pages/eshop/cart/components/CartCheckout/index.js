@@ -16,6 +16,8 @@ import {
 import styles from './styles/cartcheckout.style';
 import locale from '../../../../../shared/localisation/eshop/cart';
 
+const renderDangerHtml = (lang) => ({ __html: locale[lang].offerHead });
+
 /* const cartDiscountData = [{
   id: '001',
   count: 1,
@@ -119,7 +121,7 @@ const CartCheckout = compose(
   return (
     <div className="cart-checkout-wrapper">
       <div className="bg-white position-fixed right-side" />
-      <div className="cart-checkout-container px-5 pt-5">
+      <div className="cart-checkout-container ">
         <h3 className="text-uppercase mb-5">{locale[lang].cart}</h3>
         <div className="checkout-content">
           {
@@ -240,6 +242,63 @@ const CartCheckout = compose(
                     </span>
                   </p>
                   <p className="text-right mb-5">{locale[lang].VAT}</p>
+                  <div className="funnel">
+                    <div className="funnel-head">
+                      <h6>{locale[lang].limitedOffer}</h6>
+                      <h5 dangerouslySetInnerHTML={renderDangerHtml(lang)} />
+                    </div>
+                    <div className="content">
+                      <img src="/static/images/cart/box.png" alt="box" />
+                      <div className="items">
+                        <div className="item">
+                          <img src="/static/images/cart/done.png" alt="check" />
+                          <div>
+                            <h4>SOUND LIKE PRO</h4>
+                            <p>{locale[lang].firstCheck}</p>
+                            <span>{locale[lang].firstPrice}</span>
+                          </div>
+                        </div>
+                        <div className="item">
+                          <img src="/static/images/cart/done.png" alt="check" />
+                          <div>
+                            <h4>SOUND LIKE PRO</h4>
+                            <p>{locale[lang].secondCheck}</p>
+                            <span>{locale[lang].secondPrice}</span>
+                          </div>
+                        </div>
+                        <div className="item">
+                          <img src="/static/images/cart/done.png" alt="check" />
+                          <div>
+                            <h4>SOUND LIKE PRO</h4>
+                            <p>{locale[lang].thirdCheck}</p>
+                            <span>{locale[lang].thirdPrice}</span>
+                          </div>
+                        </div>
+                        <button type="button" className="cart-button">{locale[lang].addButton}</button>
+                        <div className="price-holder">
+                          <div>
+                            <p className="price">
+                              {locale[lang].lowerThirdsPrice}
+                              <span className="currency">{locale[lang].lowerThirdsCurrency}</span>
+                            </p>
+                            <p className="price_low">
+                              {locale[lang].lowerThirdsBottomPrice}
+                            </p>
+                          </div>
+                          <div className="with-cross">
+                            <div className="cross" />
+                            <p className="price-action">
+                              {locale[lang].lowerThirdsPriceAction}
+                              <span className="currency">{locale[lang].lowerThirdsCurrencyAction}</span>
+                            </p>
+                            <p className="price_low_action">
+                              {locale[lang].lowerThirdsBottomPriceAction}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <p><small>{locale[lang].purchasedProductsInMail}</small></p>
                   <FormGroup check className="mb-5">
                     <Label check>

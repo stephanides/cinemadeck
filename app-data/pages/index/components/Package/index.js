@@ -101,7 +101,7 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
                 <span className="currency">EUR</span>
               </p>
             </div>
-            <Link href={`/eshop/funnel?locale=${lang}`} as={`/${lang}/eshop/funnel`}>
+            <Link href={`/eshop/cart?locale=${lang}`} as={`/${lang}/eshop/cart`}>
               <button
                 type="button"
                 onClick={handleAddProductToCart}

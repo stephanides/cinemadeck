@@ -33,7 +33,22 @@
     "bankTransfer": "Bank transfer",
     "notePlaceHolder": "Note",
     "VAT": "Including VAT.",
-    "GPRedirect": "The CinemaDeck website will be redirected to payment gateway..."
+    "GPRedirect": "The CinemaDeck website will be redirected to payment gateway...",
+    "limitedOffer":"Limited offer",
+    "offerHead":"Take your <strong>postproduction</strong> to the <strong>next level</strong>",
+    "firstCheck": "Detailed instructor for perfect sounding in your interview",
+    "secondCheck": "12 title pre-sets with movie visualisation",
+    "thirdCheck": "10 Lower Thirds pre-sets with movie visualisation",
+    "firstPrice":"(19EUR / 21USD)",
+    "secondPrice":"(21EUR / 23USD)",
+    "thirdPrice":"(15EUR / 17USD)",
+    "addButton":"+ ADD TO ORDER",
+    "lowerThirdsPrice":"15",
+    "lowerThirdsCurrency":"EUR",
+    "lowerThirdsBottomPrice":"(16 USD)",
+    "lowerThirdsPriceAction":"56",
+    "lowerThirdsCurrencyAction":"EUR",
+    "lowerThirdsBottomPriceAction":"(61 USD)"
   },
   "cz": {
     "billingDataToFill": "Vyplňte prosím vaše fakturační údaje",
@@ -69,6 +84,21 @@
     "bankTransfer": "Bankovní prevod",
     "notePlaceHolder": "Poznámka",
     "VAT": "Ceny jsou uvedeny s DPH.",
-    "GPRedirect": "Stránka CinemaDeck bude přesměrovaná na platobní bránu..."
+    "GPRedirect": "Stránka CinemaDeck bude přesměrovaná na platobní bránu...",
+    "limitedOffer":"Limitovaná nabídka",
+    "offerHead":"Dostaňte <strong>postprodukci</strong> na <strong>nejvyšší level</strong>",
+    "firstCheck": "Instruktor pro perfektní nazvučení vašeho interview",
+    "secondCheck": "12 filmových titulků pro jméno a pozici herce",
+    "thirdCheck": "10 Lower Thirds titulků pro jméno a pozici herce",
+    "firstPrice":"(490CZK / 19EUR)",
+    "secondPrice":"(550CZK / 21EUR)",
+    "thirdPrice":"(400CZK / 15EUR)",
+    "addButton":"+ PŘIDAT K OBJEDNÁVCE",
+    "lowerThirdsPrice":"390",
+    "lowerThirdsCurrency":"CZK",
+    "lowerThirdsBottomPrice":"(15 EUR)",
+    "lowerThirdsPriceAction":"1440",
+    "lowerThirdsCurrencyAction":"CZK",
+    "lowerThirdsBottomPriceAction":"(56 EUR)"
   }
 }

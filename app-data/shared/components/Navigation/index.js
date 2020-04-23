@@ -227,11 +227,11 @@ const Navigation = graphql(
                     )
                 }
               </NavItem>
-              <NavItem>
+              {/*<NavItem>
                 <Link href={`/eshop?locale=${lang}`} as={`/${lang}/eshop`}>
                   <a onClick={() => toggle(false)} className="nav-link">ESHOP</a>
                 </Link>
-              </NavItem>
+              </NavItem>*/ }
               <NavItem
                 className={
                   ((!isHome && !isCart && cart && cart.length > 0) && cartReady)
