@@ -70,7 +70,7 @@ const CartCheckout = compose(
   graphql(addProductToCartMutation, { name: 'addProductToCart' }),
   graphql(removeProductFromCartMutation, { name: 'removeProductFromCart' }),
 )(({
-  cart, disabled, lang, /* addProductToCart, */ replaceItemsInCart,
+  cart, disabled, lang, addProductToCart, replaceItemsInCart,
   removeProductFromCart, orderDiscount, // stateSelected,
 }) => {
   /* const handleAddProductToCart = async (id) => {
@@ -80,6 +80,13 @@ const CartCheckout = compose(
       console.log(err);
     }
   }; */
+  const handleAddProductToCart = async () => {
+    try {
+      await addProductToCart({ variables: { id: '002' } });
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const handleOrderDiscount = async (disc) => {
     // pLyGkyrY6z - discount code
     try {
@@ -166,7 +173,7 @@ const CartCheckout = compose(
                                   {' / '}
                                 </span>,
                                 <span className="position-relative" key={1}>
-                                  {(item.totalPrice.en * 1.12).toFixed(2)}
+                                  {Math.round(item.totalPrice.en * 1.08)}
                                   <small className="position-absolute text-uppercase">
                                     USD
                                   </small>
@@ -232,7 +239,7 @@ const CartCheckout = compose(
                             {' / '}
                           </span>,
                           <span className="position-relative" key={1}>
-                            {(cart.reduce((a, b) => (a + b.totalPrice.en), 0) * 1.12).toFixed(2)}
+                            {Math.round(cart.reduce((a, b) => (a + b.totalPrice.en), 0) * 1.08)}
                             <small className="position-absolute text-uppercase">
                               USD
                             </small>
@@ -274,7 +281,13 @@ const CartCheckout = compose(
                             <span>{locale[lang].thirdPrice}</span>
                           </div>
                         </div>
-                        <button type="button" className="cart-button">{locale[lang].addButton}</button>
+                        <button
+                          type="button"
+                          className="cart-button"
+                          onClick={() => handleAddProductToCart()}
+                        >
+                          {locale[lang].addButton}
+                        </button>
                         <div className="price-holder">
                           <div>
                             <p className="price">

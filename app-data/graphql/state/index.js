@@ -14,11 +14,23 @@ export default {
       title: 'CinemaDeck Cards',
       price: {
         __typename: 'Price',
-        cz: 947,
-        en: 37,
+        cz: 1259,
+        en: 49,
+        usd: 53,
       },
     },
     {
+      __typename: 'Product',
+      id: '002',
+      title: 'INTERVIEW EDITING PACK PRO',
+      price: {
+        __typename: 'Price',
+        cz: 390,
+        en: 15,
+        usd: 16,
+      },
+    },
+    /* {
       __typename: 'Product',
       id: '002',
       title: 'Title Presets',
@@ -26,8 +38,9 @@ export default {
         __typename: 'Price',
         cz: 180,
         en: 7,
+        usd: 8,
       },
-    },
+    }, */
     {
       __typename: 'Product',
       id: '003',
@@ -36,6 +49,7 @@ export default {
         __typename: 'Price',
         cz: 180,
         en: 7,
+        usd: 8,
       },
     },
   ],
