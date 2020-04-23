@@ -92,13 +92,22 @@ const Package = graphql(addProductToCartMutation)(({ lang, mutate }) => {
             <p className="text-complete">{localisation[lang].faqPackageText}</p>
             <div className="price-holder">
               <p className={lang === 'cz' ? 'd-block price' : 'd-none price'}>
-                947
+                1259
                 <span className="currency">CZK</span>
                 &nbsp;/
               </p>
-              <p className="price">
-                37
+              <p className={lang === 'en' ? 'd-block price' : 'd-none price'}>
+                49
                 <span className="currency">EUR</span>
+                &nbsp;/
+              </p>
+              <p className={lang === 'cz' ? 'd-block price' : 'd-none price'}>
+                49
+                <span className="currency">EUR</span>
+              </p>
+              <p className={lang === 'en' ? 'd-block price' : 'd-none price'}>
+                53
+                <span className="currency">USD</span>
               </p>
             </div>
             <Link href={`/eshop/cart?locale=${lang}`} as={`/${lang}/eshop/cart`}>
