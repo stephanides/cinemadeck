@@ -46,11 +46,8 @@ const Download = compose(
       for (let i = 0; i < order.products.length; i += 1) {
         let id = '001';
 
-        if (order.products[i].title === 'Sound Like Pro') {
-          id = '003';
-        } else if (order.products[i].title === 'Title Presets') {
+        if (order.products[i].title === 'Interview Editing Pack PRO') {
           id = '002';
-        }
 
         const product = {
           ...order.products[i],
