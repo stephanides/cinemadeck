@@ -93,7 +93,7 @@ const CartCheckout = compose(
       await replaceItemsInCart({
         variables: {
           data: {
-            products: ['001', '002', '003'],
+            products: ['001'], // ['001', '002', '003']
             discount: disc,
           },
         },
