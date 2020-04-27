@@ -130,12 +130,10 @@ const Download = compose(
         case '002': {
           const file1 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Titles Presets.aep`);
           zip.file('CinemaDeck Titles Presets.aep', file1, { binary: true });
-
-          break;
-        }
-        case '003': {
-          const file1 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`);
-          zip.file(`CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`, file1, { binary: true });
+          const file2 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Lower Thirds.aep`);
+          zip.file('CinemaDeck Lower Thirds.aep', file2, { binary: true });
+          const file3 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`);
+          zip.file(`CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`, file3, { binary: true });
 
           break;
         }
@@ -146,6 +144,8 @@ const Download = compose(
           const file4 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Mobile (${lang.toUpperCase()}).pdf`);
           const file5 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Print Data (${lang.toUpperCase()}).pdf`);
           const file6 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Titles Presets.aep`);
+          const file7 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Lower Thirds.aep`);
+          const file8 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`);
 
           zip.file(`CinemaDeck Guide (${lang.toUpperCase()}).pdf`, file1, { binary: true });
           zip.file(`CinemaDeck Checklist (${lang.toUpperCase()}).pdf`, file2, { binary: true });
@@ -153,51 +153,8 @@ const Download = compose(
           zip.file(`CinemaDeck Mobile (${lang.toUpperCase()}).pdf`, file4, { binary: true });
           zip.file(`CinemaDeck Print Data (${lang.toUpperCase()}).pdf`, file5, { binary: true });
           zip.file('CinemaDeck Titles Presets.aep', file6, { binary: true });
-
-          break;
-        }
-        case '001003': {
-          const file1 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Guide (${lang.toUpperCase()}).pdf`);
-          const file2 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Checklist (${lang.toUpperCase()}).pdf`);
-          const file3 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Light Like Pro (${lang.toUpperCase()}).pdf`);
-          const file4 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Mobile (${lang.toUpperCase()}).pdf`);
-          const file5 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Print Data (${lang.toUpperCase()}).pdf`);
-          const file6 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`);
-
-          zip.file(`CinemaDeck Guide (${lang.toUpperCase()}).pdf`, file1, { binary: true });
-          zip.file(`CinemaDeck Checklist (${lang.toUpperCase()}).pdf`, file2, { binary: true });
-          zip.file(`CinemaDeck Light Like Pro (${lang.toUpperCase()}).pdf`, file3, { binary: true });
-          zip.file(`CinemaDeck Mobile (${lang.toUpperCase()}).pdf`, file4, { binary: true });
-          zip.file(`CinemaDeck Print Data (${lang.toUpperCase()}).pdf`, file5, { binary: true });
-          zip.file(`CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`, file6, { binary: true });
-
-          break;
-        }
-        case '002003': {
-          const file1 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Titles Presets.aep`);
-          const file2 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`);
-
-          zip.file('CinemaDeck Titles Presets.aep', file1, { binary: true });
-          zip.file(`CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`, file2, { binary: true });
-
-          break;
-        }
-        case '001002003': {
-          const file1 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Guide (${lang.toUpperCase()}).pdf`);
-          const file2 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Checklist (${lang.toUpperCase()}).pdf`);
-          const file3 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Light Like Pro (${lang.toUpperCase()}).pdf`);
-          const file4 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Mobile (${lang.toUpperCase()}).pdf`);
-          const file5 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Print Data (${lang.toUpperCase()}).pdf`);
-          const file6 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Titles Presets.aep`);
-          const file7 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`);
-
-          zip.file(`CinemaDeck Guide (${lang.toUpperCase()}).pdf`, file1, { binary: true });
-          zip.file(`CinemaDeck Checklist (${lang.toUpperCase()}).pdf`, file2, { binary: true });
-          zip.file(`CinemaDeck Light Like Pro (${lang.toUpperCase()}).pdf`, file3, { binary: true });
-          zip.file(`CinemaDeck Mobile (${lang.toUpperCase()}).pdf`, file4, { binary: true });
-          zip.file(`CinemaDeck Print Data (${lang.toUpperCase()}).pdf`, file5, { binary: true });
-          zip.file('CinemaDeck Titles Presets.aep', file6, { binary: true });
-          zip.file(`CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`, file7, { binary: true });
+          zip.file('CinemaDeck Lower Thirds.aep', file7, { binary: true });
+          zip.file(`CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`, file8, { binary: true });
 
           break;
         }
