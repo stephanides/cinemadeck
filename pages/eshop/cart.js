@@ -199,28 +199,26 @@ const ShoppingCart = compose(
           noValidate
         >
           <Row>
-            <Col sm={{ size: 12, order: 1 }} md={{ size: 6, order: 1 }} lg={{ size: 6, order: 1 }}>
+            <Col sm={{ size: 12, order: 1 }} md={{ size: 12, order: 1 }} lg={{ size: 6, order: 1 }}>
               <ContactInfo
                 lang={lang}
                 handleStateChange={handleStateChange}
                 order={order}
                 handleOrder={handleOrder}
               />
+              <DynamicPaymentMethods
+                handleOrder={handleOrder}
+                lang={lang}
+                order={order}
+              />
             </Col>
-            <Col sm={{ size: 12, order: 3 }} md={{ size: 6, order: 2 }} lg={{ size: 6, order: 2 }}>
+            <Col sm={{ size: 12, order: 3 }} md={{ size: 12, order: 2 }} lg={{ size: 6, order: 2 }}>
               <CartCheckout
                 cart={cart}
                 lang={lang}
                 stateSelected={stateSelected}
                 disabled={submitted}
                 orderDiscount={orderDiscount}
-              />
-            </Col>
-            <Col sm={{ size: 12, order: 2 }} md={{ size: 6, order: 3 }} lg={{ size: 6, order: 3 }}>
-              <DynamicPaymentMethods
-                handleOrder={handleOrder}
-                lang={lang}
-                order={order}
               />
             </Col>
             <Col

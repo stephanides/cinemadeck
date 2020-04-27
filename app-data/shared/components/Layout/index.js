@@ -21,7 +21,7 @@ const Layout = ({
     ReactGA.pageview(window.location.pathname);
   }, []);
   return (
-    <div className={isCart ? 'bg-light' : undefined}>
+    <div className={isCart ? '' : undefined}>
       <GoPayRedirectModal lang={lang} show={goPayRedirect} />
       <Navigation
         cart={cart}

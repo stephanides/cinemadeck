@@ -185,12 +185,12 @@ const CartCheckout = compose(
                             <span className="d-flex justify-content-between">
                               <button
                                 type="button"
-                                className="d-flex align-items-center justify-content-center h-100"
+                                className="d-flex align-items-center justify-content-center h-100 remove-button"
                                 onClick={() => {
                                   handleRemoveProductFromCart(item.id);
                                 }}
                               >
-                                -
+                                x
                               </button>
                               {/*
                                 !orderDiscount && (
@@ -312,8 +312,7 @@ const CartCheckout = compose(
                       </div>
                     </div>
                   </div>
-                  <p><small>{locale[lang].purchasedProductsInMail}</small></p>
-                  <FormGroup check className="mb-5">
+                  <FormGroup check className="mb-5 form-check-flex">
                     <Label check>
                       <Input type="checkbox" id="agree" name="agree" required />
                       {' '}
@@ -341,6 +340,7 @@ const CartCheckout = compose(
                   >
                     {locale[lang].buy}
                   </button>
+                  <p className="all-products"><small>{locale[lang].purchasedProductsInMail}</small></p>
                   <img className="secure-payment" src="/static/images/gopay.png" alt="secure payment" />
                 </div>
               )

@@ -36,8 +36,14 @@ const Videos = ({ lang }) => (
               </div>
             </div>
           </Col>
+          <Col md="6" sm="12">
+            <div className="video-holder">
+              <div className="video">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Hh9lcZCBazw" title="video3" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              </div>
+            </div>
+          </Col>
         </Row>
-        <p className="text-p" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
       </Container>
     </Container>
     <style jsx>{styles}</style>

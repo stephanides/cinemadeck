@@ -32,6 +32,9 @@ export default css.global/* css */`
                 & > small {
                   top: -15px;
                   right: -20px;
+                  @media(max-width: 576px){
+                    right: 0px;
+                  }
                 }
               }
             }

@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-export default css`
+export default css.global`
   .cart-checkout-wrapper {
     padding-top: 3rem;
     padding-left: 1rem;
@@ -40,12 +40,16 @@ export default css`
                       font-size: xx-small;
                       top: -10px;
                       right: -20px;
+                      @media(max-width: 576px){
+                        right: 0px;
+                      }
                     }
                   }
                 }
               }
             }
             &.sum {
+              margin-right: 20px;
               & > span {
                 &:first-child {
                   letter-spacing: .25rem;
@@ -58,6 +62,9 @@ export default css`
                     font-size: xx-small;
                     top: -10px;
                     right: -20px;
+                    @media(max-width: 576px){
+                      right: 0px;
+                    }
                   }
                 }
               }
@@ -103,6 +110,8 @@ export default css`
       }
     }
     .funnel{
+      box-shadow: 0px 0px 20px 0px rgba(134, 133, 133, 0.2);
+      margin-bottom: 20px;
       .price-holder{
         display: flex;
         align-items: center;
@@ -110,57 +119,68 @@ export default css`
         .with-cross{
           position: relative;
           transform: scale(0.8);
+          left: -34px;
+          top: -6px;
           .cross{
             width: 124px;
             position: absolute;
             height: 2px;
-            background-color: grey;
-            top: 37%;
+            background-color: #bababa;
+            top: 22px;
             transform: rotate(150deg) translateX(26px);
           }
         }
         .price{
-          font-size: 2rem !important;
+          font-size: 2.5rem !important;
           font-weight: bold;
           position: relative;
+          font-family: ProximaNova-Bold;
           color: black;
           margin: 0;
           .currency{
             font-size: .8rem !important;
             color: black;
-            top: 0;
+            top: 12px;
             position: absolute;
+            right: -30px;
+            font-family: ProximaNova-Regular;
           }
         }
         .price_low{
-          font-size: 1.3rem !important;
+          font-size: 1rem !important;
           font-weight: bold;
           position: relative;
           color: black;
+          top: -15px;
         }
         .price_low_action{
           font-size: 1.3rem !important;
-          font-weight: bold;
+          font-family: ProximaNova-Regular;
           position: relative;
-          color: grey;
+          color: #bababa;
+          top: -12px;
         }
         .price-action{
-          font-size: 2rem !important;
-          font-weight: bold;
+          font-size: 2.2rem !important;
+          font-family: ProximaNova-Regular;
           position: relative;
-          color: grey;
+          color: #bababa;
           margin: 0;
           .currency{
             font-size: .8rem !important;
-            color: grey;
-            top: 0;
+            color: #bababa;
+            top: 9px;
+            right: -19px;
             position: absolute;
+            font-family: ProximaNova-Regular;
           }
           .price_low{
             font-size: 1.3rem !important;
             font-weight: bold;
             position: relative;
-            color: grey;
+            color: #bababa;
+            top: -15px;
+            font-family: ProximaNova-Regular;
           }
         }
       }
@@ -178,17 +198,18 @@ export default css`
           text-transform: uppercase;
           font-size: 1.25rem;
           margin: 0;
+          font-weight: 400;
         }
       }
       .content{
-        margin-top: 1rem;
+        margin-top: 2rem;
         display: flex;
-        align-items: center;
+        align-items: end;
         @media(max-width: 1200px){
           flex-direction: column;
         }
         .cart-button{
-          background-color: #0098d8;
+          background-color: #37baf1;
           font-weight: bold;
           font-size: 0.7rem !important;
           height: 50px !important;
@@ -209,13 +230,25 @@ export default css`
           .item{
             display: flex;
             align-items: end;
-            margin-bottom: 1rem;
+            margin-bottom: .5rem;
             p{
               margin: 0;
+              font-family: ProximaNova-Regular;
+              font-size: 0.9rem;
+              padding-right: 2rem;
+              line-height: 16px;
             }
             span{
               color: #cccccc !important;
               font-size: 0.7rem;
+              font-family: ProximaNova-Regular;
+              top: -6px;
+              position: relative;
+            }
+            h4{
+              font-weight: 700;
+              font-family: ProximaNova-Bold;
+              font-size: 1.2rem;
             }
           }
         }
@@ -223,12 +256,37 @@ export default css`
     }
   }
   .secure-payment{
-    width: 100%;
-    margin-top: 2rem;
+    width: 80%;
+    margin: auto;
+    display: block;
+    margin-top: 6rem;
   }
   .right-side{
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 992px) {
       display:none;
     }
   }
+  .all-products{
+    text-align: center;
+    margin-top: 2rem;
+    small{
+      color: rgb(142, 151, 160);
+      font-family: ProximaNova-Regular;
+      font-size: .7rem;
+      text-transform: uppercase;
+    }
+  }
+  .form-check-flex{
+    display: flex !important;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  .remove-button{
+    color: rgb(142, 151, 160) !important;
+    background-color: white !important;
+    &:hover{
+      color: black !important;
+    }
+  }
+  
 `;

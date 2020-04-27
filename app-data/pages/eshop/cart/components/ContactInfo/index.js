@@ -8,17 +8,17 @@ import styles from './styles/ContactInfo.style';
 import locale from '../../../../../shared/localisation/eshop/cart';
 
 const ContactInfo = ({ lang }) => (
-  <div className="pt-5  contact-info-container position-relative mb-5">
-    <p className="text-uppercase"><small>{locale[lang].billingDataToFill}</small></p>
+  <div className="pt-5  contact-info-container position-relative">
+    <p className="text-uppercase"><small className="letter-spacing-2">{locale[lang].billingDataToFill}</small></p>
     <h3 className="text-uppercase mb-5">{locale[lang].nameAddressContact}</h3>
-    <div className="bg-white p-5">
+    <div className="bg-white card">
       <FormGroup>
         <Input
           type="text"
           id="name"
           name="name"
           placeholder={locale[lang].namePlaceholder}
-          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0 pl-0 input-label"
           required
         />
         <div className="invalid-feedback">
@@ -31,7 +31,7 @@ const ContactInfo = ({ lang }) => (
           id="street"
           name="street"
           placeholder={locale[lang].streetPlaceholder}
-          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0 pl-0 input-label"
           required
         />
         <div className="invalid-feedback">
@@ -45,7 +45,7 @@ const ContactInfo = ({ lang }) => (
             id="city"
             name="city"
             placeholder={locale[lang].cityPlaceholder}
-            className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+            className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0 pl-0 input-label"
             required
           />
           <div className="invalid-feedback">
@@ -58,7 +58,7 @@ const ContactInfo = ({ lang }) => (
             id="psc"
             name="psc"
             placeholder={locale[lang].postCode}
-            className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+            className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0 pl-0 input-label"
             required
           />
           <div className="invalid-feedback">
@@ -66,12 +66,12 @@ const ContactInfo = ({ lang }) => (
           </div>
         </Col>
       </FormGroup>
-      <FormGroup className="pl-1">
+      <FormGroup className="">
         <Input
           type="select"
           id="state"
           name="state"
-          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0 pl-0 input-label"
           required
         >
           <option defaultChecked value="">{locale[lang].state}</option>
@@ -96,7 +96,7 @@ const ContactInfo = ({ lang }) => (
           id="email"
           name="email"
           placeholder={locale[lang].emailPlaceholder}
-          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0 pl-0 input-label"
           required
         />
         <div className="invalid-feedback">
@@ -109,7 +109,7 @@ const ContactInfo = ({ lang }) => (
           id="note"
           name="note"
           placeholder={locale[lang].notePlaceHolder}
-          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0"
+          className="border-bottom border-secondary border-top-0 border-left-0 border-right-0 rounded-0 pl-0 input-label"
         />
       </FormGroup>
     </div>
