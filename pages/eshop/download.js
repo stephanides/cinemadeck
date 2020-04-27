@@ -110,8 +110,7 @@ const Download = compose(
         }
       }
 
-      // console.log(filesId);
-
+      console.log(filesId);
       switch (filesId) {
         case '001': {
           const file1 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Guide (${lang.toUpperCase()}).pdf`);

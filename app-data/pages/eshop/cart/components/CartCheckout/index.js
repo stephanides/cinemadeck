@@ -112,14 +112,14 @@ const CartCheckout = compose(
   };
 
   useEffect(() => {
-    if (orderDiscount && orderDiscount === 'pLyGkyrY7z') {
-      handleOrderDiscount(0.24);
+    if (orderDiscount && orderDiscount === 'nzf50dWvJku') {
+      handleOrderDiscount(0.5);
     }
-    if (orderDiscount && orderDiscount === 'oGsGCEdBaD') {
+    if (orderDiscount && orderDiscount === 'nzf15dWvJku') {
       handleOrderDiscount(0.15);
     }
-    if (orderDiscount && orderDiscount === 'nzf4dWvJku') {
-      handleOrderDiscount(0.5);
+    if (orderDiscount && orderDiscount === 'nzf20dWvJku') {
+      handleOrderDiscount(0.2);
     }
 
     // return () => handleOrderDiscount();

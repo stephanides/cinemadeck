@@ -43,15 +43,15 @@ const ShoppingCart = compose(
   const [redirectGP, handleRedirectGP] = useState(false);
 
   useEffect((orderDiscount) => {
-    if (window.location.href.indexOf('pLyGkyrY6z') > -1) {
+    if (window.location.href.indexOf('nzf15dWvJku') > -1) {
       window.localStorage.removeItem('cart');
-      window.location.href = `https://thecinemadeck.com/${lang}/code-not-found`;
+      // window.location.href = `https://thecinemadeck.com/${lang}/code-not-found`;
     }
-    if (window.location.href.indexOf('pLyGkyrY7z') > -1) {
+    if (window.location.href.indexOf('nzf20dWvJku') > -1) {
       window.localStorage.removeItem('cart');
-      window.location.href = `https://thecinemadeck.com/${lang}/code-not-found`;
+      // window.location.href = `https://thecinemadeck.com/${lang}/code-not-found`;
     }
-    if (window.location.href.indexOf('nzf4dWvJku') > -1) {
+    if (window.location.href.indexOf('nzf50dWvJku') > -1) {
       window.localStorage.removeItem('cart');
       // window.location.href = `https://thecinemadeck.com/${lang}/code-not-found`;
     }

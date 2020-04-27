@@ -67,30 +67,56 @@ export default {
       const cartData = [];
 
       for (let i = 0; i < productsDefs.length; i += 1) {
-        const item = {
-          ...productsDefs[i],
-          count: 1,
-          price: {
-            ...productsDefs[i].price, // 0.16, 0.15
-            cz: Math.round(
-              (productsDefs[i].price.cz - (productsDefs[i].price.cz * discount)) * 100,
-            ) / 100,
-            en: Math.round(
-              (productsDefs[i].price.en - (productsDefs[i].price.en * discount)) * 100,
-            ) / 100,
-          },
-          totalPrice: {
-            ...productsDefs[i].price,
-            cz: Math.round(
-              (productsDefs[i].price.cz - (productsDefs[i].price.cz * discount)) * 100,
-            ) / 100,
-            en: Math.round(
-              (productsDefs[i].price.en - (productsDefs[i].price.en * discount)) * 100,
-            ) / 100,
-          },
-        };
+        if (productsDefs[i].title === 'CinemaDeck Cards') {
+          const item = {
+            ...productsDefs[i],
+            count: 1,
+            price: {
+              ...productsDefs[i].price, // 0.16, 0.15
+              cz: Math.round(
+                (productsDefs[i].price.cz - (productsDefs[i].price.cz * discount)) * 100,
+              ) / 100,
+              en: Math.round(
+                (productsDefs[i].price.en - (productsDefs[i].price.en * discount)) * 100,
+              ) / 100,
+            },
+            totalPrice: {
+              ...productsDefs[i].price,
+              cz: Math.round(
+                (productsDefs[i].price.cz - (productsDefs[i].price.cz * discount)) * 100,
+              ) / 100,
+              en: Math.round(
+                (productsDefs[i].price.en - (productsDefs[i].price.en * discount)) * 100,
+              ) / 100,
+            },
+          };
 
-        cartData.push(item);
+          cartData.push(item);
+        } else {
+          const item = {
+            ...productsDefs[i],
+            count: 1,
+            price: {
+              ...productsDefs[i].price, // 0.16, 0.15
+              cz: Math.round(
+                (productsDefs[i].price.cz) * 100,
+              ) / 100,
+              en: Math.round(
+                (productsDefs[i].price.en) * 100,
+              ) / 100,
+            },
+            totalPrice: {
+              ...productsDefs[i].price,
+              cz: Math.round(
+                (productsDefs[i].price.cz) * 100,
+              ) / 100,
+              en: Math.round(
+                (productsDefs[i].price.en) * 100,
+              ) / 100,
+            },
+          };
+          cartData.push(item);
+        }
       }
 
       const data = {

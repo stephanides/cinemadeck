@@ -69,10 +69,8 @@ const Success = compose(
                 // await removeProduct({ variables: { id:  } });
                 if (order.products[i].title === 'CinemaDeck Cards') {
                   productIds.push('001');
-                } else if (order.products[i].title === 'Title Presets') {
+                } else if (order.products[i].title === 'Interview Editing Pack PRO') {
                   productIds.push('002');
-                } else {
-                  productIds.push('003');
                 }
               }
 
@@ -113,10 +111,8 @@ const Success = compose(
         // await removeProduct({ variables: { id:  } });
         if (order.products[i].title === 'CinemaDeck Cards') {
           productIds.push('001');
-        } else if (order.products[i].title === 'Title Presets') {
+        } else if (order.products[i].title === 'Interview Editing Pack PRO') {
           productIds.push('002');
-        } else {
-          productIds.push('003');
         }
       }
 
@@ -166,7 +162,7 @@ const Success = compose(
           const file3 = await JSZipUtils.getBinaryContent(`/static/download/${lang}/CinemaDeck Lower Thirds.aep`);
           zip.file('CinemaDeck Titles Presets.aep', file1, { binary: true });
           zip.file(`CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`, file2, { binary: true });
-          zip.file('CinemaDeck Titles Presets.aep', file3, { binary: true });
+          zip.file('CinemaDeck Lower Thirds.aep', file3, { binary: true });
 
           break;
         }
@@ -187,7 +183,7 @@ const Success = compose(
           zip.file(`CinemaDeck Print Data (${lang.toUpperCase()}).pdf`, file5, { binary: true });
           zip.file('CinemaDeck Titles Presets.aep', file6, { binary: true });
           zip.file(`CinemaDeck Sound Like Pro (${lang.toUpperCase()}).pdf`, file7, { binary: true });
-          zip.file('CinemaDeck Titles Presets.aep', file8, { binary: true });
+          zip.file('CinemaDeck Lower Thirds.aep', file8, { binary: true });
 
           break;
         }
