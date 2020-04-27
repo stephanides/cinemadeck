@@ -48,6 +48,7 @@ const Download = compose(
 
         if (order.products[i].title === 'Interview Editing Pack PRO') {
           id = '002';
+        }
 
         const product = {
           ...order.products[i],
