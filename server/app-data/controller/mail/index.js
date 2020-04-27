@@ -21,7 +21,7 @@ class MailController {
         pass: 'N6PpyL2hCPOX', // 'windowsXP8975', // 'Presov51230890Mh',
         user: 'martin@thecinemadeck.com', // 'info@codebrothers.sk', // 'martin@thecinemadeck.com'
       },
-      host: 'email.active24.com', // 'email09.active24.com', // 'smtp.zoho.eu', // 'email09.active24.com'
+      host: 'email09.active24.com', // 'email09.active24.com', // 'smtp.zoho.eu', // 'email09.active24.com'
       port: 465, // 587,
       secure: true, // true, // ssl
       ignoreTLS: true,
