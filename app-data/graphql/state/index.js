@@ -41,16 +41,5 @@ export default {
         usd: 8,
       },
     }, */
-    {
-      __typename: 'Product',
-      id: '003',
-      title: 'Sound Like Pro',
-      price: {
-        __typename: 'Price',
-        cz: 180,
-        en: 7,
-        usd: 8,
-      },
-    },
   ],
 };
