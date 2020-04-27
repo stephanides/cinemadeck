@@ -22,7 +22,7 @@ export default {
     {
       __typename: 'Product',
       id: '002',
-      title: 'INTERVIEW EDITING PACK PRO',
+      title: 'Interview Editing Pack PRO',
       price: {
         __typename: 'Price',
         cz: 390,
