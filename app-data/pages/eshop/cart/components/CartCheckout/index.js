@@ -268,7 +268,7 @@ const CartCheckout = compose(
                         <div className="item">
                           <img src="/static/images/cart/done.png" alt="check" />
                           <div>
-                            <h4>SOUND LIKE PRO</h4>
+                            <h4>TITLE PRESETS</h4>
                             <p>{locale[lang].secondCheck}</p>
                             <span>{locale[lang].secondPrice}</span>
                           </div>
@@ -276,7 +276,7 @@ const CartCheckout = compose(
                         <div className="item">
                           <img src="/static/images/cart/done.png" alt="check" />
                           <div>
-                            <h4>SOUND LIKE PRO</h4>
+                            <h4>LOWER THIRDS</h4>
                             <p>{locale[lang].thirdCheck}</p>
                             <span>{locale[lang].thirdPrice}</span>
                           </div>
