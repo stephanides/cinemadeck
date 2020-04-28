@@ -145,7 +145,7 @@ const CartCheckout = compose(
                         }
                         key={i}
                       >
-                        <span>{`${item.count}x ${item.title}`}</span>
+                        <span>{`${item.title}`}</span>
                         <span className="d-flex">
                           <span>
                             {

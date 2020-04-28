@@ -92,30 +92,6 @@ export default {
           };
 
           cartData.push(item);
-        } else {
-          const item = {
-            ...productsDefs[i],
-            count: 1,
-            price: {
-              ...productsDefs[i].price, // 0.16, 0.15
-              cz: Math.round(
-                (productsDefs[i].price.cz) * 100,
-              ) / 100,
-              en: Math.round(
-                (productsDefs[i].price.en) * 100,
-              ) / 100,
-            },
-            totalPrice: {
-              ...productsDefs[i].price,
-              cz: Math.round(
-                (productsDefs[i].price.cz) * 100,
-              ) / 100,
-              en: Math.round(
-                (productsDefs[i].price.en) * 100,
-              ) / 100,
-            },
-          };
-          cartData.push(item);
         }
       }
 
