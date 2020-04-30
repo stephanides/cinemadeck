@@ -3,7 +3,7 @@ module.exports = {
   gp: {
     ClientID: '1209532907', // prod: '1209532907', // test: '1421225531',
     ClientSecret: 'J3EMGn8d', // prod: 'J3EMGn8d', // test: 'QYGKXDut',
-    SandBox: true, // true,
+    SandBox: false, // true,
   },
   superAdmin: {
     superAdminEmail: 'info@codebrothers.sk',
