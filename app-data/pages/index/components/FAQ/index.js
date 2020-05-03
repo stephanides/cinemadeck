@@ -123,8 +123,8 @@ const FAQ = graphql(addProductToCartMutation)(({ lang, mutate }) => {
                 &nbsp;/
               </p>
               <p className={lang === 'en' ? 'd-block price' : 'd-none price'}>
-                49
-                <span className="currency">EUR</span>
+                53
+                <span className="currency">USD</span>
                 &nbsp;/
               </p>
               <p className={lang === 'cz' ? 'd-block price' : 'd-none price'}>
@@ -132,8 +132,8 @@ const FAQ = graphql(addProductToCartMutation)(({ lang, mutate }) => {
                 <span className="currency">EUR</span>
               </p>
               <p className={lang === 'en' ? 'd-block price' : 'd-none price'}>
-                53
-                <span className="currency">USD</span>
+                49
+                <span className="currency">EUR</span>
               </p>
             </div>
             <Link href={`/eshop/cart?locale=${lang}`} as={`/${lang}/eshop/cart`}>

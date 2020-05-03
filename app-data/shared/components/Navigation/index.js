@@ -158,8 +158,9 @@ const Navigation = graphql(
                       </Link>
                     ) : (
                       <AnchorLink
-                        href="#cardcomposition"
+                        href="#compare"
                         className="nav-link"
+                        offset="80"
                         onClick={() => toggle(false)}
                       >
                         {localisation[lang].about}
@@ -180,6 +181,7 @@ const Navigation = graphql(
                       <AnchorLink
                         href="#videos"
                         className="nav-link"
+                        offset="80"
                         onClick={() => toggle(false)}
                       >
                         {localisation[lang].talks}
@@ -200,6 +202,7 @@ const Navigation = graphql(
                       <AnchorLink
                         href="#slideshow"
                         className="nav-link"
+                        offset="80"
                         onClick={() => toggle(false)}
                       >
                         {localisation[lang].compositions}
@@ -220,6 +223,7 @@ const Navigation = graphql(
                       <AnchorLink
                         href="#package"
                         className="nav-link"
+                        offset="80"
                         onClick={() => toggle(false)}
                       >
                         {localisation[lang].price}
@@ -250,6 +254,7 @@ const Navigation = graphql(
                       <AnchorLink
                         href="#footer-main"
                         className="nav-link"
+                        offset="80"
                         onClick={() => toggle(false)}
                       >
                         {localisation[lang].contact}
@@ -279,7 +284,7 @@ const Navigation = graphql(
                       onClick={() => toggle(false)}
                       href="#free-download-point"
                       className="button-link"
-                      offset="100"
+                      offset="80"
                     >
                       {localisation[lang].download}
                     </AnchorLink>

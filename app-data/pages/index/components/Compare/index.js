@@ -23,7 +23,11 @@ const Compare = ({ lang }) => (
             <p className="text-small" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
           </Col>
           <Col lg="6" className="lower-size">
-            <img className="compare-img" alt="karty" src="/static/images/Compare/karty.png" />
+            <img
+              className="compare-img"
+              alt="karty"
+              src={lang === 'en' ? '/static/images/Compare/karty.png' : '/static/images/Compare/kartycz.png'}
+            />
           </Col>
         </Row>
       </Container>

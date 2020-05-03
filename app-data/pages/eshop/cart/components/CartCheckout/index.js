@@ -161,25 +161,25 @@ const CartCheckout = compose(
                                 </span>,
                               ]
                             }
-                            <span className="position-relative ml-1" key={2}>
-                              {item.totalPrice.en}
-                              <small className="position-absolute text-uppercase">
-                                eur
-                              </small>
-                            </span>
                             {
                               lang === 'en' && [
-                                <span key={0}>
-                                  {' / '}
-                                </span>,
                                 <span className="position-relative" key={1}>
                                   {Math.round(item.totalPrice.en * 1.08)}
                                   <small className="position-absolute text-uppercase">
                                     USD
                                   </small>
                                 </span>,
+                                <span key={0}>
+                                  {' / '}
+                                </span>,
                               ]
                             }
+                            <span className="position-relative ml-1" key={2}>
+                              {item.totalPrice.en}
+                              <small className="position-absolute text-uppercase">
+                                eur
+                              </small>
+                            </span>
                           </span>
                           <span className="ml-4">
                             <span className="d-flex justify-content-between">
@@ -227,25 +227,25 @@ const CartCheckout = compose(
                           </span>,
                         ]
                       }
-                      <span className="position-relative" key={2}>
-                        {cart.reduce((a, b) => (a + b.totalPrice.en), 0)}
-                        <small className="text-uppercase position-absolute">
-                          eur
-                        </small>
-                      </span>
                       {
                         lang === 'en' && [
-                          <span key={0}>
-                            {' / '}
-                          </span>,
                           <span className="position-relative" key={1}>
                             {Math.round(cart.reduce((a, b) => (a + b.totalPrice.en), 0) * 1.08)}
                             <small className="position-absolute text-uppercase">
                               USD
                             </small>
                           </span>,
+                          <span key={0}>
+                            {' / '}
+                          </span>,
                         ]
                       }
+                      <span className="position-relative" key={2}>
+                        {cart.reduce((a, b) => (a + b.totalPrice.en), 0)}
+                        <small className="text-uppercase position-absolute">
+                          eur
+                        </small>
+                      </span>
                     </span>
                   </p>
                   <p className="text-right mb-5">{locale[lang].VAT}</p>
