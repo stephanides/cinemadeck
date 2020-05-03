@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-export default css`
+export default css.global`
   $break-xsmall: 400px;
   $break-small: 576px;
   $break-mobile:768px;
@@ -10,6 +10,17 @@ export default css`
 
   .videos{
       background-image: url("/static/images/steps/background.jpg");
+    .margin-bottom-60{
+      margin-bottom: 60px;
+      @media screen and (max-width: $break-mobile) {
+        margin-bottom: 0px;
+      }
+    }
+    .BrainhubCarousel__arrows{
+      background-image: url("/static/images/steps/background.jpg");
+      background-color: transparent;
+      outline: none !important;
+    }
     h2{
       padding-top: 120px;
       font-family: ProximaNova-SemiBold;
@@ -47,12 +58,12 @@ export default css`
       }
     }
     .video-holder{
-      padding-top: 60px;
+      width: 100%;
+      margin: 1rem;
       @media screen and (max-width: $break-xsmall) {
         padding-top: 40px;
       }
       .video{
-        background-image: url("/static/images/videos/video.jpg");
         height: 315px;
         box-shadow: 0px 3px 14px 0px #252424;
         @media screen and (max-width: $break-mobile) {

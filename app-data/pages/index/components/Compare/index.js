@@ -9,65 +9,51 @@ import localisation from '../../../../shared/localisation/Compare';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].text1 });
 const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].text2 });
+const renderDangerHtml3 = (lang) => ({ __html: localisation[lang].text3 });
 
 const Compare = ({ lang }) => (
   <div className="compare" id="compare">
-    <Container>
-      <h2 className="text-center">{localisation[lang].title}</h2>
-      <p className="text-p" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
-    </Container>
-    <div className="imgWrapper">
+    <div className="compare-head">
       <Container>
         <Row>
-          <Col lg="4" md="12" className="imgHolder">
-            <div className="start">
-              <p>2018</p>
-              <img className="miniImg" alt="2018" src="/static/images/Compare/1.png" />
-            </div>
-            <div className="start">
-              <p><strong>2019</strong></p>
-              <img className="miniImg" alt="2018" src="/static/images/Compare/2.png" />
-            </div>
+          <Col lg="6">
+            <h2 className="text-left">{localisation[lang].title}</h2>
+            <p className="subtitle">{localisation[lang].subtitle}</p>
+            <p className="text-small" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
           </Col>
-          <Col lg="4" md="12" className="imgHolder">
-            <div className="divider left" />
-            <div className="later">
-              <p>2018</p>
-              <img className="miniImg" alt="2018" src="/static/images/Compare/3.png" />
-            </div>
-            <div className="later">
-              <p><strong>2019</strong></p>
-              <img className="miniImg" alt="2018" src="/static/images/Compare/4.png" />
-            </div>
-            <div className="divider right" />
-          </Col>
-          <Col lg="4" md="12" className="imgHolder desktop">
-            <div className="end">
-              <img className="miniImg" alt="2018" src="/static/images/Compare/5.png" />
-              <p>2018</p>
-            </div>
-            <div className="end">
-              <img className="miniImg" alt="2018" src="/static/images/Compare/6.png" />
-              <p><strong>2019</strong></p>
-            </div>
-          </Col>
-          <Col lg="4" md="12" className="imgHolder mobile">
-            <div className="end">
-              <p>2018</p>
-              <img className="miniImg" alt="2018" src="/static/images/Compare/5.png" />
-            </div>
-            <div className="end">
-              <p><strong>2019</strong></p>
-              <img className="miniImg" alt="2018" src="/static/images/Compare/6.png" />
-            </div>
+          <Col lg="6" className="lower-size">
+            <img className="compare-img" alt="karty" src="/static/images/Compare/karty.png" />
           </Col>
         </Row>
       </Container>
     </div>
-    <Container>
-      <h2 className="text-center">{localisation[lang].title2}</h2>
-      <p className="text-p" dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
-    </Container>
+    <div className="imgWrapper">
+      <Container>
+        <h4 className="text-center">{localisation[lang].title2}</h4>
+        <p className="text-small" dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
+        <Row>
+          <Col size="6">
+            <h6 className="text-left">{localisation[lang].before}</h6>
+            <img className="miniImg" alt="2018" src="/static/images/Compare/1.jpg" />
+            <img className="miniImg" alt="2018" src="/static/images/Compare/3.jpg" />
+            <img className="miniImg" alt="2018" src="/static/images/Compare/5.jpg" />
+          </Col>
+          <Col size="6">
+            <h6 className="text-left">{localisation[lang].after}</h6>
+            <img className="miniImg" alt="2018" src="/static/images/Compare/2.jpg" />
+            <img className="miniImg" alt="2018" src="/static/images/Compare/4.jpg" />
+            <img className="miniImg" alt="2018" src="/static/images/Compare/6.jpg" />
+          </Col>
+        </Row>
+      </Container>
+    </div>
+    <div className="mapWrapper">
+      <Container>
+        <h4 className="text-center">{localisation[lang].title3}</h4>
+        <img alt="map" src="/static/images/Compare/map.png" />
+        <p className="text-small" dangerouslySetInnerHTML={renderDangerHtml3(lang)} />
+      </Container>
+    </div>
     <style jsx global>{styles}</style>
   </div>
 );

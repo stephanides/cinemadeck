@@ -17,6 +17,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" />
           <meta name="google-site-verification" content="DLioDlInGinWBF6y7FNH6itiz5j-6AiWPyyicqfLXao" />
           <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
+          <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
           <script
             dangerouslySetInnerHTML={{
               __html: `!function(f,b,e,v,n,t,s)

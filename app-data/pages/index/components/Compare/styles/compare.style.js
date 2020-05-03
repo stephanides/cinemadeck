@@ -10,14 +10,123 @@ export default css.global`
 
   .compare{
       background-color:#f8f8f8;
-    h2{
+    .compare-head{
+      background-color: #1c1c20;
+      padding-bottom: 60px;
       padding-top: 80px;
+      @media(max-width: 576px){
+        padding-top: 40px;
+      }
+      .subtitle{
+        font-family: 'Caveat', cursive;
+        color: #43a7de;
+        font-size: 1.2rem;
+        @media(max-width: 576px){
+          text-align: center;
+        }
+      }
+      .lower-size{
+        @media(max-width: 1200px){
+          align-items: center;
+          justify-content: center;
+          display: flex;
+        }
+      }
+      .compare-img{
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+      }
+      .text-small{
+        color: white;
+        font-size: 0.8rem;
+        text-align: left;
+        font-family: ProximaNova-Regular;
+        @media(max-width: 576px){
+          text-align: center;
+        }
+        strong{
+          font-weight: 400;
+          color: #43a7de;
+        }
+      }
+    }
+    .mapWrapper{
+      background-color: #fafafa;
+      padding-bottom: 2rem;
+      img{
+        width: 100%;
+      }
+      h4{
+        font-size: 2rem;
+        color: black;
+        text-transform: uppercase;
+        font-family: ProximaNova-Bold;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+        letter-spacing: 4px;
+        @media(max-width: 768px){
+          padding-top: 2rem;
+        }
+      }
+      .text-small{
+        color: black;
+        font-size: 1.3rem;
+        text-align: center;
+        font-family: ProximaNova-Regular;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        @media screen and (max-width: $break-mobile) {
+          font-size: 1.2em;
+        }
+        strong{
+          font-weight: 600;
+          color: #43a7de;
+        }
+      }
+    }
+    .imgWrapper{
+      img{
+        width: 100%;
+      }
+      h4{
+        font-size: 2rem;
+        color: black;
+        text-transform: uppercase;
+        font-family: ProximaNova-Bold;
+        letter-spacing: 4px;
+      }
+      h6{
+        font-size: 1.8rem;
+        color: black;
+        text-transform: uppercase;
+        font-family: ProximaNova-Bold;
+      }
+      .text-small{
+        color: black;
+        font-size: 1.3rem;
+        text-align: center;
+        font-family: ProximaNova-Regular;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        @media screen and (max-width: $break-mobile) {
+          font-size: 1.2em;
+        }
+        strong{
+          font-weight: 600;
+          color: #43a7de;
+        }
+      }
+    }
+    h2{
       font-family: ProximaNova-Bold;
-      font-size: 2em;
-      color:#2f3438; 
-      letter-spacing: 8px;
+      font-size: 2.5em;
+      color: white; 
+      letter-spacing: 2px;
       text-transform: uppercase;
-      font-size: 2rem;
+      @media(max-width: 576px){
+        text-align: center !important;
+      }
       @media screen and (max-width: $break-mobile) {
         padding-top: 60px;
         font-size: 1.5em;
@@ -129,9 +238,12 @@ export default css.global`
       }
     }
     .imgWrapper{
-      background-image: url("/static/images/steps/background.jpg");
-      padding-top:2rem;
-      padding-bottom: 2rem;
+      background-color: white;
+      padding-top:4rem;
+      padding-bottom: 6rem;
+      @media(max-width: 768px){
+        padding-bottom: 2rem;
+      }
     }
     .divider{
       height:80px;
