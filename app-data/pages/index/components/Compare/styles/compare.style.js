@@ -20,26 +20,24 @@ export default css.global`
       .subtitle{
         font-family: 'Caveat', cursive;
         color: #43a7de;
-        font-size: 1.2rem;
+        font-size: 1.38rem;
         @media(max-width: 576px){
           text-align: center;
         }
       }
       .lower-size{
-        @media(max-width: 1200px){
-          align-items: center;
-          justify-content: center;
-          display: flex;
-        }
+        align-items: center;
+        justify-content: center;
+        display: flex;
       }
       .compare-img{
-        width: 80%;
+        width: 95%;
         margin: 0 auto;
         display: block;
       }
       .text-small{
         color: white;
-        font-size: 0.8rem;
+        font-size: 1.2rem;
         text-align: left;
         font-family: ProximaNova-Regular;
         @media(max-width: 576px){
@@ -64,7 +62,7 @@ export default css.global`
         font-family: ProximaNova-Bold;
         padding-top: 4rem;
         padding-bottom: 3rem;
-        letter-spacing: 4px;
+        letter-spacing: 2px;
         @media(max-width: 768px){
           padding-top: 2rem;
         }
@@ -94,7 +92,7 @@ export default css.global`
         color: black;
         text-transform: uppercase;
         font-family: ProximaNova-Bold;
-        letter-spacing: 4px;
+        letter-spacing: 2px;
       }
       h6{
         font-size: 1.8rem;

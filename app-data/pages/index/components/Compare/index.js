@@ -10,6 +10,7 @@ import localisation from '../../../../shared/localisation/Compare';
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].text1 });
 const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].text2 });
 const renderDangerHtml3 = (lang) => ({ __html: localisation[lang].text3 });
+const title2 = (lang) => ({ __html: localisation[lang].title2 });
 
 const Compare = ({ lang }) => (
   <div className="compare" id="compare">
@@ -29,7 +30,7 @@ const Compare = ({ lang }) => (
     </div>
     <div className="imgWrapper">
       <Container>
-        <h4 className="text-center">{localisation[lang].title2}</h4>
+        <h4 className="text-center" dangerouslySetInnerHTML={title2(lang)} />
         <p className="text-small" dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
         <Row>
           <Col size="6">
