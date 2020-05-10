@@ -11,6 +11,7 @@ import styles from './styles/about.style';
 import localisation from '../../../../shared/localisation/About';
 
 const renderDangerHtml = (lang) => ({ __html: localisation[lang].aboutTitle });
+const renderDangerHtml2 = (lang) => ({ __html: localisation[lang].aboutSubTitle });
 
 const About = ({ lang }) => (
 
@@ -20,6 +21,7 @@ const About = ({ lang }) => (
         <Container>
           <img loading="lazy" className="logo-image" src="/static/images/logo-light.svg" alt="Karty CinemaDeck" />
           <h1 className="text-center" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
+          <h2 className="text-center" dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
           <img loading="lazy" src={`/static/images/aboutKarty/${lang === 'cz' ? '' : 'en/'}spoluKarty.png`} alt="Karty CinemaDeck" />
           <div className="link_holder">
             <AnchorLink

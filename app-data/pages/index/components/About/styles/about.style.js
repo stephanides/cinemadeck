@@ -24,14 +24,28 @@ export default css.global`
     }
     h1{
       font-family: ProximaNova-SemiBold;
-      font-size: 2em;
+      font-size: 2.25em;
       color:white; 
-      letter-spacing: 8px;
+      letter-spacing: 4px;
       @media screen and (max-width: $break-mobile) {
         font-size: 1.5em;
       }
       @media screen and (max-width: $break-xsmall) {
         font-size: 1.2em;
+        letter-spacing: 4px;
+      }
+    }
+    h2{
+      margin-top: 1.5rem;
+      font-family: ProximaNova-Regular;
+      font-size: 1.75em;
+      color:rgba(255,255,255,0.8); 
+      letter-spacing: 6px;
+      @media screen and (max-width: $break-mobile) {
+        font-size: 1.25em;
+      }
+      @media screen and (max-width: $break-xsmall) {
+        font-size: 1em;
         letter-spacing: 4px;
       }
     }
@@ -154,7 +168,7 @@ export default css.global`
     width:240px;
     margin: 0 auto;
     margin-bottom: 2rem;
-    @media screen and (max-width: $break-mobile) {
+    @media screen and (max-width: $break-medium) {
       margin-top: 3rem;
     }
   }

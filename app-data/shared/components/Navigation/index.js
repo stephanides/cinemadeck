@@ -123,7 +123,7 @@ const Navigation = graphql(
             )
             : 'fixed-top bg-white navbar-light'
         }
-        expand="md"
+        expand="lg"
       >
         <Container fluid className="navigation_holder">
           <Link href={`/?locale=${lang}`} as={`/${lang}/home`}>

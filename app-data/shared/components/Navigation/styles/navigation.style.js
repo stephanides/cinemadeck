@@ -41,7 +41,7 @@ export default css.global/* css */`
         animation: shadow-pulse 1s 3;
         transition: opacity .5s;
       }
-      @media screen and (max-width: $break-mobile) {
+      @media screen and (max-width: $break-medium) {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -74,7 +74,7 @@ export default css.global/* css */`
       padding-left: 50px;
       padding-right: 50px;
     }
-    @media screen and (max-width: $break-mobile) {
+    @media screen and (max-width: $break-medium) {
       padding-left: 20px;
       padding-right: 20px;
       background-color: #171717;
@@ -88,7 +88,7 @@ export default css.global/* css */`
     }
 
     .navbar-nav {
-      @media screen and (max-width: $break-mobile) {
+      @media screen and (max-width: $break-medium) {
         height: 100vh;
         padding-top: 100px;
       }
@@ -98,7 +98,7 @@ export default css.global/* css */`
       li {
         display: flex;
         align-items: center;
-        @media screen and (max-width: $break-mobile) {
+        @media screen and (max-width: $break-medium) {
           align-items: center;
           justify-content: center;
           margin-top: 20px;
@@ -120,7 +120,7 @@ export default css.global/* css */`
             padding: 0 .2rem;
           }
 
-          @media screen and (max-width: $break-mobile) {
+          @media screen and (max-width: $break-medium) {
             font-size: 1.5em;
           }
           @media screen and (max-width: 576px) {
@@ -146,7 +146,7 @@ export default css.global/* css */`
           padding: 0 .5rem;
           outline: none;
 
-          @media screen and (max-width: $break-mobile) {
+          @media screen and (max-width: $break-medium) {
             font-size: 1.5em;
           }
           &:hover {
@@ -184,7 +184,7 @@ export default css.global/* css */`
           padding: 0 0 0 1rem;
           margin: 0 0 0 1rem;
 
-          @media screen and (max-width: $break-mobile) {
+          @media screen and (max-width: $break-medium) {
             margin: 0;
             padding: 0;
             margin-top: 20px;
@@ -198,7 +198,7 @@ export default css.global/* css */`
             left: 0;
           }
 
-          @media screen and (max-width: $break-mobile) {
+          @media screen and (max-width: $break-medium) {
             &::before {
               display: none;
             }
@@ -271,7 +271,7 @@ export default css.global/* css */`
             &.move-left {
               margin-right: 350px;
 
-              @media screen and (max-width: $break-mobile) {
+              @media screen and (max-width: $break-medium) {
                 margin-right: 0!important;
               }
             }
@@ -292,7 +292,7 @@ export default css.global/* css */`
             transform: translateY(-399px);
             width: 300px;
             
-            @media screen and (max-width: $break-mobile) {
+            @media screen and (max-width: $break-medium) {
               margin-top: 2.5rem!important;
               position: static;
               right: 0;
@@ -305,7 +305,7 @@ export default css.global/* css */`
               margin-bottom: .5rem;
 
               span {
-                @media screen and (max-width: $break-mobile) {
+                @media screen and (max-width: $break-medium) {
                   font-size: .7rem;
                 }
               }
