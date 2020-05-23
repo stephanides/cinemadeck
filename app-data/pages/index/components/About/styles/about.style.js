@@ -22,6 +22,20 @@ export default css.global`
     @media screen and (max-width: $break-xsmall) {
       padding-top: 80px;
     }
+    .main-video{
+      overflow:hidden;
+      padding-bottom:56.25%;
+      position:relative;
+      height:0;
+      margin-top: 2rem;
+      iframe{
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+      }
+    }
     h1{
       font-family: ProximaNova-SemiBold;
       font-size: 2.25em;

@@ -22,7 +22,19 @@ const About = ({ lang }) => (
           <img loading="lazy" className="logo-image" src="/static/images/logo-light.svg" alt="Karty CinemaDeck" />
           <h1 className="text-center" dangerouslySetInnerHTML={renderDangerHtml(lang)} />
           <h2 className="text-center" dangerouslySetInnerHTML={renderDangerHtml2(lang)} />
-          <img loading="lazy" src={`/static/images/aboutKarty/${lang === 'cz' ? '' : 'en/'}spoluKarty.png`} alt="Karty CinemaDeck" />
+        </Container>
+          { /* <img loading="lazy" src={`/static/images/aboutKarty/${lang === 'cz' ? '' : 'en/'}spoluKarty.png`} alt="Karty CinemaDeck" /> */ }
+        <div className="main-video">
+          <iframe
+            title="main-video"
+            width="420"
+            height="315"
+            frameBorder="0"
+            allowFullScreen
+            src="https://www.youtube-nocookie.com/embed/3jv9mxL2YpE"
+          />
+        </div>
+        <Container>
           <div className="link_holder">
             <AnchorLink
               href="#free-download-point"
